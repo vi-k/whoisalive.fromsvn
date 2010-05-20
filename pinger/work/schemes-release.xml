@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schemes>
+
+<scheme
+	name="Объекты слежения на карте Яндекс"
+	type="map"
+	min_scale="2.0"
+	max_scale="262144"
+	show_names="1">
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="135 4 23.18"
+		lat="48 28 46.64"
+		scale_min="5754.44"
+		link="172.16.16.1"
+		link_type="optics">
+			<host>10.10.30.6</host>
+	</object>
+	<object name="Ленина"
+		class="host"
+		lon="135 4 57.88"
+		lat="48 28 39.13"
+		scale_min="5754.44"
+		link="172.16.16.1"
+		link_type="optics">
+			<host>172.16.16.107</host>
+	</object>
+	<object name="Дзержинского"
+		class="Сервер"
+		lon="135 4 18.16"
+		lat="48 28 25.6"
+		scale_min="5754.44"
+		link="172.16.16.1"
+		link_type="optics">
+			<host>172.16.23.1</host>
+	</object>
+
+	<object name="Центр"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_min="724.08"
+		scale_max="5754.44"
+		link="172.16.16.1"
+		link_type="optics">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+	</object>
+
+	<object name="Cisco"
+		class="Сервер"
+		lon="135 6 18.11"
+		lat="48 24 58.71"
+		scale_min="5792.62">
+			<host>172.16.16.1</host>
+	</object>
+	<object name="ТМО-2С8-D(РП)"
+		class="ТМО-2С8-D(РП)"
+		lon="135 6 18.11"
+		lat="48 24 58.71"
+		offs_x="48"
+		scale_min="5792.62"
+		link="172.16.16.1"
+		link_type="optics">
+			<host>172.16.22.24</host>
+	</object>
+	<object name="Иртышский"
+		class="Группа объектов"
+		lon="135 6 18.11"
+		lat="48 24 58.71"
+		scale_min="724.08"
+		scale_max="5792.62">
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+	</object>
+
+	<object name="ТМО-2С8-D(РП) Шелеста"
+		class="ТМО-2С8-D(РП)"
+		lon="135 3 10.88"
+		lat="48 31 16.17"
+		scale_min="724.08"
+		link="172.16.16.107"
+		link_type="air">
+			<host>172.16.16.153</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Воровского"
+		class="ТМО-2С8-D(РП)"
+		lon="135 10 44.13"
+		lat="48 27 23.04"
+		scale_min="724.08"
+		link="172.16.16.107"
+		link_type="air">
+			<host>172.16.16.154</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Суворова"
+		class="ТМО-2С8-D(РП)"
+		lon="135 9 33.46"
+		lat="48 23 40.90"
+		scale_min="724.08"
+		link="172.16.16.107"
+		link_type="air">
+			<host>172.16.16.156</host>
+	</object>
+
+	<object name="Хабаровск"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_min="362.04"
+		scale_max="724.08"
+		link="0.0.0.1"
+		link_type="air">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+			<host>172.16.16.153</host>
+			<host>172.16.16.154</host>
+			<host>172.16.16.156</host>
+	</object>
+	
+	<object name="Cisco"
+		class="Сервер"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		scale_min="5754.44"
+		link="172.16.16.107"
+		link_type="air">
+			<host>172.16.22.1</host>
+	</object>
+	<object name="ТМО-2С8-D(РП)"
+		class="ТМО-2С8-D(РП)"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="30"
+		offs_y="-52"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.19.33</host>
+	</object>
+	<object name="ТМО-2С8-КВ 1"
+		class="ТМО-2С8-КВ"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="60"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.22.21</host>
+	</object>
+	<object name="ТМО-2С8-КВ 2"
+		class="ТМО-2С8-КВ"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="30"
+		offs_y="52"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.22.22</host>
+	</object>
+	<object name="AC-7"
+		class="host"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="-30"
+		offs_y="-52"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.22.111</host>
+	</object>
+	<object name="APM-M"
+		class="host"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="-60"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.22.112</host>
+	</object>
+	<object name="Agilent"
+		class="host"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		offs_x="-30"
+		offs_y="52"
+		scale_min="5754.44"
+		link="172.16.22.1"
+		link_type="wire">
+			<host>172.16.22.113</host>
+	</object>
+	<object name="Малиновка"
+		class="Группа объектов"
+		lon="135 16 01.26"
+		lat="48 28 51.88"
+		scale_min="362.04" scale_max="5754.44"
+		link="172.16.16.107"
+		link_type="air">
+			<host>172.16.22.1</host>
+			<host>172.16.19.33</host>
+			<host>172.16.22.21</host>
+			<host>172.16.22.22</host>
+			<host>172.16.22.111</host>
+			<host>172.16.22.112</host>
+			<host>172.16.22.113</host>
+	</object>
+
+	<object name="Хабаровск"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_min="22.63"
+		scale_max="362.04"
+		link="0.0.0.1"
+		link_type="air">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+			<host>172.16.16.153</host>
+			<host>172.16.16.154</host>
+			<host>172.16.16.156</host>
+			<host>172.16.22.1</host>
+			<host>172.16.19.33</host>
+			<host>172.16.22.21</host>
+			<host>172.16.22.22</host>
+			<host>172.16.22.111</host>
+			<host>172.16.22.112</host>
+			<host>172.16.22.113</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="132 56 23.00"
+		lat="48 46 48.00"
+		offs_x="48"
+		scale_min="1448.16"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.25</host>
+	</object>
+	<object name="ТМО-2С8-D(РП)"
+		class="ТМО-2С8-D(РП)"
+		lon="132 56 23.00"
+		lat="48 46 48.00"
+		scale_min="1448.16"
+		link="10.10.30.25"
+		link_type="wire">
+			<host>192.168.6.100</host>
+	</object>
+	<object name="ЕАО"
+		class="Группа объектов"
+		lon="132 56 23.00"
+		lat="48 46 48.00"
+		scale_min="22.63"
+		scale_max="1448.16"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.25</host>
+			<host>192.168.6.100</host>
+	</object>
+
+	<object name="ТМО-2С8-D(РП) Бикин"
+		class="ТМО-2С8-D(РП)"
+		lon="134 15 38.31"
+		lat="46 48 41.05"
+		scale_min="22.63"
+		link="172.16.16.1"
+		link_type="wire">
+			<host>172.27.82.3</host>
+	</object>
+
+	<object name="Хабаровск"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_min="11.31"
+		scale_max="22.63"
+		link="0.0.0.1"
+		link_type="air">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+			<host>172.16.16.153</host>
+			<host>172.16.16.154</host>
+			<host>172.16.16.156</host>
+			<host>172.16.22.1</host>
+			<host>172.16.19.33</host>
+			<host>172.16.22.21</host>
+			<host>172.16.22.22</host>
+			<host>172.16.22.111</host>
+			<host>172.16.22.112</host>
+			<host>172.16.22.113</host>
+			<host>10.10.30.25</host>
+			<host>192.168.6.100</host>
+			<host>172.27.82.3</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="127 31 39.91"
+		lat="50 16 4.87"
+		scale_min="1448.16"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.17</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) 1"
+		class="ТМО-2С8-D(РП)"
+		lon="127 32 32.32"
+		lat="50 17 06.00"
+		scale_min="1448.16"
+		link="10.10.30.17"
+		link_type="wire">
+			<host>192.168.28.41</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) 2"
+		class="ТМО-2С8-D(РП)"
+		lon="127 33 32.23"
+		lat="50 14 46.00"
+		scale_min="1448.16"
+		link="10.10.30.17"
+		link_type="wire">
+			<host>192.168.28.42</host>
+	</object>
+	<object name="Амурская область"
+		class="Группа объектов"
+		lon="127 33 2.27"
+		lat="50 15 56.00"
+		scale_min="11.31"
+		scale_max="1448.16"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.17</host>
+			<host>192.168.28.41</host>
+			<host>192.168.28.42</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="142 43 03.14"
+		lat="46 57 54.04"
+		offs_x="-48"
+		offs_y="-24"
+		scale_min="1448.16"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.29</host>
+	</object>
+	<object name="ТМО-2С8-D(РП)"
+		class="ТМО-2С8-D(РП)"
+		lon="142 43 03.14"
+		lat="46 57 54.04"
+		scale_min="1448.16"
+		link="10.10.30.29"
+		link_type="wire">
+			<host>192.168.65.55</host>
+	</object>
+	<object name="Сахалин"
+		class="Группа объектов"
+		lon="142 43 03.14"
+		lat="46 57 54.04"
+		scale_min="11.31"
+		scale_max="1448.16"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.29</host>
+			<host>192.168.65.55</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="131 54 33.44"
+		lat="43 6 53.90"
+		scale_min="2896.31"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.1</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Комарова"
+		class="ТМО-2С8-D(РП)"
+		lon="131 53 22.13"
+		lat="43 7 15.04"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.4</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Кипарисовая"
+		class="ТМО-2С8-D(РП)"
+		lon="131 54 56.13"
+		lat="43 5 14.04"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.5</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Чкалова"
+		class="ТМО-2С8-D(РП)"
+		lon="131 54 55.13"
+		lat="43 10 38.04"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.6</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Ладыгина"
+		class="ТМО-2С8-D(РП)"
+		lon="131 56 55.13"
+		lat="43 7 01.04"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.7</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Днепровская"
+		class="ТМО-2С8-D(РП)"
+		lon="131 53 24.20"
+		lat="43 8 20.06"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.8</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) Станюковича"
+		class="ТМО-2С8-D(РП)"
+		lon="131 51 50.95"
+		lat="43 6 09.96"
+		scale_min="2896.31"
+		link="10.10.30.1"
+		link_type="wire">
+			<host>192.168.1.9</host>
+	</object>
+	<object name="Владивосток"
+		class="Группа объектов"
+		lon="131 54 33.44"
+		lat="43 6 53.90"
+		scale_min="11.31"
+		scale_max="2896.31"
+		link="10.10.30.6"
+		link_type="wire">
+			<host>10.10.30.1</host>
+			<host>192.168.1.4</host>
+			<host>192.168.1.5</host>
+			<host>192.168.1.6</host>
+			<host>192.168.1.7</host>
+			<host>192.168.1.8</host>
+			<host>192.168.1.9</host>
+	</object>
+
+	<object name="Хабаровск"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_min="5.66"
+		scale_max="11.31"
+		link="0.0.0.1"
+		link_type="air">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+			<host>172.16.16.153</host>
+			<host>172.16.16.154</host>
+			<host>172.16.16.156</host>
+			<host>172.16.22.1</host>
+			<host>172.16.19.33</host>
+			<host>172.16.22.21</host>
+			<host>172.16.22.22</host>
+			<host>172.16.22.111</host>
+			<host>172.16.22.112</host>
+			<host>172.16.22.113</host>
+			<host>10.10.30.25</host>
+			<host>192.168.6.100</host>
+			<host>172.27.82.3</host>
+			<host>10.10.30.17</host>
+			<host>192.168.28.41</host>
+			<host>192.168.28.42</host>
+			<host>10.10.30.29</host>
+			<host>192.168.65.55</host>
+			<host>10.10.30.1</host>
+			<host>192.168.1.4</host>
+			<host>192.168.1.5</host>
+			<host>192.168.1.6</host>
+			<host>192.168.1.7</host>
+			<host>192.168.1.8</host>
+			<host>192.168.1.9</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="129 42 23.94"
+		lat="62 1 11.90"
+		scale_min="724.08"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.21</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) 1"
+		class="ТМО-2С8-D(РП)"
+		lon="129 45 11.97"
+		lat="62 02 48.27"
+		scale_min="724.08"
+		link="10.10.30.21"
+		link_type="air">
+			<host>192.168.14.210</host>
+	</object>
+	<object name="ТМО-2С8-D(РП) 2"
+		class="ТМО-2С8-D(РП)"
+		lon="129 38 38.13"
+		lat="62 02 39.85"
+		scale_min="724.08"
+		link="10.10.30.21"
+		link_type="air">
+			<host>192.168.14.212</host>
+	</object>
+	<object name="ТМО-2С8-КВ 1"
+		class="ТМО-2С8-КВ"
+		lon="129 33 11.57"
+		lat="61 54 43.16"
+		offs_x="-24"
+		scale_min="724.08"
+		link="10.10.30.21"
+		link_type="air">
+			<host>192.168.14.216</host>
+	</object>
+	<object name="ТМО-2С8-КВ 2"
+		class="ТМО-2С8-КВ"
+		lon="129 33 11.57"
+		lat="61 54 43.16"
+		offs_x="24"
+		offs_y="20"
+		scale_min="724.08"
+		link="10.10.30.21"
+		link_type="air">
+			<host>192.168.14.217</host>
+	</object>
+	<object name="Якутия"
+		class="Группа объектов"
+		lon="129 41 55.05"
+		lat="62 2 44.06"
+		scale_min="5.66"
+		scale_max="724.08"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.21</host>
+			<host>192.168.14.210</host>
+			<host>192.168.14.212</host>
+			<host>192.168.14.216</host>
+			<host>192.168.14.217</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="150 48 29.00"
+		lat="59 33 15.00"
+		offs_x="-48"
+		offs_y="48"
+		scale_min="1448.16"
+		link="10.10.30.6"
+		link_type="air">
+			<host>213.59.161.185</host>
+	</object>
+	<object name="ТМО-2С8-D(РП)"
+		class="ТМО-2С8-D(РП)"
+		lon="150 48 29.00"
+		lat="59 33 15.00"
+		scale_min="1448.16"
+		link="213.59.161.185"
+		link_type="wire">
+			<host>192.168.50.161</host>
+	</object>
+	<object name="ТМО-2С8-КВ 1"
+		class="ТМО-2С8-КВ"
+		lon="150 53 25.18"
+		lat="59 32 37.92"
+		offs_y="0"
+		scale_min="1448.16"
+		link="213.59.161.185"
+		link_type="wire">
+			<host>192.168.50.150</host>
+	</object>
+	<object name="ТМО-2С8-КВ 2"
+		class="ТМО-2С8-КВ"
+		lon="150 53 25.18"
+		lat="59 32 37.92"
+		offs_y="+48"
+		scale_min="1448.16"
+		link="213.59.161.185"
+		link_type="wire">
+			<host>192.168.50.151</host>
+	</object>
+	<object name="Магадан"
+		class="Группа объектов"
+		lon="150 48 29.00"
+		lat="59 33 15.00"
+		scale_min="5.66"
+		scale_max="1448.16"
+		link="10.10.30.6"
+		link_type="air">
+			<host>213.59.161.185</host>
+			<host>192.168.50.161</host>
+			<host>192.168.50.150</host>
+			<host>192.168.50.151</host>
+	</object>
+
+	<object name="Ростелеком"
+		class="Ростелеком"
+		lon="158 34 53.28"
+		lat="53 7 32.00"
+		scale_min="362.04"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.33</host>
+	</object>
+	<object name="Петропавловск-Камчатский"
+		class="host"
+		lon="158 39 45.06"
+		lat="53 3 20.74"
+		scale_min="362.04"
+		link="10.10.30.33"
+		link_type="air">
+			<host>192.168.41.31</host>
+	</object>
+	<object name="Елизово"
+		class="host"
+		lon="158 22 41.29"
+		lat="53 11 11.48"
+		scale_min="362.04"
+		link="10.10.30.33"
+		link_type="air">
+			<host>192.168.41.32</host>
+	</object>
+	<object name="Камчатка"
+		class="Группа объектов"
+		lon="158 39 45.06"
+		lat="53 3 20.74"
+		scale_min="5.66"
+		scale_max="362.04"
+		link="10.10.30.6"
+		link_type="air">
+			<host>10.10.30.33</host>
+			<host>192.168.41.31</host>
+			<host>192.168.41.32</host>
+	</object>
+
+	<object name="Хабаровск"
+		class="Группа объектов"
+		lon="135 4 33.07"
+		lat="48 28 37.12"
+		scale_max="5.66">
+			<host>10.10.30.6</host>
+			<host>172.16.16.107</host>
+			<host>172.16.23.1</host>
+			<host>172.16.16.1</host>
+			<host>172.16.22.24</host>
+			<host>172.16.16.153</host>
+			<host>172.16.16.154</host>
+			<host>172.16.16.156</host>
+			<host>172.16.22.1</host>
+			<host>172.16.19.33</host>
+			<host>172.16.22.21</host>
+			<host>172.16.22.22</host>
+			<host>172.16.22.111</host>
+			<host>172.16.22.112</host>
+			<host>172.16.22.113</host>
+			<host>10.10.30.25</host>
+			<host>192.168.6.100</host>
+			<host>172.27.82.3</host>
+			<host>10.10.30.17</host>
+			<host>192.168.28.41</host>
+			<host>192.168.28.42</host>
+			<host>10.10.30.29</host>
+			<host>192.168.65.55</host>
+			<host>10.10.30.1</host>
+			<host>192.168.1.4</host>
+			<host>192.168.1.5</host>
+			<host>192.168.1.6</host>
+			<host>192.168.1.7</host>
+			<host>192.168.1.8</host>
+			<host>192.168.1.9</host>
+			<host>10.10.30.21</host>
+			<host>192.168.14.210</host>
+			<host>192.168.14.212</host>
+			<host>192.168.14.216</host>
+			<host>192.168.14.217</host>
+			<host>213.59.161.185</host>
+			<host>192.168.50.161</host>
+			<host>192.168.50.150</host>
+			<host>192.168.50.151</host>
+			<host>10.10.30.33</host>
+			<host>192.168.41.31</host>
+			<host>192.168.41.32</host>
+	</object>
+
+	<objectN name="Комсомольск-на-Амуре"
+		class="host"
+		lon="137 0 5.66"
+		lat="50 32 42.87"
+		scale_min="22.63">
+	</objectN>
+
+	<objectN name="Ванино"
+		class="host"
+		lon="140 15 27.58"
+		lat="49 6 2.68"
+		scale_min="22.63">
+	</objectN>
+
+	<objectN name="Лесозаводск"
+		class="host"
+		lon="133 24 20.19"
+		lat="45 28 41.88"
+		scale_min="22.63">
+	</objectN>
+
+	<objectN name="Уссурийск"
+		class="host"
+		lon="131 56 46.74"
+		lat="43 48 28.18"
+		scale_min="22.63">
+	</objectN>
+
+	<objectN name="Арсеньев"
+		class="host"
+		lon="133 15 43.56"
+		lat="44 12 52.84"
+		scale_min="22.63">
+	</objectN>
+
+	<objectN name="Москва"
+		class="host"
+		lon="37 37 31.54"
+		lat="55 45 15.66">
+	</objectN>
+</scheme>
+
+</schemes>

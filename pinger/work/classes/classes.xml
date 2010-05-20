@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<classes>
+
+	<class name="link">
+		<param type=":from">Хоста 1</param>
+		<param type=":to">Хост 2</param>
+		<param type="text" edited="1">Комментарий</param>
+	</class>
+
+	<class name="Медный провод" inherited="link">
+		<width>6</width>
+		<param type=":from">Хост 1</param>
+ 		<param type=":to">Хост 2</param>
+	 	<param type="text" edited="1">Комментарий</param>
+	</class>
+
+	<class name="Беспроводное соединение" inherited="link">
+		<width>2</width>
+		<param type=":from">Хоста 1</param>
+		<param type=":to">Хост 2</param>
+ 		<param type="text" edited="1">Комментарий</param>
+	</class>
+
+	<class name="Оптоволокно" inherited="link">
+		<width>12</width>
+		<param type=":from">Хоста 1</param>
+		<param type=":to">Хост 2</param>
+		<param type="text" edited="1">Комментарий</param>
+	</class>
+
+	<class name="host">
+		<image xc="0.5" yc="0.95">/classes/computer.png</image>
+		<image state="ok">/classes/computer.png</image>
+		<image state="warn">/classes/computer.png</image>
+		<image state="fail">/classes/computer.png</image>
+		<param type=":address">Хост</param>
+		<param type="text" edited="1">Комментарий</param>
+
+	</class>
+
+	<class name="ТМО-2С8-D(РП)" inherited="host">
+		<image xc="0.5" yc="0.95">/classes/wifi.png</image>
+		<image state="ok">/classes/wifi.png</image>
+		<image state="warn">/classes/wifi.png</image>
+		<image state="fail">/classes/wifi.png</image>
+	</class>
+
+	<class name="ТМО-2С8-КВ" inherited="host">
+		<image xc="0.5" yc="0.95">/classes/wifi.png</image>
+		<image state="ok">/classes/wifi.png</image>
+		<image state="warn">/classes/wifi.png</image>
+		<image state="fail">/classes/wifi.png</image>
+	</class>
+
+	<class name="Ростелеком" inherited="host">
+		<image xc="0.5" yc="0.95">/classes/thunder.png</image>
+		<image state="ok">/classes/thunder.png</image>
+		<image state="warn">/classes/thunder.png</image>
+		<image state="fail">/classes/thunder.png</image>
+	</class>
+
+	<class name="Сервер" inherited="host">
+		<image xc="0.5" yc="0.95">/classes/home.png</image>
+		<image state="ok">/classes/home.png</image>
+		<image state="warn">/classes/home.png</image>
+		<image state="fail">/classes/home.png</image>
+	</class>
+
+	<class name="Группа объектов">
+		<image xc="0.5" yc="0.95">/classes/group.png</image>
+		<image state="ok">/classes/group.png</image>
+		<image state="warn">/classes/group.png</image>
+		<image state="fail">/classes/group.png</image>
+		<param type=":count">Количество объектов</param>
+	</class>
+
+	<class name="antena">
+		<image xc="0.5" yc="0.95">/classes/wifi.png</image>
+		<image state="ok">/classes/wifi.png</image>
+		<image state="warn">/classes/wifi.png</image>
+		<image state="fail">/classes/wifi.png</image>
+	</class>
+
+	<class name="phones">
+		<image xc="0.5" yc="0.95">/classes/phones.png</image>
+		<image state="ok">/classes/phones.png</image>
+		<image state="warn">/classes/phones.png</image>
+		<image state="fail">/classes/phones.png</image>
+	</class>
+
+</classes>
