@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<config>
+	<server>
+		<address>172.16.22.158</address>
+		<address2>127.0.0.1</address2>
+		<port>27543</port>
+	</server>
+</config>
+

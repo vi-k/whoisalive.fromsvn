@@ -1,0 +1,6 @@
+!*
+Debug/*.bat
+Debug/*.exe
+Release/*.bat
+Release/*.exe
+work/*.*

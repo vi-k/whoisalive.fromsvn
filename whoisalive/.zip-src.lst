@@ -1,0 +1,17 @@
+.*
+!*
+*.sln
+*.vcproj
+*.vcproj.RFC.*.user
+*.cpp
+*.c
+*.h
+*.rc
+*.cbp
+*.layout
+wxsmith/*
+Debug/*.bat
+Debug/*.exe
+Release/*.bat
+Release/*.exe
+work/*.*
