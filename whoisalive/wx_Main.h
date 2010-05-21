@@ -15,8 +15,6 @@
 #include "server.h"
 #include "ipwindow.h"
 
-#include <memory>
-
 #include "wx\msw\winundef.h"
 
 //(*Headers(wx_Frame)
@@ -32,10 +30,10 @@ class wx_Frame: public wxFrame
 {
 	public:
 
-		wx_Frame(wxWindow* parent,wxWindowID id = -1);
+		wx_Frame(wxWindow* parent, wxWindowID id = -1);
 		virtual ~wx_Frame();
 
-		std::auto_ptr<who::server> server_;
+		who::server::ptr server_;
 		ipwindow_t *ipwindow_;
 		ipwidget_t *menu_widget_;
 

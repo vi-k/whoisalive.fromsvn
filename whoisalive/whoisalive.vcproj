@@ -40,11 +40,11 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
+				Optimization="0"
 				AdditionalIncludeDirectories="&quot;D:\Program Files\wxWidgets-2.9.0\lib\vc_lib\mswud&quot;;&quot;D:\Program Files\wxWidgets-2.9.0\contrib\include&quot;;&quot;D:\Program Files\wxWidgets-2.9.0\include&quot;;&quot;D:\Program Files\boost_1_43_0&quot;"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
 				MinimalRebuild="true"
-				BasicRuntimeChecks="0"
+				BasicRuntimeChecks="3"
 				RuntimeLibrary="1"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"

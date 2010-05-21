@@ -19,7 +19,8 @@ using namespace std;
 namespace who {
 
 server::server(const xml::wptree &config)
-	: gdiplus_token_(0)
+	: terminate_(false)
+	, gdiplus_token_(0)
 	, io_service_()
 	, state_log_socket_(io_service_)
 	, anim_period_(40)   /* 20 40 200 */
@@ -37,20 +38,54 @@ server::server(const xml::wptree &config)
 		my::str::to_string(config.get<wstring>(L"port",L"")) );
 	server_endpoint_ = *resolver.resolve(query);
 
-	/* Запуск потока для приёма журнала состояний хостов */
+	load_classes_();
+	load_maps_();
+
+	/* Потока для приёма журнала состояний хостов */
 	thgroup_.create_thread( boost::bind(&server::state_log_thread_proc_, this) );
 
 	/* Поток тайлера */
 	tiler_.on_update = boost::bind(&server::on_tiler_update, this);
 	thgroup_.create_thread( boost::bind(&tiler::server::run, &tiler_) );
 
-	load_classes_();
-	load_maps_();
+	/* Поток работы с io_service */
+	thgroup_.create_thread( boost::bind(&server::io_run, this) );
 }
 
-/******************************************************************************
- * Деструктор
- */
+void server::terminate()
+{
+	terminate_ = true;
+
+	io_start();
+	state_log_socket_.close();
+	tiler_.stop();
+	
+	thgroup_.interrupt_all();
+	thgroup_.join_all();
+}
+
+void server::io_run()
+{
+	mutex io_mutex;
+	
+	while (!terminate_)
+	{
+		io_service_.run();
+		io_service_.reset();
+
+		if (terminate_)
+			break;
+
+		scoped_lock lock(io_mutex);
+		cond_.wait(lock);
+	}
+}
+
+void server::io_start()
+{
+	cond_.notify_all();
+}
+
 server::~server()
 {
 	windows_.clear();
@@ -58,24 +93,26 @@ server::~server()
 
 	//TODO: (ptr_list-объекты будут очищены после, так что здесь нельзя закрывать Gdi+)
 	//Gdiplus::GdiplusShutdown(gdiplus_token_);
+
+	terminate();
 }
 
 void server::state_log_thread_proc_( void)
 {
-	state_log_socket_.connect(server_endpoint_);
-
 	my::http::reply reply;
-	reply.get(state_log_socket_,
-		"GET /pinger/state.log HTTP/1.1\r\n\r\n", false /*read_body*/);
+	get_header(state_log_socket_, reply, L"/pinger/state.log");
 
 	if (reply.status_code != 200)
 		throw my::exception(L"Сервер не вернул состояние хостов")
 			<< my::param(L"http-status-code", reply.status_code)
 			<< my::param(L"http-status-message", reply.status_message);
 	
-	while (true)
+	while (!terminate_)
 	{
 		size_t n = asio::read_until(state_log_socket_, reply.buf_, "\r\n");
+
+		if (terminate_)
+			break;
 
 		reply.body.resize(n);
 		reply.buf_.sgetn((char*)reply.body.c_str(), n);
@@ -251,7 +288,7 @@ void server::unacknowledge_all(void)
 	for( map<ipaddr_t,ipaddr_state_t>::iterator it = ipaddrs_.begin();
 		it != ipaddrs_.end(); it++)
 	{
-			it->second.unacknowledge();
+		it->second.unacknowledge();
 	}
 
 	check_state_notify();
@@ -280,6 +317,18 @@ void server::get(my::http::reply &reply, const wstring &request)
 	reply.get(socket, full_request);
 }
 
+void server::get_header(tcp::socket &socket, my::http::reply &reply,
+	const std::wstring &request)
+{
+	socket.connect(server_endpoint_);
+	
+	string full_request = "GET "
+		+ my::http::percent_encode(my::utf8::encode(request))
+		+ " HTTP/1.1\r\n\r\n";
+
+	reply.get(socket, full_request, false);
+}
+
 unsigned int server::load_file(const wstring &file,
 	const wstring &file_local, bool throw_if_fail)
 {
@@ -304,7 +353,7 @@ void server::paint_tile(Gdiplus::Graphics *canvas,
 
 	if (z)
 	{
-		tiler::tile_ptr tile = get_tile(z, x >> level, y >> level);
+		tiler::tile::ptr tile = get_tile(z, x >> level, y >> level);
 
 		if (!tile || !tile->loaded)
 			paint_tile(canvas, canvas_x, canvas_y, z - 1, x, y, level + 1);
