@@ -43,34 +43,45 @@ class ipobject_t : public ipwidget_t {
 		virtual void paint_self( Gdiplus::Graphics *canvas);
 		virtual ipwidget_t* hittest(float x, float y);
 
-		virtual float alpha(void) {
-			return ipwidget_t::alpha() * state_matrix_.m[3][3];
-		}
+		inline const std::wstring& name(void)
+			{ return name_; }
 
-		float full_alpha(void) {
-			return alpha() * flash_alpha_;
-		}
+		virtual inline float alpha(void)
+			{ return ipwidget_t::alpha() * state_matrix_.m[3][3]; }
 
-		inline ipstate::t state(void) { return state_.state(); }
+		inline float full_alpha(void)
+			{ return alpha() * flash_alpha_; }
+
+		inline ipstate::t state(void)
+			{ return state_.state(); }
+
 		virtual void do_check_state(void);
 
-		inline bool acknowledged(void) { return state_.acknowledged(); }
+		inline bool acknowledged(void)
+			{ return state_.acknowledged(); }
 		void acknowledge(void);
 		void unacknowledge(void);
 
-		inline const std::list<ipaddr_t>& ipaddrs() { return ipaddrs_; };
-		inline ipaddr_t link(void) { return link_; }
+		inline const std::list<ipaddr_t>& ipaddrs()
+			{ return ipaddrs_; };
+		inline ipaddr_t link(void)
+			{ return link_; }
 
-		inline bool show_name(void) { return show_name_; }
-		void set_show_name(bool show_name) {
+		inline bool show_name(void)
+			{ return show_name_; }
+		inline void set_show_name(bool show_name)
+		{
 			show_name_ = show_name;
 			animate();
 		}
 
-		inline float offs_x() { return offs_x_; }
-		inline float offs_y() { return offs_y_; }
+		inline float offs_x()
+			{ return offs_x_; }
+		inline float offs_y()
+			{ return offs_y_; }
 		
-		inline iplink_type::t link_type(void) { return link_type_; }
+		inline iplink_type::t link_type(void)
+			{ return link_type_; }
 };
 
 #endif

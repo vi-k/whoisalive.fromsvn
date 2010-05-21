@@ -26,7 +26,11 @@ namespace who
 	а не в терминах клиент-серверной технологии) */
 class server
 {
+public:
+	typedef shared_ptr<server> ptr;
+
 private:
+	bool terminate_;
 	boost::thread_group thgroup_;
 	asio::io_service io_service_;
 	tcp::endpoint server_endpoint_;
@@ -39,6 +43,7 @@ private:
 	std::map<ipaddr_t, ipaddr_state_t> ipaddrs_;
 	tiler::server tiler_;
 	int active_map_id_;
+	condition_variable cond_;
 
 	void load_classes_(void);
 	void load_maps_(void);
@@ -51,6 +56,11 @@ public:
 	server(const xml::wptree &config);
 	~server();
 
+	void io_run();
+	void io_start();
+
+	void terminate();
+
 	inline int def_anim_steps(void) { return def_anim_steps_; }
 	inline int anim_period(void) { return anim_period_; }
 		
@@ -61,6 +71,9 @@ public:
 	ipwindow_t* add_window(HWND hwnd);
 
 	void get(my::http::reply &reply, const std::wstring &request);
+	void get_header(tcp::socket &socket, my::http::reply &reply,
+		const std::wstring &request);
+
 	unsigned int load_file(const std::wstring &file,
 		const std::wstring &file_local, bool throw_if_fail = true);
 
@@ -89,7 +102,7 @@ public:
 
 	void check_state_notify(void);
 
-	inline tiler::tile_ptr get_tile(int z, int x, int y)
+	inline tiler::tile::ptr get_tile(int z, int x, int y)
 		{ return tiler_.get_tile(active_map_id_, z, x, y); }
 
 	inline void set_active_map(int id)
@@ -98,6 +111,9 @@ public:
 	void paint_tile(Gdiplus::Graphics *canvas,
 		int canvas_x, int canvas_y, int z, int x, int y, int level = 0);
 	void on_tiler_update();
+
+	inline asio::io_service& io_service()
+		{ return io_service_; }
 };
 
 }

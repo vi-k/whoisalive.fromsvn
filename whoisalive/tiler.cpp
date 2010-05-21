@@ -10,20 +10,23 @@ using namespace std;
 namespace who { namespace tiler {
 
 server::server(who::server &server, size_t max_tiles)
-	: server_(server)
+	: terminate_(false)
+	, server_(server)
 	, tiles_(max_tiles)
 {
 }
 
 void server::run()
 {
-	while (true)
+	scoped_lock lock(run_mutex_);
+
+	while (!terminate_)
 	{
 		tiler::tile_id tile_id;
 
 		/* Ищем первый попавшийся незагруженный тайл */
 		{
-			scoped_lock lock(server_mutex_);
+			scoped_lock lock(tiles_mutex_);
 
 			for (tiles_list::iterator it = tiles_.begin();
 				it != tiles_.end(); it++)
@@ -55,7 +58,7 @@ void server::run()
 			<< L"/y" << tile_id.y
 			<< L"." << map.ext;
 
-		tiler::tile_ptr ptr( new tile(filename.str()) );
+		tiler::tile::ptr ptr( new tile(filename.str()) );
 
 		/* Если загрузить с диска не удалось - загружаем с сервера */
 		if (!ptr->loaded)
@@ -79,7 +82,7 @@ void server::run()
 
         /* Вносим изменения в список загруженных тайлов */
 		{
-			scoped_lock lock(server_mutex_);
+			scoped_lock lock(tiles_mutex_);
 
 			tiles_list::iterator it = tiles_.find(tile_id);
 			if (it != tiles_.end())
@@ -97,19 +100,28 @@ void server::start()
 	cond_.notify_all();
 }
 
+void server::stop()
+{
+	terminate_ = true;
+	start(); /* Запускаем поток, если он заснул, чтобы он завершил работу */
+	
+	/* Ждём его завершения */
+	scoped_lock lock(run_mutex_);
+}
+
 int server::add_map(const tiler::map &map)
 {
-	scoped_lock l(server_mutex_);
+	scoped_lock l(tiles_mutex_);
 	int id = get_new_map_id_();
 	maps_[id] = map;
 	return id;
 }
 
-tile_ptr server::get_tile(int map_id, int z, int x, int y)
+tile::ptr server::get_tile(int map_id, int z, int x, int y)
 {
-	scoped_lock l(server_mutex_);
+	scoped_lock l(tiles_mutex_);
 	
-	tile_ptr ptr = tiles_[ tile_id(map_id, z, x, y) ];
+	tile::ptr ptr = tiles_[ tile_id(map_id, z, x, y) ];
 	start();
 	return ptr;
 }

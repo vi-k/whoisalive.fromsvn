@@ -82,6 +82,8 @@ struct tile_id
 
 struct tile
 {
+	typedef boost::shared_ptr<tile> ptr;
+
 	bool loaded;
 	Gdiplus::Image image;
 
@@ -94,19 +96,19 @@ struct tile
 	}
 };
 
-typedef boost::shared_ptr<tile> tile_ptr;
-
 /* Tiler-сервер */
 class server
 {
 private:
 	typedef std::map<int, map> maps_list;
-	typedef my::mru::list<tile_id, tile_ptr> tiles_list;
+	typedef my::mru::list<tile_id, tile::ptr> tiles_list;
 
+	bool terminate_;
 	who::server &server_;
 	maps_list maps_;
 	tiles_list tiles_;
-	mutex server_mutex_;
+	mutex tiles_mutex_;
+	mutex run_mutex_;
 	condition_variable cond_;
 
 	static int get_new_map_id_()
@@ -123,9 +125,10 @@ public:
 
 	void run();
 	void start();
+	void stop();
 
 	int add_map(const tiler::map &map);
-	tile_ptr get_tile(int map_id, int z, int x, int y);
+	tile::ptr get_tile(int map_id, int z, int x, int y);
 };
 
 } }

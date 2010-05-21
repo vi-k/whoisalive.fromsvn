@@ -7,6 +7,13 @@
  * License:
  **************************************************************/
 
+#include <boost/config/warning_disable.hpp> /* против unsafe */
+
+#include <wx/msgdlg.h>
+#include "wx_Main.h"
+#include "wx_App.h"
+#include "wx_Ping.h"
+
 #include "config.h"
 
 #include "../common/my_xml.h"
@@ -18,14 +25,8 @@
 #include <fstream>
 using namespace std;
 
-#include <boost/config/warning_disable.hpp> /* против unsafe */
 #include <boost/bind.hpp>
 #include <boost/archive/detail/utf8_codecvt_facet.hpp>
-
-#include <wx/msgdlg.h>
-#include "wx_Main.h"
-#include "wx_App.h"
-#include "wx_Ping.h"
 
 //(*InternalHeaders(wx_Frame)
 #include <wx/artprov.h>
@@ -546,8 +547,14 @@ void wx_Frame::OnMenuPing_Selected(wxCommandEvent& event)
 		ipobject_t *object = dynamic_cast<ipobject_t*>(menu_widget_);
 		if (object)
 		{
-			wx_Ping *frame = new wx_Ping(this);
-			frame->Run( object->ipaddrs().front() );
+			try
+			{
+				new wx_Ping(this, *server_, object); /* Удалит себя сам */
+			}
+			catch(my::exception &e)
+			{
+				wxMessageBox(e.message(), L"Ошибка", wxOK | wxICON_ERROR);
+			}
 		}
 	}
 }
