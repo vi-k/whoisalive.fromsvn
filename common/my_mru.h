@@ -46,8 +46,7 @@
 #include <list>
 #include <boost/unordered_map.hpp>
 
-namespace my { namespace mru
-{
+namespace my { namespace mru {
 
 template <typename Key, typename Value>
 class list
