@@ -60,6 +60,8 @@ void server::run()
 				}
 			}
 
+			/* Для данного обработчика список событий может оказаться пустым */
+			if (!out.str().empty())
 			try
 			{
 				h.connection->send_in_utf8(out.str());
