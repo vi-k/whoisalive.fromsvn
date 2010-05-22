@@ -1,5 +1,7 @@
-﻿#include "ipwindow.h"
+﻿#include "window.h"
 #include "server.h"
+
+#include "../common/my_time.h"
 
 #include <math.h>
 #include <stdio.h>
@@ -14,6 +16,8 @@
 extern HWND g_parent_wnd; /* Для отладки */
 #endif
 
+namespace who {
+
 const wchar_t* widget_type(ipwidget_t *widget)
 {
 	return
@@ -23,14 +27,13 @@ const wchar_t* widget_type(ipwidget_t *widget)
 		widget ? L"unknown" : L"null";
 }
 
-/******************************************************************************
-* Конструктор
-*/
-ipwindow_t::ipwindow_t(who::server &server, HWND parent)
+window::window(server &server, HWND parent)
 	: server_(server)
+	, timer_(server.io_service(), posix_time::microsec_clock::universal_time())
+	, timer_started_(false)
 	, hwnd_(NULL)
 	, focused_(false)
-	, timer_(NULL)
+	//, timer_(NULL)
 	, anim_queue_(0)
 	, w_(0)
 	, h_(0)
@@ -57,7 +60,7 @@ ipwindow_t::ipwindow_t(who::server &server, HWND parent)
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
 	wc.lpszMenuName = NULL;
-	wc.lpszClassName = L"ipwindow_t";
+	wc.lpszClassName = L"who::window";
 
 	RegisterClass(&wc);
 
@@ -67,12 +70,14 @@ ipwindow_t::ipwindow_t(who::server &server, HWND parent)
 /******************************************************************************
 * Деструктор
 */
-ipwindow_t::~ipwindow_t()
+window::~window()
 {
 	terminate_ = true;
-	/* Так и не получилось нормально его завершить */
-	//DeleteTimerQueueTimer(NULL, timer_, NULL);
-	Sleep(1000);
+	
+	/* Остановка таймера - он тут же должен запуститься последний раз */
+	timer_.cancel();
+	while (timer_started_)
+		scoped_lock l(anim_mutex_);
 
 	delete_link();
 
@@ -82,18 +87,18 @@ ipwindow_t::~ipwindow_t()
 /******************************************************************************
 * Статическая функция обработки сообщений окна
 */
-LRESULT CALLBACK ipwindow_t::static_wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
+LRESULT CALLBACK window::static_wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 	LPARAM lParam)
 {
-	/* Ссылку на ipwindow_t берём из параметров hwnd */
-	ipwindow_t *win = (ipwindow_t*)GetWindowLongPtr(hwnd, GWL_USERDATA);
+	/* Ссылку на who::window берём из параметров hwnd */
+	window *win = (window*)GetWindowLongPtr(hwnd, GWL_USERDATA);
 
 	/* Первое сообщение */
 	if (!win && uMsg == WM_NCCREATE) {
 		CREATESTRUCT *cs = (CREATESTRUCT*)lParam;
-		win = (ipwindow_t*)cs->lpCreateParams;
+		win = (window*)cs->lpCreateParams;
 		win->hwnd_ = hwnd;
-		/* Сохраняем ссылку на ipwindow_t в параметрах hwnd */
+		/* Сохраняем ссылку на who::window в параметрах hwnd */
 		SetWindowLongPtr(hwnd, GWL_USERDATA, (LONG_PTR)win);
 		return TRUE;
 	}
@@ -107,7 +112,7 @@ LRESULT CALLBACK ipwindow_t::static_wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam
 /******************************************************************************
 * Функция-член класса обработки сообщений окна
 */
-LRESULT ipwindow_t::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
+LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 	LPARAM lParam)
 {
 	switch (uMsg) {
@@ -281,7 +286,7 @@ LRESULT ipwindow_t::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 /******************************************************************************
 * Преобразование Windows-клавиш из мышинных событий в свой собственный формат
 */
-int ipwindow_t::wparam_to_keys_(WPARAM wparam)
+int window::wparam_to_keys_(WPARAM wparam)
 {
 	int keys = 0;
 	if (wparam & MK_CONTROL) keys |= mousekeys::ctrl;
@@ -295,8 +300,8 @@ int ipwindow_t::wparam_to_keys_(WPARAM wparam)
 /******************************************************************************
 * Реакция на событие мыши
 */
-void ipwindow_t::on_mouse_event_(
-		const boost::function<void (ipwindow_t*, int keys, int x, int y)> &f,
+void window::on_mouse_event_(
+		const boost::function<void (window*, int keys, int x, int y)> &f,
 		WPARAM wparam, LPARAM lparam) {
 	if (f) {
 		f(this, wparam_to_keys_(wparam),
@@ -307,7 +312,7 @@ void ipwindow_t::on_mouse_event_(
 /******************************************************************************
 * Добавление карты
 */
-void ipwindow_t::add_maps(xml::wptree &maps)
+void window::add_maps(xml::wptree &maps)
 {
 	BOOST_FOREACH(xml::wptree::value_type &v, maps)
 		if (v.first == L"scheme")
@@ -321,7 +326,7 @@ void ipwindow_t::add_maps(xml::wptree &maps)
 /******************************************************************************
 * Создание окна
 */
-void ipwindow_t::set_link(HWND parent)
+void window::set_link(HWND parent)
 {
 	delete_link();
 
@@ -334,7 +339,7 @@ void ipwindow_t::set_link(HWND parent)
 		/* Создаём на parent'е своё окно.
 			Передаём ему ссылку на this. Получим её в WM_NCCREATE.
 			HWND окна возъмём там же */
-		CreateWindowEx(0, L"ipwindow_t", L"ipwindow",
+		CreateWindowEx(0, L"who::window", L"window",
 				WS_CHILD|WS_VISIBLE|WS_TABSTOP|WS_CLIPSIBLINGS,
 				0, 0, w, h, parent, NULL, NULL, (LPVOID)this);
 
@@ -351,7 +356,7 @@ void ipwindow_t::set_link(HWND parent)
 /******************************************************************************
 * Удаление связи
 */
-void ipwindow_t::delete_link( void)
+void window::delete_link( void)
 {
 	if (hwnd_) DestroyWindow(hwnd_);
 }
@@ -359,15 +364,77 @@ void ipwindow_t::delete_link( void)
 /******************************************************************************
 * Реакция на "разрушение" окна. Вызывается из wndproc
 */
-void ipwindow_t::on_destroy( void)
+void window::on_destroy( void)
 {
 	//
 }
 
-/******************************************************************************
-* Анимация карты - таймер
-*/
-VOID CALLBACK ipwindow_t::on_timer(ipwindow_t *window, BOOLEAN TimerOrWaitFired)
+/* Анимация карты - таймер */
+void window::handle_timer(void)
+{
+	scoped_lock l(anim_mutex_);
+	
+	timer_started_ = false;
+
+	if( terminate_)
+		return;
+
+	/* Анимируются все карты */
+	bool anim = false;
+	BOOST_FOREACH(ipmap_t &map, maps_)
+		if (map.animate_calc())
+			anim = true;
+
+	/* ... но прорисовывается только одно - активное */
+	paint_();
+
+	/* Для отладки */
+	#ifdef _DEBUG
+	if (active_map_)
+	{
+		static int count = 0;
+		wchar_t buf[200];
+
+		swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"[%08X] %d - %.3f (%d) - %d",
+			hwnd_, ++count,
+			active_map_->scale(), GetCurrentThreadId(),
+			ipmap_t::z(active_map_->scale()) );
+
+		SetWindowText(g_parent_wnd, buf);
+	}
+	#endif
+
+	/* Если больше нечего анимировать - останавливаемся.
+		За время отрисовки другой поток мог запросить
+		анимацию, учитываем сей факт */
+	boost::posix_time::ptime time = timer_.expires_at() + server_.anim_period();
+	boost::posix_time::ptime now = posix_time::microsec_clock::universal_time();
+
+	/* Теоретически время следующей прорисовки должно быть относительным
+		от времени предыдущей, но на практике могут возникнуть торможения,
+		и, тогда, программа будет пытаться запустить прорисовку в прошлом.
+		В этом случае следующий запуск делаем относительно текущего времени */ 
+	timer_.expires_at( now > time ? now : time );
+
+	if (anim || InterlockedDecrement( &anim_queue_) != 0)
+	{
+		timer_.async_wait( boost::bind(&window::handle_timer, this) );
+		timer_started_ = true;
+
+		#if 0
+		HANDLE timer = window->timer_;
+		if (InterlockedDecrement( &window->anim_queue_) == 0) {
+			/* Так и не получилось нормально его завершить */
+			//if( !window->terminate_)
+			DeleteTimerQueueTimer(NULL, timer, NULL);
+			return;
+		}
+		#endif
+	}
+}
+
+#if 0
+VOID CALLBACK window::on_timer(window *window, BOOLEAN TimerOrWaitFired)
 {
 	if( window->terminate_) return;
 
@@ -412,26 +479,32 @@ VOID CALLBACK ipwindow_t::on_timer(ipwindow_t *window, BOOLEAN TimerOrWaitFired)
 		}
 	}
 }
+#endif
 
 /******************************************************************************
 * Анимация карты - запуск таймера
 */
-void ipwindow_t::animate(void)
+void window::animate(void)
 {
-	/*	2 - необходимо рисовать,
-		1 - нет, но таймер ещё работает,
-		0 - таймера нет */
-	if (InterlockedExchange( &anim_queue_, 2) == 0 && !terminate_) {
-		anim_queue_ = 1;
-		CreateTimerQueueTimer( &timer_, NULL, (WAITORTIMERCALLBACK)&on_timer,
-			this, 0, server_.anim_period(), WT_EXECUTEINTIMERTHREAD);
+	scoped_lock l(anim_mutex_);
+
+	if (terminate_)
+		return;
+
+	if (!timer_started_)
+	{
+		/* Даже если таймер был остановлен, перед остановкой
+			он устанавливает время следующего запуска. Если же время
+			его запуска уже в прошлом, то он запустится сразу */
+		timer_.async_wait( boost::bind(&window::handle_timer, this) );
+		timer_started_ = true;
 	}
 }
 
 /******************************************************************************
 * Перерисовка буфера и сброс его в окно
 */
-void ipwindow_t::paint_( void)
+void window::paint_( void)
 {
 	canvas_lock();
 
@@ -565,7 +638,7 @@ void ipwindow_t::paint_( void)
 /******************************************************************************
 * Установка текущей карты
 */
-void ipwindow_t::set_active_map_(ipmap_t *map)
+void window::set_active_map_(ipmap_t *map)
 {
 	active_map_ = map;
 	if ( map->first_activation() ) {
@@ -578,14 +651,14 @@ void ipwindow_t::set_active_map_(ipmap_t *map)
 /******************************************************************************
 * Установка текущей карты
 */
-void ipwindow_t::set_active_map(int index)
+void window::set_active_map(int index)
 {
 	BOOST_FOREACH(ipmap_t &map, maps_) {
         if (index-- == 0) set_active_map_(&map);
 	}
 }
 
-ipmap_t* ipwindow_t::get_map(int index)
+ipmap_t* window::get_map(int index)
 {
 	BOOST_FOREACH(ipmap_t &map, maps_) {
         if (index-- == 0) return &map;
@@ -597,7 +670,7 @@ ipmap_t* ipwindow_t::get_map(int index)
 /******************************************************************************
 * Изменение размера буфера
 */
-void ipwindow_t::set_size(int w, int h)
+void window::set_size(int w, int h)
 {
 	if (w == 0 || h == 0 || w == w_ && h == h_) return;
 
@@ -616,7 +689,7 @@ void ipwindow_t::set_size(int w, int h)
 	animate();
 }
 
-void ipwindow_t::do_check_state(void)
+void window::do_check_state(void)
 {
 	BOOST_FOREACH(ipmap_t &map, maps_)
 		map.do_check_state();
@@ -625,7 +698,7 @@ void ipwindow_t::do_check_state(void)
 /******************************************************************************
 * Начало движения мыши
 */
-void ipwindow_t::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
+void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 {
 	if (!active_map_ || mm == mousemode::none) return;
 
@@ -694,7 +767,7 @@ void ipwindow_t::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 /******************************************************************************
 * Движение мыши
 */
-void ipwindow_t::mouse_move_to(int x, int y)
+void window::mouse_move_to(int x, int y)
 {
 	if (!active_map_) return;
 
@@ -728,7 +801,7 @@ void ipwindow_t::mouse_move_to(int x, int y)
 /******************************************************************************
 * Завершение движения
 */
-void ipwindow_t::mouse_end(int x, int y)
+void window::mouse_end(int x, int y)
 {
 	if (!active_map_) return;
 
@@ -766,7 +839,7 @@ void ipwindow_t::mouse_end(int x, int y)
 /******************************************************************************
 * Отмена сдвига карты
 */
-void ipwindow_t::mouse_cancel(void)
+void window::mouse_cancel(void)
 {
 	switch (mouse_mode_) {
 
@@ -802,7 +875,7 @@ void ipwindow_t::mouse_cancel(void)
 /******************************************************************************
 * Кто под курсором?
 */
-ipwidget_t* ipwindow_t::hittest(int x, int y)
+ipwidget_t* window::hittest(int x, int y)
 {
 	if (!active_map_) return NULL;
 
@@ -816,7 +889,7 @@ ipwidget_t* ipwindow_t::hittest(int x, int y)
 /******************************************************************************
 * Очистить
 */
-void ipwindow_t::clear(void)
+void window::clear(void)
 {
 	active_map_ = NULL;
 	maps_.clear();
@@ -825,7 +898,7 @@ void ipwindow_t::clear(void)
 /******************************************************************************
 * Изменение масштаба
 */
-void ipwindow_t::zoom(float ds)
+void window::zoom(float ds)
 {
 	if (active_map_) {
 		float fx = (float)( w_ / 2 );
@@ -833,4 +906,6 @@ void ipwindow_t::zoom(float ds)
 		active_map_->parent_to_client(&fx, &fy);
 		active_map_->zoom(ds, fx, fy);
 	}
+}
+
 }

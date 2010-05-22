@@ -12,10 +12,10 @@
 #include <boost/ptr_container/ptr_list.hpp>
 
 class ipmap_t;
-class ipwindow_t;
 
 namespace who {
 class server;
+class window;
 }
 
 class ipwidget_t {
@@ -78,7 +78,7 @@ class ipwidget_t {
 		virtual void lock(void) { if (parent_) parent_->lock(); }
 		virtual void unlock(void) { if (parent_) parent_->unlock(); }
 
-		virtual ipwindow_t* window(void) { return parent_ ? parent_->window() : NULL; }
+		virtual who::window* window(void) { return parent_ ? parent_->window() : NULL; }
 		virtual ipmap_t* get_map(void) { return parent_ ? parent_->get_map() : NULL; }
 
 		virtual float alpha(void) {

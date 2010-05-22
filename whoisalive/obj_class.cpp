@@ -12,7 +12,7 @@ using namespace std;
 
 namespace who {
 
-obj_class::obj_class(who::server &server, const xml::wptree &config)
+obj_class::obj_class(server &server, const xml::wptree &config)
 	: server_(server)
 	, config_(config)
 	, w_(0.0f)
@@ -45,7 +45,7 @@ obj_class::obj_class(who::server &server, const xml::wptree &config)
 					//<< my::param(L"gdiplus-status", status)
 					<< my::param(L"file", file);
 
-			who::bitmap_ptr bitmap( image_optimize(&image) );
+			bitmap_ptr bitmap( image_optimize(&image) );
 			
 			wstring state = node.get<wstring>(L"<xmlattr>.state", L"");
 

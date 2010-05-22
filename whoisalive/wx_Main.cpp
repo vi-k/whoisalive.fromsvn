@@ -101,7 +101,7 @@ BEGIN_EVENT_TABLE(wx_Frame,wxFrame)
 END_EVENT_TABLE()
 
 wx_Frame::wx_Frame(wxWindow* parent, wxWindowID id)
-	: ipwindow_(NULL)
+	: window_(NULL)
 	, menu_widget_(NULL)
 {
 	//(*Initialize(wx_Frame)
@@ -206,18 +206,18 @@ wx_Frame::wx_Frame(wxWindow* parent, wxWindowID id)
 
 	server_.reset( new who::server(config.get_child(L"config.server")) );
 
-	ipwindow_ = server_->add_window( (HWND)m_map_panel->GetHandle() );
+	window_ = server_->add_window( (HWND)m_map_panel->GetHandle() );
 
-	ipwindow_->on_mouse_wheel = boost::bind(&wx_Frame::map_mousewheel,this,_1,_2,_3,_4,_5);
-	ipwindow_->on_mouse_move = boost::bind(&wx_Frame::map_mousemove,this,_1,_2,_3,_4);
-	ipwindow_->on_lbutton_down = boost::bind(&wx_Frame::map_lbutton_down,this,_1,_2,_3,_4);
-	ipwindow_->on_lbutton_up = boost::bind(&wx_Frame::map_lbutton_up,this,_1,_2,_3,_4);
-	ipwindow_->on_lbutton_dblclk = boost::bind(&wx_Frame::map_lbutton_dblclk,this,_1,_2,_3,_4);
-	ipwindow_->on_rbutton_down = boost::bind( &wx_Frame::map_rbutton_down,this,_1,_2,_3,_4);
-	ipwindow_->on_rbutton_up = boost::bind( &wx_Frame::map_rbutton_up,this,_1,_2,_3,_4);
-	ipwindow_->on_rbutton_dblclk = boost::bind(&wx_Frame::map_rbutton_dblclk,this,_1,_2,_3,_4);
-	ipwindow_->on_keydown = boost::bind( &wx_Frame::map_keydown,this,_1,_2);
-	ipwindow_->on_keyup = boost::bind( &wx_Frame::map_keyup,this,_1,_2);
+	window_->on_mouse_wheel = boost::bind(&wx_Frame::map_mousewheel,this,_1,_2,_3,_4,_5);
+	window_->on_mouse_move = boost::bind(&wx_Frame::map_mousemove,this,_1,_2,_3,_4);
+	window_->on_lbutton_down = boost::bind(&wx_Frame::map_lbutton_down,this,_1,_2,_3,_4);
+	window_->on_lbutton_up = boost::bind(&wx_Frame::map_lbutton_up,this,_1,_2,_3,_4);
+	window_->on_lbutton_dblclk = boost::bind(&wx_Frame::map_lbutton_dblclk,this,_1,_2,_3,_4);
+	window_->on_rbutton_down = boost::bind( &wx_Frame::map_rbutton_down,this,_1,_2,_3,_4);
+	window_->on_rbutton_up = boost::bind( &wx_Frame::map_rbutton_up,this,_1,_2,_3,_4);
+	window_->on_rbutton_dblclk = boost::bind(&wx_Frame::map_rbutton_dblclk,this,_1,_2,_3,_4);
+	window_->on_keydown = boost::bind( &wx_Frame::map_keydown,this,_1,_2);
+	window_->on_keyup = boost::bind( &wx_Frame::map_keyup,this,_1,_2);
 
 	open_maps();
 
@@ -248,14 +248,14 @@ bool wx_Frame::open_maps(bool new_tab)
 		throw e << my::param(L"request", L"/schemes.xml");
 	}
 
-	ipwindow_->add_maps(maps.get_child(L"schemes"));
+	window_->add_maps(maps.get_child(L"schemes"));
 
 	if (new_tab)
 	{
-		int count = ipwindow_->get_maps_count();
+		int count = window_->get_maps_count();
 		for (int i = 0; i < count; i++)
 		{
-			ipmap_t *map = ipwindow_->get_map(i);
+			ipmap_t *map = window_->get_map(i);
 			wxPanel *panel = new wxPanel(m_notebook);
 			panel->Connect(wxID_ANY,wxEVT_LEFT_DOWN,(wxObjectEventFunction)&wx_Frame::skip_leftdown);
 			m_notebook->AddPage(panel, map->get_name(), false);
@@ -268,7 +268,7 @@ bool wx_Frame::open_maps(bool new_tab)
 void wx_Frame::OnNotebookPageChanged(wxNotebookEvent& event)
 {
 	/* Если GetSelection() вернёт значение вне диапазон, ничего не произойдёт */
-	ipwindow_->set_active_map( m_notebook->GetSelection() );
+	window_->set_active_map( m_notebook->GetSelection() );
 }
 
 void wx_Frame::OnQuit(wxCommandEvent& event)
@@ -299,7 +299,7 @@ void wx_Frame::OnAbout(wxCommandEvent& event)
 		, L"whoisalive");
 }
 
-void wx_Frame::map_mousewheel(ipwindow_t *win, int delta, int keys, int x, int y)
+void wx_Frame::map_mousewheel(who::window *win, int delta, int keys, int x, int y)
 {
 	/* Изменение масштаба */
 	float ds;
@@ -311,7 +311,7 @@ void wx_Frame::map_mousewheel(ipwindow_t *win, int delta, int keys, int x, int y
 
 	//win->zoom(ds);
 
-	ipmap_t *map = ipwindow_->active_map();
+	ipmap_t *map = window_->active_map();
 	if (map)
 	{
 		float fx = (float)x;
@@ -321,24 +321,24 @@ void wx_Frame::map_mousewheel(ipwindow_t *win, int delta, int keys, int x, int y
 	}
 }
 
-void wx_Frame::map_mousemove(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_mousemove(who::window *win, int keys, int x, int y)
 {
 //	Button2->Caption = (String)x + L"," + y;
 	win->mouse_move_to(x, y);
 }
 
-void wx_Frame::map_lbutton_down(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_lbutton_down(who::window *win, int keys, int x, int y)
 {
 	//if (GetKeyState(' ') & 0x80)
 	//	win->mouse_start(mousemode::move, x, y);
 	//else
-	if (keys & mousekeys::ctrl)
-		win->mouse_start(mousemode::select, x, y);
+	if (keys & who::mousekeys::ctrl)
+		win->mouse_start(who::mousemode::select, x, y);
 	else
-		win->mouse_start(mousemode::move, x, y);
+		win->mouse_start(who::mousemode::move, x, y);
 }
 
-void wx_Frame::map_lbutton_up(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 {
 	win->mouse_end(x, y);
 
@@ -350,7 +350,7 @@ void wx_Frame::map_lbutton_up(ipwindow_t *win, int keys, int x, int y)
 	if (!object)
 		return;
 
-	if ( !(keys & mousekeys::shift) )
+	if ( !(keys & who::mousekeys::shift) )
 	{
 		float scale = object->lim_scale_max();
 		if (scale != 0.0f)
@@ -384,7 +384,7 @@ void wx_Frame::map_lbutton_up(ipwindow_t *win, int keys, int x, int y)
 	}
 }
 
-void wx_Frame::map_lbutton_dblclk(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_lbutton_dblclk(who::window *win, int keys, int x, int y)
 {
 	ipwidget_t *widget = win->hittest(x, y);
 
@@ -396,12 +396,12 @@ void wx_Frame::map_lbutton_dblclk(ipwindow_t *win, int keys, int x, int y)
 	}
 }
 
-void wx_Frame::map_rbutton_down(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_rbutton_down(who::window *win, int keys, int x, int y)
 {
 	menu_widget_ = win->hittest(x, y);
 }
 
-void wx_Frame::map_rbutton_up(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_rbutton_up(who::window *win, int keys, int x, int y)
 {
 	if (menu_widget_)
 	{
@@ -417,11 +417,11 @@ void wx_Frame::map_rbutton_up(ipwindow_t *win, int keys, int x, int y)
 	}
 }
 
-void wx_Frame::map_rbutton_dblclk(ipwindow_t *win, int keys, int x, int y)
+void wx_Frame::map_rbutton_dblclk(who::window *win, int keys, int x, int y)
 {
 }
 
-void wx_Frame::map_keydown(ipwindow_t *win, int key)
+void wx_Frame::map_keydown(who::window *win, int key)
 {
 	switch (key)
 	{
@@ -430,21 +430,21 @@ void wx_Frame::map_keydown(ipwindow_t *win, int key)
 			break;
 
 		case ' ':
-			if (win->mouse_mode() == mousemode::none)
+			if (win->mouse_mode() == who::mousemode::none)
 			{
-				win->mouse_start(mousemode::capture, 0, 0);
+				win->mouse_start(who::mousemode::capture, 0, 0);
 				::SetCursor( LoadCursor(NULL, IDC_HAND) );
 			}
 			break;
 	}
 }
 
-void wx_Frame::map_keyup(ipwindow_t *win, int key)
+void wx_Frame::map_keyup(who::window *win, int key)
 {
 	switch (key)
 	{
 		case ' ':
-			if (win->mouse_mode() == mousemode::capture)
+			if (win->mouse_mode() == who::mousemode::capture)
 				win->mouse_cancel();
 			break;
 
@@ -469,7 +469,7 @@ void wx_Frame::map_keyup(ipwindow_t *win, int key)
 			break;
 
 		case VK_MULTIPLY:
-			ipwindow_->align();
+			window_->align();
 			::SetFocus( FindWindowEx( (HWND)m_map_panel->GetHandle(), NULL, NULL, NULL ) );
 			break;
 
@@ -492,17 +492,17 @@ void wx_Frame::map_keyup(ipwindow_t *win, int key)
 			server_->acknowledge_all();
 			SleepEx(300, TRUE);
 
-			ipmap_t *map = ipwindow_->active_map();
+			ipmap_t *map = window_->active_map();
 			float x = map->x();
 			float y = map->y();
 			float scale = map->scale();
 
-			ipwindow_->clear();
+			window_->clear();
 			open_maps(false);
 
-			ipwindow_->set_active_map( m_notebook->GetSelection() );
+			window_->set_active_map( m_notebook->GetSelection() );
 
-			map = ipwindow_->active_map();
+			map = window_->active_map();
 			map->set_pos(x, y, 0);
 			map->set_scale(scale, 0);
 			break;
