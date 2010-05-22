@@ -8,7 +8,7 @@
 
 #include <boost/foreach.hpp>
 
-#include "ipwindow.h"
+#include "window.h"
 #include "server.h"
 #include "obj_class.h"
 

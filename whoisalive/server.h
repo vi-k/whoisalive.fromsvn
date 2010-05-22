@@ -4,7 +4,7 @@
 #include "ipgui.h"
 #include "ipaddr.h"
 #include "obj_class.h"
-#include "ipwindow.h"
+#include "window.h"
 #include "tiler.h"
 
 #include "../common/my_inet.h"
@@ -12,6 +12,7 @@
 #include "../common/my_thread.h"
 #include "../common/my_xml.h"
 #include "../common/my_ptr.h"
+#include "../common/my_time.h"
 
 #include <map>
 #include <memory>
@@ -36,9 +37,9 @@ private:
 	tcp::endpoint server_endpoint_;
 	tcp::socket state_log_socket_;
 	ULONG_PTR gdiplus_token_;
-	boost::unordered_map<std::wstring, who::obj_class::ptr> classes_;
-	boost::ptr_list<ipwindow_t> windows_;
-	int anim_period_;
+	boost::unordered_map<std::wstring, obj_class::ptr> classes_;
+	boost::ptr_list<window> windows_;
+	posix_time::time_duration anim_period_;
 	int def_anim_steps_;
 	std::map<ipaddr_t, ipaddr_state_t> ipaddrs_;
 	tiler::server tiler_;
@@ -62,13 +63,13 @@ public:
 	void terminate();
 
 	inline int def_anim_steps(void) { return def_anim_steps_; }
-	inline int anim_period(void) { return anim_period_; }
+	inline posix_time::time_duration anim_period(void) { return anim_period_; }
 		
-	inline who::obj_class::ptr
+	inline obj_class::ptr
 		obj_class(const std::wstring &class_name)
 			{ return classes_[class_name]; }
 
-	ipwindow_t* add_window(HWND hwnd);
+	window* add_window(HWND hwnd);
 
 	void get(my::http::reply &reply, const std::wstring &request);
 	void get_header(tcp::socket &socket, my::http::reply &reply,

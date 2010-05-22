@@ -207,10 +207,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\ipwindow.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\common\my_http.cpp"
 				>
 			</File>
@@ -252,6 +248,10 @@
 			</File>
 			<File
 				RelativePath=".\tiler.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\window.cpp"
 				>
 			</File>
 			<File
@@ -298,10 +298,6 @@
 			</File>
 			<File
 				RelativePath=".\ipwidget.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ipwindow.h"
 				>
 			</File>
 			<File
@@ -378,6 +374,10 @@
 			</File>
 			<File
 				RelativePath=".\tiler.h"
+				>
+			</File>
+			<File
+				RelativePath=".\window.h"
 				>
 			</File>
 			<File

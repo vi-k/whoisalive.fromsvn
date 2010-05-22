@@ -13,7 +13,7 @@
 
 #include "ipgui.h"
 #include "server.h"
-#include "ipwindow.h"
+#include "window.h"
 
 #include "wx\msw\winundef.h"
 
@@ -34,21 +34,21 @@ class wx_Frame: public wxFrame
 		virtual ~wx_Frame();
 
 		who::server::ptr server_;
-		ipwindow_t *ipwindow_;
+		who::window *window_;
 		ipwidget_t *menu_widget_;
 
 		bool open_maps(bool new_tab = true);
 
-		void map_mousewheel(ipwindow_t *win, int delta, int keys, int x, int y);
-		void map_mousemove(ipwindow_t *win, int keys, int x, int y);
-		void map_lbutton_down(ipwindow_t *win, int keys, int x, int y);
-		void map_lbutton_up(ipwindow_t *win, int keys, int x, int y);
-		void map_lbutton_dblclk(ipwindow_t *win, int keys, int x, int y);
-		void map_rbutton_down(ipwindow_t *win, int keys, int x, int y);
-		void map_rbutton_up(ipwindow_t *win, int keys, int x, int y);
-		void map_rbutton_dblclk(ipwindow_t *win, int keys, int x, int y);
-		void map_keydown(ipwindow_t *win, int key);
-		void map_keyup(ipwindow_t *win, int key);
+		void map_mousewheel(who::window *win, int delta, int keys, int x, int y);
+		void map_mousemove(who::window *win, int keys, int x, int y);
+		void map_lbutton_down(who::window *win, int keys, int x, int y);
+		void map_lbutton_up(who::window *win, int keys, int x, int y);
+		void map_lbutton_dblclk(who::window *win, int keys, int x, int y);
+		void map_rbutton_down(who::window *win, int keys, int x, int y);
+		void map_rbutton_up(who::window *win, int keys, int x, int y);
+		void map_rbutton_dblclk(who::window *win, int keys, int x, int y);
+		void map_keydown(who::window *win, int key);
+		void map_keyup(who::window *win, int key);
 
 	private:
 

@@ -1,6 +1,6 @@
 ﻿#include "ipwidget.h"
 #include "ipmap.h"
-#include "ipwindow.h"
+#include "window.h"
 #include "server.h"
 
 #include <boost/foreach.hpp>
@@ -293,7 +293,7 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 		canvas->DrawLine( &pen, (float)rs.X, y, (float)(rs.X + rs.Width - 1), y );
 	}
 
-	ipwindow_t *win = window();
+	who::window *win = window();
 
 	/* Выделение */
 	if (win->select_parent() == this) {

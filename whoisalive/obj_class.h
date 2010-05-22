@@ -20,10 +20,10 @@ typedef shared_ptr<Gdiplus::Bitmap> bitmap_ptr;
 class obj_class
 {
 public:
-	typedef shared_ptr<who::obj_class> ptr;
+	typedef shared_ptr<obj_class> ptr;
 
 private:
-	who::server &server_;
+	server &server_;
 	std::wstring name_;
 	xml::wptree config_;
 	bitmap_ptr bitmap_[4];
@@ -33,7 +33,7 @@ private:
 	float yc_;
 
 public:
-	obj_class(who::server &server, const xml::wptree &config);
+	obj_class(server &server, const xml::wptree &config);
 	~obj_class() {}
 
 	inline const std::wstring& name(void)

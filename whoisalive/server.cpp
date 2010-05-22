@@ -23,8 +23,8 @@ server::server(const xml::wptree &config)
 	, gdiplus_token_(0)
 	, io_service_()
 	, state_log_socket_(io_service_)
-	, anim_period_(40)   /* 20 40 200 */
-	, def_anim_steps_(5) /* 10  5   1 */
+	, anim_period_( posix_time::milliseconds(40) )  /* 20 40 200 */
+	, def_anim_steps_(5)                                  /* 10  5   1 */
 	, active_map_id_(1)
 	, tiler_(*this, 1000)
 {
@@ -231,14 +231,14 @@ void server::load_maps_(void)
 /******************************************************************************
 * Добавление окна
 */
-ipwindow_t* server::add_window(HWND parent_wnd)
+window* server::add_window(HWND parent_wnd)
 {
-	ipwindow_t *window = new ipwindow_t(*this, parent_wnd);
-	windows_.push_back(window);
+	window *win = new window(*this, parent_wnd);
+	windows_.push_back(win);
 
 	check_state_notify();
 
-	return window;
+	return win;
 }
 
 /* Регистрация ip-адреса */
@@ -301,8 +301,8 @@ void server::check_state_notify(void)
 	/* Отсылаем всем окнам сообщение об необходимости проверки
 		состояния. Через сообщения, потому что можем находиться
 		не в том потоке */
-	BOOST_FOREACH(ipwindow_t &window, windows_)
-		PostMessage( window.hwnd(), MY_WM_CHECK_STATE, 0, 0);
+	BOOST_FOREACH(window &win, windows_)
+		PostMessage( win.hwnd(), MY_WM_CHECK_STATE, 0, 0);
 }
 
 void server::get(my::http::reply &reply, const wstring &request)
@@ -379,8 +379,8 @@ void server::paint_tile(Gdiplus::Graphics *canvas,
 
 void server::on_tiler_update()
 {
-	BOOST_FOREACH(ipwindow_t &window, windows_)
-		PostMessage(window.hwnd(), MY_WM_UPDATE, 0, 0);
+	BOOST_FOREACH(window &win, windows_)
+		PostMessage(win.hwnd(), MY_WM_UPDATE, 0, 0);
 }
 
 }

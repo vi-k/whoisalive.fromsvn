@@ -25,7 +25,7 @@ namespace map_type
 
 class ipmap_t : public ipwidget_t {
 	private:
-		ipwindow_t *window_;
+		who::window *window_;
 		wstring name_;
 		bool first_activation_;
 		mutex mutex_;
@@ -56,8 +56,8 @@ class ipmap_t : public ipwidget_t {
 
 		virtual void set_parent(ipwidget_t *parent) {} /* Блокируем изменение parent'а */
 
-		virtual ipwindow_t* window(void) { return window_; }
-		void set_window(ipwindow_t *window) {
+		virtual who::window* window(void) { return window_; }
+		void set_window(who::window *window) {
 			window_ = window;
 		}
 		virtual ipmap_t* get_map(void) { return this; }
