@@ -31,8 +31,6 @@ private:
 	void handle_read(const boost::system::error_code& error,
 		size_t bytes_transferred);
 
-	void handle_stop(void);
-
 	//(*Handlers(wx_Ping)
 	void OnClose(wxCloseEvent& event);
 	//*)
