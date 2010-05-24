@@ -4,6 +4,8 @@
 #include "../common/my_http.h"
 #include "../common/my_utf8.h"
 #include "../common/my_fs.h"
+//#include "../common/my_log.h"
+//extern my::log main_log;
 
 #include <iostream>
 #include <map>
@@ -26,7 +28,7 @@ server::server(const xml::wptree &config)
 	, anim_period_( posix_time::milliseconds(40) )  /* 20 40 200 */
 	, def_anim_steps_(5)                                  /* 10  5   1 */
 	, active_map_id_(1)
-	, tiler_(*this, 1000)
+	, tiler_(*this, 1000, boost::bind(&server::on_tiler_update, this))
 {
 	/* Инициализируем GDI+ */
 	Gdiplus::GdiplusStartupInput gs;
@@ -42,32 +44,18 @@ server::server(const xml::wptree &config)
 	load_maps_();
 
 	/* Потока для приёма журнала состояний хостов */
-	thgroup_.create_thread( boost::bind(&server::state_log_thread_proc_, this) );
-
-	/* Поток тайлера */
-	tiler_.on_update = boost::bind(&server::on_tiler_update, this);
-	thgroup_.create_thread( boost::bind(&tiler::server::run, &tiler_) );
+	state_log_thread_ = boost::thread(
+		boost::bind(&server::state_log_thread_proc, this) );
 
 	/* Поток работы с io_service */
-	thgroup_.create_thread( boost::bind(&server::io_run, this) );
+	io_thread_ = boost::thread(
+		boost::bind(&server::io_thread_proc, this) );
 }
 
-void server::terminate()
-{
-	terminate_ = true;
-
-	io_start();
-	state_log_socket_.close();
-	tiler_.stop();
-	
-	thgroup_.interrupt_all();
-	thgroup_.join_all();
-}
-
-void server::io_run()
+void server::io_thread_proc()
 {
 	mutex io_mutex;
-	
+
 	while (!terminate_)
 	{
 		io_service_.run();
@@ -77,61 +65,76 @@ void server::io_run()
 			break;
 
 		scoped_lock lock(io_mutex);
-		cond_.wait(lock);
+		io_cond_.wait(lock);
 	}
-}
-
-void server::io_start()
-{
-	cond_.notify_all();
 }
 
 server::~server()
 {
+	terminate_ = true;
+
 	windows_.clear();
 	classes_.clear();
 
 	//TODO: (ptr_list-объекты будут очищены после, так что здесь нельзя закрывать Gdi+)
 	//Gdiplus::GdiplusShutdown(gdiplus_token_);
 
-	terminate();
+	io_wake_up();
+	io_thread_.join();
+	
+	state_log_socket_.close();
+	state_log_thread_.join();
 }
 
-void server::state_log_thread_proc_( void)
+void server::state_log_thread_proc( void)
 {
-	my::http::reply reply;
-	get_header(state_log_socket_, reply, L"/pinger/state.log");
-
-	if (reply.status_code != 200)
-		throw my::exception(L"Сервер не вернул состояние хостов")
-			<< my::param(L"http-status-code", reply.status_code)
-			<< my::param(L"http-status-message", reply.status_message);
-	
-	while (!terminate_)
+	try
 	{
-		size_t n = asio::read_until(state_log_socket_, reply.buf_, "\r\n");
+		my::http::reply reply;
+		get_header(state_log_socket_, reply, L"/pinger/state.log");
 
-		if (terminate_)
-			break;
+		if (reply.status_code != 200)
+			throw my::exception(L"Сервер не вернул состояние хостов")
+				<< my::param(L"http-status-code", reply.status_code)
+				<< my::param(L"http-status-message", reply.status_message);
+	
+		while (!terminate_)
+		{
+			size_t n = asio::read_until(state_log_socket_, reply.buf_, "\r\n");
 
-		reply.body.resize(n);
-		reply.buf_.sgetn((char*)reply.body.c_str(), n);
+			if (terminate_)
+				break;
 
-		xml::wptree pt;
-		reply.to_xml(pt);
+			reply.body.resize(n);
+			reply.buf_.sgetn((char*)reply.body.c_str(), n);
 
-		wstring value = pt.get<wstring>(L"state.<xmlattr>.address");
-		ipaddr_t address(value.c_str());
+			xml::wptree pt;
+			reply.to_xml(pt);
 
-		ipstate::t state;
-		value = pt.get<wstring>(L"state.<xmlattr>.state");
-		if (value == L"ok") state = ipstate::ok;
-		else if (value == L"warn") state = ipstate::warn;
-		else if (value == L"fail") state = ipstate::fail;
-		else state = ipstate::unknown;
+			wstring value = pt.get<wstring>(L"state.<xmlattr>.address");
+			ipaddr_t address(value.c_str());
 
-		if ( ipaddrs_[address].set_state(state) )
-			check_state_notify();
+			ipstate::t state;
+			value = pt.get<wstring>(L"state.<xmlattr>.state");
+			if (value == L"ok") state = ipstate::ok;
+			else if (value == L"warn") state = ipstate::warn;
+			else if (value == L"fail") state = ipstate::fail;
+			else state = ipstate::unknown;
+
+			if ( ipaddrs_[address].set_state(state) )
+				check_state_notify();
+		}
+	}
+	catch (my::exception &e)
+	{
+		if (!terminate_)
+			throw e;
+	}
+	catch(exception &e)
+	{
+		if (!terminate_)
+			throw my::exception(e)
+				<< my::param(L"where", L"who::server::state_log_thread_proc()");
 	}
 }
 

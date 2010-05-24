@@ -27,14 +27,12 @@ const wchar_t* widget_type(ipwidget_t *widget)
 		widget ? L"unknown" : L"null";
 }
 
+#pragma warning(disable:4355) /* 'this' : used in base member initializer list */
+
 window::window(server &server, HWND parent)
 	: server_(server)
-	, timer_(server.io_service(), posix_time::microsec_clock::universal_time())
-	, timer_started_(false)
 	, hwnd_(NULL)
 	, focused_(false)
-	//, timer_(NULL)
-	, anim_queue_(0)
 	, w_(0)
 	, h_(0)
 	, bg_color_(255,255,255)
@@ -47,7 +45,6 @@ window::window(server &server, HWND parent)
 	, select_parent_(NULL)
 	, select_rect_(0.0f, 0.0f, 0.0f, 0.0f)
 	, terminate_(false)
-	, canvas_mutex_()
 {
 	/* Создание внутреннего окна для обработки сообщений от внешнего окна */
 	WNDCLASS wc;
@@ -65,24 +62,87 @@ window::window(server &server, HWND parent)
 	RegisterClass(&wc);
 
 	set_link(parent);
+
+	anim_thread_ = boost::thread( boost::bind(&window::anim_thread_proc, this) );
 }
 
-/******************************************************************************
-* Деструктор
-*/
 window::~window()
 {
-	terminate_ = true;
+	/* Ждём завершения animate-потока */
+	{
+		terminate_ = true; /* Сообщаем потоку о прекращении работы */
+		animate(); /* Будим поток */
+		anim_thread_.join(); /* Ждём завершения */
+	}
 	
-	/* Остановка таймера - он тут же должен запуститься последний раз */
-	timer_.cancel();
-	while (timer_started_)
-		scoped_lock l(anim_mutex_);
-
 	delete_link();
 
 	maps_.clear();
 }
+
+/* Анимация карты */
+void window::anim_thread_proc(void)
+{
+	asio::io_service io_service;
+	asio::deadline_timer timer(io_service, posix_time::microsec_clock::universal_time());
+	
+	while (!terminate_)
+	{
+		/* Анимируются все карты */
+		bool anim = false;
+		BOOST_FOREACH(ipmap_t &map, maps_)
+			if (map.animate_calc())
+				anim = true;
+
+		/* ... но прорисовывается только одно - активное */
+		paint_();
+
+		/* Для отладки */
+		#ifdef _DEBUG
+		if (active_map_)
+		{
+			static int count = 0;
+			wchar_t buf[200];
+
+			swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"[%08X] %d - %.3f (%d) - %d",
+				hwnd_, ++count,
+				active_map_->scale(), GetCurrentThreadId(),
+				ipmap_t::z(active_map_->scale()) );
+
+			SetWindowText(g_parent_wnd, buf);
+		}
+		#endif
+
+		boost::posix_time::ptime time = timer.expires_at() + server_.anim_period();
+		boost::posix_time::ptime now = posix_time::microsec_clock::universal_time();
+
+		/* Теоретически время следующей прорисовки должно быть относительным
+			от времени предыдущей, но на практике могут возникнуть торможения,
+			и, тогда, программа будет пытаться запустить прорисовку в прошлом.
+			В этом случае следующий запуск делаем относительно текущего времени */ 
+		timer.expires_at( now > time ? now : time );
+
+		if (terminate_)
+			return;
+
+		/* Если больше нечего анимировать - засыпаем */
+		if (!anim)
+		{
+			mutex sleep_mutex;
+			scoped_lock lock(sleep_mutex);
+			anim_cond_.wait(lock);
+		}
+
+		timer.wait();
+	}
+}
+
+/* Анимация карты - запуск потока, если он был остановлен */
+void window::animate(void)
+{
+	anim_cond_.notify_all();
+}
+
 
 /******************************************************************************
 * Статическая функция обработки сообщений окна
@@ -115,9 +175,11 @@ LRESULT CALLBACK window::static_wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 	LPARAM lParam)
 {
-	switch (uMsg) {
+	switch (uMsg)
+	{
 
-		case WM_NCDESTROY: {
+		case WM_NCDESTROY:
+		{
 			SetWindowLongPtr(hwnd_, GWL_USERDATA, NULL);
 			hwnd_ = NULL;
 			on_destroy();
@@ -129,25 +191,27 @@ LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 
 		/* Обновление внешнего окна (WM_PAINT) - содержимое берёт из буфера.
 			Прорисовывает только требуемую часть */
-		case WM_PAINT: {
+		case WM_PAINT:
+		{
 			/* Перерисовка окна. paint() не вызывается. Берёт из буфера.
 				Прорисовывает только требуемую часть */
 			PAINTSTRUCT ps;
 			HDC hdc = BeginPaint(hwnd, &ps);
 
-			canvas_lock();
+			{
+				scoped_lock l(canvas_mutex_);
 
-			if (bitmap_.get()) {
-				Gdiplus::Graphics g(hdc);
-				g.DrawImage( bitmap_.get(),
-					(int)ps.rcPaint.left, (int)ps.rcPaint.top,
-					(int)ps.rcPaint.left, (int)ps.rcPaint.top,
-					(int)(ps.rcPaint.right - ps.rcPaint.left),
-					(int)(ps.rcPaint.bottom - ps.rcPaint.top),
-					Gdiplus::UnitPixel );
+				if (bitmap_.get())
+				{
+					Gdiplus::Graphics g(hdc);
+					g.DrawImage( bitmap_.get(),
+						(int)ps.rcPaint.left, (int)ps.rcPaint.top,
+						(int)ps.rcPaint.left, (int)ps.rcPaint.top,
+						(int)(ps.rcPaint.right - ps.rcPaint.left),
+						(int)(ps.rcPaint.bottom - ps.rcPaint.top),
+						Gdiplus::UnitPixel );
+				}
 			}
-
-			canvas_unlock();
 
 			EndPaint(hwnd, &ps);
 			return 0;
@@ -157,17 +221,17 @@ LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 			set_size( ((WINDOWPOS*)lParam)->cx, ((WINDOWPOS*)lParam)->cy);
 			break;
 
-		case WM_MOUSEWHEEL: {
+		case WM_MOUSEWHEEL:
+		{
 			/* Место под курсором должно остаться на том же месте */
 			POINT pt;
 			pt.x = GET_X_LPARAM(lParam);
 			pt.y = GET_Y_LPARAM(lParam);
 			ScreenToClient(hwnd, &pt);
 
-			if (on_mouse_wheel) {
+			if (on_mouse_wheel)
 				on_mouse_wheel(this, GET_WHEEL_DELTA_WPARAM(wParam) / 120,
 						wparam_to_keys_(wParam), pt.x, pt.y );
-			}
 			break;
 		}
 
@@ -231,21 +295,26 @@ LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 			return 0;
 
 		case WM_KEYDOWN:
-			if (wParam == VK_ESCAPE && GetCapture() == hwnd) {
+			if (wParam == VK_ESCAPE && GetCapture() == hwnd)
+			{
 				mouse_cancel();
 				SetCapture(NULL);
 			}
-			if (on_keydown) on_keydown(this, wParam);
+			
+			if (on_keydown)
+				on_keydown(this, wParam);
+			
 			break;
 
 		case WM_KEYUP:
-			if (on_keyup) on_keyup(this, wParam);
+			if (on_keyup)
+				on_keyup(this, wParam);		
 			break;
 
 		case WM_SETCURSOR: {
 			LPCTSTR cursor;
-			switch (mouse_mode_) {
-
+			switch (mouse_mode_)
+			{
 				case mousemode::none:
 				case mousemode::select:
 					cursor = IDC_ARROW;
@@ -272,7 +341,8 @@ LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 
 		/*-
 		default:
-			if (uMsg != WM_NCHITTEST) {
+			if (uMsg != WM_NCHITTEST)
+			{
 				char buf[100];
 				sprintf(buf, "msg=0x%08X", uMsg);
 				SetWindowText(g_ParentHwnd, buf);
@@ -289,11 +359,22 @@ LRESULT window::wndproc_(HWND hwnd, UINT uMsg, WPARAM wParam,
 int window::wparam_to_keys_(WPARAM wparam)
 {
 	int keys = 0;
-	if (wparam & MK_CONTROL) keys |= mousekeys::ctrl;
-	if (wparam & MK_SHIFT)   keys |= mousekeys::shift;
-	if (wparam & MK_LBUTTON) keys |= mousekeys::lbutton;
-	if (wparam & MK_RBUTTON) keys |= mousekeys::rbutton;
-	if (wparam & MK_MBUTTON) keys |= mousekeys::mbutton;
+	
+	if (wparam & MK_CONTROL)
+		keys |= mousekeys::ctrl;
+	
+	if (wparam & MK_SHIFT)
+		keys |= mousekeys::shift;
+	
+	if (wparam & MK_LBUTTON)
+		keys |= mousekeys::lbutton;
+	
+	if (wparam & MK_RBUTTON)
+		keys |= mousekeys::rbutton;
+	
+	if (wparam & MK_MBUTTON)
+		keys |= mousekeys::mbutton;
+	
 	return keys;
 }
 
@@ -301,12 +382,12 @@ int window::wparam_to_keys_(WPARAM wparam)
 * Реакция на событие мыши
 */
 void window::on_mouse_event_(
-		const boost::function<void (window*, int keys, int x, int y)> &f,
-		WPARAM wparam, LPARAM lparam) {
-	if (f) {
+	const boost::function<void (window*, int keys, int x, int y)> &f,
+	WPARAM wparam, LPARAM lparam)
+{
+	if (f)
 		f(this, wparam_to_keys_(wparam),
 				GET_X_LPARAM(lparam), GET_Y_LPARAM(lparam));
-	}
 }
 
 /******************************************************************************
@@ -332,7 +413,8 @@ void window::set_link(HWND parent)
 
 	RECT rect;
 	/* Берём размеры parent'а и, заодно, узнаём - существует ли он вообще */
-	if (::GetClientRect( parent, &rect)) {
+	if (::GetClientRect( parent, &rect))
+	{
 		int w = rect.right - rect.left;
 		int h = rect.bottom - rect.top;
 
@@ -340,16 +422,16 @@ void window::set_link(HWND parent)
 			Передаём ему ссылку на this. Получим её в WM_NCCREATE.
 			HWND окна возъмём там же */
 		CreateWindowEx(0, L"who::window", L"window",
-				WS_CHILD|WS_VISIBLE|WS_TABSTOP|WS_CLIPSIBLINGS,
-				0, 0, w, h, parent, NULL, NULL, (LPVOID)this);
+			WS_CHILD|WS_VISIBLE|WS_TABSTOP|WS_CLIPSIBLINGS,
+			0, 0, w, h, parent, NULL, NULL, (LPVOID)this);
 
 		/* Выравниваем все карты относительно нового parent'а */
-		BOOST_FOREACH(ipmap_t &map, maps_) {
+		BOOST_FOREACH(ipmap_t &map, maps_)
 			map.set_first_activation(true);
-		}
 
 		set_size(w, h);
-		if (active_map_) set_active_map_(active_map_);
+		if (active_map_)
+			set_active_map_(active_map_);
 	}
 }
 
@@ -369,168 +451,42 @@ void window::on_destroy( void)
 	//
 }
 
-/* Анимация карты - таймер */
-void window::handle_timer(void)
-{
-	scoped_lock l(anim_mutex_);
-	
-	timer_started_ = false;
-
-	if( terminate_)
-		return;
-
-	/* Анимируются все карты */
-	bool anim = false;
-	BOOST_FOREACH(ipmap_t &map, maps_)
-		if (map.animate_calc())
-			anim = true;
-
-	/* ... но прорисовывается только одно - активное */
-	paint_();
-
-	/* Для отладки */
-	#ifdef _DEBUG
-	if (active_map_)
-	{
-		static int count = 0;
-		wchar_t buf[200];
-
-		swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"[%08X] %d - %.3f (%d) - %d",
-			hwnd_, ++count,
-			active_map_->scale(), GetCurrentThreadId(),
-			ipmap_t::z(active_map_->scale()) );
-
-		SetWindowText(g_parent_wnd, buf);
-	}
-	#endif
-
-	/* Если больше нечего анимировать - останавливаемся.
-		За время отрисовки другой поток мог запросить
-		анимацию, учитываем сей факт */
-	boost::posix_time::ptime time = timer_.expires_at() + server_.anim_period();
-	boost::posix_time::ptime now = posix_time::microsec_clock::universal_time();
-
-	/* Теоретически время следующей прорисовки должно быть относительным
-		от времени предыдущей, но на практике могут возникнуть торможения,
-		и, тогда, программа будет пытаться запустить прорисовку в прошлом.
-		В этом случае следующий запуск делаем относительно текущего времени */ 
-	timer_.expires_at( now > time ? now : time );
-
-	if (anim || InterlockedDecrement( &anim_queue_) != 0)
-	{
-		timer_.async_wait( boost::bind(&window::handle_timer, this) );
-		timer_started_ = true;
-
-		#if 0
-		HANDLE timer = window->timer_;
-		if (InterlockedDecrement( &window->anim_queue_) == 0) {
-			/* Так и не получилось нормально его завершить */
-			//if( !window->terminate_)
-			DeleteTimerQueueTimer(NULL, timer, NULL);
-			return;
-		}
-		#endif
-	}
-}
-
-#if 0
-VOID CALLBACK window::on_timer(window *window, BOOLEAN TimerOrWaitFired)
-{
-	if( window->terminate_) return;
-
-	/* Анимируются все карты */
-	bool anim = false;
-	BOOST_FOREACH(ipmap_t &map, window->maps_) {
-		if (map.animate_calc()) anim = true;
-	}
-
-	/* ... но прорисовывается только одно - активное */
-	if( window->terminate_) return;
-
-	window->paint_();
-
-	/* Для отладки */
-	#ifdef _DEBUG
-	if (window->active_map_) {
-		static int count = 0;
-		wchar_t buf[200];
-
-		swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"[%08X] %d - %.3f (%d) - %d",
-				window->hwnd_, ++count,
-				window->active_map_->scale(), GetCurrentThreadId(),
-				ipmap_t::z(window->active_map_->scale()) );
-
-		SetWindowText(g_parent_wnd, buf);
-	}
-	#endif
-
-	/* Если больше нечего анимировать - останавливаемся */
-	if( window->terminate_) return;
-
-	if (!anim) {
-		/* За время отрисовки другой поток мог запросить
-			анимацию, учитываем сей факт */
-		HANDLE timer = window->timer_;
-		if (InterlockedDecrement( &window->anim_queue_) == 0) {
-			/* Так и не получилось нормально его завершить */
-			//if( !window->terminate_)
-			DeleteTimerQueueTimer(NULL, timer, NULL);
-			return;
-		}
-	}
-}
-#endif
-
-/******************************************************************************
-* Анимация карты - запуск таймера
-*/
-void window::animate(void)
-{
-	scoped_lock l(anim_mutex_);
-
-	if (terminate_)
-		return;
-
-	if (!timer_started_)
-	{
-		/* Даже если таймер был остановлен, перед остановкой
-			он устанавливает время следующего запуска. Если же время
-			его запуска уже в прошлом, то он запустится сразу */
-		timer_.async_wait( boost::bind(&window::handle_timer, this) );
-		timer_started_ = true;
-	}
-}
-
 /******************************************************************************
 * Перерисовка буфера и сброс его в окно
 */
 void window::paint_( void)
 {
-	canvas_lock();
+	scoped_lock l(canvas_mutex_);
 
-	if (canvas_.get()) {
+	if (canvas_.get())
+	{
 		/* Рисуем в буфере */
 		Gdiplus::SolidBrush brush( focused_ ? bg_color_ : Gdiplus::Color(248, 248, 248) );
 		canvas_->FillRectangle(&brush, 0, 0, w_, h_);
 
-		if (active_map_) {
+		if (active_map_)
+		{
 			/* Выделение - расчёт */
-			if (mouse_mode_ == mousemode::select) {
-
-				if (mouse_end_x_ > mouse_start_x_) {
+			if (mouse_mode_ == mousemode::select)
+			{
+				if (mouse_end_x_ > mouse_start_x_)
+				{
 					select_rect_.X = (float)mouse_start_x_;
 					select_rect_.Width = (float)( mouse_end_x_ - mouse_start_x_ );
 				}
-				else {
+				else
+				{
 					select_rect_.X = (float)mouse_end_x_;
 					select_rect_.Width = (float)( mouse_start_x_ - mouse_end_x_ );
 				}
 
-				if (mouse_end_y_ > mouse_start_y_) {
+				if (mouse_end_y_ > mouse_start_y_)
+				{
 					select_rect_.Y = (float)mouse_start_y_;
 					select_rect_.Height = (float)( mouse_end_y_ - mouse_start_y_ );
 				}
-				else {
+				else
+				{
 					select_rect_.Y = (float)mouse_end_y_;
 					select_rect_.Height = (float)( mouse_start_y_ - mouse_end_y_ );
 				}
@@ -540,19 +496,21 @@ void window::paint_( void)
 				/*TODO: Снимаем временное(!!!) выделение */
 				select_parent_->unselect_all();
 
-				if (select_rect_.Width==0 && select_rect_.Height==0) {
+				if (select_rect_.Width==0 && select_rect_.Height==0)
 					select_parent_->tmp_select();
-				}
-				else {
+				else
+				{
 					/* Временное выделение widget'ов */
 					int count = 0;
-					BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs()) {
-						if (widget.in_rect(select_rect_)) {
+					BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs())
+						if (widget.in_rect(select_rect_))
+						{
 							widget.tmp_select();
 							count++;
 						}
-					}
-					if (count==0) select_parent_->tmp_select();
+
+					if (count==0)
+						select_parent_->tmp_select();
 				}
 			}
 
@@ -598,13 +556,14 @@ void window::paint_( void)
 					&font, Gdiplus::PointF(0.0f, 24.0f), &brush);
 
 			if (mouse_mode_ == mousemode::select
-					|| mouse_mode_ == mousemode::edit) {
+				|| mouse_mode_ == mousemode::edit)
+			{
 				swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"selection: select_parent=[%s], x=%0.1f, y=%0.1f, w=%0.1f, h=%0.1f",
-                        widget_type(select_parent_),
-						select_rect_.X, select_rect_.Y,
-						select_rect_.Width, select_rect_.Height);
+					widget_type(select_parent_),
+					select_rect_.X, select_rect_.Y,
+					select_rect_.Width, select_rect_.Height);
 				canvas_->DrawString( buf, wcslen(buf),
-						&font, Gdiplus::PointF(0.0f, 36.0f), &brush);
+					&font, Gdiplus::PointF(0.0f, 36.0f), &brush);
 			}
 #endif
 #endif
@@ -616,7 +575,8 @@ void window::paint_( void)
 
 		canvas_->DrawRectangle(&pen, 0, 0, w_ - 1, h_ - 1);
 
-		if (focused_) {
+		if (focused_)
+		{
 			Gdiplus::Color color1(230, 139, 44);
 			Gdiplus::Color color2(255, 199, 60);
 
@@ -631,8 +591,6 @@ void window::paint_( void)
 		Gdiplus::Graphics g(hwnd_, FALSE);
 		g.DrawImage(bitmap_.get(), 0, 0);
 	}
-
-	canvas_unlock();
 }
 
 /******************************************************************************
@@ -674,17 +632,17 @@ void window::set_size(int w, int h)
 {
 	if (w == 0 || h == 0 || w == w_ && h == h_) return;
 
-	canvas_lock();
+	{
+		scoped_lock l(canvas_mutex_);
 
-	/* Создаём новый */
-	Gdiplus::Graphics g(NULL, FALSE);
-	bitmap_.reset( new Gdiplus::Bitmap(w, h, &g) );
-	canvas_.reset( new Gdiplus::Graphics(bitmap_.get()) );
+		/* Создаём новый */
+		Gdiplus::Graphics g(NULL, FALSE);
+		bitmap_.reset( new Gdiplus::Bitmap(w, h, &g) );
+		canvas_.reset( new Gdiplus::Graphics(bitmap_.get()) );
 
-	w_ = w;
-	h_ = h;
-
-	canvas_unlock();
+		w_ = w;
+		h_ = h;
+	}
 
 	animate();
 }
@@ -700,9 +658,11 @@ void window::do_check_state(void)
 */
 void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 {
-	if (!active_map_ || mm == mousemode::none) return;
+	if (!active_map_ || mm == mousemode::none)
+		return;
 
-	if (GetCapture() != hwnd_) SetCapture(hwnd_);
+	if (GetCapture() != hwnd_)
+		SetCapture(hwnd_);
 
 	mouse_mode_ = mm;
 	mouse_start_x_ = x;
@@ -710,10 +670,12 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 	mouse_end_x_ = x;
 	mouse_end_y_ = y;
 
-	switch (mm) {
+	switch (mm)
+	{
 		/* Ничего не двигаем, только захватываем окно (SetCapture) */
 		case mousemode::capture:
-			if (mouse_mode_ != mousemode::none) return;
+			if (mouse_mode_ != mousemode::none)
+				return;
 			break;
 
 		/* Двигаем карту */
@@ -727,8 +689,9 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 			break;
 
 		/* Выделяем объекты на карте */
-		case mousemode::select: {
+		case mousemode::select:
 		case mousemode::edit:
+		{
 			float fx = (float)x;
 			float fy = (float)y;
 			active_map_->parent_to_client(&fx, &fy);
@@ -738,12 +701,13 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 			/* Ограничиваем движения мыши
 				Для карты не ограничиваем - при нажатии вне карты курсор
 				некрасиво перемещается внутрь */
-			if (select_parent_ != active_map_) {
+			if (select_parent_ != active_map_)
+			{
 				Gdiplus::Rect rect =
-						rectF_to_rect( select_parent_->rect_in_window() );
+					rectF_to_rect( select_parent_->rect_in_window() );
 
 				RECT rt = { rect.X, rect.Y,
-						rect.X + rect.Width + 1, rect.Y + rect.Height + 1 };
+					rect.X + rect.Width + 1, rect.Y + rect.Height + 1 };
 
 				ClientToScreen(hwnd_, (POINT*)&rt.left);
 				ClientToScreen(hwnd_, (POINT*)&rt.right);
@@ -751,11 +715,11 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 				ClipCursor(&rt);
 			}
 
-			if (sm == selectmode::normal) {
+			if (sm == selectmode::normal)
 				active_map_->unselect_all();
-			}
 
-			if (select_parent_ == active_map_) mouse_mode_ = mousemode::select;
+			if (select_parent_ == active_map_)
+				mouse_mode_ = mousemode::select;
 
 			break;
 		}
@@ -769,10 +733,11 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 */
 void window::mouse_move_to(int x, int y)
 {
-	if (!active_map_) return;
+	if (!active_map_)
+		return;
 
-	switch (mouse_mode_) {
-
+	switch (mouse_mode_)
+	{
 		case mousemode::none:
 		case mousemode::capture:
 			animate();
@@ -781,11 +746,12 @@ void window::mouse_move_to(int x, int y)
 		case mousemode::move:
 			/* Сдвиг делаем относительно ранее сохранённых координат */
 			active_map_->move_from_saved( (float)(x - mouse_start_x_),
-                    (float)(y - mouse_start_y_) );
+				(float)(y - mouse_start_y_) );
 			animate();
 			break;
 
-		case mousemode::select: {
+		case mousemode::select:
+		{
 			mouse_end_x_ = x;
 			mouse_end_y_ = y;
 			animate();
@@ -803,34 +769,34 @@ void window::mouse_move_to(int x, int y)
 */
 void window::mouse_end(int x, int y)
 {
-	if (!active_map_) return;
+	if (!active_map_)
+		return;
 
 	mouse_move_to(x, y);
 
-	switch (mouse_mode_) {
-
+	switch (mouse_mode_)
+	{
 		case mousemode::none:
 		case mousemode::capture:
 		case mousemode::move:
 			break;
 
-		case mousemode::select: {
-			if (select_parent_->tmp_selected()) select_parent_->select();
-			else {
-				BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs()) {
+		case mousemode::select:
+			if (select_parent_->tmp_selected())
+				select_parent_->select();
+			else
+				BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs())
 					if (widget.tmp_selected()) widget.select();
-				}
-			}
 			select_parent_ = NULL;
 			break;
-		}
 
 		case mousemode::edit:
 			break;
 	}
 
 	mouse_mode_ = mousemode::none;
-	if (GetCapture() == hwnd_) SetCapture(NULL);
+	if (GetCapture() == hwnd_)
+		SetCapture(NULL);
 	ClipCursor(NULL);
 
 	animate();
@@ -841,14 +807,15 @@ void window::mouse_end(int x, int y)
 */
 void window::mouse_cancel(void)
 {
-	switch (mouse_mode_) {
-
+	switch (mouse_mode_)
+	{
 		case mousemode::none:
 		case mousemode::capture:
 			break;
 
 		case mousemode::move:
-			if (active_map_) active_map_->restore_pos();
+			if (active_map_)
+				active_map_->restore_pos();
 			break;
 
 		case mousemode::select:
@@ -857,16 +824,16 @@ void window::mouse_cancel(void)
 			break;
 
 		case mousemode::edit:
-			if (active_map_) {
+			//if (active_map_)
 				/*TODO: восстановление позиций выделенных объектов */
 				//active_map_->restore_pos();
-			}
 			break;
 	}
 
 	mouse_mode_ = mousemode::none;
 	::SetCursor( LoadCursor(NULL, IDC_ARROW) );
-	if (GetCapture() == hwnd_) SetCapture(NULL);
+	if (GetCapture() == hwnd_)
+		SetCapture(NULL);
 	ClipCursor(NULL);
 
 	animate();
@@ -877,7 +844,8 @@ void window::mouse_cancel(void)
 */
 ipwidget_t* window::hittest(int x, int y)
 {
-	if (!active_map_) return NULL;
+	if (!active_map_)
+		return NULL;
 
 	float fx = (float)x;
 	float fy = (float)y;
@@ -900,7 +868,8 @@ void window::clear(void)
 */
 void window::zoom(float ds)
 {
-	if (active_map_) {
+	if (active_map_)
+	{
 		float fx = (float)( w_ / 2 );
 		float fy = (float)( h_ / 2 );
 		active_map_->parent_to_client(&fx, &fy);

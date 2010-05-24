@@ -90,7 +90,7 @@ wx_Ping::wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object)
             boost::asio::placeholders::error,
 			boost::asio::placeholders::bytes_transferred) );
 
-	server_.io_start();
+	server_.io_wake_up();
 
 	Show();
 }
@@ -104,11 +104,6 @@ wx_Ping::~wx_Ping()
 
 	//(*Destroy(wx_Ping)
 	//*)
-}
-
-void wx_Ping::handle_stop(void)
-{
-	socket_.close();
 }
 
 void wx_Ping::OnClose(wxCloseEvent& event)

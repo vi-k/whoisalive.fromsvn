@@ -34,13 +34,10 @@ class window
 private:
 	bool terminate_;
 	server &server_;
-	asio::deadline_timer timer_;
-	bool timer_started_;
-	mutex anim_mutex_;
+	boost::thread anim_thread_;
+	condition_variable anim_cond_;
 	HWND hwnd_;
 	bool focused_;
-	//HANDLE timer_;
-	LONG anim_queue_;
 	int w_;
 	int h_;
 	std::auto_ptr<Gdiplus::Bitmap> bitmap_;
@@ -71,6 +68,8 @@ private:
 		WPARAM wparam, LPARAM lparam);
 		
 	static int window::wparam_to_keys_(WPARAM wparam);
+
+	void anim_thread_proc(void);
 
 public:
 	/* События */
@@ -125,14 +124,7 @@ public:
 	void mouse_end(int x, int y);
 	void mouse_cancel(void);
 
-	void handle_timer(void);
-
 	virtual void do_check_state(void);
-
-	void canvas_lock(void)
-		{ canvas_mutex_.lock(); }
-	void canvas_unlock(void)
-		{ canvas_mutex_.unlock(); }
 
 	void zoom(float ds);
 

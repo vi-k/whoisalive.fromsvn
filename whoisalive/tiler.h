@@ -104,28 +104,28 @@ private:
 	typedef my::mru::list<tile_id, tile::ptr> tiles_list;
 
 	bool terminate_;
+	boost::thread thread_;
 	who::server &server_;
 	maps_list maps_;
 	tiles_list tiles_;
 	mutex tiles_mutex_;
-	mutex run_mutex_;
 	condition_variable cond_;
+	boost::function<void ()> on_update_;
 
 	static int get_new_map_id_()
 	{
 		static int id = 0;
 		return ++id;
 	}
+	
+	void thread_proc();
 
 public:
-	server(who::server &server, size_t max_tiles);
-	~server() {}
+	server(who::server &server, size_t max_tiles, boost::function<void ()> on_update_proc);
+	~server();
 
-	boost::function<void ()> on_update;
-
-	void run();
-	void start();
-	void stop();
+	inline void wake_up()
+		{ cond_.notify_all(); }
 
 	int add_map(const tiler::map &map);
 	tile::ptr get_tile(int map_id, int z, int x, int y);

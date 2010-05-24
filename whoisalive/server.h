@@ -32,10 +32,12 @@ public:
 
 private:
 	bool terminate_;
-	boost::thread_group thgroup_;
 	asio::io_service io_service_;
+	boost::thread io_thread_;
+	condition_variable io_cond_;
 	tcp::endpoint server_endpoint_;
 	tcp::socket state_log_socket_;
+	boost::thread state_log_thread_;
 	ULONG_PTR gdiplus_token_;
 	boost::unordered_map<std::wstring, obj_class::ptr> classes_;
 	boost::ptr_list<window> windows_;
@@ -44,23 +46,21 @@ private:
 	std::map<ipaddr_t, ipaddr_state_t> ipaddrs_;
 	tiler::server tiler_;
 	int active_map_id_;
-	condition_variable cond_;
 
 	void load_classes_(void);
 	void load_maps_(void);
 
 	bool add_addr_(const ipaddr_t &ipaddr);
 
-	void state_log_thread_proc_(void);
+	void state_log_thread_proc(void);
+	void io_thread_proc();
 
 public:
 	server(const xml::wptree &config);
 	~server();
 
-	void io_run();
-	void io_start();
-
-	void terminate();
+	inline void io_wake_up()
+		{ io_cond_.notify_all(); }
 
 	inline int def_anim_steps(void) { return def_anim_steps_; }
 	inline posix_time::time_duration anim_period(void) { return anim_period_; }

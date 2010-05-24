@@ -7,19 +7,31 @@
 #include <sstream>
 using namespace std;
 
+#include <boost/bind.hpp>
+
 namespace who { namespace tiler {
 
-server::server(who::server &server, size_t max_tiles)
+#pragma warning(disable:4355) /* 'this' : used in base member initializer list */
+
+server::server(who::server &server, size_t max_tiles, boost::function<void ()> on_update_proc)
 	: terminate_(false)
 	, server_(server)
 	, tiles_(max_tiles)
+	, on_update_(on_update_proc)
 {
+	/* Запускаем после инициализации */
+	thread_ = boost::thread( boost::bind(&server::thread_proc, this) );
 }
 
-void server::run()
+server::~server()
 {
-	scoped_lock lock(run_mutex_);
+	terminate_ = true;
+	wake_up(); /* Будим поток, чтобы он завершил работу */
+	thread_.join(); /* Ждём его завершения */
+}
 
+void server::thread_proc()
+{
 	while (!terminate_)
 	{
 		tiler::tile_id tile_id;
@@ -89,24 +101,10 @@ void server::run()
 				it->value() = ptr;
 		}
 
-		if (on_update)
-			on_update();
+		if (on_update_)
+			on_update_();
 
 	} /* while (true) */
-}
-
-void server::start()
-{
-	cond_.notify_all();
-}
-
-void server::stop()
-{
-	terminate_ = true;
-	start(); /* Запускаем поток, если он заснул, чтобы он завершил работу */
-	
-	/* Ждём его завершения */
-	scoped_lock lock(run_mutex_);
 }
 
 int server::add_map(const tiler::map &map)
@@ -122,7 +120,7 @@ tile::ptr server::get_tile(int map_id, int z, int x, int y)
 	scoped_lock l(tiles_mutex_);
 	
 	tile::ptr ptr = tiles_[ tile_id(map_id, z, x, y) ];
-	start();
+	wake_up();
 	return ptr;
 }
 
