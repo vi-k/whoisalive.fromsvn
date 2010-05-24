@@ -5,7 +5,7 @@
 		<bg>wxSYS_COLOUR_BTNFACE</bg>
 		<pos_arg>1</pos_arg>
 		<size_arg>1</size_arg>
-		<style>wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT</style>
+		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxFRAME_TOOL_WINDOW|wxFRAME_FLOAT_ON_PARENT</style>
 		<handler function="OnClose" entry="EVT_CLOSE" />
 		<object class="wxFlexGridSizer" variable="FlexGridSizer1" member="no">
 			<cols>1</cols>
@@ -16,8 +16,8 @@
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 					<size>173,24</size>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrl2" member="yes">
-						<value>Text</value>
-						<pos>64,0</pos>
+						<pos>8,0</pos>
+						<size>384,24</size>
 					</object>
 				</object>
 				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -26,7 +26,7 @@
 			</object>
 			<object class="sizeritem">
 				<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="m_bitmap" member="yes">
-					<size>62,78</size>
+					<size>400,58</size>
 				</object>
 				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>
@@ -34,10 +34,10 @@
 			</object>
 			<object class="sizeritem">
 				<object class="wxTextCtrl" name="ID_PINGTEXTCTRL" variable="m_ping_textctrl" member="yes">
-					<size>400,201</size>
+					<size>400,140</size>
 					<fg>#C0C0C0</fg>
 					<bg>#000000</bg>
-					<style>wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH</style>
+					<style>wxTE_AUTO_SCROLL|wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH2|wxTE_NOHIDESEL</style>
 				</object>
 				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>

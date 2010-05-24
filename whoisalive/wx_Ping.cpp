@@ -45,7 +45,7 @@ wx_Ping::wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object)
 	//(*Initialize(wx_Ping)
 	wxFlexGridSizer* FlexGridSizer1;
 
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT, _T("id"));
+	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxFRAME_TOOL_WINDOW|wxFRAME_FLOAT_ON_PARENT, _T("id"));
 	SetClientSize(wxSize(544,333));
 	Move(wxDefaultPosition);
 	SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNFACE));
@@ -53,11 +53,11 @@ wx_Ping::wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object)
 	FlexGridSizer1->AddGrowableCol(0);
 	FlexGridSizer1->AddGrowableRow(2);
 	Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(173,24), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	TextCtrl2 = new wxTextCtrl(Panel1, ID_TEXTCTRL2, _("Text"), wxPoint(64,0), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	TextCtrl2 = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(8,0), wxSize(384,24), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
 	FlexGridSizer1->Add(Panel1, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	m_bitmap = new wxStaticBitmap(this, ID_STATICBITMAP2, wxNullBitmap, wxDefaultPosition, wxSize(62,78), 0, _T("ID_STATICBITMAP2"));
+	m_bitmap = new wxStaticBitmap(this, ID_STATICBITMAP2, wxNullBitmap, wxDefaultPosition, wxSize(400,58), 0, _T("ID_STATICBITMAP2"));
 	FlexGridSizer1->Add(m_bitmap, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	m_ping_textctrl = new wxTextCtrl(this, ID_PINGTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(400,201), wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH, wxDefaultValidator, _T("ID_PINGTEXTCTRL"));
+	m_ping_textctrl = new wxTextCtrl(this, ID_PINGTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(400,140), wxTE_AUTO_SCROLL|wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH2|wxTE_NOHIDESEL, wxDefaultValidator, _T("ID_PINGTEXTCTRL"));
 	m_ping_textctrl->SetForegroundColour(wxColour(192,192,192));
 	m_ping_textctrl->SetBackgroundColour(wxColour(0,0,0));
 	FlexGridSizer1->Add(m_ping_textctrl, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -137,31 +137,24 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 			posix_time::ptime time = my::time::utc_to_local(
 				my::time::to_time( node.get<wstring>(L"start") ) );
 
-			*m_ping_textctrl
-				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", my::time::to_time( node.get<wstring>(L"start") ))
-				<< L"\n";
-
-			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
+			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxGREEN));
 			*m_ping_textctrl
 				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", time)
-				<< L": icmp_seq=" << node.get<wstring>(L"icmp_seq", L"?")
+				<< L": ok icmp_seq=" << node.get<wstring>(L"icmp_seq", L"?")
 				<< L", time=" << node.get<wstring>(L"time", L"?")
 				<< L", ttl=" << node.get<wstring>(L"ttl", L"?")
-				<< L"\n";
-			
-			*m_ping_textctrl
-				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", my::time::local_to_utc(time))
 				<< L"\n";
 		}
 		else if (node_name == L"timeout")
 		{
-			posix_time::ptime time = //my::time::utc_to_local(
-				my::time::to_time( node.get<wstring>(L"start") );// );
+			posix_time::ptime time = my::time::utc_to_local(
+				my::time::to_time( node.get<wstring>(L"start") ) );
 
 			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxRED));
 			*m_ping_textctrl
 				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", time)
-				<< L": timeout\n";
+				<< L": timeout icmp_seq=" << node.get<wstring>(L"icmp_seq", L"?")
+				<< L"\n";
 		}
 		else
 		{
