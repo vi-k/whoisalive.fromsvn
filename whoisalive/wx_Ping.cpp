@@ -46,18 +46,20 @@ wx_Ping::wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object)
 	wxFlexGridSizer* FlexGridSizer1;
 
 	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE|wxFRAME_FLOAT_ON_PARENT, _T("id"));
-	SetClientSize(wxSize(400,340));
+	SetClientSize(wxSize(544,333));
 	Move(wxDefaultPosition);
 	SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNFACE));
 	FlexGridSizer1 = new wxFlexGridSizer(3, 1, 0, 0);
 	FlexGridSizer1->AddGrowableCol(0);
 	FlexGridSizer1->AddGrowableRow(2);
-	Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(549,45), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+	Panel1 = new wxPanel(this, ID_PANEL1, wxDefaultPosition, wxSize(173,24), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	TextCtrl2 = new wxTextCtrl(Panel1, ID_TEXTCTRL2, _("Text"), wxPoint(64,0), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
 	FlexGridSizer1->Add(Panel1, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	m_bitmap = new wxStaticBitmap(this, ID_STATICBITMAP2, wxNullBitmap, wxDefaultPosition, wxSize(549,78), 0, _T("ID_STATICBITMAP2"));
+	m_bitmap = new wxStaticBitmap(this, ID_STATICBITMAP2, wxNullBitmap, wxDefaultPosition, wxSize(62,78), 0, _T("ID_STATICBITMAP2"));
 	FlexGridSizer1->Add(m_bitmap, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	m_ping_textctrl = new wxTextCtrl(this, ID_PINGTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(549,201), wxTE_MULTILINE|wxTE_READONLY, wxDefaultValidator, _T("ID_PINGTEXTCTRL"));
+	m_ping_textctrl = new wxTextCtrl(this, ID_PINGTEXTCTRL, wxEmptyString, wxDefaultPosition, wxSize(400,201), wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH, wxDefaultValidator, _T("ID_PINGTEXTCTRL"));
+	m_ping_textctrl->SetForegroundColour(wxColour(192,192,192));
+	m_ping_textctrl->SetBackgroundColour(wxColour(0,0,0));
 	FlexGridSizer1->Add(m_ping_textctrl, 1, wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	SetSizer(FlexGridSizer1);
 	FlexGridSizer1->SetSizeHints(this);
@@ -124,7 +126,48 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 		reply_.body.resize(bytes_transferred);
 		reply_.buf_.sgetn((char*)reply_.body.c_str(), bytes_transferred);
 
-		*m_ping_textctrl << reply_.body;
+		xml::wptree pt;
+		reply_.to_xml(pt);
+
+		wstring node_name = pt.front().first;
+		xml::wptree &node = pt.front().second.get_child(L"<xmlattr>");
+
+		if (node_name == L"reply")
+		{
+			posix_time::ptime time = my::time::utc_to_local(
+				my::time::to_time( node.get<wstring>(L"start") ) );
+
+			*m_ping_textctrl
+				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", my::time::to_time( node.get<wstring>(L"start") ))
+				<< L"\n";
+
+			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxLIGHT_GREY));
+			*m_ping_textctrl
+				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", time)
+				<< L": icmp_seq=" << node.get<wstring>(L"icmp_seq", L"?")
+				<< L", time=" << node.get<wstring>(L"time", L"?")
+				<< L", ttl=" << node.get<wstring>(L"ttl", L"?")
+				<< L"\n";
+			
+			*m_ping_textctrl
+				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", my::time::local_to_utc(time))
+				<< L"\n";
+		}
+		else if (node_name == L"timeout")
+		{
+			posix_time::ptime time = //my::time::utc_to_local(
+				my::time::to_time( node.get<wstring>(L"start") );// );
+
+			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxRED));
+			*m_ping_textctrl
+				<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", time)
+				<< L": timeout\n";
+		}
+		else
+		{
+			m_ping_textctrl->SetDefaultStyle(wxTextAttr(*wxRED));
+			*m_ping_textctrl << L"unknown message\n";
+		}
 
 		asio::async_read_until(
 			socket_, reply_.buf_, "\r\n",
@@ -136,7 +179,7 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 	{
 		boost::system::system_error se(error);
 		wstring str = my::str::to_wstring( se.what() );
-		
+
 		wxMessageBox(str, L"Ошибка чтения данных",
 			wxOK | wxICON_ERROR, this);
 		Close();
