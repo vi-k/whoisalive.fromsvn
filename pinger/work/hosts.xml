@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <hosts>
 	<host request_period_="00:00:01">127.0.0.1</host>
-	<host timeout="00:00:01.000">www.boost.org</host>
-	<host>президент.рф</host>
+	<host_ timeout="00:00:01.000">www.boost.org</host_>
+	<host_>президент.рф</host_>
 	<host>10.10.30.6</host>
 	<host>172.16.16.107</host>
 	<host>172.16.23.1</host>
