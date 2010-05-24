@@ -4,7 +4,7 @@
 	Version="9,00"
 	Name="pinger"
 	ProjectGUID="{C2829665-1330-4551-A373-2D44D2E3F89D}"
-	RootNamespace="ping_server"
+	RootNamespace="whoisalive"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
