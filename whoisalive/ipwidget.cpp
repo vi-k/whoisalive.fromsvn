@@ -206,12 +206,12 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 
 	/* Рисуем линии */
 	BOOST_FOREACH(ipwidget_t &widget, childs_) {
-		ipobject_t *object1 = dynamic_cast<ipobject_t*>(&widget);
+		who::object *object1 = dynamic_cast<who::object*>(&widget);
 
 		if (object1 && object1->alpha() != 0.0f) {
 			BOOST_FOREACH(const ipaddr_t &addr, object1->ipaddrs()) {
 				BOOST_FOREACH(ipwidget_t &widget, childs_) {
-					ipobject_t *object2 = dynamic_cast<ipobject_t*>(&widget);
+					who::object *object2 = dynamic_cast<who::object*>(&widget);
 					if (object2 && addr == object2->link()) {
 						float x1 = object1->x_;
 						float y1 = object1->y_;
@@ -239,13 +239,13 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 							float thickness = 0.0f;
 							
 							switch ( object2->link_type() ) {
-								case iplink_type::wire:
+								case who::link_type::wire:
 									thickness = 6.0f;
 									break;
-								case iplink_type::optics:
+								case who::link_type::optics:
 									thickness = 12.0f;
 									break;
-								case iplink_type::air:
+								case who::link_type::air:
 									thickness = 2.0f;
 									break;
 							}
@@ -346,7 +346,7 @@ Gdiplus::RectF ipwidget_t::objects_rect(void)
 {
 	Gdiplus::RectF rect(0.0f, 0.0f, -10.0f, -10.0f);
 
-	ipobject_t *object = dynamic_cast<ipobject_t*>(this);
+	who::object *object = dynamic_cast<who::object*>(this);
 	if (object) rect = own_rect();
 
 	BOOST_FOREACH(ipwidget_t &child, childs_) {

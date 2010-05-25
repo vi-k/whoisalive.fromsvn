@@ -1,4 +1,4 @@
-﻿#include "ipobject.h"
+﻿#include "object.h"
 #include "server.h"
 #include "obj_class.h"
 
@@ -86,7 +86,9 @@ const Gdiplus::ColorMatrix state_matrices[4] = {
 		0.4f, 0.0f, 0.0f, 0.0f, 1.0f   }
 };
 
-ipobject_t::ipobject_t(who::server &server, const xml::wptree *pt)
+namespace who {
+
+object::object(server &server, const xml::wptree *pt)
 	: ipwidget_t(server, pt)
 	, state_matrix_( state_matrices[state_.state()] )
 	, new_state_matrix_( state_matrices[state_.state()] )
@@ -98,7 +100,7 @@ ipobject_t::ipobject_t(who::server &server, const xml::wptree *pt)
 	, link_()
 	, offs_x_(0.0f)
 	, offs_y_(0.0f)
-	, link_type_(iplink_type::wire)
+	, link_type_(link_type::wire)
 {
 	try
 	{
@@ -137,11 +139,11 @@ ipobject_t::ipobject_t(who::server &server, const xml::wptree *pt)
 
 			wstring str = attrs.get<wstring>(L"link_type", L"");
 			if (str == L"wire")
-				link_type_ = iplink_type::wire;
+				link_type_ = link_type::wire;
 			else if (str == L"optics")
-				link_type_ = iplink_type::optics;
+				link_type_ = link_type::optics;
 			else if (str == L"air")
-				link_type_ = iplink_type::air;
+				link_type_ = link_type::air;
 
 			name_ = attrs.get<wstring>(L"name", L"");
 			/* Если имя не задано, определяем его по первому попавшемуся ip-адресу */
@@ -178,7 +180,7 @@ ipobject_t::ipobject_t(who::server &server, const xml::wptree *pt)
 	}
 }
 
-ipobject_t::~ipobject_t()
+object::~object()
 {
 	BOOST_FOREACH(const ipaddr_t &addr, ipaddrs_)
 		server_.unregister_ipaddr(addr);
@@ -186,7 +188,7 @@ ipobject_t::~ipobject_t()
 
 /******************************************************************************
 */
-Gdiplus::RectF ipobject_t::own_rect(void)
+Gdiplus::RectF object::own_rect(void)
 {
 	return Gdiplus::RectF(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -200,7 +202,7 @@ Gdiplus::RectF ipobject_t::own_rect(void)
 
 /******************************************************************************
 */
-Gdiplus::RectF ipobject_t::rect_norm( void)
+Gdiplus::RectF object::rect_norm( void)
 {
 	Gdiplus::RectF r;
 
@@ -215,7 +217,7 @@ Gdiplus::RectF ipobject_t::rect_norm( void)
 /******************************************************************************
 * Плюс к обычной анимации анимируем состояние (меняем цвета)
 */
-bool ipobject_t::animate_calc( void)
+bool object::animate_calc( void)
 {
 	if (state_step_) {
 		/* Плавно меняем состояние */
@@ -257,7 +259,7 @@ bool ipobject_t::animate_calc( void)
 
 /******************************************************************************
 */
-void ipobject_t::paint_self(Gdiplus::Graphics *canvas)
+void object::paint_self(Gdiplus::Graphics *canvas)
 {
 	who::bitmap_ptr bitmap = class_->bitmap(state_.state());
 
@@ -373,7 +375,7 @@ void ipobject_t::paint_self(Gdiplus::Graphics *canvas)
 }
 
 /* Оповещение о необходимости проверить состояние объекта */
-void ipobject_t::do_check_state(void)
+void object::do_check_state(void)
 {
 	ipgroup_state_t new_state;
 
@@ -402,7 +404,7 @@ void ipobject_t::do_check_state(void)
 }
 
 /* Квитирование */
-void ipobject_t::acknowledge(void)
+void object::acknowledge(void)
 {
 	lock();
 
@@ -415,7 +417,7 @@ void ipobject_t::acknowledge(void)
 }
 
 /* Отмена квитирования */
-void ipobject_t::unacknowledge(void)
+void object::unacknowledge(void)
 {
 	lock();
 	
@@ -430,7 +432,7 @@ void ipobject_t::unacknowledge(void)
 /******************************************************************************
 * Находится ли объект в координатах
 */
-ipwidget_t* ipobject_t::hittest(float x, float y)
+ipwidget_t* object::hittest(float x, float y)
 {
 	ipwidget_t *widget = ipwidget_t::hittest(x, y);
 	if (widget || alpha() == 0.0f)
@@ -465,4 +467,6 @@ ipwidget_t* ipobject_t::hittest(float x, float y)
 	}
 
 	return widget;
+}
+
 }

@@ -40,7 +40,7 @@ private:
 	bool terminate_;
 	who::server &server_;
 	tcp::socket socket_;
-	ipobject_t *object_;
+	who::object *object_;
 	my::http::reply reply_;
 	mutex read_mutex_;
 	pings_list pings_;
@@ -77,7 +77,7 @@ protected:
 	//*)
 	
 public:
-	wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object);
+	wx_Ping(wxWindow* parent, who::server &server, who::object *object);
 	virtual ~wx_Ping();
 
 	//(*Declarations(wx_Ping)

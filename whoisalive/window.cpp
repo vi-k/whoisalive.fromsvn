@@ -23,7 +23,7 @@ const wchar_t* widget_type(ipwidget_t *widget)
 	return
 		dynamic_cast<ipmap_t*>(widget) ? L"scheme" :
 		dynamic_cast<ipimage_t*>(widget) ? L"image" :
-		dynamic_cast<ipobject_t*>(widget) ? L"object" :
+		dynamic_cast<object*>(widget) ? L"object" :
 		widget ? L"unknown" : L"null";
 }
 
