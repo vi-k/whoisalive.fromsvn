@@ -253,14 +253,14 @@ wstring host_pinger_copy::result_to_wstring(const ping_result &result) const
 	wstringstream out;
 
 	out << L"<" << result.state.to_wstring()
-		<< L" address=\"" << my::ip::to_wstring(address) << L"\""
+		<< L" address=\"" << hostname /*my::ip::to_wstring(address)*/ << L"\""
 		<< L" icmp_seq=\"" << result.sequence_number << L"\"";
 
 	if (result.state == pinger::ping_state::ok)
 		out << L" ttl=\"" << result.ipv4_hdr.time_to_live() << L"\"";
 
 	out << L" start=\"" << my::time::to_wstring(result.time_sent) << L"\""
-		<< L" time=\"" << result.time.total_milliseconds() << L"ms\""
+		<< L" time=\"" << my::time::to_wstring(result.time) << L"\""
 		<< L"/>";
 
 	return out.str();
