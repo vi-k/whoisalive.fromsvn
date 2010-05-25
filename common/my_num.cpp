@@ -47,6 +47,8 @@ T to_##N(const wchar_t *str, T def) \
 
 DEF_TO_NUM_FUNCS(int,int)
 DEF_TO_NUM_FUNCS(uint,unsigned int)
+DEF_TO_NUM_FUNCS(short,short)
+DEF_TO_NUM_FUNCS(ushort,unsigned short)
 DEF_TO_NUM_FUNCS(float,float)
 DEF_TO_NUM_FUNCS(double,double)
 
