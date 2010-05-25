@@ -175,9 +175,13 @@ void connection::run()
 					vector<pinger::ping_result> results;
 					server_.pinger().results_copy(address, results);
 
+					out << L"START ARCHIVE\r\n";
+
 					BOOST_FOREACH(pinger::ping_result &result, results)
 						out << pinger.result_to_wstring(result)
 							<< L"\r\n";
+
+					out << L"END ARCHIVE\r\n";
 				}
 				else
 				{
@@ -190,9 +194,14 @@ void connection::run()
 						vector<pinger::ping_result> results;
 						server_.pinger().results_copy(pinger.address, results);
 
+						out << L"START ARCHIVE\r\n";
+
 						BOOST_FOREACH(pinger::ping_result &result, results)
-							out << pinger.result_to_wstring(result)
+							out << L"*"
+								<< pinger.result_to_wstring(result)
 								<< L"\r\n";
+						
+						out << L"END ARCHIVE\r\n";
 					}
 				}
 
