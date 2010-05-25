@@ -3,9 +3,8 @@
 	<object class="wxFrame" name="wx_Ping">
 		<size>544,333</size>
 		<bg>wxSYS_COLOUR_BTNFACE</bg>
-		<pos_arg>1</pos_arg>
-		<size_arg>1</size_arg>
-		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER|wxFRAME_TOOL_WINDOW|wxFRAME_FLOAT_ON_PARENT</style>
+		<id_arg>0</id_arg>
+		<style>wxDEFAULT_DIALOG_STYLE|wxFRAME_TOOL_WINDOW|wxFRAME_FLOAT_ON_PARENT</style>
 		<handler function="OnClose" entry="EVT_CLOSE" />
 		<object class="wxFlexGridSizer" variable="FlexGridSizer1" member="no">
 			<cols>1</cols>
@@ -14,7 +13,7 @@
 			<growablerows>2</growablerows>
 			<object class="sizeritem">
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
-					<size>173,24</size>
+					<size>400,24</size>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="TextCtrl2" member="yes">
 						<pos>8,0</pos>
 						<size>384,24</size>
@@ -25,8 +24,12 @@
 				<option>1</option>
 			</object>
 			<object class="sizeritem">
-				<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="m_bitmap" member="yes">
-					<size>400,58</size>
+				<object class="wxPanel" name="ID_PINGPANEL" variable="m_pingpanel" member="yes">
+					<size>400,61</size>
+					<handler function="on_pingpanel_paint" entry="EVT_PAINT" />
+					<handler function="on_pingpanel_erasebackground" entry="EVT_ERASE_BACKGROUND" />
+					<handler function="on_pingpanel_mousemove" entry="EVT_MOTION" />
+					<handler function="on_pingpanel_mouseleave" entry="EVT_LEAVE_WINDOW" />
 				</object>
 				<flag>wxALL|wxEXPAND|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 				<border>5</border>
@@ -34,7 +37,7 @@
 			</object>
 			<object class="sizeritem">
 				<object class="wxTextCtrl" name="ID_PINGTEXTCTRL" variable="m_ping_textctrl" member="yes">
-					<size>400,140</size>
+					<size>400,97</size>
 					<fg>#C0C0C0</fg>
 					<bg>#000000</bg>
 					<style>wxTE_AUTO_SCROLL|wxTE_MULTILINE|wxTE_READONLY|wxTE_RICH2|wxTE_NOHIDESEL</style>
