@@ -53,14 +53,12 @@ class list
 {
 private:
     class item;
-public:
 	typedef std::list<item> list_t;
+public:
 	typedef typename list_t::iterator iterator;
-	typedef typename list_t::const_iterator const_iterator;
 private:
 	typedef boost::unordered_map<Key, typename list_t::iterator> map_t;
 	typedef typename map_t::iterator map_iterator;
-	typedef typename map_t::const_iterator map_const_iterator;
 
 private:
 
@@ -130,9 +128,6 @@ private:
 
 		inline Value& value()
 			{ return value_; }
-
-		inline const Value& value() const
-			{ return value_; }
 	};
 
 	map_t map_;
@@ -191,7 +186,7 @@ public:
     	Если ключ отсутствует, он будет создан - у класса Value
     	должен быть определён конструктор по умолчанию.
 
-		Если ключ уже есть, он будет поднят наверх.
+		//Если ключ уже есть, он будет поднят наверх.
     */
 	Value& operator[](Key const& key)
 	{
@@ -205,10 +200,10 @@ public:
 		if (map_iter == map_.end())
 			list_iter = item::create(*this, key, Value());
 		else
-		{
-			up__(&map_iter->second);
+		//{
+			//up__(&map_iter->second);
 			list_iter = map_iter->second;
-		}
+		//}
 
 		return list_iter->value();
 	}
@@ -282,29 +277,20 @@ public:
 	inline void clear()
 		{ list_.clear(); }
 
-    inline list_t* operator ->()
-    	{ return &list_; }
-
-    inline const list_t& operator ->() const
-    	{ return list_; }
-
-    inline list_t& get()
-    	{ return list_; }
-
-    inline const list_t& get() const
-    	{ return list_; }
-
 	inline iterator begin()
 		{ return list_.begin(); }
 
-	inline const_iterator begin() const
-		{ return list_.begin(); }
-	
 	inline iterator end()
 		{ return list_.end(); }
 	
-	inline const_iterator end() const
-		{ return list_.end(); }
+    /*-
+    inline list_t* operator ->()
+    	{ return &list_; }
+
+    inline list_t& get()
+    	{ return list_; }
+    -*/
+
 };
 
 } }
