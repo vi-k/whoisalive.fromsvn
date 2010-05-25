@@ -38,7 +38,7 @@ END_EVENT_TABLE()
 
 #define BLOCK_W 4
 
-wx_Ping::wx_Ping(wxWindow* parent, who::server &server, ipobject_t *object)
+wx_Ping::wx_Ping(wxWindow* parent, who::server &server, who::object *object)
 	: terminate_(false)
 	, server_(server)
 	, socket_(server.io_service())

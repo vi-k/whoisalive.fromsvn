@@ -11,9 +11,11 @@
 #include <string>
 #include <list>
 
-namespace iplink_type { enum t {wire, optics, air}; }
+namespace who {
 
-class ipobject_t : public ipwidget_t {
+namespace link_type { enum t {wire, optics, air}; }
+
+class object : public ::ipwidget_t {
 	private:
 		std::wstring name_;
 		std::list<ipaddr_t> ipaddrs_;
@@ -30,12 +32,11 @@ class ipobject_t : public ipwidget_t {
 		bool show_name_;
 		float offs_x_;
 		float offs_y_;
-		iplink_type::t link_type_;
+		link_type::t link_type_;
 
 	public:
-		ipobject_t(who::server &server,
-			const xml::wptree *pt = NULL);
-		virtual ~ipobject_t();
+		object(server &server, const xml::wptree *pt = NULL);
+		virtual ~object();
 
 		virtual Gdiplus::RectF own_rect( void);
 		Gdiplus::RectF rect_norm( void);
@@ -80,8 +81,10 @@ class ipobject_t : public ipwidget_t {
 		inline float offs_y()
 			{ return offs_y_; }
 		
-		inline iplink_type::t link_type(void)
+		inline link_type::t link_type(void)
 			{ return link_type_; }
 };
+
+}
 
 #endif

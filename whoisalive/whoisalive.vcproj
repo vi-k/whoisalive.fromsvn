@@ -199,10 +199,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\ipobject.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\ipwidget.cpp"
 				>
 			</File>
@@ -240,6 +236,10 @@
 			</File>
 			<File
 				RelativePath=".\obj_class.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\object.cpp"
 				>
 			</File>
 			<File
@@ -290,10 +290,6 @@
 			</File>
 			<File
 				RelativePath=".\ipmap.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ipobject.h"
 				>
 			</File>
 			<File
@@ -366,6 +362,10 @@
 			</File>
 			<File
 				RelativePath=".\obj_class.h"
+				>
+			</File>
+			<File
+				RelativePath=".\object.h"
 				>
 			</File>
 			<File

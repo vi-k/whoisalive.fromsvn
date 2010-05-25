@@ -4,7 +4,7 @@
 #include "ipgui.h"
 #include "ipwidget.h"
 #include "ipimage.h"
-#include "ipobject.h"
+#include "object.h"
 
 #include "../common/my_xml.h"
 #include "../common/my_thread.h"

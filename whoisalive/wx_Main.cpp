@@ -346,7 +346,7 @@ void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 	if (!widget)
 		return;
 
-	ipobject_t *object = dynamic_cast<ipobject_t*>(widget);
+	who::object *object = dynamic_cast<who::object*>(widget);
 	if (!object)
 		return;
 
@@ -390,7 +390,7 @@ void wx_Frame::map_lbutton_dblclk(who::window *win, int keys, int x, int y)
 
 	if (widget)
 	{
-		ipobject_t *object = dynamic_cast<ipobject_t*>(widget);
+		who::object *object = dynamic_cast<who::object*>(widget);
 		if (object)
 			object->acknowledge();
 	}
@@ -405,7 +405,7 @@ void wx_Frame::map_rbutton_up(who::window *win, int keys, int x, int y)
 {
 	if (menu_widget_)
 	{
-		ipobject_t *object = dynamic_cast<ipobject_t*>(menu_widget_);
+		who::object *object = dynamic_cast<who::object*>(menu_widget_);
 		if (object)
 		{
 			bool acknowledged = object->acknowledged();
@@ -514,7 +514,7 @@ void wx_Frame::OnMenuItem_AckSelected(wxCommandEvent& event)
 {
 	if (menu_widget_)
 	{
-		ipobject_t *object = dynamic_cast<ipobject_t*>(menu_widget_);
+		who::object *object = dynamic_cast<who::object*>(menu_widget_);
 		if (object)
 			object->acknowledge();
 	}
@@ -524,7 +524,7 @@ void wx_Frame::OnMenuItem_UnackSelected(wxCommandEvent& event)
 {
 	if (menu_widget_)
 	{
-		ipobject_t *object = dynamic_cast<ipobject_t*>(menu_widget_);
+		who::object *object = dynamic_cast<who::object*>(menu_widget_);
 		if (object)
 			object->unacknowledge();
 	}
@@ -544,7 +544,7 @@ void wx_Frame::OnMenuPing_Selected(wxCommandEvent& event)
 {
 	if (menu_widget_)
 	{
-		ipobject_t *object = dynamic_cast<ipobject_t*>(menu_widget_);
+		who::object *object = dynamic_cast<who::object*>(menu_widget_);
 		if (object)
 		{
 			try

@@ -56,7 +56,7 @@ ipmap_t::ipmap_t(who::server &server, const xml::wptree *pt)
 			p = pt->equal_range(L"object");
 			while (p.first != p.second)
 			{
-				ipobject_t *object = new ipobject_t(server_, &(*p.first).second);
+				who::object *object = new who::object(server_, &(*p.first).second);
 				object->set_parent(this);
 				object->set_show_name(show_names_);
 				childs_.push_back(object);
