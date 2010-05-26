@@ -89,7 +89,7 @@ const Gdiplus::ColorMatrix state_matrices[4] = {
 namespace who {
 
 object::object(server &server, const xml::wptree *pt)
-	: ipwidget_t(server, pt)
+	: widget(server, pt)
 	, state_matrix_( state_matrices[state_.state()] )
 	, new_state_matrix_( state_matrices[state_.state()] )
 	, state_step_(0)
@@ -254,7 +254,7 @@ bool object::animate_calc( void)
 		}
 	}
 
-	return ipwidget_t::animate_calc() || state_step_ || flash_step_;
+	return widget::animate_calc() || state_step_ || flash_step_;
 }
 
 /******************************************************************************
@@ -382,49 +382,51 @@ void object::do_check_state(void)
 	BOOST_FOREACH(ipaddr_t &addr, ipaddrs_)
 		new_state << server_.ipaddr_state(addr);
 
-	if (new_state != state_) {
-		lock();
+	if (new_state != state_)
+	{
+		{
+			scoped_lock l = create_lock();
 
-		state_ = new_state;
-		state_step_ = 2 * server_.def_anim_steps();
-		new_state_matrix_ = state_matrices[ state_.state() ];
+			state_ = new_state;
+			state_step_ = 2 * server_.def_anim_steps();
+			new_state_matrix_ = state_matrices[ state_.state() ];
 
-		/* Делаем объект мигающим */
-		if (!state_.acknowledged()) {
-			flash_step_ = 1;
-			flash_pause_ = true;
+			/* Делаем объект мигающим */
+			if (!state_.acknowledged())
+			{
+				flash_step_ = 1;
+				flash_pause_ = true;
+			}
 		}
-
-		unlock();
 
 		animate();
 	}
 
-	ipwidget_t::do_check_state();
+	widget::do_check_state();
 }
 
 /* Квитирование */
 void object::acknowledge(void)
 {
-	lock();
+	{
+		scoped_lock l = create_lock();
 
-	BOOST_FOREACH(const ipaddr_t &addr, ipaddrs_)
-		server_.acknowledge(addr);
+		BOOST_FOREACH(const ipaddr_t &addr, ipaddrs_)
+			server_.acknowledge(addr);
+	}
 	
-	unlock();
-
 	animate();
 }
 
 /* Отмена квитирования */
 void object::unacknowledge(void)
 {
-	lock();
+	{
+		scoped_lock l = create_lock();
 	
-	BOOST_FOREACH(const ipaddr_t &addr, ipaddrs_)
-		server_.unacknowledge(addr);
-
-	unlock();
+		BOOST_FOREACH(const ipaddr_t &addr, ipaddrs_)
+			server_.unacknowledge(addr);
+	}
 
 	animate();
 }
@@ -432,13 +434,13 @@ void object::unacknowledge(void)
 /******************************************************************************
 * Находится ли объект в координатах
 */
-ipwidget_t* object::hittest(float x, float y)
+widget* object::hittest(float x, float y)
 {
-	ipwidget_t *widget = ipwidget_t::hittest(x, y);
-	if (widget || alpha() == 0.0f)
-		return widget;
+	widget *widg = widget::hittest(x, y);
+	if (widg || alpha() == 0.0f)
+		return widg;
 
-	who::bitmap_ptr bitmap = class_->bitmap(state_.state());
+	bitmap_ptr bitmap = class_->bitmap(state_.state());
 	if (!bitmap)
 		return NULL;
 
@@ -463,10 +465,10 @@ ipwidget_t* object::hittest(float x, float y)
 		bitmap->GetPixel(ix, iy, &color);
 		
 		if (color.GetA() >= 128)
-			widget = this;
+			widg = this;
 	}
 
-	return widget;
+	return widg;
 }
 
 }

@@ -1,5 +1,5 @@
-﻿#ifndef IPOWNER_H
-#define IPOWNER_H
+﻿#ifndef WHO_SERVER_H
+#define WHO_SERVER_H
 
 #include "ipgui.h"
 #include "ipaddr.h"

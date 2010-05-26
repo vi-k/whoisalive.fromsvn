@@ -195,14 +195,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\ipmap.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\ipwidget.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\common\my_http.cpp"
 				>
 			</File>
@@ -243,11 +235,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\scheme.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\server.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\tiler.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\widget.cpp"
 				>
 			</File>
 			<File
@@ -277,6 +277,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\host.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ipaddr.h"
 				>
 			</File>
@@ -286,14 +290,6 @@
 			</File>
 			<File
 				RelativePath=".\ipimage.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ipmap.h"
-				>
-			</File>
-			<File
-				RelativePath=".\ipwidget.h"
 				>
 			</File>
 			<File
@@ -369,11 +365,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\scheme.h"
+				>
+			</File>
+			<File
 				RelativePath=".\server.h"
 				>
 			</File>
 			<File
 				RelativePath=".\tiler.h"
+				>
+			</File>
+			<File
+				RelativePath=".\widget.h"
 				>
 			</File>
 			<File

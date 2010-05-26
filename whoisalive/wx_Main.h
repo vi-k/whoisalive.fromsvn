@@ -2,7 +2,6 @@
  * Name:      wx_Main.h
  * Purpose:   Defines Application Frame
  * Author:    vi.k (vi.k@mail.ru)
- * Author:    vi.k (vi.k@mail.ru)
  * Created:   2010-03-30
  * Copyright: vi.k ()
  * License:
@@ -35,9 +34,9 @@ class wx_Frame: public wxFrame
 
 		who::server::ptr server_;
 		who::window *window_;
-		ipwidget_t *menu_widget_;
+		who::widget *menu_widget_;
 
-		bool open_maps(bool new_tab = true);
+		bool open_schemes(bool new_tab = true);
 
 		void map_mousewheel(who::window *win, int delta, int keys, int x, int y);
 		void map_mousemove(who::window *win, int keys, int x, int y);

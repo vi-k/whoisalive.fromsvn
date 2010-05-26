@@ -219,7 +219,7 @@ wx_Frame::wx_Frame(wxWindow* parent, wxWindowID id)
 	window_->on_keydown = boost::bind( &wx_Frame::map_keydown,this,_1,_2);
 	window_->on_keyup = boost::bind( &wx_Frame::map_keyup,this,_1,_2);
 
-	open_maps();
+	open_schemes();
 
 	m_notebook->SetSelection(0);
 }
@@ -233,32 +233,32 @@ wx_Frame::~wx_Frame()
 			(ULONG_PTR)g_OldMapPanelWndProc );
 }
 
-bool wx_Frame::open_maps(bool new_tab)
+bool wx_Frame::open_schemes(bool new_tab)
 {
 	my::http::reply reply;
 	server_->get(reply, L"/schemes.xml");
 
-	xml::wptree maps;
+	xml::wptree pt;
 	try
 	{
-		reply.to_xml(maps);
+		reply.to_xml(pt);
 	}
 	catch(my::exception &e)
 	{
 		throw e << my::param(L"request", L"/schemes.xml");
 	}
 
-	window_->add_maps(maps.get_child(L"schemes"));
+	window_->add_schemes(pt.get_child(L"schemes"));
 
 	if (new_tab)
 	{
-		int count = window_->get_maps_count();
+		int count = window_->get_schemes_count();
 		for (int i = 0; i < count; i++)
 		{
-			ipmap_t *map = window_->get_map(i);
+			who::scheme *scheme = window_->get_scheme(i);
 			wxPanel *panel = new wxPanel(m_notebook);
 			panel->Connect(wxID_ANY,wxEVT_LEFT_DOWN,(wxObjectEventFunction)&wx_Frame::skip_leftdown);
-			m_notebook->AddPage(panel, map->get_name(), false);
+			m_notebook->AddPage(panel, scheme->get_name(), false);
 		}
 	}
 
@@ -268,7 +268,7 @@ bool wx_Frame::open_maps(bool new_tab)
 void wx_Frame::OnNotebookPageChanged(wxNotebookEvent& event)
 {
 	/* Если GetSelection() вернёт значение вне диапазон, ничего не произойдёт */
-	window_->set_active_map( m_notebook->GetSelection() );
+	window_->set_active_scheme( m_notebook->GetSelection() );
 }
 
 void wx_Frame::OnQuit(wxCommandEvent& event)
@@ -311,13 +311,13 @@ void wx_Frame::map_mousewheel(who::window *win, int delta, int keys, int x, int 
 
 	//win->zoom(ds);
 
-	ipmap_t *map = window_->active_map();
-	if (map)
+	who::scheme *scheme = window_->active_scheme();
+	if (scheme)
 	{
 		float fx = (float)x;
 		float fy = (float)y;
-		map->window_to_client(&fx, &fy);
-		map->zoom(ds, fx, fy, 2);
+		scheme->window_to_client(&fx, &fy);
+		scheme->zoom(ds, fx, fy, 2);
 	}
 }
 
@@ -342,7 +342,7 @@ void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 {
 	win->mouse_end(x, y);
 
-	ipwidget_t *widget = win->hittest(x, y);
+	who::widget *widget = win->hittest(x, y);
 	if (!widget)
 		return;
 
@@ -355,12 +355,12 @@ void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 		float scale = object->lim_scale_max();
 		if (scale != 0.0f)
 		{
-			int new_z = ipmap_t::z(scale) + 1;
+			int new_z = who::scheme::z(scale) + 1;
 			scale = 1 << (new_z - 1);
-			int steps = new_z - ipmap_t::z(win->active_map()->scale());
+			int steps = new_z - who::scheme::z(win->active_scheme()->scale());
 			if (steps)
 			{
-				win->active_map()->scale__( scale, object->x(), object->y(),
+				win->active_scheme()->scale__( scale, object->x(), object->y(),
 					2 * steps);
 				return;
 			}
@@ -371,12 +371,12 @@ void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 		float scale = object->lim_scale_min();
 		if (scale != 0.0f)
 		{
-			int new_z = ipmap_t::z(scale);
+			int new_z = who::scheme::z(scale);
 			scale = 1 << (new_z - 1);
-			int steps = ipmap_t::z(win->active_map()->scale()) - new_z;
+			int steps = who::scheme::z(win->active_scheme()->scale()) - new_z;
 			if (steps)
 			{
-				win->active_map()->scale__( scale, object->x(), object->y(),
+				win->active_scheme()->scale__( scale, object->x(), object->y(),
 					2 * steps);
 				return;
 			}
@@ -386,7 +386,7 @@ void wx_Frame::map_lbutton_up(who::window *win, int keys, int x, int y)
 
 void wx_Frame::map_lbutton_dblclk(who::window *win, int keys, int x, int y)
 {
-	ipwidget_t *widget = win->hittest(x, y);
+	who::widget *widget = win->hittest(x, y);
 
 	if (widget)
 	{
@@ -426,7 +426,8 @@ void wx_Frame::map_keydown(who::window *win, int key)
 	switch (key)
 	{
 		case VK_ESCAPE:
-			if (win->active_map()) win->active_map()->unselect_all();
+			if (win->active_scheme())
+				win->active_scheme()->unselect_all();
 			break;
 
 		case ' ':
@@ -492,19 +493,19 @@ void wx_Frame::map_keyup(who::window *win, int key)
 			server_->acknowledge_all();
 			SleepEx(300, TRUE);
 
-			ipmap_t *map = window_->active_map();
-			float x = map->x();
-			float y = map->y();
-			float scale = map->scale();
+			who::scheme *scheme = window_->active_scheme();
+			float x = scheme->x();
+			float y = scheme->y();
+			float scale = scheme->scale();
 
 			window_->clear();
-			open_maps(false);
+			open_schemes(false);
 
-			window_->set_active_map( m_notebook->GetSelection() );
+			window_->set_active_scheme( m_notebook->GetSelection() );
 
-			map = window_->active_map();
-			map->set_pos(x, y, 0);
-			map->set_scale(scale, 0);
+			scheme = window_->active_scheme();
+			scheme->set_pos(x, y, 0);
+			scheme->set_scale(scale, 0);
 			break;
 		}
 	}
