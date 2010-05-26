@@ -1,6 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <hosts>
-	<host request_period_="00:00:01">127.0.0.1</host>
-	<host timeout="00:00:01.000">www.boost.org</host>
+	<host request_period="00:00:01">127.0.0.1</host>
 	<host>президент.рф</host>
+
+	<host>10.10.30.6</host>
+	<host>172.16.16.107</host>
+	<host>172.16.23.1</host>
+	<host>172.16.16.1</host>
+	<host>172.16.22.24</host>
+	<host>172.16.16.153</host>
+	<host>172.16.16.154</host>
+	<host>172.16.16.156</host>
+	<host>172.16.22.1</host>
+	<host>172.16.19.33</host>
+	<host>172.16.22.21</host>
+	<host>172.16.22.22</host>
+	<host>172.16.22.111</host>
+	<host>172.16.22.112</host>
+	<host>172.16.22.113</host>
+	<host>10.10.30.25</host>
+	<host>192.168.6.100</host>
+	<host>172.27.82.3</host>
+	<host>10.10.30.17</host>
+	<host>192.168.28.41</host>
+	<host>192.168.28.42</host>
+	<host>10.10.30.29</host>
+	<host>192.168.65.55</host>
+	<host>10.10.30.1</host>
+	<host>192.168.1.4</host>
+	<host>192.168.1.5</host>
+	<host>192.168.1.6</host>
+	<host>192.168.1.7</host>
+	<host>192.168.1.8</host>
+	<host>192.168.1.9</host>
+	<host>10.10.30.21</host>
+	<host>192.168.14.210</host>
+	<host>192.168.14.212</host>
+	<host>192.168.14.216</host>
+	<host>192.168.14.217</host>
+	<host>213.59.161.185</host>
+	<host>192.168.50.161</host>
+	<host>192.168.50.150</host>
+	<host>192.168.50.151</host>
+	<host>10.10.30.33</host>
+	<host>192.168.41.31</host>
+	<host>192.168.41.32</host>
+
+	<host>172.16.22.250</host>
+	<host>172.16.22.123</host>
+	<host>172.16.16.32</host>
+	<host>172.16.16.31</host>
+	<host>172.16.16.102</host>
+	<host>172.16.16.103</host>
+	<host>172.16.16.157</host>
+	<host>172.16.16.159</host>
+	<host>172.16.23.2</host>
+	<host>172.16.23.100</host>
+	<host>172.16.79.250</host>
+	<host>172.16.16.158</host>
+	<host>172.16.64.1</host>
+	<host>192.168.0.3</host>
+	<host>192.168.41.2</host>
+	<host>192.168.65.101</host>
+	<host>192.168.6.2</host>
+	<host>192.168.28.55</host>
+	<host>192.168.14.200</host>
+	<host>192.168.14.101</host>
+	<host>192.168.14.201</host>
+	<host>192.168.14.203</host>
+	<host>192.168.14.205</host>
+	<host>172.16.16.56</host>
+	<host>172.16.16.55</host>
 </hosts>

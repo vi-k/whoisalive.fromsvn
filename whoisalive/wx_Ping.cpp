@@ -140,14 +140,22 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 		wxTextAttr style;
 
 		if (reply_.body == "START ARCHIVE\r\n")
+		{
 			archive_mode_ = true;
+			m_ping_textctrl->SetDefaultStyle(*wxLIGHT_GREY);
+			*m_ping_textctrl << L"Начало архива\n";
+		}
 		else if (reply_.body == "END ARCHIVE\r\n")
 		{
 			archive_mode_ = false;
+			m_ping_textctrl->SetDefaultStyle(*wxLIGHT_GREY);
+			*m_ping_textctrl << L"Конец архива\n";
 
+			/*
 			m_ping_textctrl->SetDefaultStyle(last_archive_style_);
 			*m_ping_textctrl << last_archive_text_;
 			repaint();
+			*/
 		}
 		else
 		{
@@ -180,11 +188,10 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 				{
 					case pinger::ping_result::ok:
 						style = wxTextAttr(*wxGREEN);
-						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", ping.time())
-							<< L": "
+						out << my::time::to_fmt_wstring(L"[%H:%M:%S] ", ping.time())
 							<< ping.ipv4_hdr().header_length()
 							<< L" bytes from " << ping.ipv4_hdr().source_address()
-							<< L": icmp_seq=" << num
+							<< L", icmp_seq=" << num
 							<< L", ttl=" << ping.ipv4_hdr().time_to_live()
 							<< L", time=" << ping.duration().total_milliseconds() << L" ms"
 							<< L"\n";
@@ -192,8 +199,8 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 
 					case pinger::ping_result::timeout:
 						style = wxTextAttr(*wxRED);
-						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", ping.time())
-							<< L": timeout (icmp_seq=" << num
+						out << my::time::to_fmt_wstring(L"[%H:%M:%S] ", ping.time())
+							<< L"timeout (icmp_seq=" << num
 							<< L", time=" << ping.duration().total_milliseconds() << L" ms"
 							<< L")\n";
 						break;
@@ -202,14 +209,15 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 
 			m_ping_textctrl->SetDefaultStyle(style);
 			*m_ping_textctrl << out.str();
+			repaint();
 				
-			if (!archive_mode_)
-				repaint();
-			else
+			if (archive_mode_)
 			{
 				last_archive_style_ = style;
 				last_archive_text_ = out.str();
 			}
+			//else
+			//	repaint();
 		
 		} /* Разбор очередной строки */
 
