@@ -177,7 +177,7 @@ void connection::run()
 
 					out << L"START ARCHIVE\r\n";
 
-					BOOST_FOREACH(pinger::ping_result &result, results)
+					BOOST_REVERSE_FOREACH(pinger::ping_result &result, results)
 						out << pinger.result_to_wstring(result)
 							<< L"\r\n";
 
@@ -189,7 +189,7 @@ void connection::run()
 					vector<pinger::host_pinger_copy> pingers;
 					server_.pinger().pingers_copy(pingers);
 
-					BOOST_FOREACH(pinger::host_pinger_copy &pinger, pingers)
+					BOOST_REVERSE_FOREACH(pinger::host_pinger_copy &pinger, pingers)
 					{
 						vector<pinger::ping_result> results;
 						server_.pinger().results_copy(pinger.address, results);

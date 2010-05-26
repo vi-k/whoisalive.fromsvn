@@ -56,6 +56,7 @@ private:
 	typedef std::list<item> list_t;
 public:
 	typedef typename list_t::iterator iterator;
+	typedef typename list_t::reverse_iterator reverse_iterator;
 private:
 	typedef boost::unordered_map<Key, typename list_t::iterator> map_t;
 	typedef typename map_t::iterator map_iterator;
@@ -283,6 +284,12 @@ public:
 	inline iterator end()
 		{ return list_.end(); }
 	
+	inline reverse_iterator rbegin()
+		{ return list_.rbegin(); }
+
+	inline reverse_iterator rend()
+		{ return list_.rend(); }
+
     /*-
     inline list_t* operator ->()
     	{ return &list_; }
