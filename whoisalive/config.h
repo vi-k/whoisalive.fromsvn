@@ -6,8 +6,8 @@
 
 /* Версия */
 #define VERSION L"0.5.0 alpha"
-#define BUILDNO L"[build 70]"
-#define BUILDDATE L"26.05.2010"
-#define BUILDTIME L"08:59:01"
+#define BUILDNO L"[build 71]"
+#define BUILDDATE L"27.05.2010"
+#define BUILDTIME L"08:48:38"
 
 #endif
