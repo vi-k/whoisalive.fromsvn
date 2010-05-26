@@ -150,4 +150,74 @@ wstring escape(const wchar_t *ptr, int flags, int len)
 	return out;
 }
 
+string to_hex(const char *str, int len)
+{
+	static const char hex[16] =
+	{
+		'0', '1', '2', '3', '4', '5', '6', '7',
+		'8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+	};
+
+	if (len < 0)
+		len = strlen(str);
+
+	const char *ptr_in = str;
+	const char *end_in = ptr_in + len;
+
+	/* Сразу готовим буфер */
+	string out(len * 2, ' ');
+	char *ptr_out = (char*)out.c_str();
+
+	while (ptr_in != end_in)
+	{
+		char ch = *ptr_in++;
+		*ptr_out++ = hex[ ((unsigned char)ch) >> 4];
+		*ptr_out++ = hex[ ch & 0xf ];
+	}
+
+	return out;
+}
+
+string from_hex(const char *str, int len)
+{
+	if (len < 0)
+		len = strlen(str);
+
+	const char *ptr_in = str;
+	const char *end_in = ptr_in + len;
+
+	string out( (len + 1) >> 1, ' ' );
+	char *begin_out = (char*)out.c_str();
+	char *ptr_out = begin_out;
+
+	bool even = false;
+
+	while (ptr_in != end_in)
+	{
+		char ch = *ptr_in++;
+		if (ch >= 48 && ch <= 57) /* 0..9 */
+			ch -= 48;
+		else if (ch >= 65 && ch <= 70) /* A..F */
+			ch -= 55;
+		else if (ch >= 97 && ch <= 102) /* a..f */
+			ch -= 87;
+		else
+			break;
+
+		if (!even)
+			*ptr_out = ch << 4;
+		else
+			*ptr_out++ = *ptr_out | ch;
+
+		even = !even;
+	}
+
+	out.resize(ptr_out - begin_out);
+
+	/* Пользователь может проверить результат:
+		ошибка, если out.size() * 2 != len */
+
+	return out;
+}
+
 } }

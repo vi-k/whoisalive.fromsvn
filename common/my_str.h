@@ -8,15 +8,11 @@ namespace my { namespace str {
 
 std::string to_string(const wchar_t *str, int len = -1);
 inline std::string to_string(const std::wstring &str)
-{
-	return my::str::to_string(str.c_str(), (int)str.size());
-}
+	{ return my::str::to_string(str.c_str(), (int)str.size()); }
 
 std::wstring to_wstring(const char *str, int len = -1);
 inline std::wstring to_wstring(const std::string &str)
-{
-	return my::str::to_wstring(str.c_str(), (int)str.size());
-}
+	{ return my::str::to_wstring(str.c_str(), (int)str.size()); }
 
 
 enum
@@ -33,15 +29,19 @@ enum
 
 std::string escape(const char *str, int flags = escape_default, int len = -1);
 inline std::string escape(const std::string &str, int flags = escape_default)
-{
-	return my::str::escape(str.c_str(), flags, (int)str.size());
-}
+	{ return my::str::escape(str.c_str(), flags, (int)str.size()); }
 
 std::wstring escape(const wchar_t *str, int flags = escape_default, int len = -1);
 inline std::wstring escape(const std::wstring &str, int flags = escape_default)
-{
-	return my::str::escape(str.c_str(), flags, (int)str.size());
-}
+	{ return my::str::escape(str.c_str(), flags, (int)str.size()); }
+
+std::string to_hex(const char *str, int len = -1);
+inline std::string to_hex(const std::string &str)
+	{ return my::str::to_hex(str.c_str(), (int)str.size()); }
+
+std::string from_hex(const char *str, int len = -1);
+inline std::string from_hex(const std::string &str)
+	{ return my::str::from_hex(str.c_str(), (int)str.size()); }
 
 } }
 
