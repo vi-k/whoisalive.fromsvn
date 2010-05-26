@@ -3,10 +3,8 @@
 
 <scheme
 	name="Объекты слежения на карте Яндекс"
-	type="map"
 	min_scale="2.0"
-	max_scale="262144"
-	show_names="1">
+	max_scale="262144">
 
 	<object name="Ростелеком"
 		class="Ростелеком"
@@ -747,7 +745,7 @@
 
 <scheme
 	name="Схема"
-	type="scheme"
+	show_map="0"
 	min_scale="0.5"
 	max_scale="2.0">
 

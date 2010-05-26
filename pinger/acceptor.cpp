@@ -164,9 +164,8 @@ void server::on_change_state(const pinger::host_pinger_copy &pinger)
 void server::on_ping(const pinger::host_pinger_copy &pinger,
 	const pinger::ping_result &result)
 {
-	wstring str = pinger.result_to_wstring(result);
 #ifdef _DEBUG
-	wcout << str << endl;
+	wcout << pinger.result_winfo(result) << endl;
 #endif
-	ping_eventer_.add_event(pinger.address, str);
+	ping_eventer_.add_event(pinger.address, pinger.result_to_wstring(result));
 }

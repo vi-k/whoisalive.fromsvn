@@ -197,8 +197,7 @@ void connection::run()
 						out << L"START ARCHIVE\r\n";
 
 						BOOST_FOREACH(pinger::ping_result &result, results)
-							out << L"*"
-								<< pinger.result_to_wstring(result)
+							out << pinger.result_to_wstring(result)
 								<< L"\r\n";
 						
 						out << L"END ARCHIVE\r\n";

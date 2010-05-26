@@ -13,15 +13,17 @@
 	file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 */
 
+#include "ping_result.h"
+
 #include "../common/my_thread.h"
 #include "../common/my_inet.h"
 #include "../common/my_time.h"
 #include "../common/my_xml.h"
+#include "../common/my_mru.h"
 
 #include <vector>
 
 #include <boost/bind.hpp>
-#include <boost/circular_buffer.hpp>
 #include <boost/ptr_container/ptr_list.hpp>
 
 #include "icmp_header.hpp"
@@ -31,51 +33,6 @@ namespace pinger {
 
 inline posix_time::ptime now();
 inline unsigned short get_id();
-
-class ping_state
-{
-public:
-	enum type {unknown, ok, timeout};
-private:
-	type state_;
-public:
-	ping_state(type state)
-		: state_(state) {};
-
-	std::string to_string() const
-	{
-		return state_ == ping_state::ok ? "reply"
-			: state_ == ping_state::timeout ? "timeout"
-			: "unknown";
-	}
-
-	std::wstring to_wstring() const
-	{
-		return state_ == ping_state::ok ? L"reply"
-			: state_ == ping_state::timeout ? L"timeout"
-			: L"unknown";
-	}
-
-	inline bool operator ==(const ping_state &rhs) const
-		{ return state_ == rhs.state_; }
-	inline bool operator !=(const ping_state &rhs) const
-		{ return state_ != rhs.state_; }
-};
-
-/* Результат отдельного ping'а */
-struct ping_result
-{
-	unsigned short sequence_number;
-	ping_state state;
-	posix_time::ptime time_sent;
-	posix_time::time_duration time;
-	ipv4_header ipv4_hdr;
-	icmp_header icmp_hdr;
-
-	ping_result()
-		: sequence_number(0)
-		, state(ping_state::unknown) {}
-};
 
 class host_state
 {
@@ -114,6 +71,8 @@ class host_pinger
 {
 	friend class host_pinger_copy;
 
+	typedef my::mru::list<unsigned short, ping_result> results_list;
+
 private:
 	server &parent_;
 	std::wstring hostname_; /* Имя хоста */
@@ -121,7 +80,7 @@ private:
 	host_state state_; /* Состояние адреса */
 	posix_time::ptime state_changed_; /* Время изменения состояния */
 	int fails_; /* Кол-во таймаутов подряд */
-	boost::circular_buffer<ping_result> results_; /* Результаты пингов */
+	results_list results_; /* Результаты пингов */
 	unsigned short sequence_number_; /* Номер последнего пинга */
 	posix_time::ptime last_ping_time_; /* Время отправки последнего пинга */
 	icmp::socket &socket_;
@@ -130,7 +89,6 @@ private:
 	posix_time::time_duration request_period_; /* Период опроса */
 	mutex pinger_mutex_; /* Блокировка всего пингера */
 
-	ping_result* find_result_(unsigned short sequence_number);
 	void handle_timeout_(unsigned short sequence_number);
 	
 public:
@@ -160,40 +118,7 @@ public:
 
 	void results_copy(std::vector<ping_result> &v);
 
-#if 0
-	host_state::type state()
-	{
-		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-		return state_;
-	}
-
-	posix_time::ptime state_changed()
-	{
-		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-		return state_changed_;
-	}
-	
-	int fails()
-	{
-		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-		return fails_;
-	}
-
-	posix_time::time_duration timeout()
-	{
-		scoped_lock l(pinger_mutex_);
-		return timeout_;
-	}
-
-	inline posix_time::time_duration request_period()
-	{
-		scoped_lock l(pinger_mutex_);
-		return request_period_;
-	}
-#endif
-	
 	/* Изменение параметров пингера */
-
 	void set_request_period(posix_time::time_duration request_period)
 	{
 		scoped_lock l(pinger_mutex_);
@@ -229,7 +154,12 @@ public:
 		, request_period(pinger.request_period_) {}
 
 	std::wstring to_wstring() const;
-	std::wstring result_to_wstring(const ping_result &result) const;
+
+	std::wstring result_to_wstring(const ping_result &result) const
+		{ return hostname + L" " + result.to_wstring(); }
+
+	std::wstring result_winfo(const ping_result &result) const
+		{ return hostname + L" " + result.winfo(); }
 };
 
 /* Пингер-сервер */

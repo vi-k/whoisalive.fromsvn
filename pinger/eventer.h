@@ -58,8 +58,8 @@ class server
 		void run();
 		void start();
 
-		//scoped_lock get_events_lock() { return scoped_lock(events_mutex_); }
-		scoped_lock get_lock() { return scoped_lock(handlers_mutex_); }
+		scoped_lock get_lock()
+			{ return scoped_lock(handlers_mutex_); }
 
 		void add_handler(acceptor::connection *connection,
 			ip::address_v4 for_whom);
@@ -67,9 +67,7 @@ class server
 		void add_event(ip::address_v4 who, const std::wstring &what);
 
 		static bool handler_failed(const handler &_handler)
-		{
-			return !_handler.connection->socket().is_open();
-		}
+			{ return !_handler.connection->socket().is_open(); }
 };
 
 }

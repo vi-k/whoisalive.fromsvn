@@ -53,6 +53,8 @@ class ipv4_header
 public:
   ipv4_header() { std::fill(rep_, rep_ + sizeof(rep_), 0); }
 
+  unsigned char rep_[60];
+
   unsigned char version() const { return (rep_[0] >> 4) & 0xF; }
   unsigned short header_length() const { return (rep_[0] & 0xF) * 4; }
   unsigned char type_of_service() const { return rep_[1]; }
@@ -95,8 +97,6 @@ public:
 private:
   unsigned short decode(int a, int b) const
     { return (rep_[a] << 8) + rep_[b]; }
-
-  unsigned char rep_[60];
 };
 
 #endif // IPV4_HEADER_HPP
