@@ -71,20 +71,13 @@ host_pinger_copy host_pinger::copy()
 
 void host_pinger::results_copy(vector<ping_result> &v)
 {
-	scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-	BOOST_FOREACH(ping_result &result, results_)
-		v.push_back(result);
-}
+	scoped_lock l(pinger_mutex_);
 
-ping_result* host_pinger::find_result_(unsigned short sequence_number)
-{
-	scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-
-	BOOST_FOREACH(ping_result &result, results_)
-		if (result.sequence_number == sequence_number)
-			return &result;
-
-	return NULL;
+	for (results_list::iterator iter = results_.begin();
+		iter != results_.end(); iter++)
+	{
+		v.push_back(iter->value());
+	}
 }
 
 void host_pinger::run()
@@ -124,22 +117,22 @@ void host_pinger::handle_timeout_(unsigned short sequence_number)
 	{
 		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
 
-		ping_result *result_in_list = find_result_(sequence_number);
-		if (result_in_list)
+		results_list::iterator iter = results_.find(sequence_number);
+		if (iter != results_.end())
 			return;
 	}
 
 	/* Сохраняем результат (отрицательный результат - тоже результат */
 	ping_result result;
-	result.sequence_number = sequence_number;
-	result.state = ping_state::timeout;
-	result.time_sent = last_ping_time_;
-	result.time = time - last_ping_time_;
+	result.set_sequence_number(sequence_number);
+	result.set_state(ping_result::timeout);
+	result.set_time(last_ping_time_);
+	result.set_duration(time - last_ping_time_);
 
 	{	
 		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
-		results_.push_back(result);
-		
+		results_[sequence_number] = result;
+
 		/* Мы имеем копию результата, поэтому дальнейшая
 			блокировка нам не нужна */
 	}
@@ -174,13 +167,12 @@ void host_pinger::handle_timeout_(unsigned short sequence_number)
 void host_pinger::on_receive(posix_time::ptime time,
 	const ipv4_header &ipv4_hdr, const icmp_header &icmp_hdr)
 {
-	ping_result *result_in_list = NULL;
+	results_list::iterator iter;
 
 	ping_result result;
-	result.sequence_number = icmp_hdr.sequence_number();
-	result.state = ping_state::ok;
-	result.ipv4_hdr = ipv4_hdr;
-	result.icmp_hdr = icmp_hdr;
+	result.set_state(ping_result::ok);
+	result.set_ipv4_hdr(ipv4_hdr);
+	result.set_icmp_hdr(icmp_hdr);
 
 	{
 		scoped_lock l(pinger_mutex_); /* Блокируем пингер */
@@ -188,26 +180,28 @@ void host_pinger::on_receive(posix_time::ptime time,
 		/* При получении отклика, результат уже может быть в списке,
 			если ранее сработал таймаут. В этом случае исправляем старый
 			результат на новый */
-		result_in_list = find_result_(result.sequence_number);
+		unsigned short n = result.sequence_number();
 
-		if (result_in_list)
+		iter = results_.find(n);
+
+		if (iter != results_.end())
 		{
-			result.time_sent = result_in_list->time_sent;
-			result.time = time - result.time_sent;
-			*result_in_list = result;
+			result.set_time( iter->value().time() );
+			result.set_duration( time - result.time() );
 		}
 		else
 		{
-			result.time_sent = last_ping_time_;
-			result.time = time - last_ping_time_;
-			results_.push_back(result);
+			result.set_time(last_ping_time_);
+			result.set_duration(time - last_ping_time_);
 		}
+
+		results_[n] = result;
 
 		/* Мы имеем копию результата, поэтому дальнейшая
 			блокировка нам не нужна */
 	}
 
-	if (!result_in_list)
+	if (iter == results_.end())
 	{
 		timer_.cancel();
 		timer_.expires_at( last_ping_time_ + request_period_ );
@@ -219,7 +213,7 @@ void host_pinger::on_receive(posix_time::ptime time,
 	if (fails_ != 0 || state_ == host_state::unknown)
 		state_changed_ = time;
 
-	if (sequence_number_ == result.sequence_number)
+	if (sequence_number_ == result.sequence_number())
 	{
 		state_ = host_state::ok;
 		fails_ = 0;
@@ -236,7 +230,7 @@ wstring host_pinger_copy::to_wstring() const
 	wstringstream out;
 
 	out << L"<state"
-		<< L" address=\"" << my::ip::to_wstring(address) << L"\""
+		<< L" address=\"" << hostname << L"\""
 		<< L" state=\"" << state.to_wstring() << L"\""
 		<< L" state_changed=\"" << my::time::to_wstring(state_changed) << L"\"";
 		
@@ -244,24 +238,6 @@ wstring host_pinger_copy::to_wstring() const
 		out << L" fails=\"" << fails << L"\"";
 		
 	out << L"/>";
-
-	return out.str();
-}
-
-wstring host_pinger_copy::result_to_wstring(const ping_result &result) const
-{
-	wstringstream out;
-
-	out << L"<" << result.state.to_wstring()
-		<< L" address=\"" << hostname /*my::ip::to_wstring(address)*/ << L"\""
-		<< L" icmp_seq=\"" << result.sequence_number << L"\"";
-
-	if (result.state == pinger::ping_state::ok)
-		out << L" ttl=\"" << result.ipv4_hdr.time_to_live() << L"\"";
-
-	out << L" start=\"" << my::time::to_wstring(result.time_sent) << L"\""
-		<< L" time=\"" << my::time::to_wstring(result.time) << L"\""
-		<< L"/>";
 
 	return out.str();
 }

@@ -33,6 +33,8 @@
 class icmp_header
 {
 public:
+  unsigned char rep_[8];
+
   enum { echo_reply = 0, destination_unreachable = 3, source_quench = 4,
     redirect = 5, echo_request = 8, time_exceeded = 11, parameter_problem = 12,
     timestamp_request = 13, timestamp_reply = 14, info_request = 15,
@@ -67,8 +69,6 @@ private:
     rep_[a] = static_cast<unsigned char>(n >> 8);
     rep_[b] = static_cast<unsigned char>(n & 0xFF);
   }
-
-  unsigned char rep_[8];
 };
 
 template <typename Iterator>

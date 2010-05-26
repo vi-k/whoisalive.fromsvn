@@ -323,6 +323,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ping_result.h"
+				>
+			</File>
+			<File
 				RelativePath=".\pinger.h"
 				>
 			</File>
