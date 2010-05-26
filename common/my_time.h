@@ -21,9 +21,9 @@ std::wstring to_fmt_wstring(const wchar_t *fmt,
 	const posix_time::time_duration &time);
 
 inline std::wstring to_wstring(const posix_time::ptime &time)
-	{ return my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S%F %z", time); }
+	{ return my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S%F", time); }
 inline std::wstring to_wstring(const posix_time::time_duration &time)
-	{ return to_fmt_wstring(L"%-%H:%M:%S%F !", time); }
+	{ return to_fmt_wstring(L"%-%H:%M:%S%F", time); }
 
 void throw_if_fail(const posix_time::ptime &time);
 void throw_if_fail(const posix_time::time_duration &time);
@@ -35,9 +35,9 @@ posix_time::ptime to_time_fmt(const wchar_t *str, const wchar_t *fmt);
 inline posix_time::ptime to_time_fmt(const std::wstring &str, const wchar_t *fmt)
 	{ return to_time_fmt(str.c_str(), fmt); }
 inline posix_time::ptime to_time(const wchar_t *str)
-	{ return to_time_fmt(str, L"%Y-%m-%d %H:%M:%S%F %z"); }
+	{ return to_time_fmt(str, L"%Y-%m-%d %H:%M:%S%F"); }
 inline posix_time::ptime to_time(const std::wstring &str)
-	{ return to_time_fmt(str.c_str(), L"%Y-%m-%d %H:%M:%S%F %z"); }
+	{ return to_time_fmt(str.c_str(), L"%Y-%m-%d %H:%M:%S%F"); }
 
 } }
 

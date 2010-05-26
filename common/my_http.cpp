@@ -137,7 +137,11 @@ string percent_decode(const char *str, int len)
 string percent_encode(const char *str,
 	const char *escape_symbols, int len)
 {
-	static const char hex[17] = "0123456789abcdef";
+	static const char hex[16] =
+	{
+		'0', '1', '2', '3', '4', '5', '6', '7',
+		'8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+	};
 
 	if (len < 0)
 		len = strlen(str);
@@ -156,7 +160,7 @@ string percent_encode(const char *str,
 	{
 		char ch = *ptr_in++;
         /* Кодируются все специальные символы, все не ascii-символы (>127),
-        	пробел и заказынне пользователем */
+        	пробел и заказанные пользователем */
 		if (ch <= 32 || ch > 127 ||
 			escape_symbols && strchr(escape_symbols, ch))
 		{
