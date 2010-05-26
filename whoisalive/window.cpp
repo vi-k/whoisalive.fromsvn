@@ -18,13 +18,13 @@ extern HWND g_parent_wnd; /* Для отладки */
 
 namespace who {
 
-const wchar_t* widget_type(ipwidget_t *widget)
+const wchar_t* widget_type(widget *widg)
 {
 	return
-		dynamic_cast<ipmap_t*>(widget) ? L"scheme" :
-		dynamic_cast<ipimage_t*>(widget) ? L"image" :
-		dynamic_cast<object*>(widget) ? L"object" :
-		widget ? L"unknown" : L"null";
+		dynamic_cast<scheme*>(widg) ? L"scheme" :
+		dynamic_cast<ipimage_t*>(widg) ? L"image" :
+		dynamic_cast<object*>(widg) ? L"object" :
+		widg ? L"unknown" : L"null";
 }
 
 #pragma warning(disable:4355) /* 'this' : used in base member initializer list */
@@ -36,7 +36,7 @@ window::window(server &server, HWND parent)
 	, w_(0)
 	, h_(0)
 	, bg_color_(255,255,255)
-	, active_map_(NULL)
+	, active_scheme_(NULL)
 	, mouse_mode_(mousemode::none)
 	, mouse_start_x_(0)
 	, mouse_start_y_(0)
@@ -77,7 +77,7 @@ window::~window()
 	
 	delete_link();
 
-	maps_.clear();
+	schemes_.clear();
 }
 
 /* Анимация карты */
@@ -90,8 +90,8 @@ void window::anim_thread_proc(void)
 	{
 		/* Анимируются все карты */
 		bool anim = false;
-		BOOST_FOREACH(ipmap_t &map, maps_)
-			if (map.animate_calc())
+		BOOST_FOREACH(who::scheme &scheme, schemes_)
+			if (scheme.animate_calc())
 				anim = true;
 
 		/* ... но прорисовывается только одно - активное */
@@ -99,15 +99,15 @@ void window::anim_thread_proc(void)
 
 		/* Для отладки */
 		#ifdef _DEBUG
-		if (active_map_)
+		if (active_scheme_)
 		{
 			static int count = 0;
 			wchar_t buf[200];
 
 			swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"[%08X] %d - %.3f (%d) - %d",
 				hwnd_, ++count,
-				active_map_->scale(), GetCurrentThreadId(),
-				ipmap_t::z(active_map_->scale()) );
+				active_scheme_->scale(), GetCurrentThreadId(),
+				scheme::z(active_scheme_->scale()) );
 
 			SetWindowText(g_parent_wnd, buf);
 		}
@@ -393,14 +393,14 @@ void window::on_mouse_event_(
 /******************************************************************************
 * Добавление карты
 */
-void window::add_maps(xml::wptree &maps)
+void window::add_schemes(xml::wptree &config)
 {
-	BOOST_FOREACH(xml::wptree::value_type &v, maps)
+	BOOST_FOREACH(xml::wptree::value_type &v, config)
 		if (v.first == L"scheme")
 		{
-			ipmap_t *map = new ipmap_t(server_, &v.second);
-			map->set_window(this);
-			maps_.push_back(map);
+			who::scheme *scheme = new who::scheme(server_, &v.second);
+			scheme->set_window(this);
+			schemes_.push_back(scheme);
 		}
 }
 
@@ -426,12 +426,12 @@ void window::set_link(HWND parent)
 			0, 0, w, h, parent, NULL, NULL, (LPVOID)this);
 
 		/* Выравниваем все карты относительно нового parent'а */
-		BOOST_FOREACH(ipmap_t &map, maps_)
-			map.set_first_activation(true);
+		BOOST_FOREACH(who::scheme &scheme, schemes_)
+			scheme.set_first_activation(true);
 
 		set_size(w, h);
-		if (active_map_)
-			set_active_map_(active_map_);
+		if (active_scheme_)
+			set_active_scheme_(active_scheme_);
 	}
 }
 
@@ -464,7 +464,7 @@ void window::paint_( void)
 		Gdiplus::SolidBrush brush( focused_ ? bg_color_ : Gdiplus::Color(248, 248, 248) );
 		canvas_->FillRectangle(&brush, 0, 0, w_, h_);
 
-		if (active_map_)
+		if (active_scheme_)
 		{
 			/* Выделение - расчёт */
 			if (mouse_mode_ == mousemode::select)
@@ -502,10 +502,10 @@ void window::paint_( void)
 				{
 					/* Временное выделение widget'ов */
 					int count = 0;
-					BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs())
-						if (widget.in_rect(select_rect_))
+					BOOST_FOREACH(widget &widg, select_parent_->childs())
+						if (widg.in_rect(select_rect_))
 						{
-							widget.tmp_select();
+							widg.tmp_select();
 							count++;
 						}
 
@@ -514,7 +514,7 @@ void window::paint_( void)
 				}
 			}
 
-			active_map_->paint( canvas_.get() );
+			active_scheme_->paint( canvas_.get() );
 
 #ifdef _DEBUG
 #if 0
@@ -526,9 +526,9 @@ void window::paint_( void)
 
 			float x = (float)( pt.x - rt.left );
 			float y = (float)( pt.y - rt.top );
-			active_map_->parent_to_client(&x, &y);
+			active_scheme_->parent_to_client(&x, &y);
 
-			ipwidget_t *widget = active_map_->hittest(x, y);
+			widget *widg = active_scheme_->hittest(x, y);
 
 			Gdiplus::Font font(L"Tahoma", 10, 0, Gdiplus::UnitPixel);
 			Gdiplus::SolidBrush brush( Gdiplus::Color(0, 0, 0) );
@@ -540,9 +540,9 @@ void window::paint_( void)
 					&font, Gdiplus::PointF(0.0f, 0.0f), &brush);
 
 			swprintf_s( buf, sizeof(buf) / sizeof(*buf), L"object: [%s], childs=%d, parent=[%s]",
-					widget_type(widget),
-					widget->childs().size(),
-					widget_type(widget->parent()));
+					widget_type(widg),
+					widg->childs().size(),
+					widget_type(widg->parent()));
 			canvas_->DrawString( buf, wcslen(buf),
 					&font, Gdiplus::PointF(0.0f, 12.0f), &brush);
 
@@ -596,12 +596,11 @@ void window::paint_( void)
 /******************************************************************************
 * Установка текущей карты
 */
-void window::set_active_map_(ipmap_t *map)
+void window::set_active_scheme_(who::scheme *scheme)
 {
-	active_map_ = map;
-	if ( map->first_activation() ) {
-		map->align( (float)w_, (float)h_ );
-	}
+	active_scheme_ = scheme;
+	if (scheme->first_activation())
+		scheme->align( (float)w_, (float)h_ );
 
 	animate();
 }
@@ -609,18 +608,18 @@ void window::set_active_map_(ipmap_t *map)
 /******************************************************************************
 * Установка текущей карты
 */
-void window::set_active_map(int index)
+void window::set_active_scheme(int index)
 {
-	BOOST_FOREACH(ipmap_t &map, maps_) {
-        if (index-- == 0) set_active_map_(&map);
-	}
+	BOOST_FOREACH(who::scheme &scheme, schemes_)
+        if (index-- == 0)
+			set_active_scheme_(&scheme);
 }
 
-ipmap_t* window::get_map(int index)
+scheme* window::get_scheme(int index)
 {
-	BOOST_FOREACH(ipmap_t &map, maps_) {
-        if (index-- == 0) return &map;
-	}
+	BOOST_FOREACH(who::scheme &scheme, schemes_)
+        if (index-- == 0)
+			return &scheme;
 
 	return NULL;
 }
@@ -649,8 +648,8 @@ void window::set_size(int w, int h)
 
 void window::do_check_state(void)
 {
-	BOOST_FOREACH(ipmap_t &map, maps_)
-		map.do_check_state();
+	BOOST_FOREACH(who::scheme &scheme, schemes_)
+		scheme.do_check_state();
 }
 
 /******************************************************************************
@@ -658,7 +657,7 @@ void window::do_check_state(void)
 */
 void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 {
-	if (!active_map_ || mm == mousemode::none)
+	if (!active_scheme_ || mm == mousemode::none)
 		return;
 
 	if (GetCapture() != hwnd_)
@@ -685,7 +684,7 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 			/* Запоминаем нынешние координаты карты, во-первых, для смещения
 				относительно них, во-вторых, чтобы вернуть карту на место
 				в случае отмены */
-			active_map_->save_pos();
+			active_scheme_->save_pos();
 			break;
 
 		/* Выделяем объекты на карте */
@@ -694,14 +693,14 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 		{
 			float fx = (float)x;
 			float fy = (float)y;
-			active_map_->parent_to_client(&fx, &fy);
+			active_scheme_->parent_to_client(&fx, &fy);
 
-			select_parent_ = active_map_->hittest(fx, fy);
+			select_parent_ = active_scheme_->hittest(fx, fy);
 
 			/* Ограничиваем движения мыши
 				Для карты не ограничиваем - при нажатии вне карты курсор
 				некрасиво перемещается внутрь */
-			if (select_parent_ != active_map_)
+			if (select_parent_ != active_scheme_)
 			{
 				Gdiplus::Rect rect =
 					rectF_to_rect( select_parent_->rect_in_window() );
@@ -716,9 +715,9 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 			}
 
 			if (sm == selectmode::normal)
-				active_map_->unselect_all();
+				active_scheme_->unselect_all();
 
-			if (select_parent_ == active_map_)
+			if (select_parent_ == active_scheme_)
 				mouse_mode_ = mousemode::select;
 
 			break;
@@ -733,7 +732,7 @@ void window::mouse_start(mousemode::t mm, int x, int y, selectmode::t sm)
 */
 void window::mouse_move_to(int x, int y)
 {
-	if (!active_map_)
+	if (!active_scheme_)
 		return;
 
 	switch (mouse_mode_)
@@ -745,7 +744,7 @@ void window::mouse_move_to(int x, int y)
 
 		case mousemode::move:
 			/* Сдвиг делаем относительно ранее сохранённых координат */
-			active_map_->move_from_saved( (float)(x - mouse_start_x_),
+			active_scheme_->move_from_saved( (float)(x - mouse_start_x_),
 				(float)(y - mouse_start_y_) );
 			animate();
 			break;
@@ -769,7 +768,7 @@ void window::mouse_move_to(int x, int y)
 */
 void window::mouse_end(int x, int y)
 {
-	if (!active_map_)
+	if (!active_scheme_)
 		return;
 
 	mouse_move_to(x, y);
@@ -785,8 +784,10 @@ void window::mouse_end(int x, int y)
 			if (select_parent_->tmp_selected())
 				select_parent_->select();
 			else
-				BOOST_FOREACH(ipwidget_t &widget, select_parent_->childs())
-					if (widget.tmp_selected()) widget.select();
+				BOOST_FOREACH(widget &widg, select_parent_->childs())
+					if (widg.tmp_selected())
+						widg.select();
+			
 			select_parent_ = NULL;
 			break;
 
@@ -814,8 +815,8 @@ void window::mouse_cancel(void)
 			break;
 
 		case mousemode::move:
-			if (active_map_)
-				active_map_->restore_pos();
+			if (active_scheme_)
+				active_scheme_->restore_pos();
 			break;
 
 		case mousemode::select:
@@ -824,9 +825,9 @@ void window::mouse_cancel(void)
 			break;
 
 		case mousemode::edit:
-			//if (active_map_)
+			//if (active_scheme_)
 				/*TODO: восстановление позиций выделенных объектов */
-				//active_map_->restore_pos();
+				//active_scheme_->restore_pos();
 			break;
 	}
 
@@ -842,16 +843,16 @@ void window::mouse_cancel(void)
 /******************************************************************************
 * Кто под курсором?
 */
-ipwidget_t* window::hittest(int x, int y)
+widget* window::hittest(int x, int y)
 {
-	if (!active_map_)
+	if (!active_scheme_)
 		return NULL;
 
 	float fx = (float)x;
 	float fy = (float)y;
-	active_map_->window_to_client(&fx, &fy);
+	active_scheme_->window_to_client(&fx, &fy);
 
-	return active_map_->hittest(fx, fy);
+	return active_scheme_->hittest(fx, fy);
 }
 
 /******************************************************************************
@@ -859,8 +860,8 @@ ipwidget_t* window::hittest(int x, int y)
 */
 void window::clear(void)
 {
-	active_map_ = NULL;
-	maps_.clear();
+	active_scheme_ = NULL;
+	schemes_.clear();
 }
 
 /******************************************************************************
@@ -868,12 +869,12 @@ void window::clear(void)
 */
 void window::zoom(float ds)
 {
-	if (active_map_)
+	if (active_scheme_)
 	{
 		float fx = (float)( w_ / 2 );
 		float fy = (float)( h_ / 2 );
-		active_map_->parent_to_client(&fx, &fy);
-		active_map_->zoom(ds, fx, fy);
+		active_scheme_->parent_to_client(&fx, &fy);
+		active_scheme_->zoom(ds, fx, fy);
 	}
 }
 

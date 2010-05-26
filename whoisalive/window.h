@@ -1,10 +1,10 @@
-﻿#ifndef IPWINDOW_H
-#define IPWINDOW_H
+﻿#ifndef WHO_WINDOW_H
+#define WHO_WINDOW_H
 
 #include "ipgui.h"
 #include "ipaddr.h"
-#include "ipwidget.h"
-#include "ipmap.h"
+#include "widget.h"
+#include "scheme.h"
 
 #include "../common/my_thread.h"
 #include "../common/my_http.h"
@@ -43,14 +43,14 @@ private:
 	std::auto_ptr<Gdiplus::Bitmap> bitmap_;
 	std::auto_ptr<Gdiplus::Graphics> canvas_;
 	Gdiplus::Color bg_color_;
-	ipmap_t *active_map_;
-	boost::ptr_list<ipmap_t> maps_;
+	scheme *active_scheme_;
+	boost::ptr_list<scheme> schemes_;
 	mousemode::t mouse_mode_;
 	int mouse_start_x_;
 	int mouse_start_y_;
 	int mouse_end_x_;
 	int mouse_end_y_;
-	ipwidget_t *select_parent_;
+	widget *select_parent_;
 	Gdiplus::RectF select_rect_;
 	mutex canvas_mutex_;
 
@@ -61,7 +61,7 @@ private:
 	inline LRESULT wndproc_(HWND hwnd, UINT uMsg,
 			WPARAM wParam, LPARAM lParam);
 
-	void set_active_map_(ipmap_t *map);
+	void set_active_scheme_(who::scheme *scheme);
 		
 	inline void on_mouse_event_(
 		const boost::function<void (window*, int keys, int x, int y)> &f,
@@ -92,7 +92,7 @@ public:
 
 	inline HWND hwnd(void)
 		{ return hwnd_; }
-	inline ipwidget_t* select_parent(void)
+	inline widget* select_parent(void)
 		{ return select_parent_; }
 	inline Gdiplus::RectF select_rect(void)
 		{ return select_rect_; }
@@ -103,18 +103,18 @@ public:
 
 	void animate(void);
 
-	void add_maps(xml::wptree &maps);
+	void add_schemes(xml::wptree &config);
 
 	void set_link(HWND parent);
 	void delete_link(void);
 	void on_destroy(void);
 
-	void set_active_map(int index);
-	inline ipmap_t* active_map(void)
-		{ return active_map_; }
-	ipmap_t* get_map(int index);
-	inline int get_maps_count(void)
-		{ return maps_.size(); }
+	void set_active_scheme(int index);
+	inline scheme* active_scheme(void)
+		{ return active_scheme_; }
+	scheme* get_scheme(int index);
+	inline int get_schemes_count(void)
+		{ return schemes_.size(); }
 
 	void set_size(int w, int h);
 
@@ -130,14 +130,14 @@ public:
 
 	void set_scale(float scale)
 	{
-		if (active_map_)
-			active_map_->set_scale(scale);
+		if (active_scheme_)
+			active_scheme_->set_scale(scale);
 	}
 
 	void set_pos(float x, float y)
 	{
-		if (active_map_)
-			active_map_->set_pos(x, y);
+		if (active_scheme_)
+			active_scheme_->set_pos(x, y);
 	}
 
 	inline mousemode::t mouse_mode(void)
@@ -145,11 +145,11 @@ public:
 
 	void align(void)
 	{
-		if (active_map_)
-			active_map_->align( (float)w_, (float)h_ );
+		if (active_scheme_)
+			active_scheme_->align( (float)w_, (float)h_ );
 	}
 
-	ipwidget_t* hittest(int x, int y);
+	widget* hittest(int x, int y);
 
 	void clear(void);
 };

@@ -1,11 +1,11 @@
 ﻿#include "ipimage.h"
-#include "ipmap.h"
+#include "scheme.h"
 #include "server.h"
 
 using namespace std;
 
 ipimage_t::ipimage_t(who::server &server, const xml::wptree *pt)
-	: ipwidget_t(server, pt)
+	: who::widget(server, pt)
 	, w_(0.0f)
 	, h_(0.0f)
 {
@@ -55,18 +55,21 @@ Gdiplus::RectF ipimage_t::own_rect( void)
 */
 void ipimage_t::paint_self( Gdiplus::Graphics *canvas)
 {
-	if (bitmap_.get()) {
+	if (bitmap_.get())
+	{
 		Gdiplus::RectF rect = own_rect();
 		client_to_window(&rect);
 
 		Gdiplus::ImageAttributes ia;
 
-		const Gdiplus::ColorMatrix static_matrix = {
+		const Gdiplus::ColorMatrix static_matrix =
+		{
 			1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
 			0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
 			0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
 			0.0f, 0.0f, 0.0f, 1.0f, 0.0f,
-			0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+			0.0f, 0.0f, 0.0f, 0.0f, 1.0f
+		};
 		
 		Gdiplus::ColorMatrix matrix = static_matrix;
 		matrix.m[3][3] = alpha();
@@ -85,28 +88,32 @@ void ipimage_t::paint_self( Gdiplus::Graphics *canvas)
 			float w = (float)bitmap_->GetWidth();
 			float h = (float)bitmap_->GetHeight();
 
-			if (dx > 0.0f) {
+			if (dx > 0.0f)
+			{
 				x = dx / rect.Width * w;
 				w -= x;
 				rect.X = 0.0f;
 				rect.Width -= dx;
 			}
 		
-			if (dy > 0.0f) {
+			if (dy > 0.0f)
+			{
 				y = dy / rect.Height * h;
 				h -= y;
 				rect.Y = 0.0f;
 				rect.Height -= dy;
 			}
 
-			float ww = (float)window()->w();
-			float wh = (float)window()->h();
-			if (rect.Width > ww) {
+			float ww = (float)get_window()->w();
+			float wh = (float)get_window()->h();
+			if (rect.Width > ww)
+			{
 				w -= (rect.Width - ww) / rect.Width * w;
 				rect.Width = ww;
 			}
 
-			if (rect.Height > wh) {
+			if (rect.Height > wh)
+			{
 				h -= (rect.Height - wh) / rect.Height * h;
 				rect.Height = wh;
 			}
@@ -125,13 +132,12 @@ void ipimage_t::paint_self( Gdiplus::Graphics *canvas)
 	}
 }
 
-/******************************************************************************
-*/
-ipwidget_t* ipimage_t::hittest(float x, float y)
+who::widget* ipimage_t::hittest(float x, float y)
 {
-	ipwidget_t *widget = ipwidget_t::hittest(x, y);
+	who::widget *widg = widget::hittest(x, y);
 
-	if (!widget) {
+	if (!widg)
+	{
 		Gdiplus::RectF rect = client_rect();
 
 		int bmp_w = bitmap_->GetWidth();
@@ -139,21 +145,20 @@ ipwidget_t* ipimage_t::hittest(float x, float y)
 		int ix = (int)( (x - rect.X) * bmp_w / rect.Width + 0.5f );
 		int iy = (int)( (y - rect.Y) * bmp_h / rect.Height + 0.5f );
 
-		if (ix>=0 && ix<bmp_w && iy>=0 && iy<bmp_h) {
-
+		if (ix>=0 && ix<bmp_w && iy>=0 && iy<bmp_h)
+		{
 			Gdiplus::Color color;
 			bitmap_->GetPixel(ix, iy, &color);
 
-			if (color.GetA() >= 128) widget = this;
+			if (color.GetA() >= 128)
+				widg = this;
 		}
 	}
 
-	return widget;
+	return widg;
 }
 
-/******************************************************************************
-*/
 bool ipimage_t::animate_calc(void)
 {
-	return ipwidget_t::animate_calc();
+	return widget::animate_calc();
 }

@@ -3,6 +3,7 @@
 
 #include "server.h"
 #include "ipaddr.h"
+#include "../pinger/ping_result.h"
 
 #include "../common/my_inet.h"
 #include "../common/my_http.h"
@@ -23,19 +24,10 @@ class wxFlexGridSizer;
 #include <wx/textctrl.h> 
 #include <wx/bitmap.h> 
 
-struct ping_info
-{
-	enum state_t {unknown, reply, timeout};
-	bool is_archive;
-	state_t state;
-	posix_time::ptime start;
-	posix_time::time_duration time;
-};
-
 class wx_Ping: public wxFrame
 {
 private:
-	typedef my::mru::list<unsigned short, ping_info> pings_list;
+	typedef my::mru::list<unsigned short, pinger::ping_result> pings_list;
 
 	bool terminate_;
 	who::server &server_;

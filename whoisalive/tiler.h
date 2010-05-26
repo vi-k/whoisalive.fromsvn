@@ -1,5 +1,5 @@
-﻿#ifndef TILER_H
-#define TILER_H
+﻿#ifndef WHO_TILER_H
+#define WHO_TILER_H
 
 #include "ipgui.h"
 

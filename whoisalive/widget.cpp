@@ -1,11 +1,13 @@
-﻿#include "ipwidget.h"
-#include "ipmap.h"
+﻿#include "widget.h"
+#include "scheme.h"
 #include "window.h"
 #include "server.h"
 
 #include <boost/foreach.hpp>
 
-ipwidget_t::ipwidget_t(who::server &server, const xml::wptree *pt)
+namespace who {
+
+widget::widget(who::server &server, const xml::wptree *pt)
 	: server_(server)
 	, parent_(NULL)
 	, x_(0.0f)
@@ -37,91 +39,102 @@ ipwidget_t::ipwidget_t(who::server &server, const xml::wptree *pt)
 	}
 }
 
-bool ipwidget_t::animate_calc(void)
+bool widget::animate_calc(void)
 {
 	bool anim = false;
 
 	/* Сначала себя */
-	if (xy_step_) {
+	if (xy_step_)
+	{
 		x_ += (new_x_ - x_) / xy_step_;
 		y_ += (new_y_ - y_) / xy_step_;
 		xy_step_--;
 	}
 
-	if (scale_step_) {
+	if (scale_step_)
+	{
 		scale_ += (new_scale_ - scale_) / scale_step_;
 		scale_step_--;
 	}
 
 	/* Выход за рамки масштаба */
-	float map_scale = get_map()->scale();
-	if (map_scale < lim_scale_min_ || lim_scale_max_ != 0.0f
-			&& get_map()->scale() >= lim_scale_max_) {
-		if (new_alpha_ > 0.0f) {
+	float scheme_scale = get_scheme()->scale();
+	if (scheme_scale < lim_scale_min_ || lim_scale_max_ != 0.0f
+		&& get_scheme()->scale() >= lim_scale_max_)
+	{
+		if (new_alpha_ > 0.0f)
+		{
 			new_alpha_ = 0.0f;
 			alpha_step_ = server_.def_anim_steps();
 		}
 	}
-	else if (new_alpha_ == 0.0f) {
+	else if (new_alpha_ == 0.0f)
+	{
 		new_alpha_ = 1.0f;
 		alpha_step_ = server_.def_anim_steps();
 	}
 
-	if (alpha_step_) {
+	if (alpha_step_)
+	{
 		alpha_ += (new_alpha_ - alpha_) / alpha_step_;
 		alpha_step_--;
 	}
 
 	/* ... затем и "детей" */
-	BOOST_FOREACH(ipwidget_t &widget, childs_) {
-		if (widget.animate_calc()) anim = true;
-	}
+	BOOST_FOREACH(widget &widg, childs_)
+		if (widg.animate_calc())
+			anim = true;
 
 	/* Ещё надо будет анимировать? */
 	return anim || xy_step_ || scale_step_ || alpha_step_;
 }
 
-void ipwidget_t::set_scale(float new_scale, int steps)
+void widget::set_scale(float new_scale, int steps)
 {
-	lock();
+	{
+		scoped_lock l = create_lock();
 
-	if (steps <= 0) steps = 1;
-	else steps *= server_.def_anim_steps();
+		if (steps <= 0)
+			steps = 1;
+		else
+			steps *= server_.def_anim_steps();
 
-	new_scale_ = new_scale;
-	scale_step_ = steps;
-
-	unlock();
+		new_scale_ = new_scale;
+		scale_step_ = steps;
+	}
 
 	animate();
 }
 
-void ipwidget_t::set_pos(float new_x, float new_y, int steps)
+void widget::set_pos(float new_x, float new_y, int steps)
 {
-	lock();
+	{
+		scoped_lock l = create_lock();
 
-	if (steps <= 0) steps = 1;
-	else steps *= server_.def_anim_steps();
+		if (steps <= 0)
+			steps = 1;
+		else
+			steps *= server_.def_anim_steps();
 
-	new_x_ = new_x;
-	new_y_ = new_y;
-	xy_step_ = steps;
-
-	unlock();
+		new_x_ = new_x;
+		new_y_ = new_y;
+		xy_step_ = steps;
+	}
 
 	animate();
 }
 
-ipwidget_t* ipwidget_t::hittest(float x, float y)
+widget* widget::hittest(float x, float y)
 {
-	BOOST_REVERSE_FOREACH(ipwidget_t &child, childs_) {
+	BOOST_REVERSE_FOREACH(widget &child, childs_)
+	{
 		float cx = x;
 		float cy = y;
 		child.parent_to_client(&cx, &cy);
 
-		ipwidget_t *widget = child.hittest(cx, cy);
-
-		if (widget) return widget;
+		widget *widg = child.hittest(cx, cy);
+		if (widg)
+			return widg;
 	}
 
 	return NULL;
@@ -129,10 +142,11 @@ ipwidget_t* ipwidget_t::hittest(float x, float y)
 
 /* Выделение объекта. Для этого снимаем выделение со всех родителей и детей,
 	т.к. у нас родитель не может быть выделен одновременно с детьми */
-void ipwidget_t::select(void)
+void widget::select(void)
 {
-	ipwidget_t *parent = parent_;
-	while (parent) {
+	widget *parent = parent_;
+	while (parent)
+	{
 		parent->unselect();
 		parent = parent->parent_;
 	}
@@ -145,7 +159,7 @@ void ipwidget_t::select(void)
 	animate();
 }
 
-void ipwidget_t::unselect(void)
+void widget::unselect(void)
 {
 	if (tmp_selected_) {
 		tmp_selected_ = false;
@@ -158,16 +172,15 @@ void ipwidget_t::unselect(void)
 	}
 }
 
-void ipwidget_t::unselect_all(void)
+void widget::unselect_all(void)
 {
 	unselect();
 
-	BOOST_FOREACH(ipwidget_t &widget, childs_) {
-		widget.unselect_all();
-	}
+	BOOST_FOREACH(widget &child, childs_)
+		child.unselect_all();
 }
 
-bool ipwidget_t::in_rect(Gdiplus::RectF in_r)
+bool widget::in_rect(Gdiplus::RectF in_r)
 {
 	Gdiplus::RectF obj_r = rect_in_parent();
 
@@ -198,73 +211,77 @@ bool ipwidget_t::in_rect(Gdiplus::RectF in_r)
 
 /******************************************************************************
 */
-void ipwidget_t::paint(Gdiplus::Graphics *canvas)
+void widget::paint(Gdiplus::Graphics *canvas)
 {
-	if (alpha() == 0.0f) return;
+	if (alpha() == 0.0f)
+		return;
 
 	paint_self(canvas);
 
 	/* Рисуем линии */
-	BOOST_FOREACH(ipwidget_t &widget, childs_) {
-		who::object *object1 = dynamic_cast<who::object*>(&widget);
+	BOOST_FOREACH(widget &widg, childs_)
+	{
+		object *object1 = dynamic_cast<object*>(&widg);
 
-		if (object1 && object1->alpha() != 0.0f) {
-			BOOST_FOREACH(const ipaddr_t &addr, object1->ipaddrs()) {
-				BOOST_FOREACH(ipwidget_t &widget, childs_) {
-					who::object *object2 = dynamic_cast<who::object*>(&widget);
-					if (object2 && addr == object2->link()) {
-						float x1 = object1->x_;
-						float y1 = object1->y_;
-						float x2 = object2->x_;
-						float y2 = object2->y_;
-						client_to_window(&x1, &y1);
-						client_to_window(&x2, &y2);
+		if (object1 && object1->alpha() != 0.0f)
+		BOOST_FOREACH(const ipaddr_t &addr, object1->ipaddrs())
+		BOOST_FOREACH(widget &widg, childs_)
+		{
+			object *object2 = dynamic_cast<object*>(&widg);
+			if (object2 && addr == object2->link())
+			{
+				float x1 = object1->x_;
+				float y1 = object1->y_;
+				float x2 = object2->x_;
+				float y2 = object2->y_;
+				client_to_window(&x1, &y1);
+				client_to_window(&x2, &y2);
 						
-						x1 += object1->offs_x();
-						y1 += object1->offs_y();
-						x2 += object2->offs_x();
-						y2 += object2->offs_y();
+				x1 += object1->offs_x();
+				y1 += object1->offs_y();
+				x2 += object2->offs_x();
+				y2 += object2->offs_y();
 
-						BYTE a = (int)( 255.0f * object2->full_alpha() * 0.7f);
+				BYTE a = (int)( 255.0f * object2->full_alpha() * 0.7f);
 						
-						if (a) {
-							Gdiplus::Color color(a, 0, 0, 0);
-							switch ( object2->state() ) {
-								case ipstate::unknown: color = Gdiplus::Color(a, 0, 0, 255); break;
-								case ipstate::ok: color = Gdiplus::Color(a, 0, 192, 0); break;
-								case ipstate::warn: color = Gdiplus::Color(a, 192, 192, 0); break;
-								case ipstate::fail: color = Gdiplus::Color(a, 255, 0, 0); break;
-							}
-
-							float thickness = 0.0f;
-							
-							switch ( object2->link_type() ) {
-								case who::link_type::wire:
-									thickness = 6.0f;
-									break;
-								case who::link_type::optics:
-									thickness = 12.0f;
-									break;
-								case who::link_type::air:
-									thickness = 2.0f;
-									break;
-							}
-
-							Gdiplus::Pen pen(color, thickness);
-							canvas->DrawLine(&pen, x1, y1, x2, y2);
-						}
+				if (a)
+				{
+					Gdiplus::Color color(a, 0, 0, 0);
+					switch (object2->state())
+					{
+						case ipstate::unknown: color = Gdiplus::Color(a, 0, 0, 255); break;
+						case ipstate::ok: color = Gdiplus::Color(a, 0, 192, 0); break;
+						case ipstate::warn: color = Gdiplus::Color(a, 192, 192, 0); break;
+						case ipstate::fail: color = Gdiplus::Color(a, 255, 0, 0); break;
 					}
-				}
-			}
 
-		}
+					float thickness = 0.0f;
+							
+					switch (object2->link_type())
+					{
+						case who::link_type::wire:
+							thickness = 6.0f;
+							break;
+						case who::link_type::optics:
+							thickness = 12.0f;
+							break;
+						case who::link_type::air:
+							thickness = 2.0f;
+							break;
+					}
+
+					Gdiplus::Pen pen(color, thickness);
+					canvas->DrawLine(&pen, x1, y1, x2, y2);
+				} /* if (a)*/
+			} /* if (object2 && addr == object2->link()) */
+		} /* if ... BOOST_FOREACH ... BOOST_FOREACH */
 	}
 
-	BOOST_FOREACH(ipwidget_t &widget, childs_) {
-		widget.paint(canvas);
-	}
+	BOOST_FOREACH(widget &child, childs_)
+		child.paint(canvas);
 
-	if (selected()) {
+	if (selected())
+	{
 		Gdiplus::Rect rs = rectF_to_rect( rect_in_window() );
 
 		Gdiplus::Color color_pen;
@@ -272,7 +289,7 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 		Gdiplus::Pen pen(color_pen, 1);
 
 		Gdiplus::Color color_brush(color_pen.GetValue() & 0xFFFFFF |
-				(tmp_selected_ ? 0x80000000 : 0x40000000));
+			(tmp_selected_ ? 0x80000000 : 0x40000000));
 		Gdiplus::SolidBrush brush(color_brush);
 
 		/* FillRectangle рисует ровно нужный нам прямоугольник */
@@ -293,18 +310,18 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 		canvas->DrawLine( &pen, (float)rs.X, y, (float)(rs.X + rs.Width - 1), y );
 	}
 
-	who::window *win = window();
+	window *win = get_window();
 
 	/* Выделение */
-	if (win->select_parent() == this) {
-
+	if (win->select_parent() == this)
+	{
 		/* Рамка вокруг select_parent'а */
 		Gdiplus::Rect rect = rectF_to_rect( rect_in_window() );
 		Gdiplus::Color color(0, 0, 0);
 		Gdiplus::Pen pen(color, 1);
 
 		canvas->DrawRectangle(&pen, rect.X, rect.Y,
-				rect.Width - 1, rect.Height - 1);
+			rect.Width - 1, rect.Height - 1);
 
 		/* Выделительная рамка */
 		color.SetFromCOLORREF( GetSysColor(COLOR_HIGHLIGHT) );
@@ -319,18 +336,19 @@ void ipwidget_t::paint(Gdiplus::Graphics *canvas)
 
 		canvas->FillRectangle(&brush, rect);
 		canvas->DrawRectangle(&pen, rect.X, rect.Y,
-				rect.Width - 1, rect.Height - 1);
+			rect.Width - 1, rect.Height - 1);
 	}
 }
 
 /******************************************************************************
 * Координаты и размеры widget'а
 */
-Gdiplus::RectF ipwidget_t::client_rect(void)
+Gdiplus::RectF widget::client_rect(void)
 {
 	Gdiplus::RectF rect = own_rect();
 
-	BOOST_FOREACH(ipwidget_t &child, childs_) {
+	BOOST_FOREACH(widget &child, childs_)
+	{
 		Gdiplus::RectF child_rect = child.client_rect();
 		child.client_to_parent(&child_rect);
 		rect = maxrect(rect, child_rect);
@@ -342,31 +360,37 @@ Gdiplus::RectF ipwidget_t::client_rect(void)
 /******************************************************************************
 * Координаты и размеры widget'а
 */
-Gdiplus::RectF ipwidget_t::objects_rect(void)
+Gdiplus::RectF widget::objects_rect(void)
 {
 	Gdiplus::RectF rect(0.0f, 0.0f, -10.0f, -10.0f);
 
 	who::object *object = dynamic_cast<who::object*>(this);
-	if (object) rect = own_rect();
+	if (object)
+		rect = own_rect();
 
-	BOOST_FOREACH(ipwidget_t &child, childs_) {
+	BOOST_FOREACH(widget &child, childs_)
+	{
 		Gdiplus::RectF child_rect = child.objects_rect();
 		child.client_to_parent(&child_rect);
-		if (rect.Width < 0.0f) rect = child_rect;
-		else if (child_rect.Width >= 0.0f) rect = maxrect(rect, child_rect);
+		if (rect.Width < 0.0f)
+			rect = child_rect;
+		else if (child_rect.Width >= 0.0f)
+			rect = maxrect(rect, child_rect);
 	}
 
 	return rect;
 }
 
-void ipwidget_t::set_parent(ipwidget_t *parent)
+void widget::set_parent(widget *parent)
 {
 	parent_ = parent;
 	animate();
 }
 
-void ipwidget_t::do_check_state(void)
+void widget::do_check_state(void)
 {
-	BOOST_FOREACH(ipwidget_t &widget, childs_)
-		widget.do_check_state();
+	BOOST_FOREACH(widget &child, childs_)
+		child.do_check_state();
+}
+
 }

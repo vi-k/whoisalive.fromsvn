@@ -1,5 +1,5 @@
-﻿#ifndef IPCLASS_H
-#define IPCLASS_H
+﻿#ifndef WHO_OBJ_CLASS_H
+#define WHO_OBJ_CLASS_H
 
 #include "ipgui.h"
 #include "ipaddr.h"

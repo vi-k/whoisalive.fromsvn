@@ -3,6 +3,7 @@
 #include "../common/my_exception.h"
 #include "../common/my_str.h"
 #include "../common/my_num.h"
+#include "../common/my_utf8.h"
 
 #include <sstream>
 #include <istream>
@@ -150,79 +151,67 @@ void wx_Ping::handle_read(const boost::system::error_code& error,
 		}
 		else
 		{
-			xml::wptree pt;
-			reply_.to_xml(pt);
+			wstringstream ss( my::utf8::decode(reply_.body) );
+			wstring host;
+			ss >> host;
 
-			wstring node_name = pt.front().first;
-			xml::wptree &node = pt.front().second.get_child(L"<xmlattr>");
+			pinger::ping_result ping;
+			ss >> ping;
 
-			ping_info pi;
-
-			if (node_name == L"reply")
-				pi.state = ping_info::reply;
-			else if (node_name == L"timeout")
-				pi.state = ping_info::timeout;
-			else
-				pi.state = ping_info::unknown;
-
-			unsigned short icmp_seq;
 			wstringstream out;
 			wxTextAttr style;
 
-			if (pi.state == ping_info::unknown)
+			unsigned short num = ping.sequence_number();
+
+			if (ping.state() == pinger::ping_result::unknown)
 			{
 				style = wxTextAttr(*wxLIGHT_GREY);
 				out << L"unknown message\n";
 			}
 			else
 			{
-				pi.is_archive = archive_mode_;
-
-				icmp_seq = my::num::to_ushort( node.get<wstring>(L"icmp_seq"), 0 );
-				pi.start = my::time::utc_to_local(
-					my::time::to_time( node.get<wstring>(L"start") ) );
-				pi.time = my::time::to_duration( node.get<wstring>(L"time") );
-
 				{
 					scoped_lock l(pings_mutex_);
-					pings_[icmp_seq] = pi;
+					pings_[num] = ping;
 					active_index_ = -1;
 				}
 
-				switch (pi.state)
+				switch (ping.state())
 				{
-					case ping_info::reply:
+					case pinger::ping_result::ok:
 						style = wxTextAttr(*wxGREEN);
-						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", pi.start)
-							<< L": ok (seq=" << icmp_seq
-							<< L", time=" << pi.time.total_milliseconds() << L" ms"
-							<< L", ttl=" << node.get<wstring>(L"ttl", L"?")
-							<< L")\n";
+						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", ping.time())
+							<< L": "
+							<< ping.ipv4_hdr().header_length()
+							<< L" bytes from " << ping.ipv4_hdr().source_address()
+							<< L": icmp_seq=" << num
+							<< L", ttl=" << ping.ipv4_hdr().time_to_live()
+							<< L", time=" << ping.duration().total_milliseconds() << L" ms"
+							<< L"\n";
 						break;
 
-					case ping_info::timeout:
+					case pinger::ping_result::timeout:
 						style = wxTextAttr(*wxRED);
-						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", pi.start)
-							<< L": timeout (seq=" << icmp_seq
-							<< L", time=" << pi.time.total_milliseconds() << L" ms"
+						out << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", ping.time())
+							<< L": timeout (icmp_seq=" << num
+							<< L", time=" << ping.duration().total_milliseconds() << L" ms"
 							<< L")\n";
 						break;
 				}
 			}
 
-			if (archive_mode_)
+			m_ping_textctrl->SetDefaultStyle(style);
+			*m_ping_textctrl << out.str();
+				
+			if (!archive_mode_)
+				repaint();
+			else
 			{
 				last_archive_style_ = style;
 				last_archive_text_ = out.str();
 			}
-			else
-			{
-				m_ping_textctrl->SetDefaultStyle(style);
-				*m_ping_textctrl << out.str();
-				repaint();
-			}
-
-		} /* if ( !read_archive_ ) */
+		
+		} /* Разбор очередной строки */
 
 		asio::async_read_until(
 			socket_, reply_.buf_, "\r\n",
@@ -261,7 +250,7 @@ void wx_Ping::repaint()
 	dc.SetPen(*wxGREY_PEN);
 	dc.DrawLine(0, y, w, y);
 
-	ping_info prev_pi;
+	pinger::ping_result prev_ping;
 	int index = 0;
 
 	scoped_lock ll(pings_mutex_);
@@ -269,21 +258,21 @@ void wx_Ping::repaint()
 	for (pings_list::iterator iter = pings_.begin();
 		iter != pings_.end(); iter++)
 	{
-		ping_info pi = iter->value();
-		int size = pi.time.total_milliseconds() / 100;
+		pinger::ping_result ping = iter->value();
+		int size = ping.duration().total_milliseconds() / 100;
 		if (size > y)
 			size = y;
 
 		wxColour c1, c2;
 
-		switch (pi.state)
+		switch (ping.state())
 		{
-			case ping_info::reply:
+			case pinger::ping_result::ok:
 				c1 = wxColour(0, 255, 0);
 				c2 = wxColour(0, 224, 0);
 				break;
 
-			case ping_info::timeout:
+			case pinger::ping_result::timeout:
 				c1 = wxColour(255, 0, 0);
 				c2 = wxColour(224, 0, 0);
 				break;
@@ -291,7 +280,7 @@ void wx_Ping::repaint()
 
 		int x = w - index * BLOCK_W - BLOCK_W;
 
-		if (index == 0 || prev_pi.state != pi.state)
+		if (index == 0 || prev_ping.state() != ping.state())
 		{
 			/* Самостоятельный блок */
 			dc.SetPen(c1);
@@ -305,7 +294,7 @@ void wx_Ping::repaint()
 			dc.SetBrush(c2);
 			dc.DrawRectangle(x, y - size, BLOCK_W + 1, size * 2 + 1);
 
-			size = min(size, prev_pi.time.total_milliseconds() / 100);
+			size = min(size, prev_ping.duration().total_milliseconds() / 100);
 
 			if (size)
 			{
@@ -314,7 +303,7 @@ void wx_Ping::repaint()
 			}
 		}
 
-		prev_pi = pi;
+		prev_ping = ping;
 		index++;
 	}
 
@@ -370,10 +359,10 @@ void wx_Ping::on_pingpanel_mousemove(wxMouseEvent& event)
 	{
 		wstringstream out;
 
-		out << (iter->value().state == ping_info::reply ? L"ok" : L"timeout") << endl
-			<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", iter->value().start) << endl
-			<< L"seq=" << iter->key() << endl
-			<< L"time=" << iter->value().time.total_milliseconds() << L" ms";
+		out << iter->value().state_to_wstring() << endl
+			<< my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S", iter->value().time()) << endl
+			<< L"icmp_seq=" << iter->key() << endl
+			<< L"time=" << iter->value().duration().total_milliseconds() << L" ms";
 
 		m_pingpanel->SetToolTip(out.str());
 	}

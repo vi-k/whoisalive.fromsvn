@@ -2,14 +2,14 @@
 #define IPIMAGE_H
 
 #include "ipgui.h"
-#include "ipwidget.h"
+#include "widget.h"
 
 #include "../common/my_xml.h"
 
 #include <string>
 #include <memory>
 
-class ipimage_t : public ipwidget_t {
+class ipimage_t : public who::widget {
 	private:
 		std::wstring filename_;
 		std::auto_ptr<Gdiplus::Image> image_;
@@ -23,7 +23,7 @@ class ipimage_t : public ipwidget_t {
 
 		virtual Gdiplus::RectF own_rect( void);
 		virtual void paint_self( Gdiplus::Graphics *canvas);
-		virtual ipwidget_t* hittest(float x, float y);
+		virtual who::widget* hittest(float x, float y);
 		virtual bool animate_calc(void);
 };
 
