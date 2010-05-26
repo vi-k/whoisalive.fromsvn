@@ -1,49 +1,48 @@
 @echo off
 
 set project-name=whoisalive
-set path-to-archive=D:\My\C++\!backup
+set path-to-archive=D:\My\C++\!backup\%project-name%
+set state=Release
 
 call .ver.bat -
 if not %verstate%=="" set verstate=-%verstate%
 set project=%project-name%-%vermajor%.%verminor%.%verrelease%%verpatch%[%verbranch%%verbuild%]%verstate%
+
+if "%1"=="Debug" (
+  set state=Debug
+  set project=%project%-[Debug]
+)
+
 set dir=%path-to-archive%\%project%
-
-echo.
-echo Проект: %project%
-echo Путь к архиву: %path-to-archive%\
-echo.
-
-
-call :md
-
-call :md \whoisalive
-call :copy Release\whoisalive.exe whoisalive\
-call :copy work\config-release.xml whoisalive\config.xml
-
-call :md \pinger
-call :copy pinger-Release\pinger.exe pinger\
-call :copy pinger-work\config-release.xml pinger\config.xml
-call :copy pinger-work\hosts-release.xml pinger\hosts.xml
-call :copy pinger-work\favicon.ico pinger\
-call :copy pinger-work\schemes-release.xml pinger\schemes.xml
-call :md \pinger\classes
-call :copy pinger-work\classes\*.* pinger\classes\
-call :md \pinger\maps
-call :copy pinger-work\maps\maps.xml pinger\maps\maps.xml
-
-pkzipc -add -dir=relative %dir%.zip %dir%\*.*
 rd /S /Q %dir%
+del .release.log 2>nul
+md %dir% 2>>.release.log
+
+echo.
+echo %dir%.zip
+echo.
+
+call :md \%project%
+call :copy %state%\whoisalive.exe %project%\
+call :copy work\config-release.xml %project%\config.xml
+
+echo zip: %dir%.zip
+pkzipc -add -dir=relative %dir%.zip %dir%\*.* >>.release.log
+rd /S /Q %dir%
+del .release.log 2>nul
 
 goto :eof
 
 :md
-echo md:   %project%%1
-md %dir%\%1 2>nul
+echo md: %1
+echo md: %1 >>.release.log
+md "%dir%\%1" 2>>.release.log
 goto :eof
 
 :copy
 echo copy: %1 -^> %2
-copy %1 %dir%\%2 >nul
+echo copy: %1 -^> %2 >>.release.log
+copy "%1" "%dir%\%2" >>.release.log
 if not %ERRORLEVEL%==0 (
   echo Ошибка: ERRORLEVEL=%ERRORLEVEL%
   goto :fail
@@ -53,4 +52,5 @@ goto :eof
 :fail
 echo.
 echo Операция завершена с ошибкой
+echo Подробности смотрите в ".release.log"
 exit
