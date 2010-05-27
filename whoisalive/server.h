@@ -106,6 +106,8 @@ public:
 	inline tiler::tile::ptr get_tile(int z, int x, int y)
 		{ return tiler_.get_tile(active_map_id_, z, x, y); }
 
+	inline int active_map_id()
+		{ return active_map_id_; }
 	inline void set_active_map(int id)
 		{ active_map_id_ = id; }
 

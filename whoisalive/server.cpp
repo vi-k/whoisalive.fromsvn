@@ -4,9 +4,10 @@
 #include "../common/my_http.h"
 #include "../common/my_utf8.h"
 #include "../common/my_fs.h"
-//#include "../common/my_log.h"
-//extern my::log main_log;
+#include "../common/my_log.h"
+extern my::log main_log;
 
+#include <sstream>
 #include <iostream>
 #include <map>
 #include <utility> /* std::pair */
@@ -335,11 +336,41 @@ void server::get_header(tcp::socket &socket, my::http::reply &reply,
 unsigned int server::load_file(const wstring &file,
 	const wstring &file_local, bool throw_if_fail)
 {
-	my::http::reply reply;
-	get(reply, file);
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
 	
+	my::http::reply reply;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+	get(reply, file);
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+
 	if (reply.status_code == 200)
+	{
+		count++;
+
+		total_time += time;
+
+		if (time < min_time || count == 1)
+			min_time = time;
+		if (time > max_time)
+			max_time = time;
+
 		reply.save(file_local);
+		
+		//if ((count & 0x0F) == 0)
+		{
+			wstringstream out;
+			out << L"load_file\n"
+				<< L"count=" << count
+				<< L" min=" << min_time
+				<< L" avg=" << (total_time / count)
+				<< L" max=" << max_time;
+			main_log(out.str());
+		}
+	}
 	else if (throw_if_fail)
 		throw my::exception(L"Запрашиваемый файл не найден")
 			<< my::param(L"request", file);
