@@ -1,18 +1,20 @@
-﻿[2010-05-27 06:01:26] Start
-[2010-05-27 06:01:26] get GET /classes/classes.xml HTTP/1.1
-                      
-                      
-                      count=1
-                      min=00:00:00.046875
-                      avg=00:00:00.046875
-                      max=00:00:00.046875
-[2010-05-27 06:01:26] get GET /maps/maps.xml HTTP/1.1
-                      
-                      
-                      count=2
-                      min=00:00:00
-                      avg=00:00:00.023437
-                      max=00:00:00.046875
+﻿[2010-05-27 06:01:26]
+Start
+
+[2010-05-27 06:01:26]
+get GET /classes/classes.xml HTTP/1.1
+count=1
+min=00:00:00.046875
+avg=00:00:00.046875
+max=00:00:00.046875
+
+[2010-05-27 06:01:26]
+get GET /maps/maps.xml HTTP/1.1
+count=2
+min=00:00:00
+avg=00:00:00.023437
+max=00:00:00.046875
+
 [2010-05-27 06:01:26] get GET /pinger/state.log HTTP/1.1
                       
                       

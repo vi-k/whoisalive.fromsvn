@@ -1,2 +1,2 @@
 @cd ..\pinger\work\
-..\Release\pinger.exe
+start ..\Release\pinger.exe

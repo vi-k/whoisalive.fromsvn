@@ -3,6 +3,7 @@
 #include "../common/my_time.h"
 #include "../common/my_xml.h"
 #include "../common/my_http.h"
+#include "../common/my_num.h"
 #include "../common/my_exception.h"
 
 #include <string>
@@ -32,12 +33,19 @@ server::server(xml::wptree &config)
 	if (port.empty())
 		throw my::exception(L"Не задан порт");
 
-	tcp::resolver::query query(
-		my::ip::punycode_encode(address), my::str::to_string(port) );
+	tcp::endpoint endpoint;
 
 	try
 	{
-		tcp::endpoint endpoint = *resolver.resolve(query);
+		if (address.empty())
+			endpoint = tcp::endpoint(tcp::v4(), my::num::to_int(port, 0));
+		else
+		{
+			tcp::resolver::query query(
+				my::ip::punycode_encode(address), my::str::to_string(port) );
+			endpoint = *resolver.resolve(query);
+		}
+
 		acceptor_.open(endpoint.protocol());
 		acceptor_.set_option(tcp::acceptor::reuse_address(true));
 		acceptor_.bind(endpoint);
@@ -148,6 +156,7 @@ void server::handle_accept(const boost::system::error_code &e)
 	{
 		thgroup_.create_thread( boost::bind(&connection::run,
 			new_connection_.release()) );
+
 		accept();
     }
 }

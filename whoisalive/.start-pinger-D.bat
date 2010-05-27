@@ -1,2 +1,2 @@
 @cd ..\pinger\work\
-..\Debug\pinger.exe
+start ..\Debug\pinger.exe

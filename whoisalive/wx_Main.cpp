@@ -47,17 +47,11 @@ WNDPROC g_OldMapPanelWndProc;
 extern wx_App *App;
 
 wofstream main_log_stream;
-void on_main_log(const wstring &title, const wstring &text)
+void on_main_log(const wstring &text)
 {
-	static const wstring tab(L"                      ");
-	static const wstring ntab(L"\n                      ");
-
 	main_log_stream << L"[" << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S",
-		posix_time::microsec_clock::universal_time()) << L"] ";
-	main_log_stream << boost::replace_all_copy(title, L"\n", ntab) << endl;
-	if (!text.empty())
-		main_log_stream << tab << boost::replace_all_copy(text, L"\n", ntab) << endl;
-	//main_log_stream << endl;
+		posix_time::microsec_clock::universal_time()) << L"]\n";
+	main_log_stream << text << endl << endl;
 	main_log_stream.flush();
 }
 my::log main_log(on_main_log);
@@ -174,7 +168,7 @@ wx_Frame::wx_Frame(wxWindow* parent, wxWindowID id)
 	main_log_stream.imbue( locale( main_log_stream.getloc(),
 		new boost::archive::detail::utf8_codecvt_facet) );
 
-	main_log(L"Start");
+	main_log << L"Start" << main_log;
 
 	m_object_menu.Remove(m_objectmenu_unack);
 
