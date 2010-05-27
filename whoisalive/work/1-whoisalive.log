@@ -1,0 +1,4394 @@
+﻿[2010-05-27 06:01:26] Start
+[2010-05-27 06:01:26] get GET /classes/classes.xml HTTP/1.1
+                      
+                      
+                      count=1
+                      min=00:00:00.046875
+                      avg=00:00:00.046875
+                      max=00:00:00.046875
+[2010-05-27 06:01:26] get GET /maps/maps.xml HTTP/1.1
+                      
+                      
+                      count=2
+                      min=00:00:00
+                      avg=00:00:00.023437
+                      max=00:00:00.046875
+[2010-05-27 06:01:26] get GET /pinger/state.log HTTP/1.1
+                      
+                      
+                      count=3
+                      min=00:00:00
+                      avg=00:00:00.031250
+                      max=00:00:00.046875
+[2010-05-27 06:01:26] get GET /schemes.xml HTTP/1.1
+                      
+                      
+                      count=4
+                      min=00:00:00
+                      avg=00:00:00.035156
+                      max=00:00:00.046875
+[2010-05-27 06:01:26] get GET /maps/gettile?map=yasat&z=6&x=21&y=7 HTTP/1.1
+                      
+                      
+                      count=5
+                      min=00:00:00
+                      avg=00:00:00.031250
+                      max=00:00:00.046875
+[2010-05-27 06:01:26] load_file /maps/gettile?map=yasat&z=6&x=21&y=7
+                      count=1
+                      min_load=00:00:00.015625
+                      avg_load=00:00:00.015625
+                      max_load=00:00:00.015625
+                      min_save=00:00:00.015625
+                      avg_save=00:00:00.015625
+                      max_save=00:00:00
+[2010-05-27 06:01:28] get GET /maps/gettile?map=yasat&z=5&x=13&y=5 HTTP/1.1
+                      
+                      
+                      count=6
+                      min=00:00:00
+                      avg=00:00:00.307291
+                      max=00:00:01.687500
+[2010-05-27 06:01:28] load_file /maps/gettile?map=yasat&z=5&x=13&y=5
+                      count=2
+                      min_load=00:00:00.015625
+                      avg_load=00:00:00.859375
+                      max_load=00:00:01.703125
+                      min_save=00:00:00
+                      avg_save=00:00:00.007812
+                      max_save=00:00:00
+[2010-05-27 06:01:30] get GET /maps/gettile?map=yasat&z=6&x=31&y=12 HTTP/1.1
+                      
+                      
+                      count=7
+                      min=00:00:00
+                      avg=00:00:00.533482
+                      max=00:00:01.890625
+[2010-05-27 06:01:30] load_file /maps/gettile?map=yasat&z=6&x=31&y=12
+                      count=3
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.203125
+                      max_load=00:00:01.890625
+                      min_save=00:00:00
+                      avg_save=00:00:00.005208
+                      max_save=00:00:00
+[2010-05-27 06:01:30] get GET /maps/gettile?map=yasat&z=6&x=31&y=11 HTTP/1.1
+                      
+                      
+                      count=8
+                      min=00:00:00
+                      avg=00:00:00.466796
+                      max=00:00:01.890625
+[2010-05-27 06:01:30] load_file /maps/gettile?map=yasat&z=6&x=31&y=11
+                      count=4
+                      min_load=00:00:00.015625
+                      avg_load=00:00:00.906250
+                      max_load=00:00:01.890625
+                      min_save=00:00:00
+                      avg_save=00:00:00.003906
+                      max_save=00:00:00
+[2010-05-27 06:01:32] get GET /maps/gettile?map=yasat&z=6&x=31&y=10 HTTP/1.1
+                      
+                      
+                      count=9
+                      min=00:00:00
+                      avg=00:00:00.647569
+                      max=00:00:02.093750
+[2010-05-27 06:01:32] load_file /maps/gettile?map=yasat&z=6&x=31&y=10
+                      count=5
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.143750
+                      max_load=00:00:02.093750
+                      min_save=00:00:00
+                      avg_save=00:00:00.003125
+                      max_save=00:00:00
+[2010-05-27 06:01:34] get GET /maps/gettile?map=yasat&z=6&x=31&y=9 HTTP/1.1
+                      
+                      
+                      count=10
+                      min=00:00:00
+                      avg=00:00:00.792187
+                      max=00:00:02.093750
+[2010-05-27 06:01:34] load_file /maps/gettile?map=yasat&z=6&x=31&y=9
+                      count=6
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.304687
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:01:34] get GET /maps/gettile?map=yasat&z=6&x=31&y=8 HTTP/1.1
+                      
+                      
+                      count=11
+                      min=00:00:00
+                      avg=00:00:00.721590
+                      max=00:00:02.093750
+[2010-05-27 06:01:34] load_file /maps/gettile?map=yasat&z=6&x=31&y=8
+                      count=7
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.120535
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:01:36] get GET /maps/gettile?map=yasat&z=5&x=15&y=6 HTTP/1.1
+                      
+                      
+                      count=12
+                      min=00:00:00
+                      avg=00:00:00.809895
+                      max=00:00:02.093750
+[2010-05-27 06:01:36] load_file /maps/gettile?map=yasat&z=5&x=15&y=6
+                      count=8
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.203125
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001953
+                      max_save=00:00:00
+[2010-05-27 06:01:38] get GET /maps/gettile?map=yasat&z=6&x=30&y=12 HTTP/1.1
+                      
+                      
+                      count=13
+                      min=00:00:00
+                      avg=00:00:00.894230
+                      max=00:00:02.093750
+[2010-05-27 06:01:38] load_file /maps/gettile?map=yasat&z=6&x=30&y=12
+                      count=9
+                      min_load=00:00:00.015625
+                      avg_load=00:00:01.281250
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001736
+                      max_save=00:00:00
+[2010-05-27 06:01:38] get GET /maps/gettile?map=yasat&z=6&x=29&y=12 HTTP/1.1
+                      
+                      
+                      count=14
+                      min=00:00:00
+                      avg=00:00:00.830357
+                      max=00:00:02.093750
+[2010-05-27 06:01:38] load_file /maps/gettile?map=yasat&z=6&x=29&y=12
+                      count=10
+                      min_load=00:00:00
+                      avg_load=00:00:01.153125
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001562
+                      max_save=00:00:00
+[2010-05-27 06:01:38] get GET /maps/gettile?map=yasat&z=4&x=7&y=3 HTTP/1.1
+                      
+                      
+                      count=15
+                      min=00:00:00
+                      avg=00:00:00.775000
+                      max=00:00:02.093750
+[2010-05-27 06:01:38] load_file /maps/gettile?map=yasat&z=4&x=7&y=3
+                      count=11
+                      min_load=00:00:00
+                      avg_load=00:00:01.048295
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002840
+                      max_save=00:00:00
+[2010-05-27 06:01:40] get GET /maps/gettile?map=yasat&z=5&x=14&y=6 HTTP/1.1
+                      
+                      
+                      count=16
+                      min=00:00:00
+                      avg=00:00:00.854492
+                      max=00:00:02.093750
+[2010-05-27 06:01:40] load_file /maps/gettile?map=yasat&z=5&x=14&y=6
+                      count=12
+                      min_load=00:00:00
+                      avg_load=00:00:01.131510
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:01:42] get GET /maps/gettile?map=yasat&z=6&x=28&y=12 HTTP/1.1
+                      
+                      
+                      count=17
+                      min=00:00:00
+                      avg=00:00:00.904411
+                      max=00:00:02.093750
+[2010-05-27 06:01:42] load_file /maps/gettile?map=yasat&z=6&x=28&y=12
+                      count=13
+                      min_load=00:00:00
+                      avg_load=00:00:01.175480
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002403
+                      max_save=00:00:00
+[2010-05-27 06:01:43] get GET /maps/gettile?map=yasat&z=6&x=27&y=12 HTTP/1.1
+                      
+                      
+                      count=18
+                      min=00:00:00
+                      avg=00:00:00.937500
+                      max=00:00:02.093750
+[2010-05-27 06:01:43] load_file /maps/gettile?map=yasat&z=6&x=27&y=12
+                      count=14
+                      min_load=00:00:00
+                      avg_load=00:00:01.198660
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:01:43] get GET /maps/gettile?map=yasat&z=4&x=6&y=3 HTTP/1.1
+                      
+                      
+                      count=19
+                      min=00:00:00
+                      avg=00:00:00.888157
+                      max=00:00:02.093750
+[2010-05-27 06:01:43] load_file /maps/gettile?map=yasat&z=4&x=6&y=3
+                      count=15
+                      min_load=00:00:00
+                      avg_load=00:00:01.119791
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:01:45] get GET /maps/gettile?map=yasat&z=5&x=13&y=6 HTTP/1.1
+                      
+                      
+                      count=20
+                      min=00:00:00
+                      avg=00:00:00.928125
+                      max=00:00:02.093750
+[2010-05-27 06:01:45] load_file /maps/gettile?map=yasat&z=5&x=13&y=6
+                      count=16
+                      min_load=00:00:00
+                      avg_load=00:00:01.155273
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001953
+                      max_save=00:00:00
+[2010-05-27 06:01:47] get GET /maps/gettile?map=yasat&z=6&x=26&y=12 HTTP/1.1
+                      
+                      
+                      count=21
+                      min=00:00:00
+                      avg=00:00:00.965029
+                      max=00:00:02.093750
+[2010-05-27 06:01:47] load_file /maps/gettile?map=yasat&z=6&x=26&y=12
+                      count=17
+                      min_load=00:00:00
+                      avg_load=00:00:01.187500
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001838
+                      max_save=00:00:00
+[2010-05-27 06:01:47] get GET /maps/gettile?map=yasat&z=6&x=30&y=11 HTTP/1.1
+                      
+                      
+                      count=22
+                      min=00:00:00
+                      avg=00:00:00.921164
+                      max=00:00:02.093750
+[2010-05-27 06:01:47] load_file /maps/gettile?map=yasat&z=6&x=30&y=11
+                      count=18
+                      min_load=00:00:00
+                      avg_load=00:00:01.121527
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.001736
+                      max_save=00:00:00
+[2010-05-27 06:01:49] get GET /maps/gettile?map=yasat&z=5&x=15&y=5 HTTP/1.1
+                      
+                      
+                      count=23
+                      min=00:00:00
+                      avg=00:00:00.971467
+                      max=00:00:02.093750
+[2010-05-27 06:01:49] load_file /maps/gettile?map=yasat&z=5&x=15&y=5
+                      count=19
+                      min_load=00:00:00
+                      avg_load=00:00:01.171875
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002467
+                      max_save=00:00:00
+[2010-05-27 06:01:51] get GET /maps/gettile?map=yasat&z=6&x=30&y=10 HTTP/1.1
+                      
+                      
+                      count=24
+                      min=00:00:00
+                      avg=00:00:01.001953
+                      max=00:00:02.093750
+[2010-05-27 06:01:51] load_file /maps/gettile?map=yasat&z=6&x=30&y=10
+                      count=20
+                      min_load=00:00:00
+                      avg_load=00:00:01.198437
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002343
+                      max_save=00:00:00
+[2010-05-27 06:01:52] get GET /maps/gettile?map=yasat&z=6&x=30&y=9 HTTP/1.1
+                      
+                      
+                      count=25
+                      min=00:00:00
+                      avg=00:00:01.030000
+                      max=00:00:02.093750
+[2010-05-27 06:01:52] load_file /maps/gettile?map=yasat&z=6&x=30&y=9
+                      count=21
+                      min_load=00:00:00
+                      avg_load=00:00:01.222470
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:01:54] get GET /maps/gettile?map=yasat&z=5&x=15&y=4 HTTP/1.1
+                      
+                      
+                      count=26
+                      min=00:00:00
+                      avg=00:00:01.055889
+                      max=00:00:02.093750
+[2010-05-27 06:01:54] load_file /maps/gettile?map=yasat&z=5&x=15&y=4
+                      count=22
+                      min_load=00:00:00
+                      avg_load=00:00:01.244318
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002130
+                      max_save=00:00:00
+[2010-05-27 06:01:54] get GET /maps/gettile?map=yasat&z=6&x=30&y=8 HTTP/1.1
+                      
+                      
+                      count=27
+                      min=00:00:00
+                      avg=00:00:01.017361
+                      max=00:00:02.093750
+[2010-05-27 06:01:54] load_file /maps/gettile?map=yasat&z=6&x=30&y=8
+                      count=23
+                      min_load=00:00:00
+                      avg_load=00:00:01.190896
+                      max_load=00:00:02.109375
+                      min_save=00:00:00
+                      avg_save=00:00:00.002038
+                      max_save=00:00:00
+[2010-05-27 06:01:56] get GET /maps/gettile?map=yasat&z=6&x=29&y=11 HTTP/1.1
+                      
+                      
+                      count=28
+                      min=00:00:00
+                      avg=00:00:01.059151
+                      max=00:00:02.187500
+[2010-05-27 06:01:56] load_file /maps/gettile?map=yasat&z=6&x=29&y=11
+                      count=24
+                      min_load=00:00:00
+                      avg_load=00:00:01.232421
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:01:58] get GET /maps/gettile?map=yasat&z=6&x=29&y=10 HTTP/1.1
+                      
+                      
+                      count=29
+                      min=00:00:00
+                      avg=00:00:01.088362
+                      max=00:00:02.187500
+[2010-05-27 06:01:58] load_file /maps/gettile?map=yasat&z=6&x=29&y=10
+                      count=25
+                      min_load=00:00:00
+                      avg_load=00:00:01.259375
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002500
+                      max_save=00:00:00
+[2010-05-27 06:02:00] get GET /maps/gettile?map=yasat&z=6&x=29&y=9 HTTP/1.1
+                      
+                      
+                      count=30
+                      min=00:00:00
+                      avg=00:00:01.102083
+                      max=00:00:02.187500
+[2010-05-27 06:02:00] load_file /maps/gettile?map=yasat&z=6&x=29&y=9
+                      count=26
+                      min_load=00:00:00
+                      avg_load=00:00:01.268629
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002403
+                      max_save=00:00:00
+[2010-05-27 06:02:00] get GET /maps/gettile?map=yasat&z=6&x=29&y=8 HTTP/1.1
+                      
+                      
+                      count=31
+                      min=00:00:00
+                      avg=00:00:01.066532
+                      max=00:00:02.187500
+[2010-05-27 06:02:00] load_file /maps/gettile?map=yasat&z=6&x=29&y=8
+                      count=27
+                      min_load=00:00:00
+                      avg_load=00:00:01.221643
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002314
+                      max_save=00:00:00
+[2010-05-27 06:02:01] get GET /maps/gettile?map=yasat&z=6&x=28&y=11 HTTP/1.1
+                      
+                      
+                      count=32
+                      min=00:00:00
+                      avg=00:00:01.085449
+                      max=00:00:02.187500
+[2010-05-27 06:02:01] load_file /maps/gettile?map=yasat&z=6&x=28&y=11
+                      count=28
+                      min_load=00:00:00
+                      avg_load=00:00:01.238281
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:02:03] get GET /maps/gettile?map=yasat&z=6&x=27&y=11 HTTP/1.1
+                      
+                      
+                      count=33
+                      min=00:00:00
+                      avg=00:00:01.104166
+                      max=00:00:02.187500
+[2010-05-27 06:02:03] load_file /maps/gettile?map=yasat&z=6&x=27&y=11
+                      count=29
+                      min_load=00:00:00
+                      avg_load=00:00:01.254310
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002155
+                      max_save=00:00:00
+[2010-05-27 06:02:03] get GET /maps/gettile?map=yasat&z=6&x=26&y=11 HTTP/1.1
+                      
+                      
+                      count=34
+                      min=00:00:00
+                      avg=00:00:01.071691
+                      max=00:00:02.187500
+[2010-05-27 06:02:03] load_file /maps/gettile?map=yasat&z=6&x=26&y=11
+                      count=30
+                      min_load=00:00:00
+                      avg_load=00:00:01.212500
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:02:05] get GET /maps/gettile?map=yasat&z=6&x=25&y=11 HTTP/1.1
+                      
+                      
+                      count=35
+                      min=00:00:00
+                      avg=00:00:01.088839
+                      max=00:00:02.187500
+[2010-05-27 06:02:05] load_file /maps/gettile?map=yasat&z=6&x=25&y=11
+                      count=31
+                      min_load=00:00:00
+                      avg_load=00:00:01.227822
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002016
+                      max_save=00:00:00
+[2010-05-27 06:02:06] get GET /maps/gettile?map=yasat&z=6&x=24&y=11 HTTP/1.1
+                      
+                      
+                      count=36
+                      min=00:00:00
+                      avg=00:00:01.097222
+                      max=00:00:02.187500
+[2010-05-27 06:02:06] load_file /maps/gettile?map=yasat&z=6&x=24&y=11
+                      count=32
+                      min_load=00:00:00
+                      avg_load=00:00:01.233398
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002441
+                      max_save=00:00:00
+[2010-05-27 06:02:06] get GET /maps/gettile?map=yasat&z=5&x=14&y=5 HTTP/1.1
+                      
+                      
+                      count=37
+                      min=00:00:00
+                      avg=00:00:01.067567
+                      max=00:00:02.187500
+[2010-05-27 06:02:06] load_file /maps/gettile?map=yasat&z=5&x=14&y=5
+                      count=33
+                      min_load=00:00:00
+                      avg_load=00:00:01.196496
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002367
+                      max_save=00:00:00
+[2010-05-27 06:02:06] get GET /maps/gettile?map=yasat&z=6&x=28&y=10 HTTP/1.1
+                      
+                      
+                      count=38
+                      min=00:00:00
+                      avg=00:00:01.039884
+                      max=00:00:02.187500
+[2010-05-27 06:02:06] load_file /maps/gettile?map=yasat&z=6&x=28&y=10
+                      count=34
+                      min_load=00:00:00
+                      avg_load=00:00:01.161764
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002297
+                      max_save=00:00:00
+[2010-05-27 06:02:08] get GET /maps/gettile?map=yasat&z=6&x=28&y=9 HTTP/1.1
+                      
+                      
+                      count=39
+                      min=00:00:00
+                      avg=00:00:01.055288
+                      max=00:00:02.187500
+[2010-05-27 06:02:08] load_file /maps/gettile?map=yasat&z=6&x=28&y=9
+                      count=35
+                      min_load=00:00:00
+                      avg_load=00:00:01.175446
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:02:10] get GET /maps/gettile?map=yasat&z=4&x=7&y=2 HTTP/1.1
+                      
+                      
+                      count=40
+                      min=00:00:00
+                      avg=00:00:01.068750
+                      max=00:00:02.187500
+[2010-05-27 06:02:10] load_file /maps/gettile?map=yasat&z=4&x=7&y=2
+                      count=36
+                      min_load=00:00:00
+                      avg_load=00:00:01.187065
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002170
+                      max_save=00:00:00
+[2010-05-27 06:02:10] get GET /maps/gettile?map=yasat&z=5&x=14&y=4 HTTP/1.1
+                      
+                      
+                      count=41
+                      min=00:00:00
+                      avg=00:00:01.042682
+                      max=00:00:02.187500
+[2010-05-27 06:02:10] load_file /maps/gettile?map=yasat&z=5&x=14&y=4
+                      count=37
+                      min_load=00:00:00
+                      avg_load=00:00:01.154983
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002111
+                      max_save=00:00:00
+[2010-05-27 06:02:11] get GET /maps/gettile?map=yasat&z=6&x=28&y=8 HTTP/1.1
+                      
+                      
+                      count=42
+                      min=00:00:00
+                      avg=00:00:01.050595
+                      max=00:00:02.187500
+[2010-05-27 06:02:11] load_file /maps/gettile?map=yasat&z=6&x=28&y=8
+                      count=38
+                      min_load=00:00:00
+                      avg_load=00:00:01.160773
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002055
+                      max_save=00:00:00
+[2010-05-27 06:02:13] get GET /maps/gettile?map=yasat&z=4&x=7&y=1 HTTP/1.1
+                      
+                      
+                      count=43
+                      min=00:00:00
+                      avg=00:00:01.065406
+                      max=00:00:02.187500
+[2010-05-27 06:02:13] load_file /maps/gettile?map=yasat&z=4&x=7&y=1
+                      count=39
+                      min_load=00:00:00
+                      avg_load=00:00:01.174679
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002003
+                      max_save=00:00:00
+[2010-05-27 06:02:14] get GET /maps/gettile?map=yasat&z=5&x=14&y=3 HTTP/1.1
+                      
+                      
+                      count=44
+                      min=00:00:00
+                      avg=00:00:01.079545
+                      max=00:00:02.187500
+[2010-05-27 06:02:14] load_file /maps/gettile?map=yasat&z=5&x=14&y=3
+                      count=40
+                      min_load=00:00:00
+                      avg_load=00:00:01.187500
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001953
+                      max_save=00:00:00
+[2010-05-27 06:02:16] get GET /maps/gettile?map=yasat&z=6&x=28&y=7 HTTP/1.1
+                      
+                      
+                      count=45
+                      min=00:00:00
+                      avg=00:00:01.093055
+                      max=00:00:02.187500
+[2010-05-27 06:02:16] load_file /maps/gettile?map=yasat&z=6&x=28&y=7
+                      count=41
+                      min_load=00:00:00
+                      avg_load=00:00:01.200076
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001905
+                      max_save=00:00:00
+[2010-05-27 06:02:18] get GET /maps/gettile?map=yasat&z=6&x=27&y=10 HTTP/1.1
+                      
+                      
+                      count=46
+                      min=00:00:00
+                      avg=00:00:01.106317
+                      max=00:00:02.187500
+[2010-05-27 06:02:18] load_file /maps/gettile?map=yasat&z=6&x=27&y=10
+                      count=42
+                      min_load=00:00:00
+                      avg_load=00:00:01.212053
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001860
+                      max_save=00:00:00
+[2010-05-27 06:02:19] get GET /maps/gettile?map=yasat&z=6&x=27&y=9 HTTP/1.1
+                      
+                      
+                      count=47
+                      min=00:00:00
+                      avg=00:00:01.119015
+                      max=00:00:02.187500
+[2010-05-27 06:02:20] load_file /maps/gettile?map=yasat&z=6&x=27&y=9
+                      count=43
+                      min_load=00:00:00
+                      avg_load=00:00:01.223473
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002180
+                      max_save=00:00:00
+[2010-05-27 06:02:21] get GET /maps/gettile?map=yasat&z=6&x=27&y=8 HTTP/1.1
+                      
+                      
+                      count=48
+                      min=00:00:00
+                      avg=00:00:01.131184
+                      max=00:00:02.187500
+[2010-05-27 06:02:21] load_file /maps/gettile?map=yasat&z=6&x=27&y=8
+                      count=44
+                      min_load=00:00:00
+                      avg_load=00:00:01.234375
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002130
+                      max_save=00:00:00
+[2010-05-27 06:02:23] get GET /maps/gettile?map=yasat&z=6&x=27&y=7 HTTP/1.1
+                      
+                      
+                      count=49
+                      min=00:00:00
+                      avg=00:00:01.142857
+                      max=00:00:02.187500
+[2010-05-27 06:02:23] load_file /maps/gettile?map=yasat&z=6&x=27&y=7
+                      count=45
+                      min_load=00:00:00
+                      avg_load=00:00:01.244791
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:02:24] get GET /maps/gettile?map=yasat&z=6&x=26&y=10 HTTP/1.1
+                      
+                      
+                      count=50
+                      min=00:00:00
+                      avg=00:00:01.150000
+                      max=00:00:02.187500
+[2010-05-27 06:02:24] load_file /maps/gettile?map=yasat&z=6&x=26&y=10
+                      count=46
+                      min_load=00:00:00
+                      avg_load=00:00:01.250339
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002038
+                      max_save=00:00:00
+[2010-05-27 06:02:26] get GET /maps/gettile?map=yasat&z=6&x=26&y=9 HTTP/1.1
+                      
+                      
+                      count=51
+                      min=00:00:00
+                      avg=00:00:01.160845
+                      max=00:00:02.187500
+[2010-05-27 06:02:26] load_file /maps/gettile?map=yasat&z=6&x=26&y=9
+                      count=47
+                      min_load=00:00:00
+                      avg_load=00:00:01.259973
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001994
+                      max_save=00:00:00
+[2010-05-27 06:02:28] get GET /maps/gettile?map=yasat&z=5&x=13&y=4 HTTP/1.1
+                      
+                      
+                      count=52
+                      min=00:00:00
+                      avg=00:00:01.165264
+                      max=00:00:02.187500
+[2010-05-27 06:02:28] load_file /maps/gettile?map=yasat&z=5&x=13&y=4
+                      count=48
+                      min_load=00:00:00
+                      avg_load=00:00:01.262695
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002278
+                      max_save=00:00:00
+[2010-05-27 06:02:30] get GET /maps/gettile?map=yasat&z=6&x=26&y=8 HTTP/1.1
+                      
+                      
+                      count=53
+                      min=00:00:00
+                      avg=00:00:01.182783
+                      max=00:00:02.187500
+[2010-05-27 06:02:30] load_file /maps/gettile?map=yasat&z=6&x=26&y=8
+                      count=49
+                      min_load=00:00:00
+                      avg_load=00:00:01.279974
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:02:31] get GET /maps/gettile?map=yasat&z=5&x=13&y=3 HTTP/1.1
+                      
+                      
+                      count=54
+                      min=00:00:00
+                      avg=00:00:01.192418
+                      max=00:00:02.187500
+[2010-05-27 06:02:31] load_file /maps/gettile?map=yasat&z=5&x=13&y=3
+                      count=50
+                      min_load=00:00:00
+                      avg_load=00:00:01.288437
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002187
+                      max_save=00:00:00
+[2010-05-27 06:02:33] get GET /maps/gettile?map=yasat&z=6&x=26&y=7 HTTP/1.1
+                      
+                      
+                      count=55
+                      min=00:00:00
+                      avg=00:00:01.208806
+                      max=00:00:02.187500
+[2010-05-27 06:02:33] load_file /maps/gettile?map=yasat&z=6&x=26&y=7
+                      count=51
+                      min_load=00:00:00
+                      avg_load=00:00:01.304227
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002144
+                      max_save=00:00:00
+[2010-05-27 06:02:35] get GET /maps/gettile?map=yasat&z=6&x=25&y=10 HTTP/1.1
+                      
+                      
+                      count=56
+                      min=00:00:00
+                      avg=00:00:01.217633
+                      max=00:00:02.187500
+[2010-05-27 06:02:35] load_file /maps/gettile?map=yasat&z=6&x=25&y=10
+                      count=52
+                      min_load=00:00:00
+                      avg_load=00:00:01.311899
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002103
+                      max_save=00:00:00
+[2010-05-27 06:02:37] get GET /maps/gettile?map=yasat&z=6&x=25&y=9 HTTP/1.1
+                      
+                      
+                      count=57
+                      min=00:00:00
+                      avg=00:00:01.226151
+                      max=00:00:02.187500
+[2010-05-27 06:02:37] load_file /maps/gettile?map=yasat&z=6&x=25&y=9
+                      count=53
+                      min_load=00:00:00
+                      avg_load=00:00:01.319280
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002063
+                      max_save=00:00:00
+[2010-05-27 06:02:37] get GET /maps/gettile?map=yasat&z=6&x=25&y=8 HTTP/1.1
+                      
+                      
+                      count=58
+                      min=00:00:00
+                      avg=00:00:01.205010
+                      max=00:00:02.187500
+[2010-05-27 06:02:37] load_file /maps/gettile?map=yasat&z=6&x=25&y=8
+                      count=54
+                      min_load=00:00:00
+                      avg_load=00:00:01.294849
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002025
+                      max_save=00:00:00
+[2010-05-27 06:02:38] get GET /maps/gettile?map=yasat&z=6&x=25&y=7 HTTP/1.1
+                      
+                      
+                      count=59
+                      min=00:00:00
+                      avg=00:00:01.209480
+                      max=00:00:02.187500
+[2010-05-27 06:02:38] load_file /maps/gettile?map=yasat&z=6&x=25&y=7
+                      count=55
+                      min_load=00:00:00
+                      avg_load=00:00:01.298295
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001988
+                      max_save=00:00:00
+[2010-05-27 06:02:38] get GET /maps/gettile?map=yasat&z=5&x=12&y=5 HTTP/1.1
+                      
+                      
+                      count=60
+                      min=00:00:00
+                      avg=00:00:01.189583
+                      max=00:00:02.187500
+[2010-05-27 06:02:38] load_file /maps/gettile?map=yasat&z=5&x=12&y=5
+                      count=56
+                      min_load=00:00:00
+                      avg_load=00:00:01.275948
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001953
+                      max_save=00:00:00
+[2010-05-27 06:02:38] get GET /maps/gettile?map=yasat&z=6&x=24&y=10 HTTP/1.1
+                      
+                      
+                      count=61
+                      min=00:00:00
+                      avg=00:00:01.170081
+                      max=00:00:02.187500
+[2010-05-27 06:02:38] load_file /maps/gettile?map=yasat&z=6&x=24&y=10
+                      count=57
+                      min_load=00:00:00
+                      avg_load=00:00:01.253837
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001918
+                      max_save=00:00:00
+[2010-05-27 06:02:38] get GET /maps/gettile?map=yasat&z=6&x=24&y=9 HTTP/1.1
+                      
+                      
+                      count=62
+                      min=00:00:00
+                      avg=00:00:01.151461
+                      max=00:00:02.187500
+[2010-05-27 06:02:38] load_file /maps/gettile?map=yasat&z=6&x=24&y=9
+                      count=58
+                      min_load=00:00:00
+                      avg_load=00:00:01.232489
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001885
+                      max_save=00:00:00
+[2010-05-27 06:02:39] get GET /maps/gettile?map=yasat&z=3&x=3&y=1 HTTP/1.1
+                      
+                      
+                      count=63
+                      min=00:00:00
+                      avg=00:00:01.133184
+                      max=00:00:02.187500
+[2010-05-27 06:02:39] load_file /maps/gettile?map=yasat&z=3&x=3&y=1
+                      count=59
+                      min_load=00:00:00
+                      avg_load=00:00:01.211599
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002118
+                      max_save=00:00:00
+[2010-05-27 06:02:40] get GET /maps/gettile?map=yasat&z=4&x=6&y=2 HTTP/1.1
+                      
+                      
+                      count=64
+                      min=00:00:00
+                      avg=00:00:01.141357
+                      max=00:00:02.187500
+[2010-05-27 06:02:40] load_file /maps/gettile?map=yasat&z=4&x=6&y=2
+                      count=60
+                      min_load=00:00:00
+                      avg_load=00:00:01.219270
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:02:40] get GET /maps/gettile?map=yasat&z=5&x=12&y=4 HTTP/1.1
+                      
+                      
+                      count=65
+                      min=00:00:00
+                      avg=00:00:01.123798
+                      max=00:00:02.187500
+[2010-05-27 06:02:40] load_file /maps/gettile?map=yasat&z=5&x=12&y=4
+                      count=61
+                      min_load=00:00:00
+                      avg_load=00:00:01.199538
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002049
+                      max_save=00:00:00
+[2010-05-27 06:02:42] get GET /maps/gettile?map=yasat&z=6&x=24&y=8 HTTP/1.1
+                      
+                      
+                      count=66
+                      min=00:00:00
+                      avg=00:00:01.132339
+                      max=00:00:02.187500
+[2010-05-27 06:02:42] load_file /maps/gettile?map=yasat&z=6&x=24&y=8
+                      count=62
+                      min_load=00:00:00
+                      avg_load=00:00:01.207409
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002016
+                      max_save=00:00:00
+[2010-05-27 06:02:43] get GET /maps/gettile?map=yasat&z=3&x=3&y=0 HTTP/1.1
+                      
+                      
+                      count=67
+                      min=00:00:00
+                      avg=00:00:01.137593
+                      max=00:00:02.187500
+[2010-05-27 06:02:43] load_file /maps/gettile?map=yasat&z=3&x=3&y=0
+                      count=63
+                      min_load=00:00:00
+                      avg_load=00:00:01.212053
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001984
+                      max_save=00:00:00
+[2010-05-27 06:02:43] get GET /maps/gettile?map=yasat&z=4&x=6&y=1 HTTP/1.1
+                      
+                      
+                      count=68
+                      min=00:00:00
+                      avg=00:00:01.121093
+                      max=00:00:02.187500
+[2010-05-27 06:02:43] load_file /maps/gettile?map=yasat&z=4&x=6&y=1
+                      count=64
+                      min_load=00:00:00
+                      avg_load=00:00:01.193359
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001953
+                      max_save=00:00:00
+[2010-05-27 06:02:43] get GET /maps/gettile?map=yasat&z=5&x=12&y=3 HTTP/1.1
+                      
+                      
+                      count=69
+                      min=00:00:00
+                      avg=00:00:01.105072
+                      max=00:00:02.187500
+[2010-05-27 06:02:44] load_file /maps/gettile?map=yasat&z=5&x=12&y=3
+                      count=65
+                      min_load=00:00:00
+                      avg_load=00:00:01.175480
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001923
+                      max_save=00:00:00
+[2010-05-27 06:02:45] get GET /maps/gettile?map=yasat&z=6&x=24&y=7 HTTP/1.1
+                      
+                      
+                      count=70
+                      min=00:00:00
+                      avg=00:00:01.106919
+                      max=00:00:02.187500
+[2010-05-27 06:02:45] load_file /maps/gettile?map=yasat&z=6&x=24&y=7
+                      count=66
+                      min_load=00:00:00
+                      avg_load=00:00:01.176373
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001893
+                      max_save=00:00:00
+[2010-05-27 06:02:46] get GET /maps/gettile?map=yasat&z=6&x=23&y=10 HTTP/1.1
+                      
+                      
+                      count=71
+                      min=00:00:00
+                      avg=00:00:01.115096
+                      max=00:00:02.187500
+[2010-05-27 06:02:46] load_file /maps/gettile?map=yasat&z=6&x=23&y=10
+                      count=67
+                      min_load=00:00:00
+                      avg_load=00:00:01.184235
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001865
+                      max_save=00:00:00
+[2010-05-27 06:02:48] get GET /maps/gettile?map=yasat&z=6&x=23&y=9 HTTP/1.1
+                      
+                      
+                      count=72
+                      min=00:00:00
+                      avg=00:00:01.122829
+                      max=00:00:02.187500
+[2010-05-27 06:02:48] load_file /maps/gettile?map=yasat&z=6&x=23&y=9
+                      count=68
+                      min_load=00:00:00
+                      avg_load=00:00:01.191406
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001838
+                      max_save=00:00:00
+[2010-05-27 06:02:48] get GET /maps/gettile?map=yasat&z=6&x=23&y=8 HTTP/1.1
+                      
+                      
+                      count=73
+                      min=00:00:00
+                      avg=00:00:01.107448
+                      max=00:00:02.187500
+[2010-05-27 06:02:48] load_file /maps/gettile?map=yasat&z=6&x=23&y=8
+                      count=69
+                      min_load=00:00:00
+                      avg_load=00:00:01.174139
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001811
+                      max_save=00:00:00
+[2010-05-27 06:02:50] get GET /maps/gettile?map=yasat&z=6&x=23&y=7 HTTP/1.1
+                      
+                      
+                      count=74
+                      min=00:00:00
+                      avg=00:00:01.112331
+                      max=00:00:02.187500
+[2010-05-27 06:02:50] load_file /maps/gettile?map=yasat&z=6&x=23&y=7
+                      count=70
+                      min_load=00:00:00
+                      avg_load=00:00:01.178571
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001785
+                      max_save=00:00:00
+[2010-05-27 06:02:51] get GET /maps/gettile?map=yasat&z=5&x=11&y=5 HTTP/1.1
+                      
+                      
+                      count=75
+                      min=00:00:00
+                      avg=00:00:01.116250
+                      max=00:00:02.187500
+[2010-05-27 06:02:51] load_file /maps/gettile?map=yasat&z=5&x=11&y=5
+                      count=71
+                      min_load=00:00:00
+                      avg_load=00:00:01.181778
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001760
+                      max_save=00:00:00
+[2010-05-27 06:02:53] get GET /maps/gettile?map=yasat&z=6&x=22&y=10 HTTP/1.1
+                      
+                      
+                      count=76
+                      min=00:00:00
+                      avg=00:00:01.123972
+                      max=00:00:02.187500
+[2010-05-27 06:02:53] load_file /maps/gettile?map=yasat&z=6&x=22&y=10
+                      count=72
+                      min_load=00:00:00
+                      avg_load=00:00:01.189019
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001736
+                      max_save=00:00:00
+[2010-05-27 06:02:55] get GET /maps/gettile?map=yasat&z=6&x=22&y=9 HTTP/1.1
+                      
+                      
+                      count=77
+                      min=00:00:00
+                      avg=00:00:01.132711
+                      max=00:00:02.187500
+[2010-05-27 06:02:55] load_file /maps/gettile?map=yasat&z=6&x=22&y=9
+                      count=73
+                      min_load=00:00:00
+                      avg_load=00:00:01.197345
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001712
+                      max_save=00:00:00
+[2010-05-27 06:02:56] get GET /maps/gettile?map=yasat&z=5&x=11&y=4 HTTP/1.1
+                      
+                      
+                      count=78
+                      min=00:00:00
+                      avg=00:00:01.139823
+                      max=00:00:02.187500
+[2010-05-27 06:02:56] load_file /maps/gettile?map=yasat&z=5&x=11&y=4
+                      count=74
+                      min_load=00:00:00
+                      avg_load=00:00:01.204180
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001689
+                      max_save=00:00:00
+[2010-05-27 06:02:58] get GET /maps/gettile?map=yasat&z=6&x=22&y=8 HTTP/1.1
+                      
+                      
+                      count=79
+                      min=00:00:00
+                      avg=00:00:01.146954
+                      max=00:00:02.187500
+[2010-05-27 06:02:58] load_file /maps/gettile?map=yasat&z=6&x=22&y=8
+                      count=75
+                      min_load=00:00:00
+                      avg_load=00:00:01.210833
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001666
+                      max_save=00:00:00
+[2010-05-27 06:03:00] get GET /maps/gettile?map=yasat&z=5&x=11&y=3 HTTP/1.1
+                      
+                      
+                      count=80
+                      min=00:00:00
+                      avg=00:00:01.153710
+                      max=00:00:02.187500
+[2010-05-27 06:03:00] load_file /maps/gettile?map=yasat&z=5&x=11&y=3
+                      count=76
+                      min_load=00:00:00
+                      avg_load=00:00:01.217105
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001850
+                      max_save=00:00:00
+[2010-05-27 06:03:01] get GET /maps/gettile?map=yasat&z=6&x=22&y=7 HTTP/1.1
+                      
+                      
+                      count=81
+                      min=00:00:00
+                      avg=00:00:01.156635
+                      max=00:00:02.187500
+[2010-05-27 06:03:01] load_file /maps/gettile?map=yasat&z=6&x=22&y=7
+                      count=77
+                      min_load=00:00:00
+                      avg_load=00:00:01.219561
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001826
+                      max_save=00:00:00
+[2010-05-27 06:03:01] get GET /maps/gettile?map=yasat&z=5&x=10&y=5 HTTP/1.1
+                      
+                      
+                      count=82
+                      min=00:00:00
+                      avg=00:00:01.142721
+                      max=00:00:02.187500
+[2010-05-27 06:03:01] load_file /maps/gettile?map=yasat&z=5&x=10&y=5
+                      count=78
+                      min_load=00:00:00
+                      avg_load=00:00:01.204326
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001802
+                      max_save=00:00:00
+[2010-05-27 06:03:03] get GET /maps/gettile?map=yasat&z=6&x=21&y=10 HTTP/1.1
+                      
+                      
+                      count=83
+                      min=00:00:00
+                      avg=00:00:01.148719
+                      max=00:00:02.187500
+[2010-05-27 06:03:03] load_file /maps/gettile?map=yasat&z=6&x=21&y=10
+                      count=79
+                      min_load=00:00:00
+                      avg_load=00:00:01.209849
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001780
+                      max_save=00:00:00
+[2010-05-27 06:03:04] get GET /maps/gettile?map=yasat&z=6&x=21&y=9 HTTP/1.1
+                      
+                      
+                      count=84
+                      min=00:00:00
+                      avg=00:00:01.152715
+                      max=00:00:02.187500
+[2010-05-27 06:03:04] load_file /maps/gettile?map=yasat&z=6&x=21&y=9
+                      count=80
+                      min_load=00:00:00
+                      avg_load=00:00:01.213476
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001757
+                      max_save=00:00:00
+[2010-05-27 06:03:06] get GET /maps/gettile?map=yasat&z=3&x=2&y=1 HTTP/1.1
+                      
+                      
+                      count=85
+                      min=00:00:00
+                      avg=00:00:01.155330
+                      max=00:00:02.187500
+[2010-05-27 06:03:06] load_file /maps/gettile?map=yasat&z=3&x=2&y=1
+                      count=81
+                      min_load=00:00:00
+                      avg_load=00:00:01.215663
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001736
+                      max_save=00:00:00
+[2010-05-27 06:03:08] get GET /maps/gettile?map=yasat&z=4&x=5&y=2 HTTP/1.1
+                      
+                      
+                      count=86
+                      min=00:00:00
+                      avg=00:00:01.162790
+                      max=00:00:02.187500
+[2010-05-27 06:03:08] load_file /maps/gettile?map=yasat&z=4&x=5&y=2
+                      count=82
+                      min_load=00:00:00
+                      avg_load=00:00:01.222942
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001714
+                      max_save=00:00:00
+[2010-05-27 06:03:09] get GET /maps/gettile?map=yasat&z=5&x=10&y=4 HTTP/1.1
+                      
+                      
+                      count=87
+                      min=00:00:00
+                      avg=00:00:01.169001
+                      max=00:00:02.187500
+[2010-05-27 06:03:09] load_file /maps/gettile?map=yasat&z=5&x=10&y=4
+                      count=83
+                      min_load=00:00:00
+                      avg_load=00:00:01.228727
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001694
+                      max_save=00:00:00
+[2010-05-27 06:03:11] get GET /maps/gettile?map=yasat&z=6&x=21&y=8 HTTP/1.1
+                      
+                      
+                      count=88
+                      min=00:00:00
+                      avg=00:00:01.174893
+                      max=00:00:02.187500
+[2010-05-27 06:03:11] load_file /maps/gettile?map=yasat&z=6&x=21&y=8
+                      count=84
+                      min_load=00:00:00
+                      avg_load=00:00:01.234188
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001860
+                      max_save=00:00:00
+[2010-05-27 06:03:13] get GET /maps/gettile?map=yasat&z=1&x=0&y=0 HTTP/1.1
+                      
+                      
+                      count=89
+                      min=00:00:00
+                      avg=00:00:01.178546
+                      max=00:00:02.187500
+[2010-05-27 06:03:13] load_file /maps/gettile?map=yasat&z=1&x=0&y=0
+                      count=85
+                      min_load=00:00:00
+                      avg_load=00:00:01.237316
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001838
+                      max_save=00:00:00
+[2010-05-27 06:03:13] get GET /maps/gettile?map=yasat&z=2&x=1&y=0 HTTP/1.1
+                      
+                      
+                      count=90
+                      min=00:00:00
+                      avg=00:00:01.165451
+                      max=00:00:02.187500
+[2010-05-27 06:03:13] load_file /maps/gettile?map=yasat&z=2&x=1&y=0
+                      count=86
+                      min_load=00:00:00
+                      avg_load=00:00:01.222928
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001816
+                      max_save=00:00:00
+[2010-05-27 06:03:14] get GET /maps/gettile?map=yasat&z=3&x=2&y=0 HTTP/1.1
+                      
+                      
+                      count=91
+                      min=00:00:00
+                      avg=00:00:01.168784
+                      max=00:00:02.187500
+[2010-05-27 06:03:14] load_file /maps/gettile?map=yasat&z=3&x=2&y=0
+                      count=87
+                      min_load=00:00:00
+                      avg_load=00:00:01.225933
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001795
+                      max_save=00:00:00
+[2010-05-27 06:03:16] get GET /maps/gettile?map=yasat&z=8&x=115&y=45 HTTP/1.1
+                      
+                      
+                      count=92
+                      min=00:00:00
+                      avg=00:00:01.176800
+                      max=00:00:02.187500
+[2010-05-27 06:03:16] load_file /maps/gettile?map=yasat&z=8&x=115&y=45
+                      count=88
+                      min_load=00:00:00
+                      avg_load=00:00:01.233664
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001775
+                      max_save=00:00:00
+[2010-05-27 06:03:17] get GET /maps/gettile?map=yasat&z=10&x=451&y=178 HTTP/1.1
+                      
+                      
+                      count=93
+                      min=00:00:00
+                      avg=00:00:01.178091
+                      max=00:00:02.187500
+[2010-05-27 06:03:17] load_file /maps/gettile?map=yasat&z=10&x=451&y=178
+                      count=89
+                      min_load=00:00:00
+                      avg_load=00:00:01.234550
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001755
+                      max_save=00:00:00
+[2010-05-27 06:03:18] get GET /maps/gettile?map=yasat&z=10&x=451&y=177 HTTP/1.1
+                      
+                      
+                      count=94
+                      min=00:00:00
+                      avg=00:00:01.175033
+                      max=00:00:02.187500
+[2010-05-27 06:03:18] load_file /maps/gettile?map=yasat&z=10&x=451&y=177
+                      count=90
+                      min_load=00:00:00
+                      avg_load=00:00:01.230729
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001909
+                      max_save=00:00:00
+[2010-05-27 06:03:19] get GET /maps/gettile?map=yasat&z=10&x=451&y=176 HTTP/1.1
+                      
+                      
+                      count=95
+                      min=00:00:00
+                      avg=00:00:01.173190
+                      max=00:00:02.187500
+[2010-05-27 06:03:19] load_file /maps/gettile?map=yasat&z=10&x=451&y=176
+                      count=91
+                      min_load=00:00:00
+                      avg_load=00:00:01.228193
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001888
+                      max_save=00:00:00
+[2010-05-27 06:03:19] get GET /maps/gettile?map=yasat&z=10&x=451&y=175 HTTP/1.1
+                      
+                      
+                      count=96
+                      min=00:00:00
+                      avg=00:00:01.161132
+                      max=00:00:02.187500
+[2010-05-27 06:03:19] load_file /maps/gettile?map=yasat&z=10&x=451&y=175
+                      count=92
+                      min_load=00:00:00
+                      avg_load=00:00:01.215013
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001868
+                      max_save=00:00:00
+[2010-05-27 06:03:20] get GET /maps/gettile?map=yasat&z=10&x=451&y=174 HTTP/1.1
+                      
+                      
+                      count=97
+                      min=00:00:00
+                      avg=00:00:01.159149
+                      max=00:00:02.187500
+[2010-05-27 06:03:20] load_file /maps/gettile?map=yasat&z=10&x=451&y=174
+                      count=93
+                      min_load=00:00:00
+                      avg_load=00:00:01.212365
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001848
+                      max_save=00:00:00
+[2010-05-27 06:03:21] get GET /maps/gettile?map=yasat&z=10&x=450&y=178 HTTP/1.1
+                      
+                      
+                      count=98
+                      min=00:00:00
+                      avg=00:00:01.157366
+                      max=00:00:02.187500
+[2010-05-27 06:03:21] load_file /maps/gettile?map=yasat&z=10&x=450&y=178
+                      count=94
+                      min_load=00:00:00
+                      avg_load=00:00:01.210106
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001828
+                      max_save=00:00:00
+[2010-05-27 06:03:21] get GET /maps/gettile?map=yasat&z=10&x=450&y=177 HTTP/1.1
+                      
+                      
+                      count=99
+                      min=00:00:00
+                      avg=00:00:01.145833
+                      max=00:00:02.187500
+[2010-05-27 06:03:21] load_file /maps/gettile?map=yasat&z=10&x=450&y=177
+                      count=95
+                      min_load=00:00:00
+                      avg_load=00:00:01.197532
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001809
+                      max_save=00:00:00
+[2010-05-27 06:03:22] get GET /maps/gettile?map=yasat&z=10&x=450&y=176 HTTP/1.1
+                      
+                      
+                      count=100
+                      min=00:00:00
+                      avg=00:00:01.144062
+                      max=00:00:02.187500
+[2010-05-27 06:03:22] load_file /maps/gettile?map=yasat&z=10&x=450&y=176
+                      count=96
+                      min_load=00:00:00
+                      avg_load=00:00:01.195312
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001790
+                      max_save=00:00:00
+[2010-05-27 06:03:23] get GET /maps/gettile?map=yasat&z=10&x=450&y=175 HTTP/1.1
+                      
+                      
+                      count=101
+                      min=00:00:00
+                      avg=00:00:01.142481
+                      max=00:00:02.187500
+[2010-05-27 06:03:23] load_file /maps/gettile?map=yasat&z=10&x=450&y=175
+                      count=97
+                      min_load=00:00:00
+                      avg_load=00:00:01.193298
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001932
+                      max_save=00:00:00
+[2010-05-27 06:03:24] get GET /maps/gettile?map=yasat&z=10&x=450&y=174 HTTP/1.1
+                      
+                      
+                      count=102
+                      min=00:00:00
+                      avg=00:00:01.142922
+                      max=00:00:02.187500
+[2010-05-27 06:03:24] load_file /maps/gettile?map=yasat&z=10&x=450&y=174
+                      count=98
+                      min_load=00:00:00
+                      avg_load=00:00:01.193399
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001913
+                      max_save=00:00:00
+[2010-05-27 06:03:25] get GET /maps/gettile?map=yasat&z=10&x=449&y=178 HTTP/1.1
+                      
+                      
+                      count=103
+                      min=00:00:00
+                      avg=00:00:01.141535
+                      max=00:00:02.187500
+[2010-05-27 06:03:25] load_file /maps/gettile?map=yasat&z=10&x=449&y=178
+                      count=99
+                      min_load=00:00:00
+                      avg_load=00:00:01.191445
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001893
+                      max_save=00:00:00
+[2010-05-27 06:03:26] get GET /maps/gettile?map=yasat&z=10&x=449&y=177 HTTP/1.1
+                      
+                      
+                      count=104
+                      min=00:00:00
+                      avg=00:00:01.141075
+                      max=00:00:02.187500
+[2010-05-27 06:03:27] load_file /maps/gettile?map=yasat&z=10&x=449&y=177
+                      count=100
+                      min_load=00:00:00
+                      avg_load=00:00:01.190625
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001875
+                      max_save=00:00:00
+[2010-05-27 06:03:27] get GET /maps/gettile?map=yasat&z=10&x=449&y=176 HTTP/1.1
+                      
+                      
+                      count=105
+                      min=00:00:00
+                      avg=00:00:01.130357
+                      max=00:00:02.187500
+[2010-05-27 06:03:27] load_file /maps/gettile?map=yasat&z=10&x=449&y=176
+                      count=101
+                      min_load=00:00:00
+                      avg_load=00:00:01.178991
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002011
+                      max_save=00:00:00
+[2010-05-27 06:03:27] get GET /maps/gettile?map=yasat&z=10&x=449&y=175 HTTP/1.1
+                      
+                      
+                      count=106
+                      min=00:00:00
+                      avg=00:00:01.128685
+                      max=00:00:02.187500
+[2010-05-27 06:03:27] load_file /maps/gettile?map=yasat&z=10&x=449&y=175
+                      count=102
+                      min_load=00:00:00
+                      avg_load=00:00:01.176776
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.001991
+                      max_save=00:00:00
+[2010-05-27 06:03:28] get GET /maps/gettile?map=yasat&z=10&x=449&y=174 HTTP/1.1
+                      
+                      
+                      count=107
+                      min=00:00:00
+                      avg=00:00:01.118136
+                      max=00:00:02.187500
+[2010-05-27 06:03:28] load_file /maps/gettile?map=yasat&z=10&x=449&y=174
+                      count=103
+                      min_load=00:00:00
+                      avg_load=00:00:01.165351
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002123
+                      max_save=00:00:00
+[2010-05-27 06:03:28] get GET /maps/gettile?map=yasat&z=10&x=448&y=178 HTTP/1.1
+                      
+                      
+                      count=108
+                      min=00:00:00
+                      avg=00:00:01.107928
+                      max=00:00:02.187500
+[2010-05-27 06:03:28] load_file /maps/gettile?map=yasat&z=10&x=448&y=178
+                      count=104
+                      min_load=00:00:00
+                      avg_load=00:00:01.154296
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002103
+                      max_save=00:00:00
+[2010-05-27 06:03:29] get GET /maps/gettile?map=yasat&z=10&x=448&y=177 HTTP/1.1
+                      
+                      
+                      count=109
+                      min=00:00:00
+                      avg=00:00:01.109231
+                      max=00:00:02.187500
+[2010-05-27 06:03:29] load_file /maps/gettile?map=yasat&z=10&x=448&y=177
+                      count=105
+                      min_load=00:00:00
+                      avg_load=00:00:01.155208
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:03:30] get GET /maps/gettile?map=yasat&z=10&x=448&y=176 HTTP/1.1
+                      
+                      
+                      count=110
+                      min=00:00:00
+                      avg=00:00:01.110937
+                      max=00:00:02.187500
+[2010-05-27 06:03:30] load_file /maps/gettile?map=yasat&z=10&x=448&y=176
+                      count=106
+                      min_load=00:00:00
+                      avg_load=00:00:01.156692
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002063
+                      max_save=00:00:00
+[2010-05-27 06:03:30] get GET /maps/gettile?map=yasat&z=10&x=448&y=175 HTTP/1.1
+                      
+                      
+                      count=111
+                      min=00:00:00
+                      avg=00:00:01.101069
+                      max=00:00:02.187500
+[2010-05-27 06:03:30] load_file /maps/gettile?map=yasat&z=10&x=448&y=175
+                      count=107
+                      min_load=00:00:00
+                      avg_load=00:00:01.146028
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002044
+                      max_save=00:00:00
+[2010-05-27 06:03:31] get GET /maps/gettile?map=yasat&z=10&x=448&y=174 HTTP/1.1
+                      
+                      
+                      count=112
+                      min=00:00:00
+                      avg=00:00:01.100027
+                      max=00:00:02.187500
+[2010-05-27 06:03:31] load_file /maps/gettile?map=yasat&z=10&x=448&y=174
+                      count=108
+                      min_load=00:00:00
+                      avg_load=00:00:01.144531
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002025
+                      max_save=00:00:00
+[2010-05-27 06:03:31] get GET /maps/gettile?map=yasat&z=10&x=447&y=178 HTTP/1.1
+                      
+                      
+                      count=113
+                      min=00:00:00
+                      avg=00:00:01.090431
+                      max=00:00:02.187500
+[2010-05-27 06:03:31] load_file /maps/gettile?map=yasat&z=10&x=447&y=178
+                      count=109
+                      min_load=00:00:00
+                      avg_load=00:00:01.134174
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002150
+                      max_save=00:00:00
+[2010-05-27 06:03:32] get GET /maps/gettile?map=yasat&z=10&x=447&y=177 HTTP/1.1
+                      
+                      
+                      count=114
+                      min=00:00:00
+                      avg=00:00:01.091145
+                      max=00:00:02.187500
+[2010-05-27 06:03:32] load_file /maps/gettile?map=yasat&z=10&x=447&y=177
+                      count=110
+                      min_load=00:00:00
+                      avg_load=00:00:01.134517
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002130
+                      max_save=00:00:00
+[2010-05-27 06:03:33] get GET /maps/gettile?map=yasat&z=10&x=447&y=176 HTTP/1.1
+                      
+                      
+                      count=115
+                      min=00:00:00
+                      avg=00:00:01.090217
+                      max=00:00:02.187500
+[2010-05-27 06:03:33] load_file /maps/gettile?map=yasat&z=10&x=447&y=176
+                      count=111
+                      min_load=00:00:00
+                      avg_load=00:00:01.133305
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002111
+                      max_save=00:00:00
+[2010-05-27 06:03:34] get GET /maps/gettile?map=yasat&z=10&x=447&y=175 HTTP/1.1
+                      
+                      
+                      count=116
+                      min=00:00:00
+                      avg=00:00:01.089439
+                      max=00:00:02.187500
+[2010-05-27 06:03:34] load_file /maps/gettile?map=yasat&z=10&x=447&y=175
+                      count=112
+                      min_load=00:00:00
+                      avg_load=00:00:01.132114
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002092
+                      max_save=00:00:00
+[2010-05-27 06:03:34] get GET /maps/gettile?map=yasat&z=10&x=447&y=174 HTTP/1.1
+                      
+                      
+                      count=117
+                      min=00:00:00
+                      avg=00:00:01.080261
+                      max=00:00:02.187500
+[2010-05-27 06:03:34] load_file /maps/gettile?map=yasat&z=10&x=447&y=174
+                      count=113
+                      min_load=00:00:00
+                      avg_load=00:00:01.122234
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002074
+                      max_save=00:00:00
+[2010-05-27 06:03:35] get GET /maps/gettile?map=yasat&z=10&x=446&y=178 HTTP/1.1
+                      
+                      
+                      count=118
+                      min=00:00:00
+                      avg=00:00:01.079316
+                      max=00:00:02.187500
+[2010-05-27 06:03:35] load_file /maps/gettile?map=yasat&z=10&x=446&y=178
+                      count=114
+                      min_load=00:00:00
+                      avg_load=00:00:01.120888
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002055
+                      max_save=00:00:00
+[2010-05-27 06:03:35] get GET /maps/gettile?map=yasat&z=10&x=446&y=177 HTTP/1.1
+                      
+                      
+                      count=119
+                      min=00:00:00
+                      avg=00:00:01.070246
+                      max=00:00:02.187500
+[2010-05-27 06:03:35] load_file /maps/gettile?map=yasat&z=10&x=446&y=177
+                      count=115
+                      min_load=00:00:00
+                      avg_load=00:00:01.111277
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002038
+                      max_save=00:00:00
+[2010-05-27 06:03:36] get GET /maps/gettile?map=yasat&z=10&x=446&y=176 HTTP/1.1
+                      
+                      
+                      count=120
+                      min=00:00:00
+                      avg=00:00:01.069401
+                      max=00:00:02.187500
+[2010-05-27 06:03:36] load_file /maps/gettile?map=yasat&z=10&x=446&y=176
+                      count=116
+                      min_load=00:00:00
+                      avg_load=00:00:01.110183
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002020
+                      max_save=00:00:00
+[2010-05-27 06:03:37] get GET /maps/gettile?map=yasat&z=10&x=446&y=175 HTTP/1.1
+                      
+                      
+                      count=121
+                      min=00:00:00
+                      avg=00:00:01.068827
+                      max=00:00:02.187500
+[2010-05-27 06:03:37] load_file /maps/gettile?map=yasat&z=10&x=446&y=175
+                      count=117
+                      min_load=00:00:00
+                      avg_load=00:00:01.109241
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002003
+                      max_save=00:00:00
+[2010-05-27 06:03:38] get GET /maps/gettile?map=yasat&z=10&x=446&y=174 HTTP/1.1
+                      
+                      
+                      count=122
+                      min=00:00:00
+                      avg=00:00:01.068135
+                      max=00:00:02.187500
+[2010-05-27 06:03:38] load_file /maps/gettile?map=yasat&z=10&x=446&y=174
+                      count=118
+                      min_load=00:00:00
+                      avg_load=00:00:01.108183
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002118
+                      max_save=00:00:00
+[2010-05-27 06:03:40] get GET /maps/gettile?map=yasat&z=9&x=227&y=89 HTTP/1.1
+                      
+                      
+                      count=123
+                      min=00:00:00
+                      avg=00:00:01.076473
+                      max=00:00:02.187500
+[2010-05-27 06:03:40] load_file /maps/gettile?map=yasat&z=9&x=227&y=89
+                      count=119
+                      min_load=00:00:00
+                      avg_load=00:00:01.116596
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002100
+                      max_save=00:00:00
+[2010-05-27 06:03:41] get GET /maps/gettile?map=yasat&z=9&x=227&y=88 HTTP/1.1
+                      
+                      
+                      count=124
+                      min=00:00:00
+                      avg=00:00:01.075856
+                      max=00:00:02.187500
+[2010-05-27 06:03:41] load_file /maps/gettile?map=yasat&z=9&x=227&y=88
+                      count=120
+                      min_load=00:00:00
+                      avg_load=00:00:01.115625
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002083
+                      max_save=00:00:00
+[2010-05-27 06:03:42] get GET /maps/gettile?map=yasat&z=9&x=227&y=87 HTTP/1.1
+                      
+                      
+                      count=125
+                      min=00:00:00
+                      avg=00:00:01.075250
+                      max=00:00:02.187500
+[2010-05-27 06:03:42] load_file /maps/gettile?map=yasat&z=9&x=227&y=87
+                      count=121
+                      min_load=00:00:00
+                      avg_load=00:00:01.114669
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002195
+                      max_save=00:00:00
+[2010-05-27 06:03:43] get GET /maps/gettile?map=yasat&z=9&x=227&y=86 HTTP/1.1
+                      
+                      
+                      count=126
+                      min=00:00:00
+                      avg=00:00:01.066840
+                      max=00:00:02.187500
+[2010-05-27 06:03:43] load_file /maps/gettile?map=yasat&z=9&x=227&y=86
+                      count=122
+                      min_load=00:00:00
+                      avg_load=00:00:01.105917
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002177
+                      max_save=00:00:00
+[2010-05-27 06:03:43] get GET /maps/gettile?map=yasat&z=9&x=226&y=89 HTTP/1.1
+                      
+                      
+                      count=127
+                      min=00:00:00
+                      avg=00:00:01.065821
+                      max=00:00:02.187500
+[2010-05-27 06:03:44] load_file /maps/gettile?map=yasat&z=9&x=226&y=89
+                      count=123
+                      min_load=00:00:00
+                      avg_load=00:00:01.104674
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002159
+                      max_save=00:00:00
+[2010-05-27 06:03:44] get GET /maps/gettile?map=yasat&z=9&x=226&y=88 HTTP/1.1
+                      
+                      
+                      count=128
+                      min=00:00:00
+                      avg=00:00:01.065185
+                      max=00:00:02.187500
+[2010-05-27 06:03:45] load_file /maps/gettile?map=yasat&z=9&x=226&y=88
+                      count=124
+                      min_load=00:00:00
+                      avg_load=00:00:01.103704
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002142
+                      max_save=00:00:00
+[2010-05-27 06:03:45] get GET /maps/gettile?map=yasat&z=9&x=226&y=87 HTTP/1.1
+                      
+                      
+                      count=129
+                      min=00:00:00
+                      avg=00:00:01.064559
+                      max=00:00:02.187500
+[2010-05-27 06:03:46] load_file /maps/gettile?map=yasat&z=9&x=226&y=87
+                      count=125
+                      min_load=00:00:00
+                      avg_load=00:00:01.102750
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002250
+                      max_save=00:00:00
+[2010-05-27 06:03:47] get GET /maps/gettile?map=yasat&z=9&x=226&y=86 HTTP/1.1
+                      
+                      
+                      count=130
+                      min=00:00:00
+                      avg=00:00:01.065504
+                      max=00:00:02.187500
+[2010-05-27 06:03:47] load_file /maps/gettile?map=yasat&z=9&x=226&y=86
+                      count=126
+                      min_load=00:00:00
+                      avg_load=00:00:01.103546
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002232
+                      max_save=00:00:00
+[2010-05-27 06:03:48] get GET /maps/gettile?map=yasat&z=9&x=225&y=89 HTTP/1.1
+                      
+                      
+                      count=131
+                      min=00:00:00
+                      avg=00:00:01.066555
+                      max=00:00:02.187500
+[2010-05-27 06:03:48] load_file /maps/gettile?map=yasat&z=9&x=225&y=89
+                      count=127
+                      min_load=00:00:00
+                      avg_load=00:00:01.104330
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002214
+                      max_save=00:00:00
+[2010-05-27 06:03:48] get GET /maps/gettile?map=yasat&z=9&x=225&y=88 HTTP/1.1
+                      
+                      
+                      count=132
+                      min=00:00:00
+                      avg=00:00:01.058475
+                      max=00:00:02.187500
+[2010-05-27 06:03:48] load_file /maps/gettile?map=yasat&z=9&x=225&y=88
+                      count=128
+                      min_load=00:00:00
+                      avg_load=00:00:01.095703
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002319
+                      max_save=00:00:00
+[2010-05-27 06:03:48] get GET /maps/gettile?map=yasat&z=9&x=225&y=87 HTTP/1.1
+                      
+                      
+                      count=133
+                      min=00:00:00
+                      avg=00:00:01.050634
+                      max=00:00:02.187500
+[2010-05-27 06:03:48] load_file /maps/gettile?map=yasat&z=9&x=225&y=87
+                      count=129
+                      min_load=00:00:00
+                      avg_load=00:00:01.087451
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002301
+                      max_save=00:00:00
+[2010-05-27 06:03:49] get GET /maps/gettile?map=yasat&z=9&x=225&y=86 HTTP/1.1
+                      
+                      
+                      count=134
+                      min=00:00:00
+                      avg=00:00:01.049673
+                      max=00:00:02.187500
+[2010-05-27 06:03:49] load_file /maps/gettile?map=yasat&z=9&x=225&y=86
+                      count=130
+                      min_load=00:00:00
+                      avg_load=00:00:01.086177
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002403
+                      max_save=00:00:00
+[2010-05-27 06:03:50] get GET /maps/gettile?map=yasat&z=9&x=224&y=89 HTTP/1.1
+                      
+                      
+                      count=135
+                      min=00:00:00
+                      avg=00:00:01.049189
+                      max=00:00:02.187500
+[2010-05-27 06:03:50] load_file /maps/gettile?map=yasat&z=9&x=224&y=89
+                      count=131
+                      min_load=00:00:00
+                      avg_load=00:00:01.085520
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002385
+                      max_save=00:00:00
+[2010-05-27 06:03:50] get GET /maps/gettile?map=yasat&z=9&x=224&y=88 HTTP/1.1
+                      
+                      
+                      count=136
+                      min=00:00:00
+                      avg=00:00:01.041590
+                      max=00:00:02.187500
+[2010-05-27 06:03:50] load_file /maps/gettile?map=yasat&z=9&x=224&y=88
+                      count=132
+                      min_load=00:00:00
+                      avg_load=00:00:01.077414
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002367
+                      max_save=00:00:00
+[2010-05-27 06:03:51] get GET /maps/gettile?map=yasat&z=9&x=224&y=87 HTTP/1.1
+                      
+                      
+                      count=137
+                      min=00:00:00
+                      avg=00:00:01.041058
+                      max=00:00:02.187500
+[2010-05-27 06:03:51] load_file /maps/gettile?map=yasat&z=9&x=224&y=87
+                      count=133
+                      min_load=00:00:00
+                      avg_load=00:00:01.076715
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002349
+                      max_save=00:00:00
+[2010-05-27 06:03:52] get GET /maps/gettile?map=yasat&z=9&x=224&y=86 HTTP/1.1
+                      
+                      
+                      count=138
+                      min=00:00:00
+                      avg=00:00:01.040534
+                      max=00:00:02.187500
+[2010-05-27 06:03:52] load_file /maps/gettile?map=yasat&z=9&x=224&y=86
+                      count=134
+                      min_load=00:00:00
+                      avg_load=00:00:01.075909
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002448
+                      max_save=00:00:00
+[2010-05-27 06:03:53] get GET /maps/gettile?map=yasat&z=9&x=223&y=89 HTTP/1.1
+                      
+                      
+                      count=139
+                      min=00:00:00
+                      avg=00:00:01.039455
+                      max=00:00:02.187500
+[2010-05-27 06:03:53] load_file /maps/gettile?map=yasat&z=9&x=223&y=89
+                      count=135
+                      min_load=00:00:00
+                      avg_load=00:00:01.074537
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002546
+                      max_save=00:00:00
+[2010-05-27 06:03:54] get GET /maps/gettile?map=yasat&z=9&x=223&y=88 HTTP/1.1
+                      
+                      
+                      count=140
+                      min=00:00:00
+                      avg=00:00:01.039174
+                      max=00:00:02.187500
+[2010-05-27 06:03:54] load_file /maps/gettile?map=yasat&z=9&x=223&y=88
+                      count=136
+                      min_load=00:00:00
+                      avg_load=00:00:01.073988
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002527
+                      max_save=00:00:00
+[2010-05-27 06:03:55] get GET /maps/gettile?map=yasat&z=9&x=223&y=87 HTTP/1.1
+                      
+                      
+                      count=141
+                      min=00:00:00
+                      avg=00:00:01.038896
+                      max=00:00:02.187500
+[2010-05-27 06:03:55] load_file /maps/gettile?map=yasat&z=9&x=223&y=87
+                      count=137
+                      min_load=00:00:00
+                      avg_load=00:00:01.073448
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002509
+                      max_save=00:00:00
+[2010-05-27 06:03:56] get GET /maps/gettile?map=yasat&z=9&x=223&y=86 HTTP/1.1
+                      
+                      
+                      count=142
+                      min=00:00:00
+                      avg=00:00:01.038512
+                      max=00:00:02.187500
+[2010-05-27 06:03:56] load_file /maps/gettile?map=yasat&z=9&x=223&y=86
+                      count=138
+                      min_load=00:00:00
+                      avg_load=00:00:01.072916
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002490
+                      max_save=00:00:00
+[2010-05-27 06:03:56] get GET /maps/gettile?map=yasat&z=9&x=222&y=89 HTTP/1.1
+                      
+                      
+                      count=143
+                      min=00:00:00
+                      avg=00:00:01.031359
+                      max=00:00:02.187500
+[2010-05-27 06:03:56] load_file /maps/gettile?map=yasat&z=9&x=222&y=89
+                      count=139
+                      min_load=00:00:00
+                      avg_load=00:00:01.065310
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002473
+                      max_save=00:00:00
+[2010-05-27 06:03:56] get GET /maps/gettile?map=yasat&z=9&x=222&y=88 HTTP/1.1
+                      
+                      
+                      count=144
+                      min=00:00:00
+                      avg=00:00:01.024197
+                      max=00:00:02.187500
+[2010-05-27 06:03:56] load_file /maps/gettile?map=yasat&z=9&x=222&y=88
+                      count=140
+                      min_load=00:00:00
+                      avg_load=00:00:01.057812
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002455
+                      max_save=00:00:00
+[2010-05-27 06:03:56] get GET /maps/gettile?map=yasat&z=9&x=222&y=87 HTTP/1.1
+                      
+                      
+                      count=145
+                      min=00:00:00
+                      avg=00:00:01.017133
+                      max=00:00:02.187500
+[2010-05-27 06:03:56] load_file /maps/gettile?map=yasat&z=9&x=222&y=87
+                      count=141
+                      min_load=00:00:00
+                      avg_load=00:00:01.050310
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002548
+                      max_save=00:00:00
+[2010-05-27 06:03:56] get GET /maps/gettile?map=yasat&z=9&x=222&y=86 HTTP/1.1
+                      
+                      
+                      count=146
+                      min=00:00:00
+                      avg=00:00:01.010273
+                      max=00:00:02.187500
+[2010-05-27 06:03:56] load_file /maps/gettile?map=yasat&z=9&x=222&y=86
+                      count=142
+                      min_load=00:00:00
+                      avg_load=00:00:01.043023
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002530
+                      max_save=00:00:00
+[2010-05-27 06:03:58] get GET /maps/gettile?map=yasat&z=8&x=115&y=44 HTTP/1.1
+                      
+                      
+                      count=147
+                      min=00:00:00
+                      avg=00:00:01.016262
+                      max=00:00:02.187500
+[2010-05-27 06:03:58] load_file /maps/gettile?map=yasat&z=8&x=115&y=44
+                      count=143
+                      min_load=00:00:00
+                      avg_load=00:00:01.049060
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002622
+                      max_save=00:00:00
+[2010-05-27 06:04:00] get GET /maps/gettile?map=yasat&z=8&x=115&y=43 HTTP/1.1
+                      
+                      
+                      count=148
+                      min=00:00:00
+                      avg=00:00:01.022065
+                      max=00:00:02.187500
+[2010-05-27 06:04:00] load_file /maps/gettile?map=yasat&z=8&x=115&y=43
+                      count=144
+                      min_load=00:00:00
+                      avg_load=00:00:01.054904
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:04:01] get GET /maps/gettile?map=yasat&z=11&x=899&y=355 HTTP/1.1
+                      
+                      
+                      count=149
+                      min=00:00:00
+                      avg=00:00:01.021916
+                      max=00:00:02.187500
+[2010-05-27 06:04:01] load_file /maps/gettile?map=yasat&z=11&x=899&y=355
+                      count=145
+                      min_load=00:00:00
+                      avg_load=00:00:01.054525
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002586
+                      max_save=00:00:00
+[2010-05-27 06:04:02] get GET /maps/gettile?map=yasat&z=11&x=899&y=354 HTTP/1.1
+                      
+                      
+                      count=150
+                      min=00:00:00
+                      avg=00:00:01.021666
+                      max=00:00:02.187500
+[2010-05-27 06:04:02] load_file /maps/gettile?map=yasat&z=11&x=899&y=354
+                      count=146
+                      min_load=00:00:00
+                      avg_load=00:00:01.054045
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002675
+                      max_save=00:00:00
+[2010-05-27 06:04:03] get GET /maps/gettile?map=yasat&z=11&x=899&y=353 HTTP/1.1
+                      
+                      
+                      count=151
+                      min=00:00:00
+                      avg=00:00:01.022764
+                      max=00:00:02.187500
+[2010-05-27 06:04:03] load_file /maps/gettile?map=yasat&z=11&x=899&y=353
+                      count=147
+                      min_load=00:00:00
+                      avg_load=00:00:01.055059
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002657
+                      max_save=00:00:00
+[2010-05-27 06:04:04] get GET /maps/gettile?map=yasat&z=11&x=899&y=352 HTTP/1.1
+                      
+                      
+                      count=152
+                      min=00:00:00
+                      avg=00:00:01.022512
+                      max=00:00:02.187500
+[2010-05-27 06:04:04] load_file /maps/gettile?map=yasat&z=11&x=899&y=352
+                      count=148
+                      min_load=00:00:00
+                      avg_load=00:00:01.054581
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002639
+                      max_save=00:00:00
+[2010-05-27 06:04:04] get GET /maps/gettile?map=yasat&z=11&x=898&y=355 HTTP/1.1
+                      
+                      
+                      count=153
+                      min=00:00:00
+                      avg=00:00:01.015829
+                      max=00:00:02.187500
+[2010-05-27 06:04:04] load_file /maps/gettile?map=yasat&z=11&x=898&y=355
+                      count=149
+                      min_load=00:00:00
+                      avg_load=00:00:01.047504
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002726
+                      max_save=00:00:00
+[2010-05-27 06:04:05] get GET /maps/gettile?map=yasat&z=11&x=898&y=354 HTTP/1.1
+                      
+                      
+                      count=154
+                      min=00:00:00
+                      avg=00:00:01.015523
+                      max=00:00:02.187500
+[2010-05-27 06:04:05] load_file /maps/gettile?map=yasat&z=11&x=898&y=354
+                      count=150
+                      min_load=00:00:00
+                      avg_load=00:00:01.046979
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002812
+                      max_save=00:00:00
+[2010-05-27 06:04:06] get GET /maps/gettile?map=yasat&z=11&x=898&y=353 HTTP/1.1
+                      
+                      
+                      count=155
+                      min=00:00:00
+                      avg=00:00:01.016633
+                      max=00:00:02.187500
+[2010-05-27 06:04:06] load_file /maps/gettile?map=yasat&z=11&x=898&y=353
+                      count=151
+                      min_load=00:00:00
+                      avg_load=00:00:01.048013
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002793
+                      max_save=00:00:00
+[2010-05-27 06:04:06] get GET /maps/gettile?map=yasat&z=11&x=898&y=352 HTTP/1.1
+                      
+                      
+                      count=156
+                      min=00:00:00
+                      avg=00:00:01.010216
+                      max=00:00:02.187500
+[2010-05-27 06:04:06] load_file /maps/gettile?map=yasat&z=11&x=898&y=352
+                      count=152
+                      min_load=00:00:00
+                      avg_load=00:00:01.041221
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002775
+                      max_save=00:00:00
+[2010-05-27 06:04:07] get GET /maps/gettile?map=yasat&z=11&x=897&y=355 HTTP/1.1
+                      
+                      
+                      count=157
+                      min=00:00:00
+                      avg=00:00:01.011246
+                      max=00:00:02.187500
+[2010-05-27 06:04:07] load_file /maps/gettile?map=yasat&z=11&x=897&y=355
+                      count=153
+                      min_load=00:00:00
+                      avg_load=00:00:01.042075
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002757
+                      max_save=00:00:00
+[2010-05-27 06:04:08] get GET /maps/gettile?map=yasat&z=11&x=897&y=354 HTTP/1.1
+                      
+                      
+                      count=158
+                      min=00:00:00
+                      avg=00:00:01.011174
+                      max=00:00:02.187500
+[2010-05-27 06:04:08] load_file /maps/gettile?map=yasat&z=11&x=897&y=354
+                      count=154
+                      min_load=00:00:00
+                      avg_load=00:00:01.041801
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002840
+                      max_save=00:00:00
+[2010-05-27 06:04:09] get GET /maps/gettile?map=yasat&z=11&x=897&y=353 HTTP/1.1
+                      
+                      
+                      count=159
+                      min=00:00:00
+                      avg=00:00:01.011006
+                      max=00:00:02.187500
+[2010-05-27 06:04:09] load_file /maps/gettile?map=yasat&z=11&x=897&y=353
+                      count=155
+                      min_load=00:00:00
+                      avg_load=00:00:01.041532
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002822
+                      max_save=00:00:00
+[2010-05-27 06:04:09] get GET /maps/gettile?map=yasat&z=11&x=897&y=352 HTTP/1.1
+                      
+                      
+                      count=160
+                      min=00:00:00
+                      avg=00:00:01.004785
+                      max=00:00:02.187500
+[2010-05-27 06:04:09] load_file /maps/gettile?map=yasat&z=11&x=897&y=352
+                      count=156
+                      min_load=00:00:00
+                      avg_load=00:00:01.034955
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002804
+                      max_save=00:00:00
+[2010-05-27 06:04:09] get GET /maps/gettile?map=yasat&z=11&x=896&y=355 HTTP/1.1
+                      
+                      
+                      count=161
+                      min=00:00:00
+                      avg=00:00:00.998544
+                      max=00:00:02.187500
+[2010-05-27 06:04:09] load_file /maps/gettile?map=yasat&z=11&x=896&y=355
+                      count=157
+                      min_load=00:00:00
+                      avg_load=00:00:01.028363
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002886
+                      max_save=00:00:00
+[2010-05-27 06:04:10] get GET /maps/gettile?map=yasat&z=11&x=896&y=354 HTTP/1.1
+                      
+                      
+                      count=162
+                      min=00:00:00
+                      avg=00:00:00.997588
+                      max=00:00:02.187500
+[2010-05-27 06:04:10] load_file /maps/gettile?map=yasat&z=11&x=896&y=354
+                      count=158
+                      min_load=00:00:00
+                      avg_load=00:00:01.027294
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002867
+                      max_save=00:00:00
+[2010-05-27 06:04:10] get GET /maps/gettile?map=yasat&z=11&x=896&y=353 HTTP/1.1
+                      
+                      
+                      count=163
+                      min=00:00:00
+                      avg=00:00:00.991564
+                      max=00:00:02.187500
+[2010-05-27 06:04:10] load_file /maps/gettile?map=yasat&z=11&x=896&y=353
+                      count=159
+                      min_load=00:00:00
+                      avg_load=00:00:01.020931
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002849
+                      max_save=00:00:00
+[2010-05-27 06:04:12] get GET /maps/gettile?map=yasat&z=11&x=896&y=352 HTTP/1.1
+                      
+                      
+                      count=164
+                      min=00:00:00
+                      avg=00:00:00.992663
+                      max=00:00:02.187500
+[2010-05-27 06:04:12] load_file /maps/gettile?map=yasat&z=11&x=896&y=352
+                      count=160
+                      min_load=00:00:00
+                      avg_load=00:00:01.021875
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002832
+                      max_save=00:00:00
+[2010-05-27 06:04:13] get GET /maps/gettile?map=yasat&z=11&x=895&y=355 HTTP/1.1
+                      
+                      
+                      count=165
+                      min=00:00:00
+                      avg=00:00:00.993939
+                      max=00:00:02.187500
+[2010-05-27 06:04:13] load_file /maps/gettile?map=yasat&z=11&x=895&y=355
+                      count=161
+                      min_load=00:00:00
+                      avg_load=00:00:01.023000
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002814
+                      max_save=00:00:00
+[2010-05-27 06:04:13] get GET /maps/gettile?map=yasat&z=11&x=895&y=354 HTTP/1.1
+                      
+                      
+                      count=166
+                      min=00:00:00
+                      avg=00:00:00.987951
+                      max=00:00:02.187500
+[2010-05-27 06:04:13] load_file /maps/gettile?map=yasat&z=11&x=895&y=354
+                      count=162
+                      min_load=00:00:00
+                      avg_load=00:00:01.016782
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002797
+                      max_save=00:00:00
+[2010-05-27 06:04:14] get GET /maps/gettile?map=yasat&z=11&x=895&y=353 HTTP/1.1
+                      
+                      
+                      count=167
+                      min=00:00:00
+                      avg=00:00:00.989053
+                      max=00:00:02.187500
+[2010-05-27 06:04:14] load_file /maps/gettile?map=yasat&z=11&x=895&y=353
+                      count=163
+                      min_load=00:00:00
+                      avg_load=00:00:01.017733
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002779
+                      max_save=00:00:00
+[2010-05-27 06:04:15] get GET /maps/gettile?map=yasat&z=11&x=895&y=352 HTTP/1.1
+                      
+                      
+                      count=168
+                      min=00:00:00
+                      avg=00:00:00.989025
+                      max=00:00:02.187500
+[2010-05-27 06:04:15] load_file /maps/gettile?map=yasat&z=11&x=895&y=352
+                      count=164
+                      min_load=00:00:00
+                      avg_load=00:00:01.017625
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002762
+                      max_save=00:00:00
+[2010-05-27 06:04:16] get GET /maps/gettile?map=yasat&z=11&x=894&y=355 HTTP/1.1
+                      
+                      
+                      count=169
+                      min=00:00:00
+                      avg=00:00:00.989644
+                      max=00:00:02.187500
+[2010-05-27 06:04:16] load_file /maps/gettile?map=yasat&z=11&x=894&y=355
+                      count=165
+                      min_load=00:00:00
+                      avg_load=00:00:01.018087
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002840
+                      max_save=00:00:00
+[2010-05-27 06:04:17] get GET /maps/gettile?map=yasat&z=11&x=894&y=354 HTTP/1.1
+                      
+                      
+                      count=170
+                      min=00:00:00
+                      avg=00:00:00.989705
+                      max=00:00:02.187500
+[2010-05-27 06:04:17] load_file /maps/gettile?map=yasat&z=11&x=894&y=354
+                      count=166
+                      min_load=00:00:00
+                      avg_load=00:00:01.017978
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002823
+                      max_save=00:00:00
+[2010-05-27 06:04:18] get GET /maps/gettile?map=yasat&z=11&x=894&y=353 HTTP/1.1
+                      
+                      
+                      count=171
+                      min=00:00:00
+                      avg=00:00:00.990953
+                      max=00:00:02.187500
+[2010-05-27 06:04:18] load_file /maps/gettile?map=yasat&z=11&x=894&y=353
+                      count=167
+                      min_load=00:00:00
+                      avg_load=00:00:01.019180
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002806
+                      max_save=00:00:00
+[2010-05-27 06:04:19] get GET /maps/gettile?map=yasat&z=11&x=894&y=352 HTTP/1.1
+                      
+                      
+                      count=172
+                      min=00:00:00
+                      avg=00:00:00.990824
+                      max=00:00:02.187500
+[2010-05-27 06:04:19] load_file /maps/gettile?map=yasat&z=11&x=894&y=352
+                      count=168
+                      min_load=00:00:00
+                      avg_load=00:00:01.018880
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002883
+                      max_save=00:00:00
+[2010-05-27 06:04:19] get GET /maps/gettile?map=yasat&z=8&x=115&y=42 HTTP/1.1
+                      
+                      
+                      count=173
+                      min=00:00:00
+                      avg=00:00:00.985097
+                      max=00:00:02.187500
+[2010-05-27 06:04:19] load_file /maps/gettile?map=yasat&z=8&x=115&y=42
+                      count=169
+                      min_load=00:00:00
+                      avg_load=00:00:01.012943
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002866
+                      max_save=00:00:00
+[2010-05-27 06:04:19] get GET /maps/gettile?map=yasat&z=8&x=115&y=41 HTTP/1.1
+                      
+                      
+                      count=174
+                      min=00:00:00
+                      avg=00:00:00.979436
+                      max=00:00:02.187500
+[2010-05-27 06:04:19] load_file /maps/gettile?map=yasat&z=8&x=115&y=41
+                      count=170
+                      min_load=00:00:00
+                      avg_load=00:00:01.007077
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002849
+                      max_save=00:00:00
+[2010-05-27 06:04:21] get GET /maps/gettile?map=yasat&z=8&x=114&y=45 HTTP/1.1
+                      
+                      
+                      count=175
+                      min=00:00:00
+                      avg=00:00:00.985625
+                      max=00:00:02.187500
+[2010-05-27 06:04:21] load_file /maps/gettile?map=yasat&z=8&x=114&y=45
+                      count=171
+                      min_load=00:00:00
+                      avg_load=00:00:01.013340
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002832
+                      max_save=00:00:00
+[2010-05-27 06:04:24] get GET /maps/gettile?map=yasat&z=8&x=114&y=44 HTTP/1.1
+                      
+                      
+                      count=176
+                      min=00:00:00
+                      avg=00:00:00.992009
+                      max=00:00:02.187500
+[2010-05-27 06:04:24] load_file /maps/gettile?map=yasat&z=8&x=114&y=44
+                      count=172
+                      min_load=00:00:00
+                      avg_load=00:00:01.019712
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002816
+                      max_save=00:00:00
+[2010-05-27 06:04:26] get GET /maps/gettile?map=yasat&z=8&x=114&y=43 HTTP/1.1
+                      
+                      
+                      count=177
+                      min=00:00:00
+                      avg=00:00:00.998322
+                      max=00:00:02.187500
+[2010-05-27 06:04:26] load_file /maps/gettile?map=yasat&z=8&x=114&y=43
+                      count=173
+                      min_load=00:00:00
+                      avg_load=00:00:01.026011
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002799
+                      max_save=00:00:00
+[2010-05-27 06:04:27] get GET /maps/gettile?map=yasat&z=8&x=114&y=42 HTTP/1.1
+                      
+                      
+                      count=178
+                      min=00:00:00
+                      avg=00:00:01.001667
+                      max=00:00:02.187500
+[2010-05-27 06:04:27] load_file /maps/gettile?map=yasat&z=8&x=114&y=42
+                      count=174
+                      min_load=00:00:00
+                      avg_load=00:00:01.029274
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002783
+                      max_save=00:00:00
+[2010-05-27 06:04:27] get GET /maps/gettile?map=yasat&z=8&x=114&y=41 HTTP/1.1
+                      
+                      
+                      count=179
+                      min=00:00:00
+                      avg=00:00:00.996071
+                      max=00:00:02.187500
+[2010-05-27 06:04:27] load_file /maps/gettile?map=yasat&z=8&x=114&y=41
+                      count=175
+                      min_load=00:00:00
+                      avg_load=00:00:01.023392
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002767
+                      max_save=00:00:00
+[2010-05-27 06:04:29] get GET /maps/gettile?map=yasat&z=8&x=113&y=45 HTTP/1.1
+                      
+                      
+                      count=180
+                      min=00:00:00
+                      avg=00:00:01.000954
+                      max=00:00:02.187500
+[2010-05-27 06:04:29] load_file /maps/gettile?map=yasat&z=8&x=113&y=45
+                      count=176
+                      min_load=00:00:00
+                      avg_load=00:00:01.028231
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002752
+                      max_save=00:00:00
+[2010-05-27 06:04:31] get GET /maps/gettile?map=yasat&z=8&x=113&y=44 HTTP/1.1
+                      
+                      
+                      count=181
+                      min=00:00:00
+                      avg=00:00:01.004834
+                      max=00:00:02.187500
+[2010-05-27 06:04:31] load_file /maps/gettile?map=yasat&z=8&x=113&y=44
+                      count=177
+                      min_load=00:00:00
+                      avg_load=00:00:01.032044
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002736
+                      max_save=00:00:00
+[2010-05-27 06:04:33] get GET /maps/gettile?map=yasat&z=8&x=113&y=43 HTTP/1.1
+                      
+                      
+                      count=182
+                      min=00:00:00
+                      avg=00:00:01.008499
+                      max=00:00:02.187500
+[2010-05-27 06:04:33] load_file /maps/gettile?map=yasat&z=8&x=113&y=43
+                      count=178
+                      min_load=00:00:00
+                      avg_load=00:00:01.035639
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002721
+                      max_save=00:00:00
+[2010-05-27 06:04:34] get GET /maps/gettile?map=yasat&z=8&x=113&y=42 HTTP/1.1
+                      
+                      
+                      count=183
+                      min=00:00:00
+                      avg=00:00:01.011185
+                      max=00:00:02.187500
+[2010-05-27 06:04:34] load_file /maps/gettile?map=yasat&z=8&x=113&y=42
+                      count=179
+                      min_load=00:00:00
+                      avg_load=00:00:01.038233
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002706
+                      max_save=00:00:00
+[2010-05-27 06:04:36] get GET /maps/gettile?map=yasat&z=8&x=113&y=41 HTTP/1.1
+                      
+                      
+                      count=184
+                      min=00:00:00
+                      avg=00:00:01.014436
+                      max=00:00:02.187500
+[2010-05-27 06:04:36] load_file /maps/gettile?map=yasat&z=8&x=113&y=41
+                      count=180
+                      min_load=00:00:00
+                      avg_load=00:00:01.041406
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002690
+                      max_save=00:00:00
+[2010-05-27 06:04:37] get GET /maps/gettile?map=yasat&z=8&x=112&y=45 HTTP/1.1
+                      
+                      
+                      count=185
+                      min=00:00:00
+                      avg=00:00:01.018158
+                      max=00:00:02.187500
+[2010-05-27 06:04:37] load_file /maps/gettile?map=yasat&z=8&x=112&y=45
+                      count=181
+                      min_load=00:00:00
+                      avg_load=00:00:01.045062
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002676
+                      max_save=00:00:00
+[2010-05-27 06:04:39] get GET /maps/gettile?map=yasat&z=8&x=112&y=44 HTTP/1.1
+                      
+                      
+                      count=186
+                      min=00:00:00
+                      avg=00:00:01.021757
+                      max=00:00:02.187500
+[2010-05-27 06:04:39] load_file /maps/gettile?map=yasat&z=8&x=112&y=44
+                      count=182
+                      min_load=00:00:00
+                      avg_load=00:00:01.048677
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002661
+                      max_save=00:00:00
+[2010-05-27 06:04:41] get GET /maps/gettile?map=yasat&z=8&x=112&y=43 HTTP/1.1
+                      
+                      
+                      count=187
+                      min=00:00:00
+                      avg=00:00:01.025401
+                      max=00:00:02.187500
+[2010-05-27 06:04:41] load_file /maps/gettile?map=yasat&z=8&x=112&y=43
+                      count=183
+                      min_load=00:00:00
+                      avg_load=00:00:01.052254
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002646
+                      max_save=00:00:00
+[2010-05-27 06:04:43] get GET /maps/gettile?map=yasat&z=8&x=112&y=42 HTTP/1.1
+                      
+                      
+                      count=188
+                      min=00:00:00
+                      avg=00:00:01.028922
+                      max=00:00:02.187500
+[2010-05-27 06:04:43] load_file /maps/gettile?map=yasat&z=8&x=112&y=42
+                      count=184
+                      min_load=00:00:00
+                      avg_load=00:00:01.055791
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002632
+                      max_save=00:00:00
+[2010-05-27 06:04:44] get GET /maps/gettile?map=yasat&z=8&x=112&y=41 HTTP/1.1
+                      
+                      
+                      count=189
+                      min=00:00:00
+                      avg=00:00:01.031911
+                      max=00:00:02.187500
+[2010-05-27 06:04:44] load_file /maps/gettile?map=yasat&z=8&x=112&y=41
+                      count=185
+                      min_load=00:00:00
+                      avg_load=00:00:01.058699
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002618
+                      max_save=00:00:00
+[2010-05-27 06:04:46] get GET /maps/gettile?map=yasat&z=8&x=111&y=45 HTTP/1.1
+                      
+                      
+                      count=190
+                      min=00:00:00
+                      avg=00:00:01.035444
+                      max=00:00:02.187500
+[2010-05-27 06:04:46] load_file /maps/gettile?map=yasat&z=8&x=111&y=45
+                      count=186
+                      min_load=00:00:00
+                      avg_load=00:00:01.062163
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:04:46] get GET /maps/gettile?map=yasat&z=8&x=111&y=44 HTTP/1.1
+                      
+                      
+                      count=191
+                      min=00:00:00
+                      avg=00:00:01.030022
+                      max=00:00:02.187500
+[2010-05-27 06:04:46] load_file /maps/gettile?map=yasat&z=8&x=111&y=44
+                      count=187
+                      min_load=00:00:00
+                      avg_load=00:00:01.056483
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002590
+                      max_save=00:00:00
+[2010-05-27 06:04:48] get GET /maps/gettile?map=yasat&z=8&x=111&y=43 HTTP/1.1
+                      
+                      
+                      count=192
+                      min=00:00:00
+                      avg=00:00:01.033365
+                      max=00:00:02.187500
+[2010-05-27 06:04:48] load_file /maps/gettile?map=yasat&z=8&x=111&y=43
+                      count=188
+                      min_load=00:00:00
+                      avg_load=00:00:01.059757
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002576
+                      max_save=00:00:00
+[2010-05-27 06:04:49] get GET /maps/gettile?map=yasat&z=8&x=111&y=42 HTTP/1.1
+                      
+                      
+                      count=193
+                      min=00:00:00
+                      avg=00:00:01.036836
+                      max=00:00:02.187500
+[2010-05-27 06:04:49] load_file /maps/gettile?map=yasat&z=8&x=111&y=42
+                      count=189
+                      min_load=00:00:00
+                      avg_load=00:00:01.063161
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002562
+                      max_save=00:00:00
+[2010-05-27 06:04:49] get GET /maps/gettile?map=yasat&z=8&x=111&y=41 HTTP/1.1
+                      
+                      
+                      count=194
+                      min=00:00:00
+                      avg=00:00:01.031572
+                      max=00:00:02.187500
+[2010-05-27 06:04:49] load_file /maps/gettile?map=yasat&z=8&x=111&y=41
+                      count=190
+                      min_load=00:00:00
+                      avg_load=00:00:01.057648
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002549
+                      max_save=00:00:00
+[2010-05-27 06:04:51] get GET /maps/gettile?map=yasat&z=8&x=110&y=45 HTTP/1.1
+                      
+                      
+                      count=195
+                      min=00:00:00
+                      avg=00:00:01.034375
+                      max=00:00:02.187500
+[2010-05-27 06:04:51] load_file /maps/gettile?map=yasat&z=8&x=110&y=45
+                      count=191
+                      min_load=00:00:00
+                      avg_load=00:00:01.060373
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002535
+                      max_save=00:00:00
+[2010-05-27 06:04:53] get GET /maps/gettile?map=yasat&z=8&x=110&y=44 HTTP/1.1
+                      
+                      
+                      count=196
+                      min=00:00:00
+                      avg=00:00:01.037786
+                      max=00:00:02.187500
+[2010-05-27 06:04:53] load_file /maps/gettile?map=yasat&z=8&x=110&y=44
+                      count=192
+                      min_load=00:00:00
+                      avg_load=00:00:01.063883
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002522
+                      max_save=00:00:00
+[2010-05-27 06:04:54] get GET /maps/gettile?map=yasat&z=8&x=110&y=43 HTTP/1.1
+                      
+                      
+                      count=197
+                      min=00:00:00
+                      avg=00:00:01.041481
+                      max=00:00:02.187500
+[2010-05-27 06:04:54] load_file /maps/gettile?map=yasat&z=8&x=110&y=43
+                      count=193
+                      min_load=00:00:00
+                      avg_load=00:00:01.067519
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002509
+                      max_save=00:00:00
+[2010-05-27 06:04:54] get GET /maps/gettile?map=yasat&z=8&x=110&y=42 HTTP/1.1
+                      
+                      
+                      count=198
+                      min=00:00:00
+                      avg=00:00:01.036300
+                      max=00:00:02.187500
+[2010-05-27 06:04:54] load_file /maps/gettile?map=yasat&z=8&x=110&y=42
+                      count=194
+                      min_load=00:00:00
+                      avg_load=00:00:01.062258
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002496
+                      max_save=00:00:00
+[2010-05-27 06:04:56] get GET /maps/gettile?map=yasat&z=8&x=110&y=41 HTTP/1.1
+                      
+                      
+                      count=199
+                      min=00:00:00
+                      avg=00:00:01.039729
+                      max=00:00:02.187500
+[2010-05-27 06:04:56] load_file /maps/gettile?map=yasat&z=8&x=110&y=41
+                      count=195
+                      min_load=00:00:00
+                      avg_load=00:00:01.065625
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002483
+                      max_save=00:00:00
+[2010-05-27 06:04:56] get GET /maps/gettile?map=yasat&z=7&x=59&y=23 HTTP/1.1
+                      
+                      
+                      count=200
+                      min=00:00:00
+                      avg=00:00:01.034531
+                      max=00:00:02.187500
+[2010-05-27 06:04:56] load_file /maps/gettile?map=yasat&z=7&x=59&y=23
+                      count=196
+                      min_load=00:00:00
+                      avg_load=00:00:01.060188
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002471
+                      max_save=00:00:00
+[2010-05-27 06:04:58] get GET /maps/gettile?map=yasat&z=7&x=59&y=22 HTTP/1.1
+                      
+                      
+                      count=201
+                      min=00:00:00
+                      avg=00:00:01.039723
+                      max=00:00:02.187500
+[2010-05-27 06:04:58] load_file /maps/gettile?map=yasat&z=7&x=59&y=22
+                      count=197
+                      min_load=00:00:00
+                      avg_load=00:00:01.065355
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002458
+                      max_save=00:00:00
+[2010-05-27 06:05:00] get GET /maps/gettile?map=yasat&z=7&x=59&y=21 HTTP/1.1
+                      
+                      
+                      count=202
+                      min=00:00:00
+                      avg=00:00:01.044941
+                      max=00:00:02.187500
+[2010-05-27 06:05:00] load_file /maps/gettile?map=yasat&z=7&x=59&y=21
+                      count=198
+                      min_load=00:00:00
+                      avg_load=00:00:01.070549
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002446
+                      max_save=00:00:00
+[2010-05-27 06:05:02] get GET /maps/gettile?map=yasat&z=7&x=59&y=20 HTTP/1.1
+                      
+                      
+                      count=203
+                      min=00:00:00
+                      avg=00:00:01.049645
+                      max=00:00:02.187500
+[2010-05-27 06:05:02] load_file /maps/gettile?map=yasat&z=7&x=59&y=20
+                      count=199
+                      min_load=00:00:00
+                      avg_load=00:00:01.075219
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002434
+                      max_save=00:00:00
+[2010-05-27 06:05:04] get GET /maps/gettile?map=yasat&z=7&x=59&y=19 HTTP/1.1
+                      
+                      
+                      count=204
+                      min=00:00:00
+                      avg=00:00:01.053768
+                      max=00:00:02.187500
+[2010-05-27 06:05:04] load_file /maps/gettile?map=yasat&z=7&x=59&y=19
+                      count=200
+                      min_load=00:00:00
+                      avg_load=00:00:01.079296
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002500
+                      max_save=00:00:00
+[2010-05-27 06:05:06] get GET /maps/gettile?map=yasat&z=7&x=58&y=23 HTTP/1.1
+                      
+                      
+                      count=205
+                      min=00:00:00
+                      avg=00:00:01.057926
+                      max=00:00:02.187500
+[2010-05-27 06:05:06] load_file /maps/gettile?map=yasat&z=7&x=58&y=23
+                      count=201
+                      min_load=00:00:00
+                      avg_load=00:00:01.083411
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002487
+                      max_save=00:00:00
+[2010-05-27 06:05:08] get GET /maps/gettile?map=yasat&z=7&x=58&y=22 HTTP/1.1
+                      
+                      
+                      count=206
+                      min=00:00:00
+                      avg=00:00:01.062044
+                      max=00:00:02.187500
+[2010-05-27 06:05:08] load_file /maps/gettile?map=yasat&z=7&x=58&y=22
+                      count=202
+                      min_load=00:00:00
+                      avg_load=00:00:01.087484
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002475
+                      max_save=00:00:00
+[2010-05-27 06:05:08] get GET /maps/gettile?map=yasat&z=7&x=58&y=21 HTTP/1.1
+                      
+                      
+                      count=207
+                      min=00:00:00
+                      avg=00:00:01.056914
+                      max=00:00:02.187500
+[2010-05-27 06:05:08] load_file /maps/gettile?map=yasat&z=7&x=58&y=21
+                      count=203
+                      min_load=00:00:00
+                      avg_load=00:00:01.082127
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002463
+                      max_save=00:00:00
+[2010-05-27 06:05:08] get GET /maps/gettile?map=yasat&z=7&x=58&y=20 HTTP/1.1
+                      
+                      
+                      count=208
+                      min=00:00:00
+                      avg=00:00:01.051832
+                      max=00:00:02.187500
+[2010-05-27 06:05:08] load_file /maps/gettile?map=yasat&z=7&x=58&y=20
+                      count=204
+                      min_load=00:00:00
+                      avg_load=00:00:01.076822
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002450
+                      max_save=00:00:00
+[2010-05-27 06:05:08] get GET /maps/gettile?map=yasat&z=7&x=58&y=19 HTTP/1.1
+                      
+                      
+                      count=209
+                      min=00:00:00
+                      avg=00:00:01.046875
+                      max=00:00:02.187500
+[2010-05-27 06:05:08] load_file /maps/gettile?map=yasat&z=7&x=58&y=19
+                      count=205
+                      min_load=00:00:00
+                      avg_load=00:00:01.071646
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002439
+                      max_save=00:00:00
+[2010-05-27 06:05:10] get GET /maps/gettile?map=yasat&z=7&x=57&y=23 HTTP/1.1
+                      
+                      
+                      count=210
+                      min=00:00:00
+                      avg=00:00:01.048586
+                      max=00:00:02.187500
+[2010-05-27 06:05:10] load_file /maps/gettile?map=yasat&z=7&x=57&y=23
+                      count=206
+                      min_load=00:00:00
+                      avg_load=00:00:01.073346
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002427
+                      max_save=00:00:00
+[2010-05-27 06:05:12] get GET /maps/gettile?map=yasat&z=7&x=57&y=22 HTTP/1.1
+                      
+                      
+                      count=211
+                      min=00:00:00
+                      avg=00:00:01.053613
+                      max=00:00:02.187500
+[2010-05-27 06:05:12] load_file /maps/gettile?map=yasat&z=7&x=57&y=22
+                      count=207
+                      min_load=00:00:00
+                      avg_load=00:00:01.078351
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002415
+                      max_save=00:00:00
+[2010-05-27 06:05:14] get GET /maps/gettile?map=yasat&z=7&x=57&y=21 HTTP/1.1
+                      
+                      
+                      count=212
+                      min=00:00:00
+                      avg=00:00:01.058593
+                      max=00:00:02.187500
+[2010-05-27 06:05:14] load_file /maps/gettile?map=yasat&z=7&x=57&y=21
+                      count=208
+                      min_load=00:00:00
+                      avg_load=00:00:01.083308
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002403
+                      max_save=00:00:00
+[2010-05-27 06:05:16] get GET /maps/gettile?map=yasat&z=7&x=57&y=20 HTTP/1.1
+                      
+                      
+                      count=213
+                      min=00:00:00
+                      avg=00:00:01.062500
+                      max=00:00:02.187500
+[2010-05-27 06:05:16] load_file /maps/gettile?map=yasat&z=7&x=57&y=20
+                      count=209
+                      min_load=00:00:00
+                      avg_load=00:00:01.087171
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002392
+                      max_save=00:00:00
+[2010-05-27 06:05:16] get GET /maps/gettile?map=yasat&z=7&x=57&y=19 HTTP/1.1
+                      
+                      
+                      count=214
+                      min=00:00:00
+                      avg=00:00:01.057535
+                      max=00:00:02.187500
+[2010-05-27 06:05:16] load_file /maps/gettile?map=yasat&z=7&x=57&y=19
+                      count=210
+                      min_load=00:00:00
+                      avg_load=00:00:01.081994
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002455
+                      max_save=00:00:00
+[2010-05-27 06:05:18] get GET /maps/gettile?map=yasat&z=7&x=56&y=23 HTTP/1.1
+                      
+                      
+                      count=215
+                      min=00:00:00
+                      avg=00:00:01.062281
+                      max=00:00:02.187500
+[2010-05-27 06:05:18] load_file /maps/gettile?map=yasat&z=7&x=56&y=23
+                      count=211
+                      min_load=00:00:00
+                      avg_load=00:00:01.086715
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002517
+                      max_save=00:00:00
+[2010-05-27 06:05:18] get GET /maps/gettile?map=yasat&z=7&x=56&y=22 HTTP/1.1
+                      
+                      
+                      count=216
+                      min=00:00:00
+                      avg=00:00:01.057364
+                      max=00:00:02.187500
+[2010-05-27 06:05:18] load_file /maps/gettile?map=yasat&z=7&x=56&y=22
+                      count=212
+                      min_load=00:00:00
+                      avg_load=00:00:01.081662
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002505
+                      max_save=00:00:00
+[2010-05-27 06:05:20] get GET /maps/gettile?map=yasat&z=7&x=56&y=21 HTTP/1.1
+                      
+                      
+                      count=217
+                      min=00:00:00
+                      avg=00:00:01.059763
+                      max=00:00:02.187500
+[2010-05-27 06:05:20] load_file /maps/gettile?map=yasat&z=7&x=56&y=21
+                      count=213
+                      min_load=00:00:00
+                      avg_load=00:00:01.083993
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002567
+                      max_save=00:00:00
+[2010-05-27 06:05:21] get GET /maps/gettile?map=yasat&z=7&x=56&y=20 HTTP/1.1
+                      
+                      
+                      count=218
+                      min=00:00:00
+                      avg=00:00:01.062715
+                      max=00:00:02.187500
+[2010-05-27 06:05:21] load_file /maps/gettile?map=yasat&z=7&x=56&y=20
+                      count=214
+                      min_load=00:00:00
+                      avg_load=00:00:01.086886
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002555
+                      max_save=00:00:00
+[2010-05-27 06:05:23] get GET /maps/gettile?map=yasat&z=7&x=56&y=19 HTTP/1.1
+                      
+                      
+                      count=219
+                      min=00:00:00
+                      avg=00:00:01.066067
+                      max=00:00:02.187500
+[2010-05-27 06:05:23] load_file /maps/gettile?map=yasat&z=7&x=56&y=19
+                      count=215
+                      min_load=00:00:00
+                      avg_load=00:00:01.090188
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002543
+                      max_save=00:00:00
+[2010-05-27 06:05:25] get GET /maps/gettile?map=yasat&z=7&x=55&y=23 HTTP/1.1
+                      
+                      
+                      count=220
+                      min=00:00:00
+                      avg=00:00:01.067968
+                      max=00:00:02.187500
+[2010-05-27 06:05:25] load_file /maps/gettile?map=yasat&z=7&x=55&y=23
+                      count=216
+                      min_load=00:00:00
+                      avg_load=00:00:01.092158
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002531
+                      max_save=00:00:00
+[2010-05-27 06:05:26] get GET /maps/gettile?map=yasat&z=7&x=55&y=22 HTTP/1.1
+                      
+                      
+                      count=221
+                      min=00:00:00
+                      avg=00:00:01.069852
+                      max=00:00:02.187500
+[2010-05-27 06:05:26] load_file /maps/gettile?map=yasat&z=7&x=55&y=22
+                      count=217
+                      min_load=00:00:00
+                      avg_load=00:00:01.093966
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002520
+                      max_save=00:00:00
+[2010-05-27 06:05:28] get GET /maps/gettile?map=yasat&z=7&x=55&y=21 HTTP/1.1
+                      
+                      
+                      count=222
+                      min=00:00:00
+                      avg=00:00:01.071720
+                      max=00:00:02.187500
+[2010-05-27 06:05:28] load_file /maps/gettile?map=yasat&z=7&x=55&y=21
+                      count=218
+                      min_load=00:00:00
+                      avg_load=00:00:01.095756
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002580
+                      max_save=00:00:00
+[2010-05-27 06:05:28] get GET /maps/gettile?map=yasat&z=7&x=55&y=20 HTTP/1.1
+                      
+                      
+                      count=223
+                      min=00:00:00
+                      avg=00:00:01.066984
+                      max=00:00:02.187500
+[2010-05-27 06:05:28] load_file /maps/gettile?map=yasat&z=7&x=55&y=20
+                      count=219
+                      min_load=00:00:00
+                      avg_load=00:00:01.090824
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002568
+                      max_save=00:00:00
+[2010-05-27 06:05:28] get GET /maps/gettile?map=yasat&z=7&x=55&y=19 HTTP/1.1
+                      
+                      
+                      count=224
+                      min=00:00:00
+                      avg=00:00:01.062220
+                      max=00:00:02.187500
+[2010-05-27 06:05:28] load_file /maps/gettile?map=yasat&z=7&x=55&y=19
+                      count=220
+                      min_load=00:00:00
+                      avg_load=00:00:01.085937
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002556
+                      max_save=00:00:00
+[2010-05-27 06:05:28] get GET /maps/gettile?map=yasat&z=7&x=54&y=23 HTTP/1.1
+                      
+                      
+                      count=225
+                      min=00:00:00
+                      avg=00:00:01.057500
+                      max=00:00:02.187500
+[2010-05-27 06:05:28] load_file /maps/gettile?map=yasat&z=7&x=54&y=23
+                      count=221
+                      min_load=00:00:00
+                      avg_load=00:00:01.081023
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002615
+                      max_save=00:00:00
+[2010-05-27 06:05:29] get GET /maps/gettile?map=yasat&z=7&x=54&y=22 HTTP/1.1
+                      
+                      
+                      count=226
+                      min=00:00:00
+                      avg=00:00:01.060011
+                      max=00:00:02.187500
+[2010-05-27 06:05:29] load_file /maps/gettile?map=yasat&z=7&x=54&y=22
+                      count=222
+                      min_load=00:00:00
+                      avg_load=00:00:01.083474
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:05:31] get GET /maps/gettile?map=yasat&z=7&x=54&y=21 HTTP/1.1
+                      
+                      
+                      count=227
+                      min=00:00:00
+                      avg=00:00:01.062775
+                      max=00:00:02.187500
+[2010-05-27 06:05:31] load_file /maps/gettile?map=yasat&z=7&x=54&y=21
+                      count=223
+                      min_load=00:00:00
+                      avg_load=00:00:01.086182
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002592
+                      max_save=00:00:00
+[2010-05-27 06:05:33] get GET /maps/gettile?map=yasat&z=7&x=54&y=20 HTTP/1.1
+                      
+                      
+                      count=228
+                      min=00:00:00
+                      avg=00:00:01.065583
+                      max=00:00:02.187500
+[2010-05-27 06:05:33] load_file /maps/gettile?map=yasat&z=7&x=54&y=20
+                      count=224
+                      min_load=00:00:00
+                      avg_load=00:00:01.088936
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002580
+                      max_save=00:00:00
+[2010-05-27 06:05:33] get GET /maps/gettile?map=yasat&z=7&x=54&y=19 HTTP/1.1
+                      
+                      
+                      count=229
+                      min=00:00:00
+                      avg=00:00:01.060998
+                      max=00:00:02.187500
+[2010-05-27 06:05:33] load_file /maps/gettile?map=yasat&z=7&x=54&y=19
+                      count=225
+                      min_load=00:00:00
+                      avg_load=00:00:01.084166
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002569
+                      max_save=00:00:00
+[2010-05-27 06:05:34] get GET /maps/gettile?map=yasat&z=4&x=5&y=1 HTTP/1.1
+                      
+                      
+                      count=230
+                      min=00:00:00
+                      avg=00:00:01.062567
+                      max=00:00:02.187500
+[2010-05-27 06:05:34] load_file /maps/gettile?map=yasat&z=4&x=5&y=1
+                      count=226
+                      min_load=00:00:00
+                      avg_load=00:00:01.085660
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002558
+                      max_save=00:00:00
+[2010-05-27 06:05:34] get GET /maps/gettile?map=yasat&z=5&x=10&y=3 HTTP/1.1
+                      
+                      
+                      count=231
+                      min=00:00:00
+                      avg=00:00:01.058035
+                      max=00:00:02.187500
+[2010-05-27 06:05:34] load_file /maps/gettile?map=yasat&z=5&x=10&y=3
+                      count=227
+                      min_load=00:00:00
+                      avg_load=00:00:01.080947
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002546
+                      max_save=00:00:00
+[2010-05-27 06:06:33] get GET /maps/gettile?map=yasat&z=12&x=1790&y=706 HTTP/1.1
+                      
+                      
+                      count=232
+                      min=00:00:00
+                      avg=00:00:01.053542
+                      max=00:00:02.187500
+[2010-05-27 06:06:33] load_file /maps/gettile?map=yasat&z=12&x=1790&y=706
+                      count=228
+                      min_load=00:00:00
+                      avg_load=00:00:01.076343
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002535
+                      max_save=00:00:00
+[2010-05-27 06:06:34] get GET /maps/gettile?map=yasat&z=12&x=1795&y=710 HTTP/1.1
+                      
+                      
+                      count=233
+                      min=00:00:00
+                      avg=00:00:01.053983
+                      max=00:00:02.187500
+[2010-05-27 06:06:34] load_file /maps/gettile?map=yasat&z=12&x=1795&y=710
+                      count=229
+                      min_load=00:00:00
+                      avg_load=00:00:01.076692
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002524
+                      max_save=00:00:00
+[2010-05-27 06:06:35] get GET /maps/gettile?map=yasat&z=12&x=1795&y=709 HTTP/1.1
+                      
+                      
+                      count=234
+                      min=00:00:00
+                      avg=00:00:01.053685
+                      max=00:00:02.187500
+[2010-05-27 06:06:35] load_file /maps/gettile?map=yasat&z=12&x=1795&y=709
+                      count=230
+                      min_load=00:00:00
+                      avg_load=00:00:01.076290
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002581
+                      max_save=00:00:00
+[2010-05-27 06:06:37] get GET /maps/gettile?map=yasat&z=12&x=1795&y=708 HTTP/1.1
+                      
+                      
+                      count=235
+                      min=00:00:00
+                      avg=00:00:01.054255
+                      max=00:00:02.187500
+[2010-05-27 06:06:37] load_file /maps/gettile?map=yasat&z=12&x=1795&y=708
+                      count=231
+                      min_load=00:00:00
+                      avg_load=00:00:01.076839
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002570
+                      max_save=00:00:00
+[2010-05-27 06:06:38] get GET /maps/gettile?map=yasat&z=12&x=1795&y=707 HTTP/1.1
+                      
+                      
+                      count=236
+                      min=00:00:00
+                      avg=00:00:01.054886
+                      max=00:00:02.187500
+[2010-05-27 06:06:38] load_file /maps/gettile?map=yasat&z=12&x=1795&y=707
+                      count=232
+                      min_load=00:00:00
+                      avg_load=00:00:01.077384
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002559
+                      max_save=00:00:00
+[2010-05-27 06:06:39] get GET /maps/gettile?map=yasat&z=12&x=1795&y=706 HTTP/1.1
+                      
+                      
+                      count=237
+                      min=00:00:00
+                      avg=00:00:01.054654
+                      max=00:00:02.187500
+[2010-05-27 06:06:39] load_file /maps/gettile?map=yasat&z=12&x=1795&y=706
+                      count=233
+                      min_load=00:00:00
+                      avg_load=00:00:01.077052
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002548
+                      max_save=00:00:00
+[2010-05-27 06:06:40] get GET /maps/gettile?map=yasat&z=12&x=1794&y=710 HTTP/1.1
+                      
+                      
+                      count=238
+                      min=00:00:00
+                      avg=00:00:01.055212
+                      max=00:00:02.187500
+[2010-05-27 06:06:40] load_file /maps/gettile?map=yasat&z=12&x=1794&y=710
+                      count=234
+                      min_load=00:00:00
+                      avg_load=00:00:01.077524
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:06:41] get GET /maps/gettile?map=yasat&z=12&x=1794&y=709 HTTP/1.1
+                      
+                      
+                      count=239
+                      min=00:00:00
+                      avg=00:00:01.055766
+                      max=00:00:02.187500
+[2010-05-27 06:06:41] load_file /maps/gettile?map=yasat&z=12&x=1794&y=709
+                      count=235
+                      min_load=00:00:00
+                      avg_load=00:00:01.078058
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002593
+                      max_save=00:00:00
+[2010-05-27 06:06:42] get GET /maps/gettile?map=yasat&z=12&x=1794&y=708 HTTP/1.1
+                      
+                      
+                      count=240
+                      min=00:00:00
+                      avg=00:00:01.056380
+                      max=00:00:02.187500
+[2010-05-27 06:06:42] load_file /maps/gettile?map=yasat&z=12&x=1794&y=708
+                      count=236
+                      min_load=00:00:00
+                      avg_load=00:00:01.078588
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002582
+                      max_save=00:00:00
+[2010-05-27 06:06:43] get GET /maps/gettile?map=yasat&z=12&x=1794&y=707 HTTP/1.1
+                      
+                      
+                      count=241
+                      min=00:00:00
+                      avg=00:00:01.056081
+                      max=00:00:02.187500
+[2010-05-27 06:06:43] load_file /maps/gettile?map=yasat&z=12&x=1794&y=707
+                      count=237
+                      min_load=00:00:00
+                      avg_load=00:00:01.078190
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002637
+                      max_save=00:00:00
+[2010-05-27 06:06:44] get GET /maps/gettile?map=yasat&z=12&x=1794&y=706 HTTP/1.1
+                      
+                      
+                      count=242
+                      min=00:00:00
+                      avg=00:00:01.055397
+                      max=00:00:02.187500
+[2010-05-27 06:06:44] load_file /maps/gettile?map=yasat&z=12&x=1794&y=706
+                      count=238
+                      min_load=00:00:00
+                      avg_load=00:00:01.077402
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002626
+                      max_save=00:00:00
+[2010-05-27 06:06:46] get GET /maps/gettile?map=yasat&z=12&x=1793&y=710 HTTP/1.1
+                      
+                      
+                      count=243
+                      min=00:00:00
+                      avg=00:00:01.055941
+                      max=00:00:02.187500
+[2010-05-27 06:06:46] load_file /maps/gettile?map=yasat&z=12&x=1793&y=710
+                      count=239
+                      min_load=00:00:00
+                      avg_load=00:00:01.077928
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002615
+                      max_save=00:00:00
+[2010-05-27 06:06:47] get GET /maps/gettile?map=yasat&z=12&x=1793&y=709 HTTP/1.1
+                      
+                      
+                      count=244
+                      min=00:00:00
+                      avg=00:00:01.056544
+                      max=00:00:02.187500
+[2010-05-27 06:06:47] load_file /maps/gettile?map=yasat&z=12&x=1793&y=709
+                      count=240
+                      min_load=00:00:00
+                      avg_load=00:00:01.078450
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:06:47] get GET /maps/gettile?map=yasat&z=12&x=1793&y=708 HTTP/1.1
+                      
+                      
+                      count=245
+                      min=00:00:00
+                      avg=00:00:01.052295
+                      max=00:00:02.187500
+[2010-05-27 06:06:47] load_file /maps/gettile?map=yasat&z=12&x=1793&y=708
+                      count=241
+                      min_load=00:00:00
+                      avg_load=00:00:01.074040
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002593
+                      max_save=00:00:00
+[2010-05-27 06:06:47] get GET /maps/gettile?map=yasat&z=12&x=1793&y=707 HTTP/1.1
+                      
+                      
+                      count=246
+                      min=00:00:00
+                      avg=00:00:01.048018
+                      max=00:00:02.187500
+[2010-05-27 06:06:47] load_file /maps/gettile?map=yasat&z=12&x=1793&y=707
+                      count=242
+                      min_load=00:00:00
+                      avg_load=00:00:01.069666
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002582
+                      max_save=00:00:00
+[2010-05-27 06:06:48] get GET /maps/gettile?map=yasat&z=12&x=1793&y=706 HTTP/1.1
+                      
+                      
+                      count=247
+                      min=00:00:00
+                      avg=00:00:01.047634
+                      max=00:00:02.187500
+[2010-05-27 06:06:48] load_file /maps/gettile?map=yasat&z=12&x=1793&y=706
+                      count=243
+                      min_load=00:00:00
+                      avg_load=00:00:01.069187
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002572
+                      max_save=00:00:00
+[2010-05-27 06:06:49] get GET /maps/gettile?map=yasat&z=12&x=1792&y=710 HTTP/1.1
+                      
+                      
+                      count=248
+                      min=00:00:00
+                      avg=00:00:01.047379
+                      max=00:00:02.187500
+[2010-05-27 06:06:49] load_file /maps/gettile?map=yasat&z=12&x=1792&y=710
+                      count=244
+                      min_load=00:00:00
+                      avg_load=00:00:01.068967
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002625
+                      max_save=00:00:00
+[2010-05-27 06:06:49] get GET /maps/gettile?map=yasat&z=12&x=1792&y=709 HTTP/1.1
+                      
+                      
+                      count=249
+                      min=00:00:00
+                      avg=00:00:01.043235
+                      max=00:00:02.187500
+[2010-05-27 06:06:49] load_file /maps/gettile?map=yasat&z=12&x=1792&y=709
+                      count=245
+                      min_load=00:00:00
+                      avg_load=00:00:01.064668
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002614
+                      max_save=00:00:00
+[2010-05-27 06:06:50] get GET /maps/gettile?map=yasat&z=12&x=1792&y=708 HTTP/1.1
+                      
+                      
+                      count=250
+                      min=00:00:00
+                      avg=00:00:01.042875
+                      max=00:00:02.187500
+[2010-05-27 06:06:50] load_file /maps/gettile?map=yasat&z=12&x=1792&y=708
+                      count=246
+                      min_load=00:00:00
+                      avg_load=00:00:01.064214
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002604
+                      max_save=00:00:00
+[2010-05-27 06:06:50] get GET /maps/gettile?map=yasat&z=12&x=1792&y=707 HTTP/1.1
+                      
+                      
+                      count=251
+                      min=00:00:00
+                      avg=00:00:01.038782
+                      max=00:00:02.187500
+[2010-05-27 06:06:50] load_file /maps/gettile?map=yasat&z=12&x=1792&y=707
+                      count=247
+                      min_load=00:00:00
+                      avg_load=00:00:01.059969
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002656
+                      max_save=00:00:00
+[2010-05-27 06:06:51] get GET /maps/gettile?map=yasat&z=12&x=1792&y=706 HTTP/1.1
+                      
+                      
+                      count=252
+                      min=00:00:00
+                      avg=00:00:01.039310
+                      max=00:00:02.187500
+[2010-05-27 06:06:51] load_file /maps/gettile?map=yasat&z=12&x=1792&y=706
+                      count=248
+                      min_load=00:00:00
+                      avg_load=00:00:01.060420
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002646
+                      max_save=00:00:00
+[2010-05-27 06:06:52] get GET /maps/gettile?map=yasat&z=12&x=1791&y=710 HTTP/1.1
+                      
+                      
+                      count=253
+                      min=00:00:00
+                      avg=00:00:01.039093
+                      max=00:00:02.187500
+[2010-05-27 06:06:52] load_file /maps/gettile?map=yasat&z=12&x=1791&y=710
+                      count=249
+                      min_load=00:00:00
+                      avg_load=00:00:01.060178
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002635
+                      max_save=00:00:00
+[2010-05-27 06:06:53] get GET /maps/gettile?map=yasat&z=12&x=1791&y=709 HTTP/1.1
+                      
+                      
+                      count=254
+                      min=00:00:00
+                      avg=00:00:01.038939
+                      max=00:00:02.187500
+[2010-05-27 06:06:53] load_file /maps/gettile?map=yasat&z=12&x=1791&y=709
+                      count=250
+                      min_load=00:00:00
+                      avg_load=00:00:01.059937
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002625
+                      max_save=00:00:00
+[2010-05-27 06:06:53] get GET /maps/gettile?map=yasat&z=12&x=1791&y=708 HTTP/1.1
+                      
+                      
+                      count=255
+                      min=00:00:00
+                      avg=00:00:01.034926
+                      max=00:00:02.187500
+[2010-05-27 06:06:53] load_file /maps/gettile?map=yasat&z=12&x=1791&y=708
+                      count=251
+                      min_load=00:00:00
+                      avg_load=00:00:01.055776
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002676
+                      max_save=00:00:00
+[2010-05-27 06:06:53] get GET /maps/gettile?map=yasat&z=12&x=1791&y=707 HTTP/1.1
+                      
+                      
+                      count=256
+                      min=00:00:00
+                      avg=00:00:01.030944
+                      max=00:00:02.187500
+[2010-05-27 06:06:53] load_file /maps/gettile?map=yasat&z=12&x=1791&y=707
+                      count=252
+                      min_load=00:00:00
+                      avg_load=00:00:01.051649
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002666
+                      max_save=00:00:00
+[2010-05-27 06:06:54] get GET /maps/gettile?map=yasat&z=12&x=1791&y=706 HTTP/1.1
+                      
+                      
+                      count=257
+                      min=00:00:00
+                      avg=00:00:01.030885
+                      max=00:00:02.187500
+[2010-05-27 06:06:54] load_file /maps/gettile?map=yasat&z=12&x=1791&y=706
+                      count=253
+                      min_load=00:00:00
+                      avg_load=00:00:01.051568
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002655
+                      max_save=00:00:00
+[2010-05-27 06:06:55] get GET /maps/gettile?map=yasat&z=12&x=1790&y=710 HTTP/1.1
+                      
+                      
+                      count=258
+                      min=00:00:00
+                      avg=00:00:01.030765
+                      max=00:00:02.187500
+[2010-05-27 06:06:55] load_file /maps/gettile?map=yasat&z=12&x=1790&y=710
+                      count=254
+                      min_load=00:00:00
+                      avg_load=00:00:01.051365
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002645
+                      max_save=00:00:00
+[2010-05-27 06:06:56] get GET /maps/gettile?map=yasat&z=12&x=1790&y=709 HTTP/1.1
+                      
+                      
+                      count=259
+                      min=00:00:00
+                      avg=00:00:01.030586
+                      max=00:00:02.187500
+[2010-05-27 06:06:56] load_file /maps/gettile?map=yasat&z=12&x=1790&y=709
+                      count=255
+                      min_load=00:00:00
+                      avg_load=00:00:01.051102
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002696
+                      max_save=00:00:00
+[2010-05-27 06:06:57] get GET /maps/gettile?map=yasat&z=12&x=1790&y=708 HTTP/1.1
+                      
+                      
+                      count=260
+                      min=00:00:00
+                      avg=00:00:01.031189
+                      max=00:00:02.187500
+[2010-05-27 06:06:57] load_file /maps/gettile?map=yasat&z=12&x=1790&y=708
+                      count=256
+                      min_load=00:00:00
+                      avg_load=00:00:01.051696
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002685
+                      max_save=00:00:00
+[2010-05-27 06:06:58] get GET /maps/gettile?map=yasat&z=12&x=1790&y=707 HTTP/1.1
+                      
+                      
+                      count=261
+                      min=00:00:00
+                      avg=00:00:01.031070
+                      max=00:00:02.187500
+[2010-05-27 06:06:58] load_file /maps/gettile?map=yasat&z=12&x=1790&y=707
+                      count=257
+                      min_load=00:00:00
+                      avg_load=00:00:01.051495
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002675
+                      max_save=00:00:00
+[2010-05-27 06:08:01] get GET /maps/gettile?map=yasat&z=13&x=3583&y=1416 HTTP/1.1
+                      
+                      
+                      count=262
+                      min=00:00:00
+                      avg=00:00:01.030772
+                      max=00:00:02.187500
+[2010-05-27 06:08:01] load_file /maps/gettile?map=yasat&z=13&x=3583&y=1416
+                      count=258
+                      min_load=00:00:00
+                      avg_load=00:00:01.051114
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002725
+                      max_save=00:00:00
+[2010-05-27 06:08:02] get GET /maps/gettile?map=yasat&z=13&x=3588&y=1419 HTTP/1.1
+                      
+                      
+                      count=263
+                      min=00:00:00
+                      avg=00:00:01.031309
+                      max=00:00:02.187500
+[2010-05-27 06:08:02] load_file /maps/gettile?map=yasat&z=13&x=3588&y=1419
+                      count=259
+                      min_load=00:00:00
+                      avg_load=00:00:01.051580
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002714
+                      max_save=00:00:00
+[2010-05-27 06:08:03] get GET /maps/gettile?map=yasat&z=13&x=3588&y=1418 HTTP/1.1
+                      
+                      
+                      count=264
+                      min=00:00:00
+                      avg=00:00:01.031901
+                      max=00:00:02.187500
+[2010-05-27 06:08:03] load_file /maps/gettile?map=yasat&z=13&x=3588&y=1418
+                      count=260
+                      min_load=00:00:00
+                      avg_load=00:00:01.052103
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002704
+                      max_save=00:00:00
+[2010-05-27 06:08:04] get GET /maps/gettile?map=yasat&z=13&x=3588&y=1417 HTTP/1.1
+                      
+                      
+                      count=265
+                      min=00:00:00
+                      avg=00:00:01.032488
+                      max=00:00:02.187500
+[2010-05-27 06:08:04] load_file /maps/gettile?map=yasat&z=13&x=3588&y=1417
+                      count=261
+                      min_load=00:00:00
+                      avg_load=00:00:01.052622
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002753
+                      max_save=00:00:00
+[2010-05-27 06:08:06] get GET /maps/gettile?map=yasat&z=13&x=3588&y=1416 HTTP/1.1
+                      
+                      
+                      count=266
+                      min=00:00:00
+                      avg=00:00:01.033482
+                      max=00:00:02.187500
+[2010-05-27 06:08:06] load_file /maps/gettile?map=yasat&z=13&x=3588&y=1416
+                      count=262
+                      min_load=00:00:00
+                      avg_load=00:00:01.053554
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002743
+                      max_save=00:00:00
+[2010-05-27 06:08:07] get GET /maps/gettile?map=yasat&z=13&x=3587&y=1419 HTTP/1.1
+                      
+                      
+                      count=267
+                      min=00:00:00
+                      avg=00:00:01.034058
+                      max=00:00:02.187500
+[2010-05-27 06:08:07] load_file /maps/gettile?map=yasat&z=13&x=3587&y=1419
+                      count=263
+                      min_load=00:00:00
+                      avg_load=00:00:01.054063
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002792
+                      max_save=00:00:00
+[2010-05-27 06:08:07] get GET /maps/gettile?map=yasat&z=13&x=3587&y=1418 HTTP/1.1
+                      
+                      
+                      count=268
+                      min=00:00:00
+                      avg=00:00:01.030258
+                      max=00:00:02.187500
+[2010-05-27 06:08:07] load_file /maps/gettile?map=yasat&z=13&x=3587&y=1418
+                      count=264
+                      min_load=00:00:00
+                      avg_load=00:00:01.050130
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002781
+                      max_save=00:00:00
+[2010-05-27 06:08:08] get GET /maps/gettile?map=yasat&z=13&x=3587&y=1417 HTTP/1.1
+                      
+                      
+                      count=269
+                      min=00:00:00
+                      avg=00:00:01.030727
+                      max=00:00:02.187500
+[2010-05-27 06:08:08] load_file /maps/gettile?map=yasat&z=13&x=3587&y=1417
+                      count=265
+                      min_load=00:00:00
+                      avg_load=00:00:01.050589
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002771
+                      max_save=00:00:00
+[2010-05-27 06:08:09] get GET /maps/gettile?map=yasat&z=13&x=3587&y=1416 HTTP/1.1
+                      
+                      
+                      count=270
+                      min=00:00:00
+                      avg=00:00:01.030613
+                      max=00:00:02.187500
+[2010-05-27 06:08:09] load_file /maps/gettile?map=yasat&z=13&x=3587&y=1416
+                      count=266
+                      min_load=00:00:00
+                      avg_load=00:00:01.050399
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002760
+                      max_save=00:00:00
+[2010-05-27 06:08:09] get GET /maps/gettile?map=yasat&z=13&x=3586&y=1419 HTTP/1.1
+                      
+                      
+                      count=271
+                      min=00:00:00
+                      avg=00:00:01.026810
+                      max=00:00:02.187500
+[2010-05-27 06:08:09] load_file /maps/gettile?map=yasat&z=13&x=3586&y=1419
+                      count=267
+                      min_load=00:00:00
+                      avg_load=00:00:01.046465
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002808
+                      max_save=00:00:00
+[2010-05-27 06:08:10] get GET /maps/gettile?map=yasat&z=13&x=3586&y=1418 HTTP/1.1
+                      
+                      
+                      count=272
+                      min=00:00:00
+                      avg=00:00:01.026252
+                      max=00:00:02.187500
+[2010-05-27 06:08:10] load_file /maps/gettile?map=yasat&z=13&x=3586&y=1418
+                      count=268
+                      min_load=00:00:00
+                      avg_load=00:00:01.045825
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002798
+                      max_save=00:00:00
+[2010-05-27 06:08:10] get GET /maps/gettile?map=yasat&z=13&x=3586&y=1417 HTTP/1.1
+                      
+                      
+                      count=273
+                      min=00:00:00
+                      avg=00:00:01.022493
+                      max=00:00:02.187500
+[2010-05-27 06:08:10] load_file /maps/gettile?map=yasat&z=13&x=3586&y=1417
+                      count=269
+                      min_load=00:00:00
+                      avg_load=00:00:01.041937
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002846
+                      max_save=00:00:00
+[2010-05-27 06:08:11] get GET /maps/gettile?map=yasat&z=13&x=3586&y=1416 HTTP/1.1
+                      
+                      
+                      count=274
+                      min=00:00:00
+                      avg=00:00:01.022296
+                      max=00:00:02.187500
+[2010-05-27 06:08:11] load_file /maps/gettile?map=yasat&z=13&x=3586&y=1416
+                      count=270
+                      min_load=00:00:00
+                      avg_load=00:00:01.041666
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002893
+                      max_save=00:00:00
+[2010-05-27 06:08:11] get GET /maps/gettile?map=yasat&z=13&x=3585&y=1419 HTTP/1.1
+                      
+                      
+                      count=275
+                      min=00:00:00
+                      avg=00:00:01.018636
+                      max=00:00:02.187500
+[2010-05-27 06:08:11] load_file /maps/gettile?map=yasat&z=13&x=3585&y=1419
+                      count=271
+                      min_load=00:00:00
+                      avg_load=00:00:01.037880
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002882
+                      max_save=00:00:00
+[2010-05-27 06:08:12] get GET /maps/gettile?map=yasat&z=13&x=3585&y=1418 HTTP/1.1
+                      
+                      
+                      count=276
+                      min=00:00:00
+                      avg=00:00:01.019927
+                      max=00:00:02.187500
+[2010-05-27 06:08:12] load_file /maps/gettile?map=yasat&z=13&x=3585&y=1418
+                      count=272
+                      min_load=00:00:00
+                      avg_load=00:00:01.039177
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002872
+                      max_save=00:00:00
+[2010-05-27 06:08:14] get GET /maps/gettile?map=yasat&z=13&x=3585&y=1417 HTTP/1.1
+                      
+                      
+                      count=277
+                      min=00:00:00
+                      avg=00:00:01.020814
+                      max=00:00:02.187500
+[2010-05-27 06:08:14] load_file /maps/gettile?map=yasat&z=13&x=3585&y=1417
+                      count=273
+                      min_load=00:00:00
+                      avg_load=00:00:01.040006
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002861
+                      max_save=00:00:00
+[2010-05-27 06:08:15] get GET /maps/gettile?map=yasat&z=13&x=3585&y=1416 HTTP/1.1
+                      
+                      
+                      count=278
+                      min=00:00:00
+                      avg=00:00:01.021414
+                      max=00:00:02.187500
+[2010-05-27 06:08:15] load_file /maps/gettile?map=yasat&z=13&x=3585&y=1416
+                      count=274
+                      min_load=00:00:00
+                      avg_load=00:00:01.040545
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002908
+                      max_save=00:00:00
+[2010-05-27 06:08:15] get GET /maps/gettile?map=yasat&z=13&x=3584&y=1419 HTTP/1.1
+                      
+                      
+                      count=279
+                      min=00:00:00
+                      avg=00:00:01.017809
+                      max=00:00:02.187500
+[2010-05-27 06:08:15] load_file /maps/gettile?map=yasat&z=13&x=3584&y=1419
+                      count=275
+                      min_load=00:00:00
+                      avg_load=00:00:01.036818
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002897
+                      max_save=00:00:00
+[2010-05-27 06:08:15] get GET /maps/gettile?map=yasat&z=13&x=3584&y=1418 HTTP/1.1
+                      
+                      
+                      count=280
+                      min=00:00:00
+                      avg=00:00:01.014229
+                      max=00:00:02.187500
+[2010-05-27 06:08:15] load_file /maps/gettile?map=yasat&z=13&x=3584&y=1418
+                      count=276
+                      min_load=00:00:00
+                      avg_load=00:00:01.033118
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002887
+                      max_save=00:00:00
+[2010-05-27 06:08:16] get GET /maps/gettile?map=yasat&z=13&x=3584&y=1417 HTTP/1.1
+                      
+                      
+                      count=281
+                      min=00:00:00
+                      avg=00:00:01.015346
+                      max=00:00:02.187500
+[2010-05-27 06:08:16] load_file /maps/gettile?map=yasat&z=13&x=3584&y=1417
+                      count=277
+                      min_load=00:00:00
+                      avg_load=00:00:01.034239
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002876
+                      max_save=00:00:00
+[2010-05-27 06:08:17] get GET /maps/gettile?map=yasat&z=13&x=3582&y=1419 HTTP/1.1
+                      
+                      
+                      count=282
+                      min=00:00:00
+                      avg=00:00:01.015292
+                      max=00:00:02.187500
+[2010-05-27 06:08:17] load_file /maps/gettile?map=yasat&z=13&x=3582&y=1419
+                      count=278
+                      min_load=00:00:00
+                      avg_load=00:00:01.034116
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002866
+                      max_save=00:00:00
+[2010-05-27 06:08:18] get GET /maps/gettile?map=yasat&z=13&x=3587&y=1420 HTTP/1.1
+                      
+                      
+                      count=283
+                      min=00:00:00
+                      avg=00:00:01.015183
+                      max=00:00:02.187500
+[2010-05-27 06:08:18] load_file /maps/gettile?map=yasat&z=13&x=3587&y=1420
+                      count=279
+                      min_load=00:00:00
+                      avg_load=00:00:01.033994
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002856
+                      max_save=00:00:00
+[2010-05-27 06:08:19] get GET /maps/gettile?map=yasat&z=13&x=3586&y=1420 HTTP/1.1
+                      
+                      
+                      count=284
+                      min=00:00:00
+                      avg=00:00:01.015074
+                      max=00:00:02.187500
+[2010-05-27 06:08:19] load_file /maps/gettile?map=yasat&z=13&x=3586&y=1420
+                      count=280
+                      min_load=00:00:00
+                      avg_load=00:00:01.033872
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002845
+                      max_save=00:00:00
+[2010-05-27 06:08:20] get GET /maps/gettile?map=yasat&z=13&x=3585&y=1420 HTTP/1.1
+                      
+                      
+                      count=285
+                      min=00:00:00
+                      avg=00:00:01.015350
+                      max=00:00:02.187500
+[2010-05-27 06:08:21] load_file /maps/gettile?map=yasat&z=13&x=3585&y=1420
+                      count=281
+                      min_load=00:00:00
+                      avg_load=00:00:01.034141
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002835
+                      max_save=00:00:00
+[2010-05-27 06:08:22] get GET /maps/gettile?map=yasat&z=13&x=3584&y=1420 HTTP/1.1
+                      
+                      
+                      count=286
+                      min=00:00:00
+                      avg=00:00:01.015898
+                      max=00:00:02.187500
+[2010-05-27 06:08:22] load_file /maps/gettile?map=yasat&z=13&x=3584&y=1420
+                      count=282
+                      min_load=00:00:00
+                      avg_load=00:00:01.034685
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002825
+                      max_save=00:00:00
+[2010-05-27 06:08:22] get GET /maps/gettile?map=yasat&z=13&x=3583&y=1420 HTTP/1.1
+                      
+                      
+                      count=287
+                      min=00:00:00
+                      avg=00:00:01.012412
+                      max=00:00:02.187500
+[2010-05-27 06:08:22] load_file /maps/gettile?map=yasat&z=13&x=3583&y=1420
+                      count=283
+                      min_load=00:00:00
+                      avg_load=00:00:01.031084
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002815
+                      max_save=00:00:00
+[2010-05-27 06:08:22] get GET /maps/gettile?map=yasat&z=13&x=3582&y=1420 HTTP/1.1
+                      
+                      
+                      count=288
+                      min=00:00:00
+                      avg=00:00:01.008897
+                      max=00:00:02.187500
+[2010-05-27 06:08:22] load_file /maps/gettile?map=yasat&z=13&x=3582&y=1420
+                      count=284
+                      min_load=00:00:00
+                      avg_load=00:00:01.027508
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002805
+                      max_save=00:00:00
+[2010-05-27 06:08:23] get GET /maps/gettile?map=yasat&z=13&x=3582&y=1418 HTTP/1.1
+                      
+                      
+                      count=289
+                      min=00:00:00
+                      avg=00:00:01.008596
+                      max=00:00:02.187500
+[2010-05-27 06:08:23] load_file /maps/gettile?map=yasat&z=13&x=3582&y=1418
+                      count=285
+                      min_load=00:00:00
+                      avg_load=00:00:01.027138
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002796
+                      max_save=00:00:00
+[2010-05-27 06:08:24] get GET /maps/gettile?map=yasat&z=13&x=3582&y=1417 HTTP/1.1
+                      
+                      
+                      count=290
+                      min=00:00:00
+                      avg=00:00:01.009213
+                      max=00:00:02.187500
+[2010-05-27 06:08:24] load_file /maps/gettile?map=yasat&z=13&x=3582&y=1417
+                      count=286
+                      min_load=00:00:00
+                      avg_load=00:00:01.027698
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002840
+                      max_save=00:00:00
+[2010-05-27 06:08:25] get GET /maps/gettile?map=yasat&z=13&x=3582&y=1416 HTTP/1.1
+                      
+                      
+                      count=291
+                      min=00:00:00
+                      avg=00:00:01.009181
+                      max=00:00:02.187500
+[2010-05-27 06:08:25] load_file /maps/gettile?map=yasat&z=13&x=3582&y=1416
+                      count=287
+                      min_load=00:00:00
+                      avg_load=00:00:01.027602
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002831
+                      max_save=00:00:00
+[2010-05-27 06:08:25] get GET /maps/gettile?map=yasat&z=13&x=3584&y=1416 HTTP/1.1
+                      
+                      
+                      count=292
+                      min=00:00:00
+                      avg=00:00:01.005725
+                      max=00:00:02.187500
+[2010-05-27 06:08:25] load_file /maps/gettile?map=yasat&z=13&x=3584&y=1416
+                      count=288
+                      min_load=00:00:00
+                      avg_load=00:00:01.024088
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002821
+                      max_save=00:00:00
+[2010-05-27 06:08:26] get GET /maps/gettile?map=yasat&z=13&x=3583&y=1419 HTTP/1.1
+                      
+                      
+                      count=293
+                      min=00:00:00
+                      avg=00:00:01.005546
+                      max=00:00:02.187500
+[2010-05-27 06:08:26] load_file /maps/gettile?map=yasat&z=13&x=3583&y=1419
+                      count=289
+                      min_load=00:00:00
+                      avg_load=00:00:01.023842
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002811
+                      max_save=00:00:00
+[2010-05-27 06:08:26] get GET /maps/gettile?map=yasat&z=13&x=3583&y=1418 HTTP/1.1
+                      
+                      
+                      count=294
+                      min=00:00:00
+                      avg=00:00:01.002125
+                      max=00:00:02.187500
+[2010-05-27 06:08:26] load_file /maps/gettile?map=yasat&z=13&x=3583&y=1418
+                      count=290
+                      min_load=00:00:00
+                      avg_load=00:00:01.020366
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002801
+                      max_save=00:00:00
+[2010-05-27 06:08:26] get GET /maps/gettile?map=yasat&z=13&x=3583&y=1417 HTTP/1.1
+                      
+                      
+                      count=295
+                      min=00:00:00
+                      avg=00:00:00.998781
+                      max=00:00:02.187500
+[2010-05-27 06:08:26] load_file /maps/gettile?map=yasat&z=13&x=3583&y=1417
+                      count=291
+                      min_load=00:00:00
+                      avg_load=00:00:01.016913
+                      max_load=00:00:02.187500
+                      min_save=00:00:00
+                      avg_save=00:00:00.002845
+                      max_save=00:00:00
