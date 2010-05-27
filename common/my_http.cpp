@@ -7,6 +7,10 @@
 #include "../common/my_fs.h"
 #include "../common/my_exception.h"
 
+#include "../common/my_log.h"
+#include "../common/my_time.h"
+extern my::log main_log;
+
 #include <errno.h>
 #include <string.h> /* strlen */
 #include <wchar.h> /* wcslen */
@@ -180,7 +184,32 @@ string percent_encode(const char *str,
 
 void message::read_header(tcp::socket &socket)
 {
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+
 	size_t n = asio::read_until(socket, buf_, boost::regex("^\r\n"));
+	
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+	count++;
+	total_time += time;
+	if (time < min_time || count == 1)
+		min_time = time;
+	if (time > max_time)
+		max_time = time;
+
+	{
+		wstringstream out;
+		out << L"read_header\n"
+			<< L"count=" << count
+			<< L" min=" << min_time
+			<< L" avg=" << (total_time / count)
+			<< L" max=" << max_time;
+		main_log(out.str());
+	}
 
 	header_.resize(n);
 	buf_.sgetn((char*)header_.c_str(), n);
@@ -198,10 +227,35 @@ void message::read_header(tcp::socket &socket)
 
 void message::read_body(tcp::socket &socket)
 {
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+
 	/* Чтение здесь всегда заканчивается ошибкой! */
 	boost::system::error_code ec;
 	asio::read(socket, buf_, boost::asio::transfer_all(), ec);
 	
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+	count++;
+	total_time += time;
+	if (time < min_time || count == 1)
+		min_time = time;
+	if (time > max_time)
+		max_time = time;
+
+	{
+		wstringstream out;
+		out << L"read_body\n"
+			<< L"count=" << count
+			<< L" min=" << min_time
+			<< L" avg=" << (total_time / count)
+			<< L" max=" << max_time;
+		main_log(out.str());
+	}
+
 	size_t n = buf_.size();
 	body.resize(n);
 	buf_.sgetn((char*)body.c_str(), n);
@@ -247,7 +301,31 @@ void message::save(const wstring &filename)
 
 void reply::read_reply(tcp::socket &socket)
 {
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+
 	size_t n = asio::read_until(socket, buf_, "\r\n");
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+	count++;
+	total_time += time;
+	if (time < min_time || count == 1)
+		min_time = time;
+	if (time > max_time)
+		max_time = time;
+
+	{
+		wstringstream out;
+		out << L"read_reply\n"
+			<< L"count=" << count
+			<< L" min=" << min_time
+			<< L" avg=" << (total_time / count)
+			<< L" max=" << max_time;
+		main_log(out.str());
+	}
 
 	reply_.resize(n);
 	buf_.sgetn((char*)reply_.c_str(), n);
@@ -261,6 +339,13 @@ void reply::read_reply(tcp::socket &socket)
 void reply::get(tcp::socket &socket,
 	const string &request, bool do_read_body)
 {
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+
 	asio::write(socket, asio::buffer(request), asio::transfer_all());
 	
 	read_reply(socket);
@@ -268,6 +353,27 @@ void reply::get(tcp::socket &socket,
 	
 	if (do_read_body)
 		read_body(socket);
+
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+
+	count++;
+
+	total_time += time;
+	if (time < min_time || count == 1)
+		min_time = time;
+	if (time > max_time)
+		max_time = time;
+
+	//if ((count & 0x0F) == 0)
+	{
+		wstringstream out;
+		out << L"get\n"
+			<< L"count=" << count
+			<< L" min=" << min_time
+			<< L" avg=" << (total_time / count)
+			<< L" max=" << max_time;
+		main_log(out.str());
+	}
 }
 
 void request::read_request(tcp::socket &socket)

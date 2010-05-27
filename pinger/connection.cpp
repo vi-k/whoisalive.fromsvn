@@ -42,6 +42,13 @@ connection::~connection()
 
 void connection::run()
 {
+	static int count = 0;
+	static posix_time::time_duration total_time;
+	static posix_time::time_duration min_time(posix_time::hours(24));
+	static posix_time::time_duration max_time;
+
+	posix_time::ptime start = posix_time::microsec_clock::local_time();
+
 	try
 	{
 		/* Читаем запрос */
@@ -420,6 +427,21 @@ void connection::run()
 		send_404(str);
 		delete this;
 	}
+
+	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+	count++;
+	total_time += time;
+	if (time < min_time || count == 1)
+		min_time = time;
+	if (time > max_time)
+		max_time = time;
+
+	wstringstream out;
+	out << L"count=" << count
+		<< L" min=" << min_time
+		<< L" avg=" << (total_time / count)
+		<< L" max=" << max_time;
+	main_log(out.str());
 }
 
 void connection::send_header(unsigned int status_code,

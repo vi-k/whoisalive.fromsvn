@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <config>
-	<address>127.0.0.1</address>
-	<address2>172.16.22.158</address2>
+	<address2>127.0.0.1</address2>
+	<address>172.16.22.158</address>
 	<port>27543</port>
 	<def_timeout>00:00:02</def_timeout>
 	<def_request_period>00:00:10</def_request_period>

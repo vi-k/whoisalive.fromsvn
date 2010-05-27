@@ -49,12 +49,15 @@ extern wx_App *App;
 wofstream main_log_stream;
 void on_main_log(const wstring &title, const wstring &text)
 {
-	main_log_stream << my::time::to_fmt_wstring(L"[%Y-%m-%d %H:%M:%S] ",
-		posix_time::microsec_clock::universal_time());
-	main_log_stream << title << endl;
+	static const wstring tab(L"                      ");
+	static const wstring ntab(L"\n                      ");
+
+	main_log_stream << L"[" << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S",
+		posix_time::microsec_clock::universal_time()) << L"] ";
+	main_log_stream << boost::replace_all_copy(title, L"\n", ntab) << endl;
 	if (!text.empty())
-		main_log_stream << text << endl;
-	main_log_stream << endl;
+		main_log_stream << tab << boost::replace_all_copy(text, L"\n", ntab) << endl;
+	//main_log_stream << endl;
 	main_log_stream.flush();
 }
 my::log main_log(on_main_log);
