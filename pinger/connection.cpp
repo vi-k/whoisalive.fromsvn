@@ -12,6 +12,17 @@
 #include "../common/my_log.h"
 extern my::log main_log;
 
+#define CALC_TIME_
+#ifdef CALC_TIME_
+#include "../common/my_debug.h"
+my::debug::timer __proc_timer;
+#define __TIMER_START(t) (t).start();
+#define __TIMER_FINISH(t) (t).finish();
+#else
+#define __TIMER_START(t)
+#define __TIMER_FINISH(t)
+#endif
+
 #include <sstream>
 #include <fstream>
 #include <locale>
@@ -21,11 +32,6 @@ using namespace std;
 
 #include <boost/foreach.hpp>
 #include <boost/bind.hpp>
-
-namespace my
-{
-void log(const wstring &message, const wstring &title = wstring());
-}
 
 using namespace acceptor;
 
@@ -42,12 +48,7 @@ connection::~connection()
 
 void connection::run()
 {
-	static int count = 0;
-	static posix_time::time_duration total_time;
-	static posix_time::time_duration min_time(posix_time::hours(24));
-	static posix_time::time_duration max_time;
-
-	posix_time::ptime start = posix_time::microsec_clock::local_time();
+	__TIMER_START(__proc_timer)
 
 	try
 	{
@@ -408,7 +409,8 @@ void connection::run()
 	catch (my::exception &e)
 	{
 		wstring error = e.message();
-		main_log(L"my::exception in connection", error);
+		main_log << L"my::exception in connection\n"
+			<< error << main_log;
 		send_404(error);
 		delete this;
 	}
@@ -416,32 +418,29 @@ void connection::run()
 	{
 		my::exception my_e(e);
 		wstring error = my_e.message();
-		main_log(L"std::exception in connection", error);
+		main_log << L"std::exception in connection\n"
+			<< error << main_log;
 		send_404(error);
 		delete this;
     }
 	catch (...)
 	{
 		wstring str(L"unexpected exception in connection");
-		main_log(str);
+		main_log << str << main_log;
 		send_404(str);
 		delete this;
 	}
 
-	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
-	count++;
-	total_time += time;
-	if (time < min_time || count == 1)
-		min_time = time;
-	if (time > max_time)
-		max_time = time;
+	__TIMER_FINISH(__proc_timer)
 
-	wstringstream out;
-	out << L"count=" << count
-		<< L" min=" << min_time
-		<< L" avg=" << (total_time / count)
-		<< L" max=" << max_time;
-	main_log(out.str());
+	#ifdef CALC_TIME_
+		main_log << L"connection::run()"
+		<< L"\ncount=" << __proc_timer.count
+		<< L" min=" << __proc_timer.min
+		<< L" avg=" << __proc_timer.avg()
+		<< L" max=" << __proc_timer.max;
+	main_log.flush();
+	#endif
 }
 
 void connection::send_header(unsigned int status_code,

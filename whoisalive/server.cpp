@@ -7,6 +7,18 @@
 #include "../common/my_log.h"
 extern my::log main_log;
 
+//#define CALC_TIME_
+#ifdef CALC_TIME_
+#include "../common/my_debug.h"
+my::debug::timer __load_file_timer1;
+my::debug::timer __load_file_timer2;
+#define __TIMER_START(t) (t).start();
+#define __TIMER_FINISH(t) (t).finish();
+#else
+#define __TIMER_START(t)
+#define __TIMER_FINISH(t)
+#endif
+
 #include <sstream>
 #include <iostream>
 #include <map>
@@ -336,40 +348,39 @@ void server::get_header(tcp::socket &socket, my::http::reply &reply,
 unsigned int server::load_file(const wstring &file,
 	const wstring &file_local, bool throw_if_fail)
 {
-	static int count = 0;
-	static posix_time::time_duration total_time;
-	static posix_time::time_duration min_time(posix_time::hours(24));
-	static posix_time::time_duration max_time;
-	
 	my::http::reply reply;
 
-	posix_time::ptime start = posix_time::microsec_clock::local_time();
+	__TIMER_START(__load_file_timer1)
+
 	get(reply, file);
-	posix_time::time_duration time = posix_time::microsec_clock::local_time() - start;
+	
+	__TIMER_FINISH(__load_file_timer1)
 
 	if (reply.status_code == 200)
 	{
-		count++;
-
-		total_time += time;
-
-		if (time < min_time || count == 1)
-			min_time = time;
-		if (time > max_time)
-			max_time = time;
+		__TIMER_START(__load_file_timer2)
 
 		reply.save(file_local);
+
+		__TIMER_FINISH(__load_file_timer2)
 		
+		#ifdef CALC_TIME_
 		//if ((count & 0x0F) == 0)
 		{
-			wstringstream out;
-			out << L"load_file\n"
-				<< L"count=" << count
-				<< L" min=" << min_time
-				<< L" avg=" << (total_time / count)
-				<< L" max=" << max_time;
-			main_log(out.str());
+			main_log << L"load_file " << file;
+			main_log << L"\nload"
+				<< L" count=" << __load_file_timer1.count
+				<< L" min=" << __load_file_timer1.min
+				<< L" avg=" << __load_file_timer1.avg()
+				<< L" max=" << __load_file_timer1.max;
+			main_log << L"\nsave"
+				<< L" count=" << __load_file_timer2.count
+				<< L" min=" << __load_file_timer2.min
+				<< L" avg=" << __load_file_timer2.avg()
+				<< L" max=" << __load_file_timer2.max;
+			main_log.flush();
 		}
+		#endif
 	}
 	else if (throw_if_fail)
 		throw my::exception(L"Запрашиваемый файл не найден")

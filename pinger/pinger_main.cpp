@@ -22,17 +22,11 @@ using namespace std;
 BOOL __stdcall CtrlHandlerRoutine(DWORD dwCtrlType);
 
 wofstream main_log_stream;
-void on_main_log(const std::wstring &title, const std::wstring &text)
+void on_main_log(const wstring &text)
 {
-	static const wstring tab(L"                      ");
-	static const wstring ntab(L"\n                      ");
-
 	main_log_stream << L"[" << my::time::to_fmt_wstring(L"%Y-%m-%d %H:%M:%S",
-		posix_time::microsec_clock::universal_time()) << L"] ";
-	main_log_stream << boost::replace_all_copy(title, L"\n", ntab) << endl;
-	if (!text.empty())
-		main_log_stream << tab << boost::replace_all_copy(text, L"\n", ntab) << endl;
-	//main_log_stream << endl;
+		posix_time::microsec_clock::universal_time()) << L"]\n";
+	main_log_stream << text << endl << endl;
 	main_log_stream.flush();
 }
 my::log main_log(on_main_log);
@@ -58,10 +52,14 @@ int main()
 		#ifdef _DEBUG
 		wcout << L"Debug: " << VERSION << L" " << BUILDNO
 			<< L" " << BUILDDATE L" " << BUILDTIME << endl;
-		main_log( L"Start", L"Debug: " VERSION L" " BUILDNO L" " BUILDDATE L" " BUILDTIME );
+		main_log << L"Start\n"
+			<< L"Debug: " VERSION L" " BUILDNO L" " BUILDDATE L" " BUILDTIME
+			<< main_log;
 		#else
 		wcout << L"Release: " << VERSION << endl;
-		main_log( L"Start", L"Release: " VERSION );
+		main_log << L"Start\n"
+			<< L"Release: " VERSION
+			<< main_log;
 		#endif
 
 
@@ -94,15 +92,19 @@ int main()
 	catch (my::exception &e)
 	{
 		wstring error = e.message();
-		wcout << L"\n-- my::exception --\n" << error << endl;
-		main_log(L"-- my::exception -- ", error);
+		wcout << L"\n-- my::exception --\n"
+			<< error << endl;
+		main_log << L"-- my::exception --\n"
+			<< error << main_log;
     }
 	catch (std::exception &e)
 	{
 		my::exception my_e(e);
 		wstring error = my_e.message();
-		wcout << L"\n-- std::exception --\n" << error << endl;
-		main_log(L"-- std::exception --", error);
+		wcout << L"\n-- std::exception --\n"
+			<< error << endl;
+		main_log << L"-- std::exception --\n"
+			<< error << main_log;
     }
 
     return 0;
@@ -111,6 +113,6 @@ int main()
 /* Обработчик нажатий Ctrl-Break */
 BOOL __stdcall CtrlHandlerRoutine(DWORD dwCtrlType)
 {
-	main_log(L"Break");
+	main_log << L"Break" << main_log;
 	return FALSE;
 }

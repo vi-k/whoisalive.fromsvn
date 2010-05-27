@@ -2,6 +2,7 @@
 #define MY_LOG_H
 
 #include <string>
+#include <sstream>
 
 #include <boost/function.hpp>
 #include <boost/format.hpp>
@@ -13,30 +14,43 @@ namespace my
 class log
 {
 public:
-	typedef boost::function<void (const std::wstring &title,
-		const std::wstring &text)> on_log_t;
+	typedef boost::function<void (const std::wstring &text)> on_log_proc;
 
 private:
-	on_log_t on_log_;
+	on_log_proc on_log_;
+	std::wstringstream out_;
 
 public:
-	log(on_log_t on_log)
+	log(on_log_proc on_log)
 		: on_log_(on_log) {}
 
-	log& operator ()(const std::wstring &title,
-		const std::wstring &text = std::wstring())
+	/*-
+	void operator ()(const std::wstring &text)
 	{
-		if (on_log_)
-			on_log_(title, text);
+		flush();
+		out_ << text;
+		flush();
+	}
+    -*/
+
+	void operator <<(const log& x)
+	{
+		flush();
+	}
+
+	template<class T>
+	log& operator <<(const T& x)
+	{
+		out_ << x;
 		return *this;
 	}
 
-	log& operator ()(const std::wstring &title,
-		const boost::wformat fmt)
+	void flush()
 	{
-		if (on_log_)
-			on_log_(title, fmt.str());
-		return *this;
+		std::wstring text = out_.str();
+		if (on_log_ && !text.empty())
+			on_log_(text);
+		out_.str(L"");
 	}
 };
 

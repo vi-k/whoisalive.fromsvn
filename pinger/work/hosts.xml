@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?> 
 <hosts>
-	<host request_period="00:00:01">127.0.0.1</host>
+	<host request_period_="00:00:01">127.0.0.1</host>
 	<host_>президент.рф</host_>
 
 	<host>10.10.30.6</host>

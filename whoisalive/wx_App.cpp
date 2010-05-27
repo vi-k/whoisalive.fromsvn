@@ -57,7 +57,7 @@ bool wx_App::OnExceptionInMainLoop()
 	}
 	catch (...)
 	{
-		main_log(L"unknown exception (App::ExceptionInMainLoop)");
+		main_log << L"unknown exception (App::ExceptionInMainLoop)" << main_log;
 		wxMessageBox( L"Неизвестное исключение в MainLoop",
 			L"Ошибка", wxOK | wxICON_ERROR);
 	}
@@ -74,20 +74,22 @@ void wx_App::OnUnhandledException()
 	catch (my::exception &e)
 	{
 		wstring error = e.message();
-		main_log(L"my::exception (App::UnhandledException)", error);
+		main_log << L"my::exception (App::UnhandledException)\n"
+			<< error << main_log;
 		wxMessageBox(error.c_str(), L"Ошибка", wxOK | wxICON_ERROR);
 	}
 	catch (exception &e)
 	{
 		my::exception my_e(e);
 		wstring error = my_e.message();
-		main_log(L"std::exception (App::UnhandledException)", error);
+		main_log << L"std::exception (App::UnhandledException)\n"
+			<< error << main_log;
 		wxMessageBox(error.c_str(),
 			L"std::exception", wxOK | wxICON_ERROR);
 	}
 	catch ( ... )
 	{
-		main_log(L"unknown exception (App::UnhandledException)");
+		main_log << L"unknown exception (App::UnhandledException)" << main_log;
 		wxMessageBox(L"Неизвестное исключение, программа будет закрыта.",
 			L"Ошибка", wxOK | wxICON_ERROR);
 	}
@@ -95,7 +97,7 @@ void wx_App::OnUnhandledException()
 
 void wx_App::OnFatalException()
 {
-	main_log(L"unknown exception (App::FatalException)");
+	main_log << L"unknown exception (App::FatalException)" << main_log;
 	wxMessageBox( L"Program has crashed and will terminate.",
 		L"Критическая ошибка", wxOK | wxICON_ERROR);
 }
