@@ -1,48 +1,28 @@
 ﻿#ifndef MY_DEBUG_H
 #define MY_DEBUG_H
 
-#include "my_time.h"
+#include "my_stopwatch.h"
 
-namespace my { namespace debug {
+namespace my {
 
-class timer
-{
-private:
-	posix_time::ptime start_;
+#ifndef MY_STOPWATCH_DEBUG
 
-public:		
-	int count;
-	posix_time::time_duration total;
-	posix_time::time_duration min;
-	posix_time::time_duration max;
+#define MY_STOPWATCH(t)
+#define MY_STOPWATCH_START(t)
+#define MY_STOPWATCH_FINISH(t)
+#define MY_STOPWATCH_OUT(out,t)
+#define IF_MY_STOPWATCH(c)
 
-	timer() : count(0) {}
+#else
 
-	inline void start()
-	{
-		start_ = posix_time::microsec_clock::local_time();
-	}
+#define MY_STOPWATCH(t) my::stopwatch t;
+#define MY_STOPWATCH_START(t) (t).start();
+#define MY_STOPWATCH_FINISH(t) (t).finish();
+#define MY_STOPWATCH_OUT(out,t) out << t;
+#define IF_MY_STOPWATCH(c) c
 
-	inline void finish()
-	{
-		posix_time::time_duration time
-			= posix_time::microsec_clock::local_time() - start_;
+#endif
 
-		if (time < min || count == 0)
-			min = time;
-		if (time > max || count == 0)
-			max = time;
-
-		total += time;
-		count++;
-	}
-
-	inline posix_time::time_duration avg()
-	{
-		return total / count;
-	}
-};
-
-} }
+}
 
 #endif

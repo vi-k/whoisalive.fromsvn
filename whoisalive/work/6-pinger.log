@@ -1,0 +1,769 @@
+﻿[2010-05-28 00:13:20]
+Start
+Debug: 0.5.0 alpha [build 66] 27.05.2010 08:43:18
+
+[2010-05-28 00:15:14]
+connection::run() time=00:00:00.031251
+
+[2010-05-28 00:15:15]
+connection::run() count=2 total=00:00:00.046876 avg=00:00:00.023438 min=00:00:00.015625 max=00:00:00.031251
+
+[2010-05-28 00:15:15]
+connection::run() count=3 total=00:00:00.046876 avg=00:00:00.015625 min=00:00:00 max=00:00:00.031251
+
+[2010-05-28 00:15:15]
+connection::run() count=4 total=00:00:00.359384 avg=00:00:00.089846 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:16]
+connection::run() count=5 total=00:00:00.359384 avg=00:00:00.071876 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:17]
+connection::run() count=6 total=00:00:00.359384 avg=00:00:00.059897 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:19]
+connection::run() count=7 total=00:00:00.359384 avg=00:00:00.051340 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:19]
+connection::run() count=8 total=00:00:00.359384 avg=00:00:00.044923 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:21]
+connection::run() count=9 total=00:00:00.359384 avg=00:00:00.039931 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:23]
+connection::run() count=10 total=00:00:00.375009 avg=00:00:00.037500 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:24]
+connection::run() count=11 total=00:00:00.375009 avg=00:00:00.034091 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:25]
+connection::run() count=12 total=00:00:00.375009 avg=00:00:00.031250 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:27]
+connection::run() count=13 total=00:00:00.375009 avg=00:00:00.028846 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:27]
+connection::run() count=14 total=00:00:00.375009 avg=00:00:00.026786 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:27]
+connection::run() count=15 total=00:00:00.375009 avg=00:00:00.025000 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:29]
+connection::run() count=16 total=00:00:00.390634 avg=00:00:00.024414 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:31]
+connection::run() count=17 total=00:00:00.406259 avg=00:00:00.023897 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:33]
+connection::run() count=18 total=00:00:00.546887 avg=00:00:00.030382 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:33]
+connection::run() count=19 total=00:00:00.562513 avg=00:00:00.029605 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:33]
+connection::run() count=20 total=00:00:00.593764 avg=00:00:00.029688 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:33]
+connection::run() count=21 total=00:00:00.625015 avg=00:00:00.029762 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:33]
+connection::run() count=22 total=00:00:00.656266 avg=00:00:00.029830 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:35]
+connection::run() count=23 total=00:00:00.765644 avg=00:00:00.033288 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:36]
+connection::run() count=24 total=00:00:00.796895 avg=00:00:00.033203 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:36]
+connection::run() count=25 total=00:00:00.812520 avg=00:00:00.032500 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:36]
+connection::run() count=26 total=00:00:00.843771 avg=00:00:00.032452 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:36]
+connection::run() count=27 total=00:00:00.859396 avg=00:00:00.031829 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:38]
+connection::run() count=28 total=00:00:00.875021 avg=00:00:00.031250 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:40]
+connection::run() count=29 total=00:00:00.890646 avg=00:00:00.030711 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:40]
+connection::run() count=30 total=00:00:00.906271 avg=00:00:00.030209 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:40]
+connection::run() count=31 total=00:00:00.953147 avg=00:00:00.030746 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:40]
+connection::run() count=32 total=00:00:00.968772 avg=00:00:00.030274 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:42]
+connection::run() count=33 total=00:00:01.078150 avg=00:00:00.032671 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:42]
+connection::run() count=34 total=00:00:01.093776 avg=00:00:00.032169 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:42]
+connection::run() count=35 total=00:00:01.125027 avg=00:00:00.032143 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:43]
+connection::run() count=36 total=00:00:01.234405 avg=00:00:00.034289 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:45]
+connection::run() count=37 total=00:00:01.390659 avg=00:00:00.037585 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:47]
+connection::run() count=38 total=00:00:01.531288 avg=00:00:00.040297 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:48]
+connection::run() count=39 total=00:00:01.562539 avg=00:00:00.040065 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:50]
+connection::run() count=40 total=00:00:01.578165 avg=00:00:00.039454 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:50]
+connection::run() count=41 total=00:00:01.593790 avg=00:00:00.038872 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:50]
+connection::run() count=42 total=00:00:01.593790 avg=00:00:00.037947 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:50]
+connection::run() count=43 total=00:00:01.609415 avg=00:00:00.037428 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:52]
+connection::run() count=44 total=00:00:01.640666 avg=00:00:00.037287 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7176&y=2838 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=45 total=00:00:01.656292 avg=00:00:00.036806 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7176&y=2837 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=46 total=00:00:01.656292 avg=00:00:00.036006 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7176&y=2836 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=47 total=00:00:01.656292 avg=00:00:00.035240 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7176&y=2835 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=48 total=00:00:01.656292 avg=00:00:00.034506 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7175&y=2838 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=49 total=00:00:01.687543 avg=00:00:00.034439 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7175&y=2837 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=50 total=00:00:01.703168 avg=00:00:00.034063 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7175&y=2836 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=51 total=00:00:01.703168 avg=00:00:00.033395 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7175&y=2835 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=52 total=00:00:01.718794 avg=00:00:00.033053 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7174&y=2838 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=53 total=00:00:01.734419 avg=00:00:00.032724 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7174&y=2837 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=54 total=00:00:01.750044 avg=00:00:00.032408 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7174&y=2836 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=55 total=00:00:01.750044 avg=00:00:00.031818 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:54]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7174&y=2835 HTTP/1.1\r\n
+
+[2010-05-28 00:15:54]
+connection::run() count=56 total=00:00:01.750044 avg=00:00:00.031250 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:55]
+connection::run() count=57 total=00:00:01.796920 avg=00:00:00.031524 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:57]
+connection::run() count=58 total=00:00:01.796920 avg=00:00:00.030981 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:57]
+connection::run() count=59 total=00:00:01.796920 avg=00:00:00.030456 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:57]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7173&y=2835 HTTP/1.1\r\n
+
+[2010-05-28 00:15:57]
+connection::run() count=60 total=00:00:01.796920 avg=00:00:00.029948 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:57]
+connection::run() count=61 total=00:00:01.812545 avg=00:00:00.029713 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:15:59]
+connection::run() count=62 total=00:00:01.843795 avg=00:00:00.029738 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:01]
+connection::run() count=63 total=00:00:01.859421 avg=00:00:00.029514 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:03]
+connection::run() count=64 total=00:00:01.968799 avg=00:00:00.030762 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:04]
+connection::run() count=65 total=00:00:01.968799 avg=00:00:00.030289 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:05]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=13&x=3590&y=1420 HTTP/1.1\r\n
+
+[2010-05-28 00:16:05]
+connection::run() count=66 total=00:00:01.968799 avg=00:00:00.029830 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:05]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=13&x=3590&y=1419 HTTP/1.1\r\n
+
+[2010-05-28 00:16:05]
+connection::run() count=67 total=00:00:01.968799 avg=00:00:00.029385 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=13&x=3590&y=1418 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=68 total=00:00:01.968799 avg=00:00:00.028952 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=13&x=3590&y=1417 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=69 total=00:00:01.984424 avg=00:00:00.028759 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7177&y=2838 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=70 total=00:00:02.000050 avg=00:00:00.028572 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7177&y=2837 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=71 total=00:00:02.000050 avg=00:00:00.028169 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7177&y=2836 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=72 total=00:00:02.015675 avg=00:00:00.027995 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=14&x=7177&y=2835 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=73 total=00:00:02.031300 avg=00:00:00.027826 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=13&x=3590&y=1416 HTTP/1.1\r\n
+
+[2010-05-28 00:16:06]
+connection::run() count=74 total=00:00:02.031300 avg=00:00:00.027450 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+connection::run() count=75 total=00:00:02.078176 avg=00:00:00.027709 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:06]
+connection::run() count=76 total=00:00:02.093802 avg=00:00:00.027550 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:08]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28699&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:08]
+connection::run() count=77 total=00:00:02.140678 avg=00:00:00.027801 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:08]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28699&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:08]
+connection::run() count=78 total=00:00:02.140678 avg=00:00:00.027444 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:08]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28699&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:08]
+connection::run() count=79 total=00:00:02.156303 avg=00:00:00.027294 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:08]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28699&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=80 total=00:00:02.156303 avg=00:00:00.026953 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28699&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=81 total=00:00:02.156303 avg=00:00:00.026621 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28698&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=82 total=00:00:02.187554 avg=00:00:00.026677 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28698&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=83 total=00:00:02.187554 avg=00:00:00.026356 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28698&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=84 total=00:00:02.187554 avg=00:00:00.026042 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28698&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=85 total=00:00:02.203179 avg=00:00:00.025919 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28698&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=86 total=00:00:02.203179 avg=00:00:00.025618 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28697&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=87 total=00:00:02.234430 avg=00:00:00.025683 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28697&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=88 total=00:00:02.250056 avg=00:00:00.025568 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28697&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=89 total=00:00:02.265681 avg=00:00:00.025457 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28697&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=90 total=00:00:02.265681 avg=00:00:00.025174 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28697&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=91 total=00:00:02.265681 avg=00:00:00.024897 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28696&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=92 total=00:00:02.296932 avg=00:00:00.024966 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28696&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=93 total=00:00:02.312558 avg=00:00:00.024866 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28696&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=94 total=00:00:02.312558 avg=00:00:00.024601 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28696&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=95 total=00:00:02.312558 avg=00:00:00.024342 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:09]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28696&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:09]
+connection::run() count=96 total=00:00:02.312558 avg=00:00:00.024089 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28695&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=97 total=00:00:02.343809 avg=00:00:00.024162 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28695&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=98 total=00:00:02.343809 avg=00:00:00.023916 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28695&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=99 total=00:00:02.343809 avg=00:00:00.023674 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28695&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=100 total=00:00:02.343809 avg=00:00:00.023438 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28695&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=101 total=00:00:02.343809 avg=00:00:00.023206 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28694&y=11352 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=102 total=00:00:02.375059 avg=00:00:00.023284 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28694&y=11351 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=103 total=00:00:02.390685 avg=00:00:00.023210 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28694&y=11350 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=104 total=00:00:02.406310 avg=00:00:00.023137 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28694&y=11349 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=105 total=00:00:02.421936 avg=00:00:00.023066 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=16&x=28694&y=11348 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=106 total=00:00:02.437562 avg=00:00:00.022995 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14351&y=5676 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=107 total=00:00:02.484438 avg=00:00:00.023219 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14351&y=5675 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=108 total=00:00:02.484438 avg=00:00:00.023004 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14351&y=5674 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=109 total=00:00:02.484438 avg=00:00:00.022793 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14351&y=5673 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=110 total=00:00:02.484438 avg=00:00:00.022585 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14350&y=5676 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=111 total=00:00:02.500063 avg=00:00:00.022523 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14350&y=5675 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=112 total=00:00:02.515689 avg=00:00:00.022461 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14350&y=5674 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=113 total=00:00:02.531314 avg=00:00:00.022401 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:10]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14350&y=5673 HTTP/1.1\r\n
+
+[2010-05-28 00:16:10]
+connection::run() count=114 total=00:00:02.546940 avg=00:00:00.022341 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14349&y=5676 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=115 total=00:00:02.578190 avg=00:00:00.022419 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14349&y=5675 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=116 total=00:00:02.578190 avg=00:00:00.022225 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14349&y=5674 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=117 total=00:00:02.578190 avg=00:00:00.022035 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14349&y=5673 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=118 total=00:00:02.593815 avg=00:00:00.021981 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14348&y=5676 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=119 total=00:00:02.625065 avg=00:00:00.022059 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14348&y=5675 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=120 total=00:00:02.625065 avg=00:00:00.021875 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14348&y=5674 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=121 total=00:00:02.625065 avg=00:00:00.021694 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14348&y=5673 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=122 total=00:00:02.625065 avg=00:00:00.021516 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14347&y=5676 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=123 total=00:00:02.671941 avg=00:00:00.021723 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14347&y=5675 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=124 total=00:00:02.687566 avg=00:00:00.021673 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14347&y=5674 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=125 total=00:00:02.703191 avg=00:00:00.021625 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+my::exception in connection
+По данному запросу нет данных
+request: GET /maps/gettile?map=yamapng&z=15&x=14347&y=5673 HTTP/1.1\r\n
+
+[2010-05-28 00:16:11]
+connection::run() count=126 total=00:00:02.703191 avg=00:00:00.021453 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+connection::run() count=127 total=00:00:02.765692 avg=00:00:00.021777 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+connection::run() count=128 total=00:00:02.765692 avg=00:00:00.021606 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+connection::run() count=129 total=00:00:02.765692 avg=00:00:00.021439 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:11]
+connection::run() count=130 total=00:00:02.765692 avg=00:00:00.021274 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:12]
+connection::run() count=131 total=00:00:02.781317 avg=00:00:00.021231 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:13]
+connection::run() count=132 total=00:00:02.812568 avg=00:00:00.021307 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:15]
+connection::run() count=133 total=00:00:02.906320 avg=00:00:00.021852 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:18]
+connection::run() count=134 total=00:00:02.937571 avg=00:00:00.021922 min=00:00:00 max=00:00:00.312508
+
+[2010-05-28 00:16:58]
+Break
+
