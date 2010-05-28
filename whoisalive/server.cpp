@@ -7,17 +7,10 @@
 #include "../common/my_log.h"
 extern my::log main_log;
 
-//#define CALC_TIME_
-#ifdef CALC_TIME_
+#define MY_STOPWATCH_DEBUG
 #include "../common/my_debug.h"
-my::debug::timer __load_file_timer1;
-my::debug::timer __load_file_timer2;
-#define __TIMER_START(t) (t).start();
-#define __TIMER_FINISH(t) (t).finish();
-#else
-#define __TIMER_START(t)
-#define __TIMER_FINISH(t)
-#endif
+MY_STOPWATCH( __load_file_sw1(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __load_file_sw2(my::stopwatch::show_all & ~my::stopwatch::show_total) )
 
 #include <sstream>
 #include <iostream>
@@ -350,37 +343,19 @@ unsigned int server::load_file(const wstring &file,
 {
 	my::http::reply reply;
 
-	__TIMER_START(__load_file_timer1)
-
-	get(reply, file);
-	
-	__TIMER_FINISH(__load_file_timer1)
+	MY_STOPWATCH_START(__load_file_sw1)
+    get(reply, file);
+	MY_STOPWATCH_FINISH(__load_file_sw1)
 
 	if (reply.status_code == 200)
 	{
-		__TIMER_START(__load_file_timer2)
-
+		MY_STOPWATCH_START(__load_file_sw2)
 		reply.save(file_local);
-
-		__TIMER_FINISH(__load_file_timer2)
-		
-		#ifdef CALC_TIME_
-		//if ((count & 0x0F) == 0)
-		{
-			main_log << L"load_file " << file;
-			main_log << L"\nload"
-				<< L" count=" << __load_file_timer1.count
-				<< L" min=" << __load_file_timer1.min
-				<< L" avg=" << __load_file_timer1.avg()
-				<< L" max=" << __load_file_timer1.max;
-			main_log << L"\nsave"
-				<< L" count=" << __load_file_timer2.count
-				<< L" min=" << __load_file_timer2.min
-				<< L" avg=" << __load_file_timer2.avg()
-				<< L" max=" << __load_file_timer2.max;
-			main_log.flush();
-		}
-		#endif
+		MY_STOPWATCH_FINISH(__load_file_sw2)
+	
+		MY_STOPWATCH_OUT(main_log, L"load_file " << file)
+		MY_STOPWATCH_OUT(main_log, L"\nload " << __load_file_sw1)
+		MY_STOPWATCH_OUT(main_log, L"\nsave " << __load_file_sw2 << main_log)
 	}
 	else if (throw_if_fail)
 		throw my::exception(L"Запрашиваемый файл не найден")

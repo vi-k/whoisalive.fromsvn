@@ -259,6 +259,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\common\my_debug.h"
+				>
+			</File>
+			<File
 				RelativePath="..\common\my_exception.h"
 				>
 			</File>

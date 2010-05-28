@@ -12,16 +12,9 @@
 #include "../common/my_log.h"
 extern my::log main_log;
 
-#define CALC_TIME_
-#ifdef CALC_TIME_
+#define MY_STOPWATCH_DEBUG
 #include "../common/my_debug.h"
-my::debug::timer __proc_timer;
-#define __TIMER_START(t) (t).start();
-#define __TIMER_FINISH(t) (t).finish();
-#else
-#define __TIMER_START(t)
-#define __TIMER_FINISH(t)
-#endif
+MY_STOPWATCH( __proc_sw(my::stopwatch::show_all & ~my::stopwatch::show_total) )
 
 #include <sstream>
 #include <fstream>
@@ -48,7 +41,7 @@ connection::~connection()
 
 void connection::run()
 {
-	__TIMER_START(__proc_timer)
+	MY_STOPWATCH_START(__proc_sw)
 
 	try
 	{
@@ -431,16 +424,9 @@ void connection::run()
 		delete this;
 	}
 
-	__TIMER_FINISH(__proc_timer)
-
-	#ifdef CALC_TIME_
-		main_log << L"connection::run()"
-		<< L"\ncount=" << __proc_timer.count
-		<< L" min=" << __proc_timer.min
-		<< L" avg=" << __proc_timer.avg()
-		<< L" max=" << __proc_timer.max;
-	main_log.flush();
-	#endif
+	MY_STOPWATCH_FINISH(__proc_sw)
+	MY_STOPWATCH_OUT(main_log,
+		L"connection::run() " << __proc_sw << main_log)
 }
 
 void connection::send_header(unsigned int status_code,

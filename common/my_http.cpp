@@ -7,24 +7,20 @@
 #include "../common/my_fs.h"
 #include "../common/my_exception.h"
 
-//#define CALC_TIME_
-#ifdef CALC_TIME_
+#define MY_STOPWATCH_DEBUG
+#ifdef MY_STOPWATCH_DEBUG
 #include "../common/my_log.h"
-#include "../common/my_debug.h"
 extern my::log main_log;
-my::debug::timer __read_reply_timer1;
-my::debug::timer __read_reply_timer2;
-my::debug::timer __read_header_timer1;
-my::debug::timer __read_header_timer2;
-my::debug::timer __read_body_timer1;
-my::debug::timer __read_body_timer2;
-my::debug::timer __read_get_timer;
-#define __TIMER_START(t) (t).start();
-#define __TIMER_FINISH(t) (t).finish();
-#else
-#define __TIMER_START(t)
-#define __TIMER_FINISH(t)
 #endif
+
+#include "../common/my_debug.h"
+MY_STOPWATCH( __read_reply_sw1(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __read_reply_sw2(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __read_header_sw1(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __read_header_sw2(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __read_body_sw1(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __read_body_sw2(my::stopwatch::show_all & ~my::stopwatch::show_total) )
+MY_STOPWATCH( __get_sw(my::stopwatch::show_all & ~my::stopwatch::show_total) )
 
 #include <errno.h>
 #include <string.h> /* strlen */
@@ -199,12 +195,11 @@ string percent_encode(const char *str,
 
 void message::read_header(tcp::socket &socket)
 {
-	__TIMER_START(__read_header_timer1)
-	__TIMER_START(__read_header_timer2)
+	MY_STOPWATCH_START(__read_header_sw1)
 
+	MY_STOPWATCH_START(__read_header_sw2)
 	size_t n = asio::read_until(socket, buf_, boost::regex("^\r\n"));
-
-	__TIMER_FINISH(__read_header_timer2)
+	MY_STOPWATCH_FINISH(__read_header_sw2)
 	
 	header_.resize(n);
 	buf_.sgetn((char*)header_.c_str(), n);
@@ -219,25 +214,26 @@ void message::read_header(tcp::socket &socket)
 			= my::utf8::decode( percent_decode(iter->second) );
 	}
 
-	__TIMER_FINISH(__read_header_timer1)
+	MY_STOPWATCH_FINISH(__read_header_sw1)
 }
 
 void message::read_body(tcp::socket &socket)
 {
-	__TIMER_START(__read_body_timer1)
-	__TIMER_START(__read_body_timer2)
+	MY_STOPWATCH_START(__read_body_sw1)
+
+	MY_STOPWATCH_START(__read_body_sw2)
 
 	/* Чтение здесь всегда заканчивается ошибкой! */
 	boost::system::error_code ec;
 	asio::read(socket, buf_, boost::asio::transfer_all(), ec);
-
-	__TIMER_FINISH(__read_body_timer2)
+	
+	MY_STOPWATCH_FINISH(__read_body_sw2)
 	
 	size_t n = buf_.size();
 	body.resize(n);
 	buf_.sgetn((char*)body.c_str(), n);
 
-	__TIMER_FINISH(__read_body_timer1)
+	MY_STOPWATCH_FINISH(__read_body_sw1)
 }
 
 wstring message::content_type()
@@ -280,12 +276,11 @@ void message::save(const wstring &filename)
 
 void reply::read_reply(tcp::socket &socket)
 {
-	__TIMER_START(__read_reply_timer1)
-	__TIMER_START(__read_reply_timer2)
+	MY_STOPWATCH_START(__read_reply_sw1)
 
+	MY_STOPWATCH_START(__read_reply_sw2)
 	size_t n = asio::read_until(socket, buf_, "\r\n");
-
-	__TIMER_FINISH(__read_reply_timer2)
+	MY_STOPWATCH_FINISH(__read_reply_sw2)
 
 	reply_.resize(n);
 	buf_.sgetn((char*)reply_.c_str(), n);
@@ -295,13 +290,13 @@ void reply::read_reply(tcp::socket &socket)
 
 	status_message = my::utf8::decode( percent_decode(status_message_s) );
 
-	__TIMER_FINISH(__read_reply_timer1)
+	MY_STOPWATCH_FINISH(__read_reply_sw1)
 }
 
 void reply::get(tcp::socket &socket,
 	const string &request, bool do_read_body)
 {
-	__TIMER_START(__read_get_timer)
+	MY_STOPWATCH_START(__get_sw)
 
 	asio::write(socket, asio::buffer(request), asio::transfer_all());
 	
@@ -311,50 +306,17 @@ void reply::get(tcp::socket &socket,
 	if (do_read_body)
 		read_body(socket);
 
-	__TIMER_FINISH(__read_get_timer)
+	MY_STOPWATCH_FINISH(__get_sw)
 
-	#ifdef CALC_TIME_
-	//if ((count & 0x0F) == 0)
-	{
-		main_log << L"get " << my::str::escape(request).c_str();
-		main_log << L"\nget"
-			<< L" count=" << __read_get_timer.count
-			<< L" min=" << __read_get_timer.min
-			<< L" avg=" << __read_get_timer.avg()
-			<< L" max=" << __read_get_timer.max;
-		main_log << L"\nread_reply1"
-			<< L" count=" << __read_reply_timer1.count
-			<< L" min=" << __read_reply_timer1.min
-			<< L" avg=" << __read_reply_timer1.avg()
-			<< L" max=" << __read_reply_timer1.max;
-		main_log << L"\nread_reply2"
-			<< L" count=" << __read_reply_timer2.count
-			<< L" min=" << __read_reply_timer2.min
-			<< L" avg=" << __read_reply_timer2.avg()
-			<< L" max=" << __read_reply_timer2.max;
-		main_log << L"\nread_header1"
-			<< L" count=" << __read_header_timer1.count
-			<< L" min=" << __read_header_timer1.min
-			<< L" avg=" << __read_header_timer1.avg()
-			<< L" max=" << __read_header_timer1.max;
-		main_log << L"\nread_header2"
-			<< L" count=" << __read_header_timer2.count
-			<< L" min=" << __read_header_timer2.min
-			<< L" avg=" << __read_header_timer2.avg()
-			<< L" max=" << __read_header_timer2.max;
-		main_log << L"\nread_body1"
-			<< L" count=" << __read_body_timer1.count
-			<< L" min=" << __read_body_timer1.min
-			<< L" avg=" << __read_body_timer1.avg()
-			<< L" max=" << __read_body_timer1.max;
-		main_log << L"\nread_body2"
-			<< L" count=" << __read_body_timer2.count
-			<< L" min=" << __read_body_timer2.min
-			<< L" avg=" << __read_body_timer2.avg()
-			<< L" max=" << __read_body_timer2.max;
-		main_log.flush();
-	}
-	#endif
+	MY_STOPWATCH_OUT(main_log, L"get " << my::str::escape(request).c_str())
+	MY_STOPWATCH_OUT(main_log, L"\nget " << __get_sw)
+	MY_STOPWATCH_OUT(main_log, L"\nread_reply1 " << __read_reply_sw1)
+	MY_STOPWATCH_OUT(main_log, L"\nread_reply2 " << __read_reply_sw2)
+	MY_STOPWATCH_OUT(main_log, L"\nread_header1 " << __read_header_sw1)
+	MY_STOPWATCH_OUT(main_log, L"\nread_header2 " << __read_header_sw2)
+	MY_STOPWATCH_OUT(main_log, L"\nread_body1 " << __read_body_sw1)
+	MY_STOPWATCH_OUT(main_log, L"\nread_body2 " << __read_body_sw2)
+	MY_STOPWATCH_OUT(main_log, main_log)
 }
 
 void request::read_request(tcp::socket &socket)

@@ -1,0 +1,2563 @@
+﻿[2010-05-28 00:51:38]
+Start
+
+[2010-05-28 00:51:38]
+get "GET /classes/classes.xml HTTP/1.1\r\n\r\n"
+get time=00:00:00.109375
+read_reply1 time=00:00:00.046875
+read_reply2 time=00:00:00.031250
+read_header1 time=00:00:00.062500
+read_header2 time=00:00:00.062500
+read_body1 time=00:00:00
+read_body2 time=00:00:00
+
+[2010-05-28 00:51:38]
+get "GET /classes/computer.png HTTP/1.1\r\n\r\n"
+get count=2 total=00:00:00.125000 avg=00:00:00.062500 min=00:00:00.015625 max=00:00:00.109375
+read_reply1 count=2 total=00:00:00.046875 avg=00:00:00.023437 min=00:00:00 max=00:00:00.046875
+read_reply2 count=2 total=00:00:00.031250 avg=00:00:00.015625 min=00:00:00 max=00:00:00.031250
+read_header1 count=2 total=00:00:00.062500 avg=00:00:00.031250 min=00:00:00 max=00:00:00.062500
+read_header2 count=2 total=00:00:00.062500 avg=00:00:00.031250 min=00:00:00 max=00:00:00.062500
+read_body1 count=2 total=00:00:00.015625 avg=00:00:00.007812 min=00:00:00 max=00:00:00.015625
+read_body2 count=2 total=00:00:00.015625 avg=00:00:00.007812 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/computer.png
+load time=00:00:00.031250
+save time=00:00:00.015625
+
+[2010-05-28 00:51:38]
+get "GET /classes/wifi.png HTTP/1.1\r\n\r\n"
+get count=3 total=00:00:00.125000 avg=00:00:00.041666 min=00:00:00 max=00:00:00.109375
+read_reply1 count=3 total=00:00:00.046875 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+read_reply2 count=3 total=00:00:00.031250 avg=00:00:00.010416 min=00:00:00 max=00:00:00.031250
+read_header1 count=3 total=00:00:00.062500 avg=00:00:00.020833 min=00:00:00 max=00:00:00.062500
+read_header2 count=3 total=00:00:00.062500 avg=00:00:00.020833 min=00:00:00 max=00:00:00.062500
+read_body1 count=3 total=00:00:00.015625 avg=00:00:00.005208 min=00:00:00 max=00:00:00.015625
+read_body2 count=3 total=00:00:00.015625 avg=00:00:00.005208 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/wifi.png
+load count=2 total=00:00:00.046875 avg=00:00:00.023437 min=00:00:00.015625 max=00:00:00.031250
+save count=2 total=00:00:00.031250 avg=00:00:00.015625 min=00:00:00.015625 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+get "GET /classes/thunder.png HTTP/1.1\r\n\r\n"
+get count=4 total=00:00:00.125000 avg=00:00:00.031250 min=00:00:00 max=00:00:00.109375
+read_reply1 count=4 total=00:00:00.046875 avg=00:00:00.011718 min=00:00:00 max=00:00:00.046875
+read_reply2 count=4 total=00:00:00.031250 avg=00:00:00.007812 min=00:00:00 max=00:00:00.031250
+read_header1 count=4 total=00:00:00.062500 avg=00:00:00.015625 min=00:00:00 max=00:00:00.062500
+read_header2 count=4 total=00:00:00.062500 avg=00:00:00.015625 min=00:00:00 max=00:00:00.062500
+read_body1 count=4 total=00:00:00.015625 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+read_body2 count=4 total=00:00:00.015625 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/thunder.png
+load count=3 total=00:00:00.062500 avg=00:00:00.020833 min=00:00:00.015625 max=00:00:00.031250
+save count=3 total=00:00:00.031250 avg=00:00:00.010416 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+get "GET /classes/home.png HTTP/1.1\r\n\r\n"
+get count=5 total=00:00:00.140625 avg=00:00:00.028125 min=00:00:00 max=00:00:00.109375
+read_reply1 count=5 total=00:00:00.046875 avg=00:00:00.009375 min=00:00:00 max=00:00:00.046875
+read_reply2 count=5 total=00:00:00.031250 avg=00:00:00.006250 min=00:00:00 max=00:00:00.031250
+read_header1 count=5 total=00:00:00.062500 avg=00:00:00.012500 min=00:00:00 max=00:00:00.062500
+read_header2 count=5 total=00:00:00.062500 avg=00:00:00.012500 min=00:00:00 max=00:00:00.062500
+read_body1 count=5 total=00:00:00.031250 avg=00:00:00.006250 min=00:00:00 max=00:00:00.015625
+read_body2 count=5 total=00:00:00.031250 avg=00:00:00.006250 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/home.png
+load count=4 total=00:00:00.078125 avg=00:00:00.019531 min=00:00:00.015625 max=00:00:00.031250
+save count=4 total=00:00:00.031250 avg=00:00:00.007812 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+get "GET /classes/group.png HTTP/1.1\r\n\r\n"
+get count=6 total=00:00:00.140625 avg=00:00:00.023437 min=00:00:00 max=00:00:00.109375
+read_reply1 count=6 total=00:00:00.046875 avg=00:00:00.007812 min=00:00:00 max=00:00:00.046875
+read_reply2 count=6 total=00:00:00.031250 avg=00:00:00.005208 min=00:00:00 max=00:00:00.031250
+read_header1 count=6 total=00:00:00.062500 avg=00:00:00.010416 min=00:00:00 max=00:00:00.062500
+read_header2 count=6 total=00:00:00.062500 avg=00:00:00.010416 min=00:00:00 max=00:00:00.062500
+read_body1 count=6 total=00:00:00.031250 avg=00:00:00.005208 min=00:00:00 max=00:00:00.015625
+read_body2 count=6 total=00:00:00.031250 avg=00:00:00.005208 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/group.png
+load count=5 total=00:00:00.093750 avg=00:00:00.018750 min=00:00:00.015625 max=00:00:00.031250
+save count=5 total=00:00:00.031250 avg=00:00:00.006250 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+get "GET /classes/phones.png HTTP/1.1\r\n\r\n"
+get count=7 total=00:00:00.140625 avg=00:00:00.020089 min=00:00:00 max=00:00:00.109375
+read_reply1 count=7 total=00:00:00.046875 avg=00:00:00.006696 min=00:00:00 max=00:00:00.046875
+read_reply2 count=7 total=00:00:00.031250 avg=00:00:00.004464 min=00:00:00 max=00:00:00.031250
+read_header1 count=7 total=00:00:00.062500 avg=00:00:00.008928 min=00:00:00 max=00:00:00.062500
+read_header2 count=7 total=00:00:00.062500 avg=00:00:00.008928 min=00:00:00 max=00:00:00.062500
+read_body1 count=7 total=00:00:00.031250 avg=00:00:00.004464 min=00:00:00 max=00:00:00.015625
+read_body2 count=7 total=00:00:00.031250 avg=00:00:00.004464 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:38]
+load_file /classes/phones.png
+load count=6 total=00:00:00.109375 avg=00:00:00.018229 min=00:00:00.015625 max=00:00:00.031250
+save count=6 total=00:00:00.031250 avg=00:00:00.005208 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:39]
+get "GET /maps/maps.xml HTTP/1.1\r\n\r\n"
+get count=8 total=00:00:00.140625 avg=00:00:00.017578 min=00:00:00 max=00:00:00.109375
+read_reply1 count=8 total=00:00:00.046875 avg=00:00:00.005859 min=00:00:00 max=00:00:00.046875
+read_reply2 count=8 total=00:00:00.031250 avg=00:00:00.003906 min=00:00:00 max=00:00:00.031250
+read_header1 count=8 total=00:00:00.062500 avg=00:00:00.007812 min=00:00:00 max=00:00:00.062500
+read_header2 count=8 total=00:00:00.062500 avg=00:00:00.007812 min=00:00:00 max=00:00:00.062500
+read_body1 count=8 total=00:00:00.031250 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+read_body2 count=8 total=00:00:00.031250 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:39]
+get "GET /pinger/state.log HTTP/1.1\r\n\r\n"
+get count=9 total=00:00:00.281250 avg=00:00:00.031250 min=00:00:00 max=00:00:00.140625
+read_reply1 count=9 total=00:00:00.187500 avg=00:00:00.020833 min=00:00:00 max=00:00:00.140625
+read_reply2 count=9 total=00:00:00.171875 avg=00:00:00.019097 min=00:00:00 max=00:00:00.140625
+read_header1 count=9 total=00:00:00.062500 avg=00:00:00.006944 min=00:00:00 max=00:00:00.062500
+read_header2 count=9 total=00:00:00.062500 avg=00:00:00.006944 min=00:00:00 max=00:00:00.062500
+read_body1 count=8 total=00:00:00.031250 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+read_body2 count=8 total=00:00:00.031250 avg=00:00:00.003906 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:39]
+get "GET /schemes.xml HTTP/1.1\r\n\r\n"
+get count=10 total=00:00:00.546875 avg=00:00:00.054687 min=00:00:00 max=00:00:00.265625
+read_reply1 count=10 total=00:00:00.453125 avg=00:00:00.045312 min=00:00:00 max=00:00:00.265625
+read_reply2 count=10 total=00:00:00.421875 avg=00:00:00.042187 min=00:00:00 max=00:00:00.250000
+read_header1 count=10 total=00:00:00.062500 avg=00:00:00.006250 min=00:00:00 max=00:00:00.062500
+read_header2 count=10 total=00:00:00.062500 avg=00:00:00.006250 min=00:00:00 max=00:00:00.062500
+read_body1 count=9 total=00:00:00.031250 avg=00:00:00.003472 min=00:00:00 max=00:00:00.015625
+read_body2 count=9 total=00:00:00.031250 avg=00:00:00.003472 min=00:00:00 max=00:00:00.015625
+
+[2010-05-28 00:51:41]
+get "GET /maps/gettile?map=yasat&z=5&x=9&y=3 HTTP/1.1\r\n\r\n"
+get count=11 total=00:00:02.562500 avg=00:00:00.232954 min=00:00:00 max=00:00:02.015625
+read_reply1 count=11 total=00:00:00.500000 avg=00:00:00.045454 min=00:00:00 max=00:00:00.265625
+read_reply2 count=11 total=00:00:00.468750 avg=00:00:00.042613 min=00:00:00 max=00:00:00.250000
+read_header1 count=11 total=00:00:00.078125 avg=00:00:00.007102 min=00:00:00 max=00:00:00.062500
+read_header2 count=11 total=00:00:00.062500 avg=00:00:00.005681 min=00:00:00 max=00:00:00.062500
+read_body1 count=10 total=00:00:01.984375 avg=00:00:00.198437 min=00:00:00 max=00:00:01.953125
+read_body2 count=10 total=00:00:01.984375 avg=00:00:00.198437 min=00:00:00 max=00:00:01.953125
+
+[2010-05-28 00:51:41]
+load_file /maps/gettile?map=yasat&z=5&x=9&y=3
+load count=7 total=00:00:02.156250 avg=00:00:00.308035 min=00:00:00.015625 max=00:00:02.046875
+save count=7 total=00:00:00.062500 avg=00:00:00.008928 min=00:00:00 max=00:00:00.031250
+
+[2010-05-28 00:51:43]
+get "GET /maps/gettile?map=yasat&z=5&x=15&y=6 HTTP/1.1\r\n\r\n"
+get count=12 total=00:00:04.406250 avg=00:00:00.367187 min=00:00:00 max=00:00:02.015625
+read_reply1 count=12 total=00:00:00.500000 avg=00:00:00.041666 min=00:00:00 max=00:00:00.265625
+read_reply2 count=12 total=00:00:00.468750 avg=00:00:00.039062 min=00:00:00 max=00:00:00.250000
+read_header1 count=12 total=00:00:00.078125 avg=00:00:00.006510 min=00:00:00 max=00:00:00.062500
+read_header2 count=12 total=00:00:00.062500 avg=00:00:00.005208 min=00:00:00 max=00:00:00.062500
+read_body1 count=11 total=00:00:03.828125 avg=00:00:00.348011 min=00:00:00 max=00:00:01.953125
+read_body2 count=11 total=00:00:03.828125 avg=00:00:00.348011 min=00:00:00 max=00:00:01.953125
+
+[2010-05-28 00:51:43]
+load_file /maps/gettile?map=yasat&z=5&x=15&y=6
+load count=8 total=00:00:04 avg=00:00:00.500000 min=00:00:00.015625 max=00:00:02.046875
+save count=8 total=00:00:00.109375 avg=00:00:00.013671 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:43]
+get "GET /maps/gettile?map=yasat&z=4&x=7&y=3 HTTP/1.1\r\n\r\n"
+get count=13 total=00:00:04.421875 avg=00:00:00.340144 min=00:00:00 max=00:00:02.015625
+read_reply1 count=13 total=00:00:00.500000 avg=00:00:00.038461 min=00:00:00 max=00:00:00.265625
+read_reply2 count=13 total=00:00:00.468750 avg=00:00:00.036057 min=00:00:00 max=00:00:00.250000
+read_header1 count=13 total=00:00:00.078125 avg=00:00:00.006009 min=00:00:00 max=00:00:00.062500
+read_header2 count=13 total=00:00:00.062500 avg=00:00:00.004807 min=00:00:00 max=00:00:00.062500
+read_body1 count=12 total=00:00:03.843750 avg=00:00:00.320312 min=00:00:00 max=00:00:01.953125
+read_body2 count=12 total=00:00:03.843750 avg=00:00:00.320312 min=00:00:00 max=00:00:01.953125
+
+[2010-05-28 00:51:43]
+load_file /maps/gettile?map=yasat&z=4&x=7&y=3
+load count=9 total=00:00:04.015625 avg=00:00:00.446180 min=00:00:00.015625 max=00:00:02.046875
+save count=9 total=00:00:00.125000 avg=00:00:00.013888 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:45]
+get "GET /maps/gettile?map=yasat&z=5&x=14&y=6 HTTP/1.1\r\n\r\n"
+get count=14 total=00:00:06.531250 avg=00:00:00.466517 min=00:00:00 max=00:00:02.109375
+read_reply1 count=14 total=00:00:00.500000 avg=00:00:00.035714 min=00:00:00 max=00:00:00.265625
+read_reply2 count=14 total=00:00:00.468750 avg=00:00:00.033482 min=00:00:00 max=00:00:00.250000
+read_header1 count=14 total=00:00:00.078125 avg=00:00:00.005580 min=00:00:00 max=00:00:00.062500
+read_header2 count=14 total=00:00:00.062500 avg=00:00:00.004464 min=00:00:00 max=00:00:00.062500
+read_body1 count=13 total=00:00:05.953125 avg=00:00:00.457932 min=00:00:00 max=00:00:02.109375
+read_body2 count=13 total=00:00:05.953125 avg=00:00:00.457932 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:45]
+load_file /maps/gettile?map=yasat&z=5&x=14&y=6
+load count=10 total=00:00:06.140625 avg=00:00:00.614062 min=00:00:00.015625 max=00:00:02.125000
+save count=10 total=00:00:00.156250 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:47]
+get "GET /maps/gettile?map=yasat&z=5&x=13&y=6 HTTP/1.1\r\n\r\n"
+get count=15 total=00:00:08 avg=00:00:00.533333 min=00:00:00 max=00:00:02.109375
+read_reply1 count=15 total=00:00:00.500000 avg=00:00:00.033333 min=00:00:00 max=00:00:00.265625
+read_reply2 count=15 total=00:00:00.468750 avg=00:00:00.031250 min=00:00:00 max=00:00:00.250000
+read_header1 count=15 total=00:00:00.078125 avg=00:00:00.005208 min=00:00:00 max=00:00:00.062500
+read_header2 count=15 total=00:00:00.062500 avg=00:00:00.004166 min=00:00:00 max=00:00:00.062500
+read_body1 count=14 total=00:00:07.421875 avg=00:00:00.530133 min=00:00:00 max=00:00:02.109375
+read_body2 count=14 total=00:00:07.421875 avg=00:00:00.530133 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:47]
+load_file /maps/gettile?map=yasat&z=5&x=13&y=6
+load count=11 total=00:00:07.609375 avg=00:00:00.691761 min=00:00:00.015625 max=00:00:02.125000
+save count=11 total=00:00:00.187500 avg=00:00:00.017045 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:47]
+get "GET /maps/gettile?map=yasat&z=4&x=6&y=3 HTTP/1.1\r\n\r\n"
+get count=16 total=00:00:08 avg=00:00:00.500000 min=00:00:00 max=00:00:02.109375
+read_reply1 count=16 total=00:00:00.500000 avg=00:00:00.031250 min=00:00:00 max=00:00:00.265625
+read_reply2 count=16 total=00:00:00.468750 avg=00:00:00.029296 min=00:00:00 max=00:00:00.250000
+read_header1 count=16 total=00:00:00.078125 avg=00:00:00.004882 min=00:00:00 max=00:00:00.062500
+read_header2 count=16 total=00:00:00.062500 avg=00:00:00.003906 min=00:00:00 max=00:00:00.062500
+read_body1 count=15 total=00:00:07.421875 avg=00:00:00.494791 min=00:00:00 max=00:00:02.109375
+read_body2 count=15 total=00:00:07.421875 avg=00:00:00.494791 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:47]
+load_file /maps/gettile?map=yasat&z=4&x=6&y=3
+load count=12 total=00:00:07.781250 avg=00:00:00.648437 min=00:00:00.015625 max=00:00:02.125000
+save count=12 total=00:00:00.187500 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:48]
+get "GET /maps/gettile?map=yasat&z=5&x=12&y=6 HTTP/1.1\r\n\r\n"
+get count=17 total=00:00:09.078125 avg=00:00:00.534007 min=00:00:00 max=00:00:02.109375
+read_reply1 count=17 total=00:00:00.500000 avg=00:00:00.029411 min=00:00:00 max=00:00:00.265625
+read_reply2 count=17 total=00:00:00.468750 avg=00:00:00.027573 min=00:00:00 max=00:00:00.250000
+read_header1 count=17 total=00:00:00.078125 avg=00:00:00.004595 min=00:00:00 max=00:00:00.062500
+read_header2 count=17 total=00:00:00.062500 avg=00:00:00.003676 min=00:00:00 max=00:00:00.062500
+read_body1 count=16 total=00:00:08.500000 avg=00:00:00.531250 min=00:00:00 max=00:00:02.109375
+read_body2 count=16 total=00:00:08.500000 avg=00:00:00.531250 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:48]
+load_file /maps/gettile?map=yasat&z=5&x=12&y=6
+load count=13 total=00:00:08.859375 avg=00:00:00.681490 min=00:00:00.015625 max=00:00:02.125000
+save count=13 total=00:00:00.203125 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:49]
+get "GET /maps/gettile?map=yasat&z=5&x=11&y=6 HTTP/1.1\r\n\r\n"
+get count=18 total=00:00:10.265625 avg=00:00:00.570312 min=00:00:00 max=00:00:02.109375
+read_reply1 count=18 total=00:00:00.515625 avg=00:00:00.028645 min=00:00:00 max=00:00:00.265625
+read_reply2 count=18 total=00:00:00.484375 avg=00:00:00.026909 min=00:00:00 max=00:00:00.250000
+read_header1 count=18 total=00:00:00.078125 avg=00:00:00.004340 min=00:00:00 max=00:00:00.062500
+read_header2 count=18 total=00:00:00.062500 avg=00:00:00.003472 min=00:00:00 max=00:00:00.062500
+read_body1 count=17 total=00:00:09.671875 avg=00:00:00.568933 min=00:00:00 max=00:00:02.109375
+read_body2 count=17 total=00:00:09.671875 avg=00:00:00.568933 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:49]
+load_file /maps/gettile?map=yasat&z=5&x=11&y=6
+load count=14 total=00:00:10.046875 avg=00:00:00.717633 min=00:00:00.015625 max=00:00:02.125000
+save count=14 total=00:00:00.234375 avg=00:00:00.016741 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:51]
+get "GET /maps/gettile?map=yasat&z=4&x=5&y=3 HTTP/1.1\r\n\r\n"
+get count=19 total=00:00:11.421875 avg=00:00:00.601151 min=00:00:00 max=00:00:02.109375
+read_reply1 count=19 total=00:00:00.531250 avg=00:00:00.027960 min=00:00:00 max=00:00:00.265625
+read_reply2 count=19 total=00:00:00.500000 avg=00:00:00.026315 min=00:00:00 max=00:00:00.250000
+read_header1 count=19 total=00:00:00.093750 avg=00:00:00.004934 min=00:00:00 max=00:00:00.062500
+read_header2 count=19 total=00:00:00.062500 avg=00:00:00.003289 min=00:00:00 max=00:00:00.062500
+read_body1 count=18 total=00:00:10.796875 avg=00:00:00.599826 min=00:00:00 max=00:00:02.109375
+read_body2 count=18 total=00:00:10.796875 avg=00:00:00.599826 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:51]
+load_file /maps/gettile?map=yasat&z=4&x=5&y=3
+load count=15 total=00:00:11.234375 avg=00:00:00.748958 min=00:00:00.015625 max=00:00:02.125000
+save count=15 total=00:00:00.234375 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:52]
+get "GET /maps/gettile?map=yasat&z=5&x=10&y=6 HTTP/1.1\r\n\r\n"
+get count=20 total=00:00:12.609375 avg=00:00:00.630468 min=00:00:00 max=00:00:02.109375
+read_reply1 count=20 total=00:00:00.562500 avg=00:00:00.028125 min=00:00:00 max=00:00:00.265625
+read_reply2 count=20 total=00:00:00.531250 avg=00:00:00.026562 min=00:00:00 max=00:00:00.250000
+read_header1 count=20 total=00:00:00.093750 avg=00:00:00.004687 min=00:00:00 max=00:00:00.062500
+read_header2 count=20 total=00:00:00.062500 avg=00:00:00.003125 min=00:00:00 max=00:00:00.062500
+read_body1 count=19 total=00:00:11.953125 avg=00:00:00.629111 min=00:00:00 max=00:00:02.109375
+read_body2 count=19 total=00:00:11.953125 avg=00:00:00.629111 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:52]
+load_file /maps/gettile?map=yasat&z=5&x=10&y=6
+load count=16 total=00:00:12.437500 avg=00:00:00.777343 min=00:00:00.015625 max=00:00:02.125000
+save count=16 total=00:00:00.265625 avg=00:00:00.016601 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:54]
+get "GET /maps/gettile?map=yasat&z=5&x=15&y=5 HTTP/1.1\r\n\r\n"
+get count=21 total=00:00:14.562500 avg=00:00:00.693452 min=00:00:00 max=00:00:02.109375
+read_reply1 count=21 total=00:00:00.562500 avg=00:00:00.026785 min=00:00:00 max=00:00:00.265625
+read_reply2 count=21 total=00:00:00.531250 avg=00:00:00.025297 min=00:00:00 max=00:00:00.250000
+read_header1 count=21 total=00:00:00.093750 avg=00:00:00.004464 min=00:00:00 max=00:00:00.062500
+read_header2 count=21 total=00:00:00.062500 avg=00:00:00.002976 min=00:00:00 max=00:00:00.062500
+read_body1 count=20 total=00:00:13.906250 avg=00:00:00.695312 min=00:00:00 max=00:00:02.109375
+read_body2 count=20 total=00:00:13.906250 avg=00:00:00.695312 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:54]
+load_file /maps/gettile?map=yasat&z=5&x=15&y=5
+load count=17 total=00:00:14.406250 avg=00:00:00.847426 min=00:00:00.015625 max=00:00:02.125000
+save count=17 total=00:00:00.265625 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:56]
+get "GET /maps/gettile?map=yasat&z=5&x=15&y=4 HTTP/1.1\r\n\r\n"
+get count=22 total=00:00:16.250000 avg=00:00:00.738636 min=00:00:00 max=00:00:02.109375
+read_reply1 count=22 total=00:00:00.562500 avg=00:00:00.025568 min=00:00:00 max=00:00:00.265625
+read_reply2 count=22 total=00:00:00.531250 avg=00:00:00.024147 min=00:00:00 max=00:00:00.250000
+read_header1 count=22 total=00:00:00.093750 avg=00:00:00.004261 min=00:00:00 max=00:00:00.062500
+read_header2 count=22 total=00:00:00.062500 avg=00:00:00.002840 min=00:00:00 max=00:00:00.062500
+read_body1 count=21 total=00:00:15.593750 avg=00:00:00.742559 min=00:00:00 max=00:00:02.109375
+read_body2 count=21 total=00:00:15.593750 avg=00:00:00.742559 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:56]
+load_file /maps/gettile?map=yasat&z=5&x=15&y=4
+load count=18 total=00:00:16.109375 avg=00:00:00.894965 min=00:00:00.015625 max=00:00:02.125000
+save count=18 total=00:00:00.296875 avg=00:00:00.016493 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:57]
+get "GET /maps/gettile?map=yasat&z=5&x=15&y=3 HTTP/1.1\r\n\r\n"
+get count=23 total=00:00:17.703125 avg=00:00:00.769701 min=00:00:00 max=00:00:02.109375
+read_reply1 count=23 total=00:00:00.562500 avg=00:00:00.024456 min=00:00:00 max=00:00:00.265625
+read_reply2 count=23 total=00:00:00.531250 avg=00:00:00.023097 min=00:00:00 max=00:00:00.250000
+read_header1 count=23 total=00:00:00.093750 avg=00:00:00.004076 min=00:00:00 max=00:00:00.062500
+read_header2 count=23 total=00:00:00.062500 avg=00:00:00.002717 min=00:00:00 max=00:00:00.062500
+read_body1 count=22 total=00:00:17.046875 avg=00:00:00.774857 min=00:00:00 max=00:00:02.109375
+read_body2 count=22 total=00:00:17.046875 avg=00:00:00.774857 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:57]
+load_file /maps/gettile?map=yasat&z=5&x=15&y=3
+load count=19 total=00:00:17.578125 avg=00:00:00.925164 min=00:00:00.015625 max=00:00:02.125000
+save count=19 total=00:00:00.296875 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:57]
+get "GET /maps/gettile?map=yasat&z=5&x=14&y=5 HTTP/1.1\r\n\r\n"
+get count=24 total=00:00:17.718750 avg=00:00:00.738281 min=00:00:00 max=00:00:02.109375
+read_reply1 count=24 total=00:00:00.562500 avg=00:00:00.023437 min=00:00:00 max=00:00:00.265625
+read_reply2 count=24 total=00:00:00.531250 avg=00:00:00.022135 min=00:00:00 max=00:00:00.250000
+read_header1 count=24 total=00:00:00.093750 avg=00:00:00.003906 min=00:00:00 max=00:00:00.062500
+read_header2 count=24 total=00:00:00.062500 avg=00:00:00.002604 min=00:00:00 max=00:00:00.062500
+read_body1 count=23 total=00:00:17.062500 avg=00:00:00.741847 min=00:00:00 max=00:00:02.109375
+read_body2 count=23 total=00:00:17.062500 avg=00:00:00.741847 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:57]
+load_file /maps/gettile?map=yasat&z=5&x=14&y=5
+load count=20 total=00:00:17.718750 avg=00:00:00.885937 min=00:00:00.015625 max=00:00:02.125000
+save count=20 total=00:00:00.328125 avg=00:00:00.016406 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:51:59]
+get "GET /maps/gettile?map=yasat&z=4&x=7&y=2 HTTP/1.1\r\n\r\n"
+get count=25 total=00:00:19.328125 avg=00:00:00.773125 min=00:00:00 max=00:00:02.109375
+read_reply1 count=25 total=00:00:00.562500 avg=00:00:00.022500 min=00:00:00 max=00:00:00.265625
+read_reply2 count=25 total=00:00:00.531250 avg=00:00:00.021250 min=00:00:00 max=00:00:00.250000
+read_header1 count=25 total=00:00:00.093750 avg=00:00:00.003750 min=00:00:00 max=00:00:00.062500
+read_header2 count=25 total=00:00:00.062500 avg=00:00:00.002500 min=00:00:00 max=00:00:00.062500
+read_body1 count=24 total=00:00:18.671875 avg=00:00:00.777994 min=00:00:00 max=00:00:02.109375
+read_body2 count=24 total=00:00:18.671875 avg=00:00:00.777994 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:51:59]
+load_file /maps/gettile?map=yasat&z=4&x=7&y=2
+load count=21 total=00:00:19.343750 avg=00:00:00.921130 min=00:00:00.015625 max=00:00:02.125000
+save count=21 total=00:00:00.328125 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:00]
+get "GET /maps/gettile?map=yasat&z=5&x=14&y=4 HTTP/1.1\r\n\r\n"
+get count=26 total=00:00:20.812500 avg=00:00:00.800480 min=00:00:00 max=00:00:02.109375
+read_reply1 count=26 total=00:00:00.562500 avg=00:00:00.021634 min=00:00:00 max=00:00:00.265625
+read_reply2 count=26 total=00:00:00.531250 avg=00:00:00.020432 min=00:00:00 max=00:00:00.250000
+read_header1 count=26 total=00:00:00.093750 avg=00:00:00.003605 min=00:00:00 max=00:00:00.062500
+read_header2 count=26 total=00:00:00.062500 avg=00:00:00.002403 min=00:00:00 max=00:00:00.062500
+read_body1 count=25 total=00:00:20.156250 avg=00:00:00.806250 min=00:00:00 max=00:00:02.109375
+read_body2 count=25 total=00:00:20.156250 avg=00:00:00.806250 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:00]
+load_file /maps/gettile?map=yasat&z=5&x=14&y=4
+load count=22 total=00:00:20.843750 avg=00:00:00.947443 min=00:00:00.015625 max=00:00:02.125000
+save count=22 total=00:00:00.328125 avg=00:00:00.014914 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:02]
+get "GET /maps/gettile?map=yasat&z=4&x=7&y=1 HTTP/1.1\r\n\r\n"
+get count=27 total=00:00:22.312500 avg=00:00:00.826388 min=00:00:00 max=00:00:02.109375
+read_reply1 count=27 total=00:00:00.562500 avg=00:00:00.020833 min=00:00:00 max=00:00:00.265625
+read_reply2 count=27 total=00:00:00.531250 avg=00:00:00.019675 min=00:00:00 max=00:00:00.250000
+read_header1 count=27 total=00:00:00.093750 avg=00:00:00.003472 min=00:00:00 max=00:00:00.062500
+read_header2 count=27 total=00:00:00.062500 avg=00:00:00.002314 min=00:00:00 max=00:00:00.062500
+read_body1 count=26 total=00:00:21.640625 avg=00:00:00.832331 min=00:00:00 max=00:00:02.109375
+read_body2 count=26 total=00:00:21.640625 avg=00:00:00.832331 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:02]
+load_file /maps/gettile?map=yasat&z=4&x=7&y=1
+load count=23 total=00:00:22.359375 avg=00:00:00.972146 min=00:00:00.015625 max=00:00:02.125000
+save count=23 total=00:00:00.328125 avg=00:00:00.014266 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:03]
+get "GET /maps/gettile?map=yasat&z=5&x=14&y=3 HTTP/1.1\r\n\r\n"
+get count=28 total=00:00:23.812500 avg=00:00:00.850446 min=00:00:00 max=00:00:02.109375
+read_reply1 count=28 total=00:00:00.562500 avg=00:00:00.020089 min=00:00:00 max=00:00:00.265625
+read_reply2 count=28 total=00:00:00.531250 avg=00:00:00.018973 min=00:00:00 max=00:00:00.250000
+read_header1 count=28 total=00:00:00.093750 avg=00:00:00.003348 min=00:00:00 max=00:00:00.062500
+read_header2 count=28 total=00:00:00.062500 avg=00:00:00.002232 min=00:00:00 max=00:00:00.062500
+read_body1 count=27 total=00:00:23.140625 avg=00:00:00.857060 min=00:00:00 max=00:00:02.109375
+read_body2 count=27 total=00:00:23.140625 avg=00:00:00.857060 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:03]
+load_file /maps/gettile?map=yasat&z=5&x=14&y=3
+load count=24 total=00:00:23.859375 avg=00:00:00.994140 min=00:00:00.015625 max=00:00:02.125000
+save count=24 total=00:00:00.375000 avg=00:00:00.015625 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:05]
+get "GET /maps/gettile?map=yasat&z=5&x=13&y=5 HTTP/1.1\r\n\r\n"
+get count=29 total=00:00:25.250000 avg=00:00:00.870689 min=00:00:00 max=00:00:02.109375
+read_reply1 count=29 total=00:00:00.562500 avg=00:00:00.019396 min=00:00:00 max=00:00:00.265625
+read_reply2 count=29 total=00:00:00.531250 avg=00:00:00.018318 min=00:00:00 max=00:00:00.250000
+read_header1 count=29 total=00:00:00.093750 avg=00:00:00.003232 min=00:00:00 max=00:00:00.062500
+read_header2 count=29 total=00:00:00.062500 avg=00:00:00.002155 min=00:00:00 max=00:00:00.062500
+read_body1 count=28 total=00:00:24.578125 avg=00:00:00.877790 min=00:00:00 max=00:00:02.109375
+read_body2 count=28 total=00:00:24.578125 avg=00:00:00.877790 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:05]
+load_file /maps/gettile?map=yasat&z=5&x=13&y=5
+load count=25 total=00:00:25.312500 avg=00:00:01.012500 min=00:00:00.015625 max=00:00:02.125000
+save count=25 total=00:00:00.375000 avg=00:00:00.015000 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:06]
+get "GET /maps/gettile?map=yasat&z=5&x=13&y=4 HTTP/1.1\r\n\r\n"
+get count=30 total=00:00:26.640625 avg=00:00:00.888020 min=00:00:00 max=00:00:02.109375
+read_reply1 count=30 total=00:00:00.562500 avg=00:00:00.018750 min=00:00:00 max=00:00:00.265625
+read_reply2 count=30 total=00:00:00.531250 avg=00:00:00.017708 min=00:00:00 max=00:00:00.250000
+read_header1 count=30 total=00:00:00.093750 avg=00:00:00.003125 min=00:00:00 max=00:00:00.062500
+read_header2 count=30 total=00:00:00.062500 avg=00:00:00.002083 min=00:00:00 max=00:00:00.062500
+read_body1 count=29 total=00:00:25.968750 avg=00:00:00.895474 min=00:00:00 max=00:00:02.109375
+read_body2 count=29 total=00:00:25.968750 avg=00:00:00.895474 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:06]
+load_file /maps/gettile?map=yasat&z=5&x=13&y=4
+load count=26 total=00:00:26.718750 avg=00:00:01.027644 min=00:00:00.015625 max=00:00:02.125000
+save count=26 total=00:00:00.375000 avg=00:00:00.014423 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:08]
+get "GET /maps/gettile?map=yasat&z=5&x=13&y=3 HTTP/1.1\r\n\r\n"
+get count=31 total=00:00:28.140625 avg=00:00:00.907762 min=00:00:00 max=00:00:02.109375
+read_reply1 count=31 total=00:00:00.578125 avg=00:00:00.018649 min=00:00:00 max=00:00:00.265625
+read_reply2 count=31 total=00:00:00.546875 avg=00:00:00.017641 min=00:00:00 max=00:00:00.250000
+read_header1 count=31 total=00:00:00.093750 avg=00:00:00.003024 min=00:00:00 max=00:00:00.062500
+read_header2 count=31 total=00:00:00.062500 avg=00:00:00.002016 min=00:00:00 max=00:00:00.062500
+read_body1 count=30 total=00:00:27.453125 avg=00:00:00.915104 min=00:00:00 max=00:00:02.109375
+read_body2 count=30 total=00:00:27.453125 avg=00:00:00.915104 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:08]
+load_file /maps/gettile?map=yasat&z=5&x=13&y=3
+load count=27 total=00:00:28.234375 avg=00:00:01.045717 min=00:00:00.015625 max=00:00:02.125000
+save count=27 total=00:00:00.375000 avg=00:00:00.013888 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:09]
+get "GET /maps/gettile?map=yasat&z=5&x=12&y=5 HTTP/1.1\r\n\r\n"
+get count=32 total=00:00:29.625000 avg=00:00:00.925781 min=00:00:00 max=00:00:02.109375
+read_reply1 count=32 total=00:00:00.578125 avg=00:00:00.018066 min=00:00:00 max=00:00:00.265625
+read_reply2 count=32 total=00:00:00.546875 avg=00:00:00.017089 min=00:00:00 max=00:00:00.250000
+read_header1 count=32 total=00:00:00.093750 avg=00:00:00.002929 min=00:00:00 max=00:00:00.062500
+read_header2 count=32 total=00:00:00.062500 avg=00:00:00.001953 min=00:00:00 max=00:00:00.062500
+read_body1 count=31 total=00:00:28.937500 avg=00:00:00.933467 min=00:00:00 max=00:00:02.109375
+read_body2 count=31 total=00:00:28.937500 avg=00:00:00.933467 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:09]
+load_file /maps/gettile?map=yasat&z=5&x=12&y=5
+load count=28 total=00:00:29.734375 avg=00:00:01.061941 min=00:00:00.015625 max=00:00:02.125000
+save count=28 total=00:00:00.406250 avg=00:00:00.014508 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:09]
+get "GET /maps/gettile?map=yasat&z=3&x=3&y=1 HTTP/1.1\r\n\r\n"
+get count=33 total=00:00:29.625000 avg=00:00:00.897727 min=00:00:00 max=00:00:02.109375
+read_reply1 count=33 total=00:00:00.578125 avg=00:00:00.017518 min=00:00:00 max=00:00:00.265625
+read_reply2 count=33 total=00:00:00.546875 avg=00:00:00.016571 min=00:00:00 max=00:00:00.250000
+read_header1 count=33 total=00:00:00.093750 avg=00:00:00.002840 min=00:00:00 max=00:00:00.062500
+read_header2 count=33 total=00:00:00.062500 avg=00:00:00.001893 min=00:00:00 max=00:00:00.062500
+read_body1 count=32 total=00:00:28.937500 avg=00:00:00.904296 min=00:00:00 max=00:00:02.109375
+read_body2 count=32 total=00:00:28.937500 avg=00:00:00.904296 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:09]
+load_file /maps/gettile?map=yasat&z=3&x=3&y=1
+load count=29 total=00:00:29.750000 avg=00:00:01.025862 min=00:00:00.015625 max=00:00:02.125000
+save count=29 total=00:00:00.406250 avg=00:00:00.014008 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:11]
+get "GET /maps/gettile?map=yasat&z=4&x=6&y=2 HTTP/1.1\r\n\r\n"
+get count=34 total=00:00:31.125000 avg=00:00:00.915441 min=00:00:00 max=00:00:02.109375
+read_reply1 count=34 total=00:00:00.578125 avg=00:00:00.017003 min=00:00:00 max=00:00:00.265625
+read_reply2 count=34 total=00:00:00.546875 avg=00:00:00.016084 min=00:00:00 max=00:00:00.250000
+read_header1 count=34 total=00:00:00.093750 avg=00:00:00.002757 min=00:00:00 max=00:00:00.062500
+read_header2 count=34 total=00:00:00.062500 avg=00:00:00.001838 min=00:00:00 max=00:00:00.062500
+read_body1 count=33 total=00:00:30.437500 avg=00:00:00.922348 min=00:00:00 max=00:00:02.109375
+read_body2 count=33 total=00:00:30.437500 avg=00:00:00.922348 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:11]
+load_file /maps/gettile?map=yasat&z=4&x=6&y=2
+load count=30 total=00:00:31.250000 avg=00:00:01.041666 min=00:00:00.015625 max=00:00:02.125000
+save count=30 total=00:00:00.421875 avg=00:00:00.014062 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:11]
+get "GET /maps/gettile?map=yasat&z=5&x=12&y=4 HTTP/1.1\r\n\r\n"
+get count=35 total=00:00:31.125000 avg=00:00:00.889285 min=00:00:00 max=00:00:02.109375
+read_reply1 count=35 total=00:00:00.578125 avg=00:00:00.016517 min=00:00:00 max=00:00:00.265625
+read_reply2 count=35 total=00:00:00.546875 avg=00:00:00.015625 min=00:00:00 max=00:00:00.250000
+read_header1 count=35 total=00:00:00.093750 avg=00:00:00.002678 min=00:00:00 max=00:00:00.062500
+read_header2 count=35 total=00:00:00.062500 avg=00:00:00.001785 min=00:00:00 max=00:00:00.062500
+read_body1 count=34 total=00:00:30.437500 avg=00:00:00.895220 min=00:00:00 max=00:00:02.109375
+read_body2 count=34 total=00:00:30.437500 avg=00:00:00.895220 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:11]
+load_file /maps/gettile?map=yasat&z=5&x=12&y=4
+load count=31 total=00:00:31.265625 avg=00:00:01.008568 min=00:00:00.015625 max=00:00:02.125000
+save count=31 total=00:00:00.421875 avg=00:00:00.013608 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:13]
+get "GET /maps/gettile?map=yasat&z=3&x=3&y=0 HTTP/1.1\r\n\r\n"
+get count=36 total=00:00:32.750000 avg=00:00:00.909722 min=00:00:00 max=00:00:02.109375
+read_reply1 count=36 total=00:00:00.578125 avg=00:00:00.016059 min=00:00:00 max=00:00:00.265625
+read_reply2 count=36 total=00:00:00.546875 avg=00:00:00.015190 min=00:00:00 max=00:00:00.250000
+read_header1 count=36 total=00:00:00.109375 avg=00:00:00.003038 min=00:00:00 max=00:00:00.062500
+read_header2 count=36 total=00:00:00.062500 avg=00:00:00.001736 min=00:00:00 max=00:00:00.062500
+read_body1 count=35 total=00:00:32.046875 avg=00:00:00.915625 min=00:00:00 max=00:00:02.109375
+read_body2 count=35 total=00:00:32.046875 avg=00:00:00.915625 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:13]
+load_file /maps/gettile?map=yasat&z=3&x=3&y=0
+load count=32 total=00:00:32.906250 avg=00:00:01.028320 min=00:00:00.015625 max=00:00:02.125000
+save count=32 total=00:00:00.421875 avg=00:00:00.013183 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:14]
+get "GET /maps/gettile?map=yasat&z=4&x=6&y=1 HTTP/1.1\r\n\r\n"
+get count=37 total=00:00:34.250000 avg=00:00:00.925675 min=00:00:00 max=00:00:02.109375
+read_reply1 count=37 total=00:00:00.593750 avg=00:00:00.016047 min=00:00:00 max=00:00:00.265625
+read_reply2 count=37 total=00:00:00.562500 avg=00:00:00.015202 min=00:00:00 max=00:00:00.250000
+read_header1 count=37 total=00:00:00.109375 avg=00:00:00.002956 min=00:00:00 max=00:00:00.062500
+read_header2 count=37 total=00:00:00.062500 avg=00:00:00.001689 min=00:00:00 max=00:00:00.062500
+read_body1 count=36 total=00:00:33.531250 avg=00:00:00.931423 min=00:00:00 max=00:00:02.109375
+read_body2 count=36 total=00:00:33.531250 avg=00:00:00.931423 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:14]
+load_file /maps/gettile?map=yasat&z=4&x=6&y=1
+load count=33 total=00:00:34.406250 avg=00:00:01.042613 min=00:00:00.015625 max=00:00:02.125000
+save count=33 total=00:00:00.437500 avg=00:00:00.013257 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:16]
+get "GET /maps/gettile?map=yasat&z=5&x=12&y=3 HTTP/1.1\r\n\r\n"
+get count=38 total=00:00:35.734375 avg=00:00:00.940378 min=00:00:00 max=00:00:02.109375
+read_reply1 count=38 total=00:00:00.593750 avg=00:00:00.015625 min=00:00:00 max=00:00:00.265625
+read_reply2 count=38 total=00:00:00.562500 avg=00:00:00.014802 min=00:00:00 max=00:00:00.250000
+read_header1 count=38 total=00:00:00.109375 avg=00:00:00.002878 min=00:00:00 max=00:00:00.062500
+read_header2 count=38 total=00:00:00.062500 avg=00:00:00.001644 min=00:00:00 max=00:00:00.062500
+read_body1 count=37 total=00:00:35.015625 avg=00:00:00.946368 min=00:00:00 max=00:00:02.109375
+read_body2 count=37 total=00:00:35.015625 avg=00:00:00.946368 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:16]
+load_file /maps/gettile?map=yasat&z=5&x=12&y=3
+load count=34 total=00:00:35.906250 avg=00:00:01.056066 min=00:00:00.015625 max=00:00:02.125000
+save count=34 total=00:00:00.468750 avg=00:00:00.013786 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:17]
+get "GET /maps/gettile?map=yasat&z=5&x=11&y=5 HTTP/1.1\r\n\r\n"
+get count=39 total=00:00:36.906250 avg=00:00:00.946314 min=00:00:00 max=00:00:02.109375
+read_reply1 count=39 total=00:00:00.609375 avg=00:00:00.015625 min=00:00:00 max=00:00:00.265625
+read_reply2 count=39 total=00:00:00.578125 avg=00:00:00.014823 min=00:00:00 max=00:00:00.250000
+read_header1 count=39 total=00:00:00.109375 avg=00:00:00.002804 min=00:00:00 max=00:00:00.062500
+read_header2 count=39 total=00:00:00.062500 avg=00:00:00.001602 min=00:00:00 max=00:00:00.062500
+read_body1 count=38 total=00:00:36.171875 avg=00:00:00.951891 min=00:00:00 max=00:00:02.109375
+read_body2 count=38 total=00:00:36.171875 avg=00:00:00.951891 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:17]
+load_file /maps/gettile?map=yasat&z=5&x=11&y=5
+load count=35 total=00:00:37.078125 avg=00:00:01.059375 min=00:00:00.015625 max=00:00:02.125000
+save count=35 total=00:00:00.468750 avg=00:00:00.013392 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:18]
+get "GET /maps/gettile?map=yasat&z=5&x=11&y=4 HTTP/1.1\r\n\r\n"
+get count=40 total=00:00:38.390625 avg=00:00:00.959765 min=00:00:00 max=00:00:02.109375
+read_reply1 count=40 total=00:00:00.609375 avg=00:00:00.015234 min=00:00:00 max=00:00:00.265625
+read_reply2 count=40 total=00:00:00.578125 avg=00:00:00.014453 min=00:00:00 max=00:00:00.250000
+read_header1 count=40 total=00:00:00.109375 avg=00:00:00.002734 min=00:00:00 max=00:00:00.062500
+read_header2 count=40 total=00:00:00.062500 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_body1 count=39 total=00:00:37.656250 avg=00:00:00.965544 min=00:00:00 max=00:00:02.109375
+read_body2 count=39 total=00:00:37.656250 avg=00:00:00.965544 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:18]
+load_file /maps/gettile?map=yasat&z=5&x=11&y=4
+load count=36 total=00:00:38.578125 avg=00:00:01.071614 min=00:00:00.015625 max=00:00:02.125000
+save count=36 total=00:00:00.468750 avg=00:00:00.013020 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:20]
+get "GET /maps/gettile?map=yasat&z=5&x=11&y=3 HTTP/1.1\r\n\r\n"
+get count=41 total=00:00:39.890625 avg=00:00:00.972942 min=00:00:00 max=00:00:02.109375
+read_reply1 count=41 total=00:00:00.609375 avg=00:00:00.014862 min=00:00:00 max=00:00:00.265625
+read_reply2 count=41 total=00:00:00.578125 avg=00:00:00.014100 min=00:00:00 max=00:00:00.250000
+read_header1 count=41 total=00:00:00.125000 avg=00:00:00.003048 min=00:00:00 max=00:00:00.062500
+read_header2 count=41 total=00:00:00.062500 avg=00:00:00.001524 min=00:00:00 max=00:00:00.062500
+read_body1 count=40 total=00:00:39.140625 avg=00:00:00.978515 min=00:00:00 max=00:00:02.109375
+read_body2 count=40 total=00:00:39.140625 avg=00:00:00.978515 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:20]
+load_file /maps/gettile?map=yasat&z=5&x=11&y=3
+load count=37 total=00:00:40.078125 avg=00:00:01.083192 min=00:00:00.015625 max=00:00:02.125000
+save count=37 total=00:00:00.468750 avg=00:00:00.012668 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:21]
+get "GET /maps/gettile?map=yasat&z=5&x=10&y=5 HTTP/1.1\r\n\r\n"
+get count=42 total=00:00:41.375000 avg=00:00:00.985119 min=00:00:00 max=00:00:02.109375
+read_reply1 count=42 total=00:00:00.609375 avg=00:00:00.014508 min=00:00:00 max=00:00:00.265625
+read_reply2 count=42 total=00:00:00.578125 avg=00:00:00.013764 min=00:00:00 max=00:00:00.250000
+read_header1 count=42 total=00:00:00.125000 avg=00:00:00.002976 min=00:00:00 max=00:00:00.062500
+read_header2 count=42 total=00:00:00.062500 avg=00:00:00.001488 min=00:00:00 max=00:00:00.062500
+read_body1 count=41 total=00:00:40.625000 avg=00:00:00.990853 min=00:00:00 max=00:00:02.109375
+read_body2 count=41 total=00:00:40.625000 avg=00:00:00.990853 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:21]
+load_file /maps/gettile?map=yasat&z=5&x=10&y=5
+load count=38 total=00:00:41.578125 avg=00:00:01.094161 min=00:00:00.015625 max=00:00:02.125000
+save count=38 total=00:00:00.500000 avg=00:00:00.013157 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:23]
+get "GET /maps/gettile?map=yasat&z=4&x=5&y=2 HTTP/1.1\r\n\r\n"
+get count=43 total=00:00:42.843750 avg=00:00:00.996366 min=00:00:00 max=00:00:02.109375
+read_reply1 count=43 total=00:00:00.625000 avg=00:00:00.014534 min=00:00:00 max=00:00:00.265625
+read_reply2 count=43 total=00:00:00.593750 avg=00:00:00.013808 min=00:00:00 max=00:00:00.250000
+read_header1 count=43 total=00:00:00.125000 avg=00:00:00.002906 min=00:00:00 max=00:00:00.062500
+read_header2 count=43 total=00:00:00.062500 avg=00:00:00.001453 min=00:00:00 max=00:00:00.062500
+read_body1 count=42 total=00:00:42.078125 avg=00:00:01.001860 min=00:00:00 max=00:00:02.109375
+read_body2 count=42 total=00:00:42.078125 avg=00:00:01.001860 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:23]
+load_file /maps/gettile?map=yasat&z=4&x=5&y=2
+load count=39 total=00:00:43.046875 avg=00:00:01.103766 min=00:00:00.015625 max=00:00:02.125000
+save count=39 total=00:00:00.500000 avg=00:00:00.012820 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:25]
+get "GET /maps/gettile?map=yasat&z=5&x=10&y=4 HTTP/1.1\r\n\r\n"
+get count=44 total=00:00:44.328125 avg=00:00:01.007457 min=00:00:00 max=00:00:02.109375
+read_reply1 count=44 total=00:00:00.625000 avg=00:00:00.014204 min=00:00:00 max=00:00:00.265625
+read_reply2 count=44 total=00:00:00.593750 avg=00:00:00.013494 min=00:00:00 max=00:00:00.250000
+read_header1 count=44 total=00:00:00.125000 avg=00:00:00.002840 min=00:00:00 max=00:00:00.062500
+read_header2 count=44 total=00:00:00.062500 avg=00:00:00.001420 min=00:00:00 max=00:00:00.062500
+read_body1 count=43 total=00:00:43.562500 avg=00:00:01.013081 min=00:00:00 max=00:00:02.109375
+read_body2 count=43 total=00:00:43.562500 avg=00:00:01.013081 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:25]
+load_file /maps/gettile?map=yasat&z=5&x=10&y=4
+load count=40 total=00:00:44.578125 avg=00:00:01.114453 min=00:00:00.015625 max=00:00:02.125000
+save count=40 total=00:00:00.500000 avg=00:00:00.012500 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:26]
+get "GET /maps/gettile?map=yasat&z=4&x=5&y=1 HTTP/1.1\r\n\r\n"
+get count=45 total=00:00:45.828125 avg=00:00:01.018402 min=00:00:00 max=00:00:02.109375
+read_reply1 count=45 total=00:00:00.625000 avg=00:00:00.013888 min=00:00:00 max=00:00:00.265625
+read_reply2 count=45 total=00:00:00.593750 avg=00:00:00.013194 min=00:00:00 max=00:00:00.250000
+read_header1 count=45 total=00:00:00.125000 avg=00:00:00.002777 min=00:00:00 max=00:00:00.062500
+read_header2 count=45 total=00:00:00.062500 avg=00:00:00.001388 min=00:00:00 max=00:00:00.062500
+read_body1 count=44 total=00:00:45.062500 avg=00:00:01.024147 min=00:00:00 max=00:00:02.109375
+read_body2 count=44 total=00:00:45.062500 avg=00:00:01.024147 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:26]
+load_file /maps/gettile?map=yasat&z=4&x=5&y=1
+load count=41 total=00:00:46.093750 avg=00:00:01.124237 min=00:00:00.015625 max=00:00:02.125000
+save count=41 total=00:00:00.500000 avg=00:00:00.012195 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:28]
+get "GET /maps/gettile?map=yasat&z=6&x=31&y=12 HTTP/1.1\r\n\r\n"
+get count=46 total=00:00:47.718750 avg=00:00:01.037364 min=00:00:00 max=00:00:02.109375
+read_reply1 count=46 total=00:00:00.625000 avg=00:00:00.013586 min=00:00:00 max=00:00:00.265625
+read_reply2 count=46 total=00:00:00.593750 avg=00:00:00.012907 min=00:00:00 max=00:00:00.250000
+read_header1 count=46 total=00:00:00.140625 avg=00:00:00.003057 min=00:00:00 max=00:00:00.062500
+read_header2 count=46 total=00:00:00.078125 avg=00:00:00.001698 min=00:00:00 max=00:00:00.062500
+read_body1 count=45 total=00:00:46.937500 avg=00:00:01.043055 min=00:00:00 max=00:00:02.109375
+read_body2 count=45 total=00:00:46.937500 avg=00:00:01.043055 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:28]
+load_file /maps/gettile?map=yasat&z=6&x=31&y=12
+load count=42 total=00:00:48 avg=00:00:01.142857 min=00:00:00.015625 max=00:00:02.125000
+save count=42 total=00:00:00.531250 avg=00:00:00.012648 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:28]
+get "GET /maps/gettile?map=yasat&z=6&x=31&y=11 HTTP/1.1\r\n\r\n"
+get count=47 total=00:00:47.718750 avg=00:00:01.015292 min=00:00:00 max=00:00:02.109375
+read_reply1 count=47 total=00:00:00.625000 avg=00:00:00.013297 min=00:00:00 max=00:00:00.265625
+read_reply2 count=47 total=00:00:00.593750 avg=00:00:00.012632 min=00:00:00 max=00:00:00.250000
+read_header1 count=47 total=00:00:00.140625 avg=00:00:00.002992 min=00:00:00 max=00:00:00.062500
+read_header2 count=47 total=00:00:00.078125 avg=00:00:00.001662 min=00:00:00 max=00:00:00.062500
+read_body1 count=46 total=00:00:46.937500 avg=00:00:01.020380 min=00:00:00 max=00:00:02.109375
+read_body2 count=46 total=00:00:46.937500 avg=00:00:01.020380 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:28]
+load_file /maps/gettile?map=yasat&z=6&x=31&y=11
+load count=43 total=00:00:48.031250 avg=00:00:01.117005 min=00:00:00.015625 max=00:00:02.125000
+save count=43 total=00:00:00.531250 avg=00:00:00.012354 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:30]
+get "GET /maps/gettile?map=yasat&z=6&x=31&y=10 HTTP/1.1\r\n\r\n"
+get count=48 total=00:00:49.562500 avg=00:00:01.032552 min=00:00:00 max=00:00:02.109375
+read_reply1 count=48 total=00:00:00.640625 avg=00:00:00.013346 min=00:00:00 max=00:00:00.265625
+read_reply2 count=48 total=00:00:00.609375 avg=00:00:00.012695 min=00:00:00 max=00:00:00.250000
+read_header1 count=48 total=00:00:00.140625 avg=00:00:00.002929 min=00:00:00 max=00:00:00.062500
+read_header2 count=48 total=00:00:00.078125 avg=00:00:00.001627 min=00:00:00 max=00:00:00.062500
+read_body1 count=47 total=00:00:48.765625 avg=00:00:01.037566 min=00:00:00 max=00:00:02.109375
+read_body2 count=47 total=00:00:48.765625 avg=00:00:01.037566 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:30]
+load_file /maps/gettile?map=yasat&z=6&x=31&y=10
+load count=44 total=00:00:49.890625 avg=00:00:01.133877 min=00:00:00.015625 max=00:00:02.125000
+save count=44 total=00:00:00.531250 avg=00:00:00.012073 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:32]
+get "GET /maps/gettile?map=yasat&z=6&x=31&y=9 HTTP/1.1\r\n\r\n"
+get count=49 total=00:00:51.453125 avg=00:00:01.050063 min=00:00:00 max=00:00:02.109375
+read_reply1 count=49 total=00:00:00.640625 avg=00:00:00.013073 min=00:00:00 max=00:00:00.265625
+read_reply2 count=49 total=00:00:00.609375 avg=00:00:00.012436 min=00:00:00 max=00:00:00.250000
+read_header1 count=49 total=00:00:00.140625 avg=00:00:00.002869 min=00:00:00 max=00:00:00.062500
+read_header2 count=49 total=00:00:00.078125 avg=00:00:00.001594 min=00:00:00 max=00:00:00.062500
+read_body1 count=48 total=00:00:50.656250 avg=00:00:01.055338 min=00:00:00 max=00:00:02.109375
+read_body2 count=48 total=00:00:50.656250 avg=00:00:01.055338 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:32]
+load_file /maps/gettile?map=yasat&z=6&x=31&y=9
+load count=45 total=00:00:51.796875 avg=00:00:01.151041 min=00:00:00.015625 max=00:00:02.125000
+save count=45 total=00:00:00.531250 avg=00:00:00.011805 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:34]
+get "GET /maps/gettile?map=yasat&z=6&x=30&y=12 HTTP/1.1\r\n\r\n"
+get count=50 total=00:00:53.343750 avg=00:00:01.066875 min=00:00:00 max=00:00:02.109375
+read_reply1 count=50 total=00:00:00.640625 avg=00:00:00.012812 min=00:00:00 max=00:00:00.265625
+read_reply2 count=50 total=00:00:00.609375 avg=00:00:00.012187 min=00:00:00 max=00:00:00.250000
+read_header1 count=50 total=00:00:00.140625 avg=00:00:00.002812 min=00:00:00 max=00:00:00.062500
+read_header2 count=50 total=00:00:00.078125 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_body1 count=49 total=00:00:52.546875 avg=00:00:01.072385 min=00:00:00 max=00:00:02.109375
+read_body2 count=49 total=00:00:52.546875 avg=00:00:01.072385 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:34]
+load_file /maps/gettile?map=yasat&z=6&x=30&y=12
+load count=46 total=00:00:53.703125 avg=00:00:01.167459 min=00:00:00.015625 max=00:00:02.125000
+save count=46 total=00:00:00.562500 avg=00:00:00.012228 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:34]
+get "GET /maps/gettile?map=yasat&z=6&x=30&y=11 HTTP/1.1\r\n\r\n"
+get count=51 total=00:00:53.359375 avg=00:00:01.046262 min=00:00:00 max=00:00:02.109375
+read_reply1 count=51 total=00:00:00.656250 avg=00:00:00.012867 min=00:00:00 max=00:00:00.265625
+read_reply2 count=51 total=00:00:00.625000 avg=00:00:00.012254 min=00:00:00 max=00:00:00.250000
+read_header1 count=51 total=00:00:00.140625 avg=00:00:00.002757 min=00:00:00 max=00:00:00.062500
+read_header2 count=51 total=00:00:00.078125 avg=00:00:00.001531 min=00:00:00 max=00:00:00.062500
+read_body1 count=50 total=00:00:52.546875 avg=00:00:01.050937 min=00:00:00 max=00:00:02.109375
+read_body2 count=50 total=00:00:52.546875 avg=00:00:01.050937 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:34]
+load_file /maps/gettile?map=yasat&z=6&x=30&y=11
+load count=47 total=00:00:53.718750 avg=00:00:01.142952 min=00:00:00.015625 max=00:00:02.125000
+save count=47 total=00:00:00.562500 avg=00:00:00.011968 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:35]
+get "GET /maps/gettile?map=yasat&z=6&x=30&y=10 HTTP/1.1\r\n\r\n"
+get count=52 total=00:00:54.796875 avg=00:00:01.053786 min=00:00:00 max=00:00:02.109375
+read_reply1 count=52 total=00:00:00.656250 avg=00:00:00.012620 min=00:00:00 max=00:00:00.265625
+read_reply2 count=52 total=00:00:00.625000 avg=00:00:00.012019 min=00:00:00 max=00:00:00.250000
+read_header1 count=52 total=00:00:00.140625 avg=00:00:00.002704 min=00:00:00 max=00:00:00.062500
+read_header2 count=52 total=00:00:00.078125 avg=00:00:00.001502 min=00:00:00 max=00:00:00.062500
+read_body1 count=51 total=00:00:53.984375 avg=00:00:01.058517 min=00:00:00 max=00:00:02.109375
+read_body2 count=51 total=00:00:53.984375 avg=00:00:01.058517 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:35]
+load_file /maps/gettile?map=yasat&z=6&x=30&y=10
+load count=48 total=00:00:55.171875 avg=00:00:01.149414 min=00:00:00.015625 max=00:00:02.125000
+save count=48 total=00:00:00.593750 avg=00:00:00.012369 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:37]
+get "GET /maps/gettile?map=yasat&z=6&x=30&y=9 HTTP/1.1\r\n\r\n"
+get count=53 total=00:00:56.265625 avg=00:00:01.061615 min=00:00:00 max=00:00:02.109375
+read_reply1 count=53 total=00:00:00.656250 avg=00:00:00.012382 min=00:00:00 max=00:00:00.265625
+read_reply2 count=53 total=00:00:00.625000 avg=00:00:00.011792 min=00:00:00 max=00:00:00.250000
+read_header1 count=53 total=00:00:00.140625 avg=00:00:00.002653 min=00:00:00 max=00:00:00.062500
+read_header2 count=53 total=00:00:00.078125 avg=00:00:00.001474 min=00:00:00 max=00:00:00.062500
+read_body1 count=52 total=00:00:55.453125 avg=00:00:01.066406 min=00:00:00 max=00:00:02.109375
+read_body2 count=52 total=00:00:55.453125 avg=00:00:01.066406 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:37]
+load_file /maps/gettile?map=yasat&z=6&x=30&y=9
+load count=49 total=00:00:56.640625 avg=00:00:01.155931 min=00:00:00.015625 max=00:00:02.125000
+save count=49 total=00:00:00.593750 avg=00:00:00.012117 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:37]
+get "GET /maps/gettile?map=yasat&z=6&x=29&y=12 HTTP/1.1\r\n\r\n"
+get count=54 total=00:00:56.265625 avg=00:00:01.041956 min=00:00:00 max=00:00:02.109375
+read_reply1 count=54 total=00:00:00.656250 avg=00:00:00.012152 min=00:00:00 max=00:00:00.265625
+read_reply2 count=54 total=00:00:00.625000 avg=00:00:00.011574 min=00:00:00 max=00:00:00.250000
+read_header1 count=54 total=00:00:00.140625 avg=00:00:00.002604 min=00:00:00 max=00:00:00.062500
+read_header2 count=54 total=00:00:00.078125 avg=00:00:00.001446 min=00:00:00 max=00:00:00.062500
+read_body1 count=53 total=00:00:55.453125 avg=00:00:01.046285 min=00:00:00 max=00:00:02.109375
+read_body2 count=53 total=00:00:55.453125 avg=00:00:01.046285 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:37]
+load_file /maps/gettile?map=yasat&z=6&x=29&y=12
+load count=50 total=00:00:56.656250 avg=00:00:01.133125 min=00:00:00.015625 max=00:00:02.125000
+save count=50 total=00:00:00.625000 avg=00:00:00.012500 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:39]
+get "GET /maps/gettile?map=yasat&z=6&x=29&y=11 HTTP/1.1\r\n\r\n"
+get count=55 total=00:00:58.093750 avg=00:00:01.056250 min=00:00:00 max=00:00:02.109375
+read_reply1 count=55 total=00:00:00.656250 avg=00:00:00.011931 min=00:00:00 max=00:00:00.265625
+read_reply2 count=55 total=00:00:00.625000 avg=00:00:00.011363 min=00:00:00 max=00:00:00.250000
+read_header1 count=55 total=00:00:00.140625 avg=00:00:00.002556 min=00:00:00 max=00:00:00.062500
+read_header2 count=55 total=00:00:00.078125 avg=00:00:00.001420 min=00:00:00 max=00:00:00.062500
+read_body1 count=54 total=00:00:57.281250 avg=00:00:01.060763 min=00:00:00 max=00:00:02.109375
+read_body2 count=54 total=00:00:57.281250 avg=00:00:01.060763 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:39]
+load_file /maps/gettile?map=yasat&z=6&x=29&y=11
+load count=51 total=00:00:58.500000 avg=00:00:01.147058 min=00:00:00.015625 max=00:00:02.125000
+save count=51 total=00:00:00.625000 avg=00:00:00.012254 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:40]
+get "GET /maps/gettile?map=yasat&z=6&x=29&y=10 HTTP/1.1\r\n\r\n"
+get count=56 total=00:00:59.890625 avg=00:00:01.069475 min=00:00:00 max=00:00:02.109375
+read_reply1 count=56 total=00:00:00.656250 avg=00:00:00.011718 min=00:00:00 max=00:00:00.265625
+read_reply2 count=56 total=00:00:00.625000 avg=00:00:00.011160 min=00:00:00 max=00:00:00.250000
+read_header1 count=56 total=00:00:00.140625 avg=00:00:00.002511 min=00:00:00 max=00:00:00.062500
+read_header2 count=56 total=00:00:00.078125 avg=00:00:00.001395 min=00:00:00 max=00:00:00.062500
+read_body1 count=55 total=00:00:59.078125 avg=00:00:01.074147 min=00:00:00 max=00:00:02.109375
+read_body2 count=55 total=00:00:59.078125 avg=00:00:01.074147 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:40]
+load_file /maps/gettile?map=yasat&z=6&x=29&y=10
+load count=52 total=00:01:00.296875 avg=00:00:01.159555 min=00:00:00.015625 max=00:00:02.125000
+save count=52 total=00:00:00.625000 avg=00:00:00.012019 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:42]
+get "GET /maps/gettile?map=yasat&z=6&x=29&y=9 HTTP/1.1\r\n\r\n"
+get count=57 total=00:01:01.375000 avg=00:00:01.076754 min=00:00:00 max=00:00:02.109375
+read_reply1 count=57 total=00:00:00.656250 avg=00:00:00.011513 min=00:00:00 max=00:00:00.265625
+read_reply2 count=57 total=00:00:00.625000 avg=00:00:00.010964 min=00:00:00 max=00:00:00.250000
+read_header1 count=57 total=00:00:00.140625 avg=00:00:00.002467 min=00:00:00 max=00:00:00.062500
+read_header2 count=57 total=00:00:00.078125 avg=00:00:00.001370 min=00:00:00 max=00:00:00.062500
+read_body1 count=56 total=00:01:00.562500 avg=00:00:01.081473 min=00:00:00 max=00:00:02.109375
+read_body2 count=56 total=00:01:00.562500 avg=00:00:01.081473 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:42]
+load_file /maps/gettile?map=yasat&z=6&x=29&y=9
+load count=53 total=00:01:01.796875 avg=00:00:01.165978 min=00:00:00.015625 max=00:00:02.125000
+save count=53 total=00:00:00.625000 avg=00:00:00.011792 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:43]
+get "GET /maps/gettile?map=yasat&z=6&x=28&y=12 HTTP/1.1\r\n\r\n"
+get count=58 total=00:01:02.875000 avg=00:00:01.084051 min=00:00:00 max=00:00:02.109375
+read_reply1 count=58 total=00:00:00.671875 avg=00:00:00.011584 min=00:00:00 max=00:00:00.265625
+read_reply2 count=58 total=00:00:00.640625 avg=00:00:00.011045 min=00:00:00 max=00:00:00.250000
+read_header1 count=58 total=00:00:00.140625 avg=00:00:00.002424 min=00:00:00 max=00:00:00.062500
+read_header2 count=58 total=00:00:00.078125 avg=00:00:00.001346 min=00:00:00 max=00:00:00.062500
+read_body1 count=57 total=00:01:02.046875 avg=00:00:01.088541 min=00:00:00 max=00:00:02.109375
+read_body2 count=57 total=00:01:02.046875 avg=00:00:01.088541 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:44]
+load_file /maps/gettile?map=yasat&z=6&x=28&y=12
+load count=54 total=00:01:03.312500 avg=00:00:01.172453 min=00:00:00.015625 max=00:00:02.125000
+save count=54 total=00:00:00.640625 avg=00:00:00.011863 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:45]
+get "GET /maps/gettile?map=yasat&z=6&x=28&y=11 HTTP/1.1\r\n\r\n"
+get count=59 total=00:01:04.328125 avg=00:00:01.090307 min=00:00:00 max=00:00:02.109375
+read_reply1 count=59 total=00:00:00.671875 avg=00:00:00.011387 min=00:00:00 max=00:00:00.265625
+read_reply2 count=59 total=00:00:00.640625 avg=00:00:00.010858 min=00:00:00 max=00:00:00.250000
+read_header1 count=59 total=00:00:00.140625 avg=00:00:00.002383 min=00:00:00 max=00:00:00.062500
+read_header2 count=59 total=00:00:00.078125 avg=00:00:00.001324 min=00:00:00 max=00:00:00.062500
+read_body1 count=58 total=00:01:03.500000 avg=00:00:01.094827 min=00:00:00 max=00:00:02.109375
+read_body2 count=58 total=00:01:03.500000 avg=00:00:01.094827 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:45]
+load_file /maps/gettile?map=yasat&z=6&x=28&y=11
+load count=55 total=00:01:04.781250 avg=00:00:01.177840 min=00:00:00.015625 max=00:00:02.125000
+save count=55 total=00:00:00.640625 avg=00:00:00.011647 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:45]
+get "GET /maps/gettile?map=yasat&z=6&x=28&y=10 HTTP/1.1\r\n\r\n"
+get count=60 total=00:01:04.328125 avg=00:00:01.072135 min=00:00:00 max=00:00:02.109375
+read_reply1 count=60 total=00:00:00.671875 avg=00:00:00.011197 min=00:00:00 max=00:00:00.265625
+read_reply2 count=60 total=00:00:00.640625 avg=00:00:00.010677 min=00:00:00 max=00:00:00.250000
+read_header1 count=60 total=00:00:00.140625 avg=00:00:00.002343 min=00:00:00 max=00:00:00.062500
+read_header2 count=60 total=00:00:00.078125 avg=00:00:00.001302 min=00:00:00 max=00:00:00.062500
+read_body1 count=59 total=00:01:03.500000 avg=00:00:01.076271 min=00:00:00 max=00:00:02.109375
+read_body2 count=59 total=00:01:03.500000 avg=00:00:01.076271 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:45]
+load_file /maps/gettile?map=yasat&z=6&x=28&y=10
+load count=56 total=00:01:04.812500 avg=00:00:01.157366 min=00:00:00.015625 max=00:00:02.125000
+save count=56 total=00:00:00.671875 avg=00:00:00.011997 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:46]
+get "GET /maps/gettile?map=yasat&z=6&x=28&y=9 HTTP/1.1\r\n\r\n"
+get count=61 total=00:01:05.750000 avg=00:00:01.077868 min=00:00:00 max=00:00:02.109375
+read_reply1 count=61 total=00:00:00.671875 avg=00:00:00.011014 min=00:00:00 max=00:00:00.265625
+read_reply2 count=61 total=00:00:00.640625 avg=00:00:00.010502 min=00:00:00 max=00:00:00.250000
+read_header1 count=61 total=00:00:00.140625 avg=00:00:00.002305 min=00:00:00 max=00:00:00.062500
+read_header2 count=61 total=00:00:00.078125 avg=00:00:00.001280 min=00:00:00 max=00:00:00.062500
+read_body1 count=60 total=00:01:04.921875 avg=00:00:01.082031 min=00:00:00 max=00:00:02.109375
+read_body2 count=60 total=00:01:04.921875 avg=00:00:01.082031 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:47]
+load_file /maps/gettile?map=yasat&z=6&x=28&y=9
+load count=57 total=00:01:06.250000 avg=00:00:01.162280 min=00:00:00.015625 max=00:00:02.125000
+save count=57 total=00:00:00.671875 avg=00:00:00.011787 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:48]
+get "GET /maps/gettile?map=yasat&z=6&x=27&y=12 HTTP/1.1\r\n\r\n"
+get count=62 total=00:01:07.250000 avg=00:00:01.084677 min=00:00:00 max=00:00:02.109375
+read_reply1 count=62 total=00:00:00.671875 avg=00:00:00.010836 min=00:00:00 max=00:00:00.265625
+read_reply2 count=62 total=00:00:00.640625 avg=00:00:00.010332 min=00:00:00 max=00:00:00.250000
+read_header1 count=62 total=00:00:00.140625 avg=00:00:00.002268 min=00:00:00 max=00:00:00.062500
+read_header2 count=62 total=00:00:00.078125 avg=00:00:00.001260 min=00:00:00 max=00:00:00.062500
+read_body1 count=61 total=00:01:06.421875 avg=00:00:01.088883 min=00:00:00 max=00:00:02.109375
+read_body2 count=61 total=00:01:06.421875 avg=00:00:01.088883 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:48]
+load_file /maps/gettile?map=yasat&z=6&x=27&y=12
+load count=58 total=00:01:07.750000 avg=00:00:01.168103 min=00:00:00.015625 max=00:00:02.125000
+save count=58 total=00:00:00.718750 avg=00:00:00.012392 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:50]
+get "GET /maps/gettile?map=yasat&z=6&x=27&y=11 HTTP/1.1\r\n\r\n"
+get count=63 total=00:01:08.703125 avg=00:00:01.090525 min=00:00:00 max=00:00:02.109375
+read_reply1 count=63 total=00:00:00.687500 avg=00:00:00.010912 min=00:00:00 max=00:00:00.265625
+read_reply2 count=63 total=00:00:00.656250 avg=00:00:00.010416 min=00:00:00 max=00:00:00.250000
+read_header1 count=63 total=00:00:00.140625 avg=00:00:00.002232 min=00:00:00 max=00:00:00.062500
+read_header2 count=63 total=00:00:00.078125 avg=00:00:00.001240 min=00:00:00 max=00:00:00.062500
+read_body1 count=62 total=00:01:07.859375 avg=00:00:01.094506 min=00:00:00 max=00:00:02.109375
+read_body2 count=62 total=00:01:07.859375 avg=00:00:01.094506 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:50]
+load_file /maps/gettile?map=yasat&z=6&x=27&y=11
+load count=59 total=00:01:09.218750 avg=00:00:01.173199 min=00:00:00.015625 max=00:00:02.125000
+save count=59 total=00:00:00.718750 avg=00:00:00.012182 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:51]
+get "GET /maps/gettile?map=yasat&z=6&x=27&y=10 HTTP/1.1\r\n\r\n"
+get count=64 total=00:01:10.203125 avg=00:00:01.096923 min=00:00:00 max=00:00:02.109375
+read_reply1 count=64 total=00:00:00.687500 avg=00:00:00.010742 min=00:00:00 max=00:00:00.265625
+read_reply2 count=64 total=00:00:00.656250 avg=00:00:00.010253 min=00:00:00 max=00:00:00.250000
+read_header1 count=64 total=00:00:00.140625 avg=00:00:00.002197 min=00:00:00 max=00:00:00.062500
+read_header2 count=64 total=00:00:00.078125 avg=00:00:00.001220 min=00:00:00 max=00:00:00.062500
+read_body1 count=63 total=00:01:09.359375 avg=00:00:01.100942 min=00:00:00 max=00:00:02.109375
+read_body2 count=63 total=00:01:09.359375 avg=00:00:01.100942 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:51]
+load_file /maps/gettile?map=yasat&z=6&x=27&y=10
+load count=60 total=00:01:10.718750 avg=00:00:01.178645 min=00:00:00.015625 max=00:00:02.125000
+save count=60 total=00:00:00.718750 avg=00:00:00.011979 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:53]
+get "GET /maps/gettile?map=yasat&z=6&x=27&y=9 HTTP/1.1\r\n\r\n"
+get count=65 total=00:01:11.687500 avg=00:00:01.102884 min=00:00:00 max=00:00:02.109375
+read_reply1 count=65 total=00:00:00.687500 avg=00:00:00.010576 min=00:00:00 max=00:00:00.265625
+read_reply2 count=65 total=00:00:00.656250 avg=00:00:00.010096 min=00:00:00 max=00:00:00.250000
+read_header1 count=65 total=00:00:00.140625 avg=00:00:00.002163 min=00:00:00 max=00:00:00.062500
+read_header2 count=65 total=00:00:00.078125 avg=00:00:00.001201 min=00:00:00 max=00:00:00.062500
+read_body1 count=64 total=00:01:10.843750 avg=00:00:01.106933 min=00:00:00 max=00:00:02.109375
+read_body2 count=64 total=00:01:10.843750 avg=00:00:01.106933 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:53]
+load_file /maps/gettile?map=yasat&z=6&x=27&y=9
+load count=61 total=00:01:12.218750 avg=00:00:01.183913 min=00:00:00.015625 max=00:00:02.125000
+save count=61 total=00:00:00.718750 avg=00:00:00.011782 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:54]
+get "GET /maps/gettile?map=yasat&z=6&x=26&y=12 HTTP/1.1\r\n\r\n"
+get count=66 total=00:01:13.187500 avg=00:00:01.108901 min=00:00:00 max=00:00:02.109375
+read_reply1 count=66 total=00:00:00.703125 avg=00:00:00.010653 min=00:00:00 max=00:00:00.265625
+read_reply2 count=66 total=00:00:00.671875 avg=00:00:00.010179 min=00:00:00 max=00:00:00.250000
+read_header1 count=66 total=00:00:00.140625 avg=00:00:00.002130 min=00:00:00 max=00:00:00.062500
+read_header2 count=66 total=00:00:00.078125 avg=00:00:00.001183 min=00:00:00 max=00:00:00.062500
+read_body1 count=65 total=00:01:12.328125 avg=00:00:01.112740 min=00:00:00 max=00:00:02.109375
+read_body2 count=65 total=00:01:12.328125 avg=00:00:01.112740 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:54]
+load_file /maps/gettile?map=yasat&z=6&x=26&y=12
+load count=62 total=00:01:13.734375 avg=00:00:01.189264 min=00:00:00.015625 max=00:00:02.125000
+save count=62 total=00:00:00.734375 avg=00:00:00.011844 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:54]
+get "GET /maps/gettile?map=yasat&z=6&x=26&y=11 HTTP/1.1\r\n\r\n"
+get count=67 total=00:01:13.203125 avg=00:00:01.092583 min=00:00:00 max=00:00:02.109375
+read_reply1 count=67 total=00:00:00.718750 avg=00:00:00.010727 min=00:00:00 max=00:00:00.265625
+read_reply2 count=67 total=00:00:00.687500 avg=00:00:00.010261 min=00:00:00 max=00:00:00.250000
+read_header1 count=67 total=00:00:00.140625 avg=00:00:00.002098 min=00:00:00 max=00:00:00.062500
+read_header2 count=67 total=00:00:00.078125 avg=00:00:00.001166 min=00:00:00 max=00:00:00.062500
+read_body1 count=66 total=00:01:12.328125 avg=00:00:01.095880 min=00:00:00 max=00:00:02.109375
+read_body2 count=66 total=00:01:12.328125 avg=00:00:01.095880 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:54]
+load_file /maps/gettile?map=yasat&z=6&x=26&y=11
+load count=63 total=00:01:13.765625 avg=00:00:01.170882 min=00:00:00.015625 max=00:00:02.125000
+save count=63 total=00:00:00.734375 avg=00:00:00.011656 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:56]
+get "GET /maps/gettile?map=yasat&z=6&x=26&y=10 HTTP/1.1\r\n\r\n"
+get count=68 total=00:01:14.625000 avg=00:00:01.097426 min=00:00:00 max=00:00:02.109375
+read_reply1 count=68 total=00:00:00.718750 avg=00:00:00.010569 min=00:00:00 max=00:00:00.265625
+read_reply2 count=68 total=00:00:00.687500 avg=00:00:00.010110 min=00:00:00 max=00:00:00.250000
+read_header1 count=68 total=00:00:00.140625 avg=00:00:00.002068 min=00:00:00 max=00:00:00.062500
+read_header2 count=68 total=00:00:00.078125 avg=00:00:00.001148 min=00:00:00 max=00:00:00.062500
+read_body1 count=67 total=00:01:13.750000 avg=00:00:01.100746 min=00:00:00 max=00:00:02.109375
+read_body2 count=67 total=00:01:13.750000 avg=00:00:01.100746 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:56]
+load_file /maps/gettile?map=yasat&z=6&x=26&y=10
+load count=64 total=00:01:15.218750 avg=00:00:01.175292 min=00:00:00.015625 max=00:00:02.125000
+save count=64 total=00:00:00.765625 avg=00:00:00.011962 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:57]
+get "GET /maps/gettile?map=yasat&z=6&x=26&y=9 HTTP/1.1\r\n\r\n"
+get count=69 total=00:01:16.187500 avg=00:00:01.104166 min=00:00:00 max=00:00:02.109375
+read_reply1 count=69 total=00:00:00.718750 avg=00:00:00.010416 min=00:00:00 max=00:00:00.265625
+read_reply2 count=69 total=00:00:00.687500 avg=00:00:00.009963 min=00:00:00 max=00:00:00.250000
+read_header1 count=69 total=00:00:00.140625 avg=00:00:00.002038 min=00:00:00 max=00:00:00.062500
+read_header2 count=69 total=00:00:00.078125 avg=00:00:00.001132 min=00:00:00 max=00:00:00.062500
+read_body1 count=68 total=00:01:15.312500 avg=00:00:01.107536 min=00:00:00 max=00:00:02.109375
+read_body2 count=68 total=00:01:15.312500 avg=00:00:01.107536 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:57]
+load_file /maps/gettile?map=yasat&z=6&x=26&y=9
+load count=65 total=00:01:16.796875 avg=00:00:01.181490 min=00:00:00.015625 max=00:00:02.125000
+save count=65 total=00:00:00.765625 avg=00:00:00.011778 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:52:59]
+get "GET /maps/gettile?map=yasat&z=6&x=25&y=12 HTTP/1.1\r\n\r\n"
+get count=70 total=00:01:17.687500 avg=00:00:01.109821 min=00:00:00 max=00:00:02.109375
+read_reply1 count=70 total=00:00:00.734375 avg=00:00:00.010491 min=00:00:00 max=00:00:00.265625
+read_reply2 count=70 total=00:00:00.703125 avg=00:00:00.010044 min=00:00:00 max=00:00:00.250000
+read_header1 count=70 total=00:00:00.140625 avg=00:00:00.002008 min=00:00:00 max=00:00:00.062500
+read_header2 count=70 total=00:00:00.078125 avg=00:00:00.001116 min=00:00:00 max=00:00:00.062500
+read_body1 count=69 total=00:01:16.796875 avg=00:00:01.112998 min=00:00:00 max=00:00:02.109375
+read_body2 count=69 total=00:01:16.796875 avg=00:00:01.112998 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:52:59]
+load_file /maps/gettile?map=yasat&z=6&x=25&y=12
+load count=66 total=00:01:18.312500 avg=00:00:01.186553 min=00:00:00.015625 max=00:00:02.125000
+save count=66 total=00:00:00.796875 avg=00:00:00.012073 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:00]
+get "GET /maps/gettile?map=yasat&z=6&x=25&y=11 HTTP/1.1\r\n\r\n"
+get count=71 total=00:01:19.343750 avg=00:00:01.117517 min=00:00:00 max=00:00:02.109375
+read_reply1 count=71 total=00:00:00.734375 avg=00:00:00.010343 min=00:00:00 max=00:00:00.265625
+read_reply2 count=71 total=00:00:00.703125 avg=00:00:00.009903 min=00:00:00 max=00:00:00.250000
+read_header1 count=71 total=00:00:00.140625 avg=00:00:00.001980 min=00:00:00 max=00:00:00.062500
+read_header2 count=71 total=00:00:00.078125 avg=00:00:00.001100 min=00:00:00 max=00:00:00.062500
+read_body1 count=70 total=00:01:18.453125 avg=00:00:01.120758 min=00:00:00 max=00:00:02.109375
+read_body2 count=70 total=00:01:18.453125 avg=00:00:01.120758 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:00]
+load_file /maps/gettile?map=yasat&z=6&x=25&y=11
+load count=67 total=00:01:19.984375 avg=00:00:01.193796 min=00:00:00.015625 max=00:00:02.125000
+save count=67 total=00:00:00.828125 avg=00:00:00.012360 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:02]
+get "GET /maps/gettile?map=yasat&z=6&x=25&y=10 HTTP/1.1\r\n\r\n"
+get count=72 total=00:01:20.796875 avg=00:00:01.122178 min=00:00:00 max=00:00:02.109375
+read_reply1 count=72 total=00:00:00.734375 avg=00:00:00.010199 min=00:00:00 max=00:00:00.265625
+read_reply2 count=72 total=00:00:00.703125 avg=00:00:00.009765 min=00:00:00 max=00:00:00.250000
+read_header1 count=72 total=00:00:00.140625 avg=00:00:00.001953 min=00:00:00 max=00:00:00.062500
+read_header2 count=72 total=00:00:00.078125 avg=00:00:00.001085 min=00:00:00 max=00:00:00.062500
+read_body1 count=71 total=00:01:19.906250 avg=00:00:01.125440 min=00:00:00 max=00:00:02.109375
+read_body2 count=71 total=00:01:19.906250 avg=00:00:01.125440 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:02]
+load_file /maps/gettile?map=yasat&z=6&x=25&y=10
+load count=68 total=00:01:21.468750 avg=00:00:01.198069 min=00:00:00.015625 max=00:00:02.125000
+save count=68 total=00:00:00.828125 avg=00:00:00.012178 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:03]
+get "GET /maps/gettile?map=yasat&z=6&x=25&y=9 HTTP/1.1\r\n\r\n"
+get count=73 total=00:01:22.281250 avg=00:00:01.127140 min=00:00:00 max=00:00:02.109375
+read_reply1 count=73 total=00:00:00.734375 avg=00:00:00.010059 min=00:00:00 max=00:00:00.265625
+read_reply2 count=73 total=00:00:00.703125 avg=00:00:00.009631 min=00:00:00 max=00:00:00.250000
+read_header1 count=73 total=00:00:00.140625 avg=00:00:00.001926 min=00:00:00 max=00:00:00.062500
+read_header2 count=73 total=00:00:00.078125 avg=00:00:00.001070 min=00:00:00 max=00:00:00.062500
+read_body1 count=72 total=00:01:21.390625 avg=00:00:01.130425 min=00:00:00 max=00:00:02.109375
+read_body2 count=72 total=00:01:21.390625 avg=00:00:01.130425 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:03]
+load_file /maps/gettile?map=yasat&z=6&x=25&y=9
+load count=69 total=00:01:22.968750 avg=00:00:01.202445 min=00:00:00.015625 max=00:00:02.125000
+save count=69 total=00:00:00.828125 avg=00:00:00.012001 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:03]
+get "GET /maps/gettile?map=yasat&z=5&x=10&y=3 HTTP/1.1\r\n\r\n"
+get count=74 total=00:01:22.328125 avg=00:00:01.112542 min=00:00:00 max=00:00:02.109375
+read_reply1 count=74 total=00:00:00.750000 avg=00:00:00.010135 min=00:00:00 max=00:00:00.265625
+read_reply2 count=74 total=00:00:00.718750 avg=00:00:00.009712 min=00:00:00 max=00:00:00.250000
+read_header1 count=74 total=00:00:00.140625 avg=00:00:00.001900 min=00:00:00 max=00:00:00.062500
+read_header2 count=74 total=00:00:00.078125 avg=00:00:00.001055 min=00:00:00 max=00:00:00.062500
+read_body1 count=73 total=00:01:21.421875 avg=00:00:01.115368 min=00:00:00 max=00:00:02.109375
+read_body2 count=73 total=00:01:21.421875 avg=00:00:01.115368 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:03]
+load_file /maps/gettile?map=yasat&z=5&x=10&y=3
+load count=70 total=00:01:23.015625 avg=00:00:01.185937 min=00:00:00.015625 max=00:00:02.125000
+save count=70 total=00:00:00.828125 avg=00:00:00.011830 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:05]
+get "GET /maps/gettile?map=yasat&z=5&x=9&y=5 HTTP/1.1\r\n\r\n"
+get count=75 total=00:01:23.843750 avg=00:00:01.117916 min=00:00:00 max=00:00:02.109375
+read_reply1 count=75 total=00:00:00.781250 avg=00:00:00.010416 min=00:00:00 max=00:00:00.265625
+read_reply2 count=75 total=00:00:00.750000 avg=00:00:00.010000 min=00:00:00 max=00:00:00.250000
+read_header1 count=75 total=00:00:00.140625 avg=00:00:00.001875 min=00:00:00 max=00:00:00.062500
+read_header2 count=75 total=00:00:00.078125 avg=00:00:00.001041 min=00:00:00 max=00:00:00.062500
+read_body1 count=74 total=00:01:22.906250 avg=00:00:01.120354 min=00:00:00 max=00:00:02.109375
+read_body2 count=74 total=00:01:22.906250 avg=00:00:01.120354 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:05]
+load_file /maps/gettile?map=yasat&z=5&x=9&y=5
+load count=71 total=00:01:24.546875 avg=00:00:01.190801 min=00:00:00.015625 max=00:00:02.125000
+save count=71 total=00:00:00.859375 avg=00:00:00.012103 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:06]
+get "GET /maps/gettile?map=yasat&z=3&x=2&y=1 HTTP/1.1\r\n\r\n"
+get count=76 total=00:01:25 avg=00:00:01.118421 min=00:00:00 max=00:00:02.109375
+read_reply1 count=76 total=00:00:00.781250 avg=00:00:00.010279 min=00:00:00 max=00:00:00.265625
+read_reply2 count=76 total=00:00:00.750000 avg=00:00:00.009868 min=00:00:00 max=00:00:00.250000
+read_header1 count=76 total=00:00:00.140625 avg=00:00:00.001850 min=00:00:00 max=00:00:00.062500
+read_header2 count=76 total=00:00:00.078125 avg=00:00:00.001027 min=00:00:00 max=00:00:00.062500
+read_body1 count=75 total=00:01:24.062500 avg=00:00:01.120833 min=00:00:00 max=00:00:02.109375
+read_body2 count=75 total=00:01:24.062500 avg=00:00:01.120833 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:06]
+load_file /maps/gettile?map=yasat&z=3&x=2&y=1
+load count=72 total=00:01:25.703125 avg=00:00:01.190321 min=00:00:00.015625 max=00:00:02.125000
+save count=72 total=00:00:00.859375 avg=00:00:00.011935 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:08]
+get "GET /maps/gettile?map=yasat&z=4&x=4&y=2 HTTP/1.1\r\n\r\n"
+get count=77 total=00:01:26.687500 avg=00:00:01.125811 min=00:00:00 max=00:00:02.109375
+read_reply1 count=77 total=00:00:00.796875 avg=00:00:00.010349 min=00:00:00 max=00:00:00.265625
+read_reply2 count=77 total=00:00:00.765625 avg=00:00:00.009943 min=00:00:00 max=00:00:00.250000
+read_header1 count=77 total=00:00:00.140625 avg=00:00:00.001826 min=00:00:00 max=00:00:00.062500
+read_header2 count=77 total=00:00:00.078125 avg=00:00:00.001014 min=00:00:00 max=00:00:00.062500
+read_body1 count=76 total=00:01:25.734375 avg=00:00:01.128083 min=00:00:00 max=00:00:02.109375
+read_body2 count=76 total=00:01:25.734375 avg=00:00:01.128083 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:08]
+load_file /maps/gettile?map=yasat&z=4&x=4&y=2
+load count=73 total=00:01:27.406250 avg=00:00:01.197345 min=00:00:00.015625 max=00:00:02.125000
+save count=73 total=00:00:00.890625 avg=00:00:00.012200 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:10]
+get "GET /maps/gettile?map=yasat&z=5&x=9&y=4 HTTP/1.1\r\n\r\n"
+get count=78 total=00:01:28.343750 avg=00:00:01.132612 min=00:00:00 max=00:00:02.109375
+read_reply1 count=78 total=00:00:00.796875 avg=00:00:00.010216 min=00:00:00 max=00:00:00.265625
+read_reply2 count=78 total=00:00:00.765625 avg=00:00:00.009815 min=00:00:00 max=00:00:00.250000
+read_header1 count=78 total=00:00:00.140625 avg=00:00:00.001802 min=00:00:00 max=00:00:00.062500
+read_header2 count=78 total=00:00:00.078125 avg=00:00:00.001001 min=00:00:00 max=00:00:00.062500
+read_body1 count=77 total=00:01:27.390625 avg=00:00:01.134943 min=00:00:00 max=00:00:02.109375
+read_body2 count=77 total=00:01:27.390625 avg=00:00:01.134943 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:10]
+load_file /maps/gettile?map=yasat&z=5&x=9&y=4
+load count=74 total=00:01:29.062500 avg=00:00:01.203547 min=00:00:00.015625 max=00:00:02.125000
+save count=74 total=00:00:00.890625 avg=00:00:00.012035 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:10]
+get "GET /maps/gettile?map=yasat&z=1&x=0&y=0 HTTP/1.1\r\n\r\n"
+get count=79 total=00:01:28.359375 avg=00:00:01.118473 min=00:00:00 max=00:00:02.109375
+read_reply1 count=79 total=00:00:00.796875 avg=00:00:00.010087 min=00:00:00 max=00:00:00.265625
+read_reply2 count=79 total=00:00:00.765625 avg=00:00:00.009691 min=00:00:00 max=00:00:00.250000
+read_header1 count=79 total=00:00:00.140625 avg=00:00:00.001780 min=00:00:00 max=00:00:00.062500
+read_header2 count=79 total=00:00:00.078125 avg=00:00:00.000988 min=00:00:00 max=00:00:00.062500
+read_body1 count=78 total=00:01:27.406250 avg=00:00:01.120592 min=00:00:00 max=00:00:02.109375
+read_body2 count=78 total=00:01:27.406250 avg=00:00:01.120592 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:10]
+load_file /maps/gettile?map=yasat&z=1&x=0&y=0
+load count=75 total=00:01:29.093750 avg=00:00:01.187916 min=00:00:00.015625 max=00:00:02.125000
+save count=75 total=00:00:00.921875 avg=00:00:00.012291 min=00:00:00 max=00:00:00.046875
+
+[2010-05-28 00:53:11]
+get "GET /maps/gettile?map=yasat&z=2&x=1&y=0 HTTP/1.1\r\n\r\n"
+get count=80 total=00:01:29.984375 avg=00:00:01.124804 min=00:00:00 max=00:00:02.109375
+read_reply1 count=80 total=00:00:00.812500 avg=00:00:00.010156 min=00:00:00 max=00:00:00.265625
+read_reply2 count=80 total=00:00:00.781250 avg=00:00:00.009765 min=00:00:00 max=00:00:00.250000
+read_header1 count=80 total=00:00:00.140625 avg=00:00:00.001757 min=00:00:00 max=00:00:00.062500
+read_header2 count=80 total=00:00:00.078125 avg=00:00:00.000976 min=00:00:00 max=00:00:00.062500
+read_body1 count=79 total=00:01:29.015625 avg=00:00:01.126780 min=00:00:00 max=00:00:02.109375
+read_body2 count=79 total=00:01:29.015625 avg=00:00:01.126780 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:11]
+load_file /maps/gettile?map=yasat&z=2&x=1&y=0
+load count=76 total=00:01:30.734375 avg=00:00:01.193873 min=00:00:00.015625 max=00:00:02.125000
+save count=76 total=00:00:00.984375 avg=00:00:00.012952 min=00:00:00 max=00:00:00.062500
+
+[2010-05-28 00:53:13]
+get "GET /maps/gettile?map=yasat&z=3&x=2&y=0 HTTP/1.1\r\n\r\n"
+get count=81 total=00:01:31.500000 avg=00:00:01.129629 min=00:00:00 max=00:00:02.109375
+read_reply1 count=81 total=00:00:00.812500 avg=00:00:00.010030 min=00:00:00 max=00:00:00.265625
+read_reply2 count=81 total=00:00:00.781250 avg=00:00:00.009645 min=00:00:00 max=00:00:00.250000
+read_header1 count=81 total=00:00:00.140625 avg=00:00:00.001736 min=00:00:00 max=00:00:00.062500
+read_header2 count=81 total=00:00:00.078125 avg=00:00:00.000964 min=00:00:00 max=00:00:00.062500
+read_body1 count=80 total=00:01:30.531250 avg=00:00:01.131640 min=00:00:00 max=00:00:02.109375
+read_body2 count=80 total=00:01:30.531250 avg=00:00:01.131640 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:13]
+load_file /maps/gettile?map=yasat&z=3&x=2&y=0
+load count=77 total=00:01:32.265625 avg=00:00:01.198254 min=00:00:00.015625 max=00:00:02.125000
+save count=77 total=00:00:00.984375 avg=00:00:00.012784 min=00:00:00 max=00:00:00.062500
+
+[2010-05-28 00:53:14]
+get "GET /maps/gettile?map=yasat&z=4&x=4&y=1 HTTP/1.1\r\n\r\n"
+get count=82 total=00:01:32.890625 avg=00:00:01.132812 min=00:00:00 max=00:00:02.109375
+read_reply1 count=82 total=00:00:00.828125 avg=00:00:00.010099 min=00:00:00 max=00:00:00.265625
+read_reply2 count=82 total=00:00:00.796875 avg=00:00:00.009717 min=00:00:00 max=00:00:00.250000
+read_header1 count=82 total=00:00:00.140625 avg=00:00:00.001714 min=00:00:00 max=00:00:00.062500
+read_header2 count=82 total=00:00:00.078125 avg=00:00:00.000952 min=00:00:00 max=00:00:00.062500
+read_body1 count=81 total=00:01:31.906250 avg=00:00:01.134645 min=00:00:00 max=00:00:02.109375
+read_body2 count=81 total=00:01:31.906250 avg=00:00:01.134645 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:53:14]
+load_file /maps/gettile?map=yasat&z=4&x=4&y=1
+load count=78 total=00:01:33.671875 avg=00:00:01.200921 min=00:00:00.015625 max=00:00:02.125000
+save count=78 total=00:00:01.015625 avg=00:00:00.013020 min=00:00:00 max=00:00:00.062500
+
+[2010-05-28 00:54:06]
+get "GET /maps/gettile?map=yasat&z=7&x=53&y=20 HTTP/1.1\r\n\r\n"
+get count=83 total=00:01:34.453125 avg=00:00:01.137989 min=00:00:00 max=00:00:02.109375
+read_reply1 count=83 total=00:00:00.859375 avg=00:00:00.010353 min=00:00:00 max=00:00:00.265625
+read_reply2 count=83 total=00:00:00.828125 avg=00:00:00.009977 min=00:00:00 max=00:00:00.250000
+read_header1 count=83 total=00:00:00.140625 avg=00:00:00.001694 min=00:00:00 max=00:00:00.062500
+read_header2 count=83 total=00:00:00.078125 avg=00:00:00.000941 min=00:00:00 max=00:00:00.062500
+read_body1 count=82 total=00:01:33.437500 avg=00:00:01.139481 min=00:00:00 max=00:00:02.109375
+read_body2 count=82 total=00:01:33.437500 avg=00:00:01.139481 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:06]
+load_file /maps/gettile?map=yasat&z=7&x=53&y=20
+load count=79 total=00:01:35.250000 avg=00:00:01.205696 min=00:00:00.015625 max=00:00:02.125000
+save count=79 total=00:00:01.390625 avg=00:00:00.017602 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:08]
+get "GET /maps/gettile?map=yasat&z=9&x=227&y=89 HTTP/1.1\r\n\r\n"
+get count=84 total=00:01:36.328125 avg=00:00:01.146763 min=00:00:00 max=00:00:02.109375
+read_reply1 count=84 total=00:00:00.875000 avg=00:00:00.010416 min=00:00:00 max=00:00:00.265625
+read_reply2 count=84 total=00:00:00.843750 avg=00:00:00.010044 min=00:00:00 max=00:00:00.250000
+read_header1 count=84 total=00:00:00.140625 avg=00:00:00.001674 min=00:00:00 max=00:00:00.062500
+read_header2 count=84 total=00:00:00.078125 avg=00:00:00.000930 min=00:00:00 max=00:00:00.062500
+read_body1 count=83 total=00:01:35.296875 avg=00:00:01.148155 min=00:00:00 max=00:00:02.109375
+read_body2 count=83 total=00:01:35.296875 avg=00:00:01.148155 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:08]
+load_file /maps/gettile?map=yasat&z=9&x=227&y=89
+load count=80 total=00:01:37.125000 avg=00:00:01.214062 min=00:00:00.015625 max=00:00:02.125000
+save count=80 total=00:00:01.406250 avg=00:00:00.017578 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:09]
+get "GET /maps/gettile?map=yasat&z=10&x=451&y=178 HTTP/1.1\r\n\r\n"
+get count=85 total=00:01:37.406250 avg=00:00:01.145955 min=00:00:00 max=00:00:02.109375
+read_reply1 count=85 total=00:00:00.875000 avg=00:00:00.010294 min=00:00:00 max=00:00:00.265625
+read_reply2 count=85 total=00:00:00.843750 avg=00:00:00.009926 min=00:00:00 max=00:00:00.250000
+read_header1 count=85 total=00:00:00.140625 avg=00:00:00.001654 min=00:00:00 max=00:00:00.062500
+read_header2 count=85 total=00:00:00.078125 avg=00:00:00.000919 min=00:00:00 max=00:00:00.062500
+read_body1 count=84 total=00:01:36.375000 avg=00:00:01.147321 min=00:00:00 max=00:00:02.109375
+read_body2 count=84 total=00:01:36.375000 avg=00:00:01.147321 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:09]
+load_file /maps/gettile?map=yasat&z=10&x=451&y=178
+load count=81 total=00:01:38.203125 avg=00:00:01.212384 min=00:00:00.015625 max=00:00:02.125000
+save count=81 total=00:00:01.437500 avg=00:00:00.017746 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:10]
+get "GET /maps/gettile?map=yasat&z=10&x=451&y=177 HTTP/1.1\r\n\r\n"
+get count=86 total=00:01:38.156250 avg=00:00:01.141351 min=00:00:00 max=00:00:02.109375
+read_reply1 count=86 total=00:00:00.875000 avg=00:00:00.010174 min=00:00:00 max=00:00:00.265625
+read_reply2 count=86 total=00:00:00.843750 avg=00:00:00.009811 min=00:00:00 max=00:00:00.250000
+read_header1 count=86 total=00:00:00.140625 avg=00:00:00.001635 min=00:00:00 max=00:00:00.062500
+read_header2 count=86 total=00:00:00.078125 avg=00:00:00.000908 min=00:00:00 max=00:00:00.062500
+read_body1 count=85 total=00:01:37.125000 avg=00:00:01.142647 min=00:00:00 max=00:00:02.109375
+read_body2 count=85 total=00:01:37.125000 avg=00:00:01.142647 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:10]
+load_file /maps/gettile?map=yasat&z=10&x=451&y=177
+load count=82 total=00:01:38.968750 avg=00:00:01.206935 min=00:00:00.015625 max=00:00:02.125000
+save count=82 total=00:00:01.468750 avg=00:00:00.017911 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:11]
+get "GET /maps/gettile?map=yasat&z=10&x=451&y=176 HTTP/1.1\r\n\r\n"
+get count=87 total=00:01:38.906250 avg=00:00:01.136853 min=00:00:00 max=00:00:02.109375
+read_reply1 count=87 total=00:00:00.875000 avg=00:00:00.010057 min=00:00:00 max=00:00:00.265625
+read_reply2 count=87 total=00:00:00.843750 avg=00:00:00.009698 min=00:00:00 max=00:00:00.250000
+read_header1 count=87 total=00:00:00.140625 avg=00:00:00.001616 min=00:00:00 max=00:00:00.062500
+read_header2 count=87 total=00:00:00.078125 avg=00:00:00.000897 min=00:00:00 max=00:00:00.062500
+read_body1 count=86 total=00:01:37.875000 avg=00:00:01.138081 min=00:00:00 max=00:00:02.109375
+read_body2 count=86 total=00:01:37.875000 avg=00:00:01.138081 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:11]
+load_file /maps/gettile?map=yasat&z=10&x=451&y=176
+load count=83 total=00:01:39.734375 avg=00:00:01.201618 min=00:00:00.015625 max=00:00:02.125000
+save count=83 total=00:00:01.468750 avg=00:00:00.017695 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:12]
+get "GET /maps/gettile?map=yasat&z=10&x=451&y=175 HTTP/1.1\r\n\r\n"
+get count=88 total=00:01:39.687500 avg=00:00:01.132812 min=00:00:00 max=00:00:02.109375
+read_reply1 count=88 total=00:00:00.875000 avg=00:00:00.009943 min=00:00:00 max=00:00:00.265625
+read_reply2 count=88 total=00:00:00.843750 avg=00:00:00.009588 min=00:00:00 max=00:00:00.250000
+read_header1 count=88 total=00:00:00.140625 avg=00:00:00.001598 min=00:00:00 max=00:00:00.062500
+read_header2 count=88 total=00:00:00.078125 avg=00:00:00.000887 min=00:00:00 max=00:00:00.062500
+read_body1 count=87 total=00:01:38.656250 avg=00:00:01.133979 min=00:00:00 max=00:00:02.109375
+read_body2 count=87 total=00:01:38.656250 avg=00:00:01.133979 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:12]
+load_file /maps/gettile?map=yasat&z=10&x=451&y=175
+load count=84 total=00:01:40.531250 avg=00:00:01.196800 min=00:00:00.015625 max=00:00:02.125000
+save count=84 total=00:00:01.468750 avg=00:00:00.017485 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:12]
+get "GET /maps/gettile?map=yasat&z=10&x=450&y=178 HTTP/1.1\r\n\r\n"
+get count=89 total=00:01:40.484375 avg=00:00:01.129037 min=00:00:00 max=00:00:02.109375
+read_reply1 count=89 total=00:00:00.890625 avg=00:00:00.010007 min=00:00:00 max=00:00:00.265625
+read_reply2 count=89 total=00:00:00.843750 avg=00:00:00.009480 min=00:00:00 max=00:00:00.250000
+read_header1 count=89 total=00:00:00.140625 avg=00:00:00.001580 min=00:00:00 max=00:00:00.062500
+read_header2 count=89 total=00:00:00.078125 avg=00:00:00.000877 min=00:00:00 max=00:00:00.062500
+read_body1 count=88 total=00:01:39.437500 avg=00:00:01.129971 min=00:00:00 max=00:00:02.109375
+read_body2 count=88 total=00:01:39.437500 avg=00:00:01.129971 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:12]
+load_file /maps/gettile?map=yasat&z=10&x=450&y=178
+load count=85 total=00:01:41.328125 avg=00:00:01.192095 min=00:00:00.015625 max=00:00:02.125000
+save count=85 total=00:00:01.515625 avg=00:00:00.017830 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:13]
+get "GET /maps/gettile?map=yasat&z=10&x=450&y=177 HTTP/1.1\r\n\r\n"
+get count=90 total=00:01:41.437500 avg=00:00:01.127083 min=00:00:00 max=00:00:02.109375
+read_reply1 count=90 total=00:00:00.890625 avg=00:00:00.009895 min=00:00:00 max=00:00:00.265625
+read_reply2 count=90 total=00:00:00.843750 avg=00:00:00.009375 min=00:00:00 max=00:00:00.250000
+read_header1 count=90 total=00:00:00.140625 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_header2 count=90 total=00:00:00.078125 avg=00:00:00.000868 min=00:00:00 max=00:00:00.062500
+read_body1 count=89 total=00:01:40.390625 avg=00:00:01.127984 min=00:00:00 max=00:00:02.109375
+read_body2 count=89 total=00:01:40.390625 avg=00:00:01.127984 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:13]
+load_file /maps/gettile?map=yasat&z=10&x=450&y=177
+load count=86 total=00:01:42.296875 avg=00:00:01.189498 min=00:00:00.015625 max=00:00:02.125000
+save count=86 total=00:00:01.515625 avg=00:00:00.017623 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:14]
+get "GET /maps/gettile?map=yasat&z=10&x=450&y=176 HTTP/1.1\r\n\r\n"
+get count=91 total=00:01:42.421875 avg=00:00:01.125515 min=00:00:00 max=00:00:02.109375
+read_reply1 count=91 total=00:00:00.890625 avg=00:00:00.009787 min=00:00:00 max=00:00:00.265625
+read_reply2 count=91 total=00:00:00.843750 avg=00:00:00.009271 min=00:00:00 max=00:00:00.250000
+read_header1 count=91 total=00:00:00.140625 avg=00:00:00.001545 min=00:00:00 max=00:00:00.062500
+read_header2 count=91 total=00:00:00.078125 avg=00:00:00.000858 min=00:00:00 max=00:00:00.062500
+read_body1 count=90 total=00:01:41.375000 avg=00:00:01.126388 min=00:00:00 max=00:00:02.109375
+read_body2 count=90 total=00:01:41.375000 avg=00:00:01.126388 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:14]
+load_file /maps/gettile?map=yasat&z=10&x=450&y=176
+load count=87 total=00:01:43.296875 avg=00:00:01.187320 min=00:00:00.015625 max=00:00:02.125000
+save count=87 total=00:00:01.515625 avg=00:00:00.017420 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:15]
+get "GET /maps/gettile?map=yasat&z=10&x=450&y=175 HTTP/1.1\r\n\r\n"
+get count=92 total=00:01:43.218750 avg=00:00:01.121942 min=00:00:00 max=00:00:02.109375
+read_reply1 count=92 total=00:00:00.906250 avg=00:00:00.009850 min=00:00:00 max=00:00:00.265625
+read_reply2 count=92 total=00:00:00.859375 avg=00:00:00.009341 min=00:00:00 max=00:00:00.250000
+read_header1 count=92 total=00:00:00.140625 avg=00:00:00.001528 min=00:00:00 max=00:00:00.062500
+read_header2 count=92 total=00:00:00.078125 avg=00:00:00.000849 min=00:00:00 max=00:00:00.062500
+read_body1 count=91 total=00:01:42.156250 avg=00:00:01.122596 min=00:00:00 max=00:00:02.109375
+read_body2 count=91 total=00:01:42.156250 avg=00:00:01.122596 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:15]
+load_file /maps/gettile?map=yasat&z=10&x=450&y=175
+load count=88 total=00:01:44.093750 avg=00:00:01.182883 min=00:00:00.015625 max=00:00:02.125000
+save count=88 total=00:00:01.546875 avg=00:00:00.017578 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:16]
+get "GET /maps/gettile?map=yasat&z=10&x=449&y=178 HTTP/1.1\r\n\r\n"
+get count=93 total=00:01:44.171875 avg=00:00:01.120127 min=00:00:00 max=00:00:02.109375
+read_reply1 count=93 total=00:00:00.906250 avg=00:00:00.009744 min=00:00:00 max=00:00:00.265625
+read_reply2 count=93 total=00:00:00.859375 avg=00:00:00.009240 min=00:00:00 max=00:00:00.250000
+read_header1 count=93 total=00:00:00.140625 avg=00:00:00.001512 min=00:00:00 max=00:00:00.062500
+read_header2 count=93 total=00:00:00.078125 avg=00:00:00.000840 min=00:00:00 max=00:00:00.062500
+read_body1 count=92 total=00:01:43.109375 avg=00:00:01.120754 min=00:00:00 max=00:00:02.109375
+read_body2 count=92 total=00:01:43.109375 avg=00:00:01.120754 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:16]
+load_file /maps/gettile?map=yasat&z=10&x=449&y=178
+load count=89 total=00:01:45.062500 avg=00:00:01.180477 min=00:00:00.015625 max=00:00:02.125000
+save count=89 total=00:00:01.546875 avg=00:00:00.017380 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:17]
+get "GET /maps/gettile?map=yasat&z=10&x=449&y=177 HTTP/1.1\r\n\r\n"
+get count=94 total=00:01:44.968750 avg=00:00:01.116688 min=00:00:00 max=00:00:02.109375
+read_reply1 count=94 total=00:00:00.921875 avg=00:00:00.009807 min=00:00:00 max=00:00:00.265625
+read_reply2 count=94 total=00:00:00.875000 avg=00:00:00.009308 min=00:00:00 max=00:00:00.250000
+read_header1 count=94 total=00:00:00.140625 avg=00:00:00.001496 min=00:00:00 max=00:00:00.062500
+read_header2 count=94 total=00:00:00.078125 avg=00:00:00.000831 min=00:00:00 max=00:00:00.062500
+read_body1 count=93 total=00:01:43.890625 avg=00:00:01.117103 min=00:00:00 max=00:00:02.109375
+read_body2 count=93 total=00:01:43.890625 avg=00:00:01.117103 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:17]
+load_file /maps/gettile?map=yasat&z=10&x=449&y=177
+load count=90 total=00:01:45.859375 avg=00:00:01.176215 min=00:00:00.015625 max=00:00:02.125000
+save count=90 total=00:00:01.578125 avg=00:00:00.017534 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:17]
+get "GET /maps/gettile?map=yasat&z=10&x=449&y=176 HTTP/1.1\r\n\r\n"
+get count=95 total=00:01:44.984375 avg=00:00:01.105098 min=00:00:00 max=00:00:02.109375
+read_reply1 count=95 total=00:00:00.921875 avg=00:00:00.009703 min=00:00:00 max=00:00:00.265625
+read_reply2 count=95 total=00:00:00.875000 avg=00:00:00.009210 min=00:00:00 max=00:00:00.250000
+read_header1 count=95 total=00:00:00.140625 avg=00:00:00.001480 min=00:00:00 max=00:00:00.062500
+read_header2 count=95 total=00:00:00.078125 avg=00:00:00.000822 min=00:00:00 max=00:00:00.062500
+read_body1 count=94 total=00:01:43.906250 avg=00:00:01.105385 min=00:00:00 max=00:00:02.109375
+read_body2 count=94 total=00:01:43.906250 avg=00:00:01.105385 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:17]
+load_file /maps/gettile?map=yasat&z=10&x=449&y=176
+load count=91 total=00:01:45.890625 avg=00:00:01.163633 min=00:00:00.015625 max=00:00:02.125000
+save count=91 total=00:00:01.578125 avg=00:00:00.017342 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:18]
+get "GET /maps/gettile?map=yasat&z=10&x=449&y=175 HTTP/1.1\r\n\r\n"
+get count=96 total=00:01:46.015625 avg=00:00:01.104329 min=00:00:00 max=00:00:02.109375
+read_reply1 count=96 total=00:00:00.937500 avg=00:00:00.009765 min=00:00:00 max=00:00:00.265625
+read_reply2 count=96 total=00:00:00.890625 avg=00:00:00.009277 min=00:00:00 max=00:00:00.250000
+read_header1 count=96 total=00:00:00.140625 avg=00:00:00.001464 min=00:00:00 max=00:00:00.062500
+read_header2 count=96 total=00:00:00.078125 avg=00:00:00.000813 min=00:00:00 max=00:00:00.062500
+read_body1 count=95 total=00:01:44.921875 avg=00:00:01.104440 min=00:00:00 max=00:00:02.109375
+read_body2 count=95 total=00:01:44.921875 avg=00:00:01.104440 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:18]
+load_file /maps/gettile?map=yasat&z=10&x=449&y=175
+load count=92 total=00:01:46.921875 avg=00:00:01.162194 min=00:00:00.015625 max=00:00:02.125000
+save count=92 total=00:00:01.578125 avg=00:00:00.017153 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:19]
+get "GET /maps/gettile?map=yasat&z=10&x=448&y=178 HTTP/1.1\r\n\r\n"
+get count=97 total=00:01:47 avg=00:00:01.103092 min=00:00:00 max=00:00:02.109375
+read_reply1 count=97 total=00:00:00.937500 avg=00:00:00.009664 min=00:00:00 max=00:00:00.265625
+read_reply2 count=97 total=00:00:00.890625 avg=00:00:00.009181 min=00:00:00 max=00:00:00.250000
+read_header1 count=97 total=00:00:00.140625 avg=00:00:00.001449 min=00:00:00 max=00:00:00.062500
+read_header2 count=97 total=00:00:00.078125 avg=00:00:00.000805 min=00:00:00 max=00:00:00.062500
+read_body1 count=96 total=00:01:45.906250 avg=00:00:01.103190 min=00:00:00 max=00:00:02.109375
+read_body2 count=96 total=00:01:45.906250 avg=00:00:01.103190 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:19]
+load_file /maps/gettile?map=yasat&z=10&x=448&y=178
+load count=93 total=00:01:47.921875 avg=00:00:01.160450 min=00:00:00.015625 max=00:00:02.125000
+save count=93 total=00:00:01.609375 avg=00:00:00.017305 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:20]
+get "GET /maps/gettile?map=yasat&z=10&x=448&y=177 HTTP/1.1\r\n\r\n"
+get count=98 total=00:01:47.953125 avg=00:00:01.101562 min=00:00:00 max=00:00:02.109375
+read_reply1 count=98 total=00:00:00.937500 avg=00:00:00.009566 min=00:00:00 max=00:00:00.265625
+read_reply2 count=98 total=00:00:00.890625 avg=00:00:00.009088 min=00:00:00 max=00:00:00.250000
+read_header1 count=98 total=00:00:00.140625 avg=00:00:00.001434 min=00:00:00 max=00:00:00.062500
+read_header2 count=98 total=00:00:00.078125 avg=00:00:00.000797 min=00:00:00 max=00:00:00.062500
+read_body1 count=97 total=00:01:46.859375 avg=00:00:01.101643 min=00:00:00 max=00:00:02.109375
+read_body2 count=97 total=00:01:46.859375 avg=00:00:01.101643 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:20]
+load_file /maps/gettile?map=yasat&z=10&x=448&y=177
+load count=94 total=00:01:48.890625 avg=00:00:01.158410 min=00:00:00.015625 max=00:00:02.125000
+save count=94 total=00:00:01.609375 avg=00:00:00.017121 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:21]
+get "GET /maps/gettile?map=yasat&z=10&x=448&y=176 HTTP/1.1\r\n\r\n"
+get count=99 total=00:01:49.156250 avg=00:00:01.102588 min=00:00:00 max=00:00:02.109375
+read_reply1 count=99 total=00:00:00.953125 avg=00:00:00.009627 min=00:00:00 max=00:00:00.265625
+read_reply2 count=99 total=00:00:00.906250 avg=00:00:00.009154 min=00:00:00 max=00:00:00.250000
+read_header1 count=99 total=00:00:00.140625 avg=00:00:00.001420 min=00:00:00 max=00:00:00.062500
+read_header2 count=99 total=00:00:00.078125 avg=00:00:00.000789 min=00:00:00 max=00:00:00.062500
+read_body1 count=98 total=00:01:48.046875 avg=00:00:01.102519 min=00:00:00 max=00:00:02.109375
+read_body2 count=98 total=00:01:48.046875 avg=00:00:01.102519 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:21]
+load_file /maps/gettile?map=yasat&z=10&x=448&y=176
+load count=95 total=00:01:50.093750 avg=00:00:01.158881 min=00:00:00.015625 max=00:00:02.125000
+save count=95 total=00:00:01.609375 avg=00:00:00.016940 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:21]
+get "GET /maps/gettile?map=yasat&z=10&x=448&y=175 HTTP/1.1\r\n\r\n"
+get count=100 total=00:01:49.171875 avg=00:00:01.091718 min=00:00:00 max=00:00:02.109375
+read_reply1 count=100 total=00:00:00.953125 avg=00:00:00.009531 min=00:00:00 max=00:00:00.265625
+read_reply2 count=100 total=00:00:00.906250 avg=00:00:00.009062 min=00:00:00 max=00:00:00.250000
+read_header1 count=100 total=00:00:00.140625 avg=00:00:00.001406 min=00:00:00 max=00:00:00.062500
+read_header2 count=100 total=00:00:00.078125 avg=00:00:00.000781 min=00:00:00 max=00:00:00.062500
+read_body1 count=99 total=00:01:48.062500 avg=00:00:01.091540 min=00:00:00 max=00:00:02.109375
+read_body2 count=99 total=00:01:48.062500 avg=00:00:01.091540 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:21]
+load_file /maps/gettile?map=yasat&z=10&x=448&y=175
+load count=96 total=00:01:50.125000 avg=00:00:01.147135 min=00:00:00.015625 max=00:00:02.125000
+save count=96 total=00:00:01.640625 avg=00:00:00.017089 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:22]
+get "GET /maps/gettile?map=yasat&z=10&x=447&y=178 HTTP/1.1\r\n\r\n"
+get count=101 total=00:01:50.093750 avg=00:00:01.090037 min=00:00:00 max=00:00:02.109375
+read_reply1 count=101 total=00:00:00.953125 avg=00:00:00.009436 min=00:00:00 max=00:00:00.265625
+read_reply2 count=101 total=00:00:00.906250 avg=00:00:00.008972 min=00:00:00 max=00:00:00.250000
+read_header1 count=101 total=00:00:00.156250 avg=00:00:00.001547 min=00:00:00 max=00:00:00.062500
+read_header2 count=101 total=00:00:00.078125 avg=00:00:00.000773 min=00:00:00 max=00:00:00.062500
+read_body1 count=100 total=00:01:48.968750 avg=00:00:01.089687 min=00:00:00 max=00:00:02.109375
+read_body2 count=100 total=00:01:48.968750 avg=00:00:01.089687 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:22]
+load_file /maps/gettile?map=yasat&z=10&x=447&y=178
+load count=97 total=00:01:51.062500 avg=00:00:01.144974 min=00:00:00.015625 max=00:00:02.125000
+save count=97 total=00:00:01.671875 avg=00:00:00.017235 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:22]
+get "GET /maps/gettile?map=yasat&z=10&x=447&y=177 HTTP/1.1\r\n\r\n"
+get count=102 total=00:01:50.109375 avg=00:00:01.079503 min=00:00:00 max=00:00:02.109375
+read_reply1 count=102 total=00:00:00.953125 avg=00:00:00.009344 min=00:00:00 max=00:00:00.265625
+read_reply2 count=102 total=00:00:00.906250 avg=00:00:00.008884 min=00:00:00 max=00:00:00.250000
+read_header1 count=102 total=00:00:00.156250 avg=00:00:00.001531 min=00:00:00 max=00:00:00.062500
+read_header2 count=102 total=00:00:00.078125 avg=00:00:00.000765 min=00:00:00 max=00:00:00.062500
+read_body1 count=101 total=00:01:48.984375 avg=00:00:01.079053 min=00:00:00 max=00:00:02.109375
+read_body2 count=101 total=00:01:48.984375 avg=00:00:01.079053 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:22]
+load_file /maps/gettile?map=yasat&z=10&x=447&y=177
+load count=98 total=00:01:51.093750 avg=00:00:01.133609 min=00:00:00.015625 max=00:00:02.125000
+save count=98 total=00:00:01.671875 avg=00:00:00.017059 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:23]
+get "GET /maps/gettile?map=yasat&z=10&x=447&y=176 HTTP/1.1\r\n\r\n"
+get count=103 total=00:01:50.125000 avg=00:00:01.069174 min=00:00:00 max=00:00:02.109375
+read_reply1 count=103 total=00:00:00.953125 avg=00:00:00.009253 min=00:00:00 max=00:00:00.265625
+read_reply2 count=103 total=00:00:00.906250 avg=00:00:00.008798 min=00:00:00 max=00:00:00.250000
+read_header1 count=103 total=00:00:00.171875 avg=00:00:00.001668 min=00:00:00 max=00:00:00.062500
+read_header2 count=103 total=00:00:00.078125 avg=00:00:00.000758 min=00:00:00 max=00:00:00.062500
+read_body1 count=102 total=00:01:48.984375 avg=00:00:01.068474 min=00:00:00 max=00:00:02.109375
+read_body2 count=102 total=00:01:48.984375 avg=00:00:01.068474 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:23]
+load_file /maps/gettile?map=yasat&z=10&x=447&y=176
+load count=99 total=00:01:51.156250 avg=00:00:01.122790 min=00:00:00.015625 max=00:00:02.125000
+save count=99 total=00:00:01.671875 avg=00:00:00.016887 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:23]
+get "GET /maps/gettile?map=yasat&z=10&x=447&y=175 HTTP/1.1\r\n\r\n"
+get count=104 total=00:01:50.750000 avg=00:00:01.064903 min=00:00:00 max=00:00:02.109375
+read_reply1 count=104 total=00:00:00.953125 avg=00:00:00.009164 min=00:00:00 max=00:00:00.265625
+read_reply2 count=104 total=00:00:00.906250 avg=00:00:00.008713 min=00:00:00 max=00:00:00.250000
+read_header1 count=104 total=00:00:00.171875 avg=00:00:00.001652 min=00:00:00 max=00:00:00.062500
+read_header2 count=104 total=00:00:00.078125 avg=00:00:00.000751 min=00:00:00 max=00:00:00.062500
+read_body1 count=103 total=00:01:49.609375 avg=00:00:01.064168 min=00:00:00 max=00:00:02.109375
+read_body2 count=103 total=00:01:49.609375 avg=00:00:01.064168 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:23]
+load_file /maps/gettile?map=yasat&z=10&x=447&y=175
+load count=100 total=00:01:51.796875 avg=00:00:01.117968 min=00:00:00.015625 max=00:00:02.125000
+save count=100 total=00:00:01.671875 avg=00:00:00.016718 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:23]
+get "GET /maps/gettile?map=yasat&z=10&x=446&y=178 HTTP/1.1\r\n\r\n"
+get count=105 total=00:01:50.765625 avg=00:00:01.054910 min=00:00:00 max=00:00:02.109375
+read_reply1 count=105 total=00:00:00.953125 avg=00:00:00.009077 min=00:00:00 max=00:00:00.265625
+read_reply2 count=105 total=00:00:00.906250 avg=00:00:00.008630 min=00:00:00 max=00:00:00.250000
+read_header1 count=105 total=00:00:00.171875 avg=00:00:00.001636 min=00:00:00 max=00:00:00.062500
+read_header2 count=105 total=00:00:00.078125 avg=00:00:00.000744 min=00:00:00 max=00:00:00.062500
+read_body1 count=104 total=00:01:49.625000 avg=00:00:01.054086 min=00:00:00 max=00:00:02.109375
+read_body2 count=104 total=00:01:49.625000 avg=00:00:01.054086 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:23]
+load_file /maps/gettile?map=yasat&z=10&x=446&y=178
+load count=101 total=00:01:51.843750 avg=00:00:01.107363 min=00:00:00.015625 max=00:00:02.125000
+save count=101 total=00:00:01.718750 avg=00:00:00.017017 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:24]
+get "GET /maps/gettile?map=yasat&z=10&x=446&y=177 HTTP/1.1\r\n\r\n"
+get count=106 total=00:01:51.765625 avg=00:00:01.054392 min=00:00:00 max=00:00:02.109375
+read_reply1 count=106 total=00:00:00.953125 avg=00:00:00.008991 min=00:00:00 max=00:00:00.265625
+read_reply2 count=106 total=00:00:00.906250 avg=00:00:00.008549 min=00:00:00 max=00:00:00.250000
+read_header1 count=106 total=00:00:00.171875 avg=00:00:00.001621 min=00:00:00 max=00:00:00.062500
+read_header2 count=106 total=00:00:00.078125 avg=00:00:00.000737 min=00:00:00 max=00:00:00.062500
+read_body1 count=105 total=00:01:50.625000 avg=00:00:01.053571 min=00:00:00 max=00:00:02.109375
+read_body2 count=105 total=00:01:50.625000 avg=00:00:01.053571 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:24]
+load_file /maps/gettile?map=yasat&z=10&x=446&y=177
+load count=102 total=00:01:52.859375 avg=00:00:01.106464 min=00:00:00.015625 max=00:00:02.125000
+save count=102 total=00:00:01.718750 avg=00:00:00.016850 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:25]
+get "GET /maps/gettile?map=yasat&z=10&x=446&y=176 HTTP/1.1\r\n\r\n"
+get count=107 total=00:01:52.562500 avg=00:00:01.051985 min=00:00:00 max=00:00:02.109375
+read_reply1 count=107 total=00:00:00.968750 avg=00:00:00.009053 min=00:00:00 max=00:00:00.265625
+read_reply2 count=107 total=00:00:00.921875 avg=00:00:00.008615 min=00:00:00 max=00:00:00.250000
+read_header1 count=107 total=00:00:00.171875 avg=00:00:00.001606 min=00:00:00 max=00:00:00.062500
+read_header2 count=107 total=00:00:00.078125 avg=00:00:00.000730 min=00:00:00 max=00:00:00.062500
+read_body1 count=106 total=00:01:51.406250 avg=00:00:01.051002 min=00:00:00 max=00:00:02.109375
+read_body2 count=106 total=00:01:51.406250 avg=00:00:01.051002 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:25]
+load_file /maps/gettile?map=yasat&z=10&x=446&y=176
+load count=103 total=00:01:53.656250 avg=00:00:01.103458 min=00:00:00.015625 max=00:00:02.125000
+save count=103 total=00:00:01.734375 avg=00:00:00.016838 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:25]
+get "GET /maps/gettile?map=yasat&z=10&x=446&y=175 HTTP/1.1\r\n\r\n"
+get count=108 total=00:01:52.578125 avg=00:00:01.042390 min=00:00:00 max=00:00:02.109375
+read_reply1 count=108 total=00:00:00.968750 avg=00:00:00.008969 min=00:00:00 max=00:00:00.265625
+read_reply2 count=108 total=00:00:00.921875 avg=00:00:00.008535 min=00:00:00 max=00:00:00.250000
+read_header1 count=108 total=00:00:00.171875 avg=00:00:00.001591 min=00:00:00 max=00:00:00.062500
+read_header2 count=108 total=00:00:00.078125 avg=00:00:00.000723 min=00:00:00 max=00:00:00.062500
+read_body1 count=107 total=00:01:51.406250 avg=00:00:01.041179 min=00:00:00 max=00:00:02.109375
+read_body2 count=107 total=00:01:51.406250 avg=00:00:01.041179 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:25]
+load_file /maps/gettile?map=yasat&z=10&x=446&y=175
+load count=104 total=00:01:53.687500 avg=00:00:01.093149 min=00:00:00.015625 max=00:00:02.125000
+save count=104 total=00:00:01.734375 avg=00:00:00.016676 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:25]
+get "GET /maps/gettile?map=yasat&z=10&x=445&y=178 HTTP/1.1\r\n\r\n"
+get count=109 total=00:01:52.625000 avg=00:00:01.033256 min=00:00:00 max=00:00:02.109375
+read_reply1 count=109 total=00:00:01 avg=00:00:00.009174 min=00:00:00 max=00:00:00.265625
+read_reply2 count=109 total=00:00:00.953125 avg=00:00:00.008744 min=00:00:00 max=00:00:00.250000
+read_header1 count=109 total=00:00:00.171875 avg=00:00:00.001576 min=00:00:00 max=00:00:00.062500
+read_header2 count=109 total=00:00:00.078125 avg=00:00:00.000716 min=00:00:00 max=00:00:00.062500
+read_body1 count=108 total=00:01:51.421875 avg=00:00:01.031684 min=00:00:00 max=00:00:02.109375
+read_body2 count=108 total=00:01:51.421875 avg=00:00:01.031684 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:25]
+load_file /maps/gettile?map=yasat&z=10&x=445&y=178
+load count=105 total=00:01:53.750000 avg=00:00:01.083333 min=00:00:00.015625 max=00:00:02.125000
+save count=105 total=00:00:01.734375 avg=00:00:00.016517 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:26]
+get "GET /maps/gettile?map=yasat&z=10&x=445&y=177 HTTP/1.1\r\n\r\n"
+get count=110 total=00:01:53.593750 avg=00:00:01.032670 min=00:00:00 max=00:00:02.109375
+read_reply1 count=110 total=00:00:01 avg=00:00:00.009090 min=00:00:00 max=00:00:00.265625
+read_reply2 count=110 total=00:00:00.953125 avg=00:00:00.008664 min=00:00:00 max=00:00:00.250000
+read_header1 count=110 total=00:00:00.171875 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_header2 count=110 total=00:00:00.078125 avg=00:00:00.000710 min=00:00:00 max=00:00:00.062500
+read_body1 count=109 total=00:01:52.390625 avg=00:00:01.031106 min=00:00:00 max=00:00:02.109375
+read_body2 count=109 total=00:01:52.390625 avg=00:00:01.031106 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:26]
+load_file /maps/gettile?map=yasat&z=10&x=445&y=177
+load count=106 total=00:01:54.750000 avg=00:00:01.082547 min=00:00:00.015625 max=00:00:02.125000
+save count=106 total=00:00:01.734375 avg=00:00:00.016362 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:27]
+get "GET /maps/gettile?map=yasat&z=10&x=445&y=176 HTTP/1.1\r\n\r\n"
+get count=111 total=00:01:54.484375 avg=00:00:01.031390 min=00:00:00 max=00:00:02.109375
+read_reply1 count=111 total=00:00:01 avg=00:00:00.009009 min=00:00:00 max=00:00:00.265625
+read_reply2 count=111 total=00:00:00.953125 avg=00:00:00.008586 min=00:00:00 max=00:00:00.250000
+read_header1 count=111 total=00:00:00.171875 avg=00:00:00.001548 min=00:00:00 max=00:00:00.062500
+read_header2 count=111 total=00:00:00.078125 avg=00:00:00.000703 min=00:00:00 max=00:00:00.062500
+read_body1 count=110 total=00:01:53.281250 avg=00:00:01.029829 min=00:00:00 max=00:00:02.109375
+read_body2 count=110 total=00:01:53.281250 avg=00:00:01.029829 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:27]
+load_file /maps/gettile?map=yasat&z=10&x=445&y=176
+load count=107 total=00:01:55.656250 avg=00:00:01.080899 min=00:00:00.015625 max=00:00:02.125000
+save count=107 total=00:00:01.734375 avg=00:00:00.016209 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:27]
+get "GET /maps/gettile?map=yasat&z=10&x=445&y=175 HTTP/1.1\r\n\r\n"
+get count=112 total=00:01:54.500000 avg=00:00:01.022321 min=00:00:00 max=00:00:02.109375
+read_reply1 count=112 total=00:00:01 avg=00:00:00.008928 min=00:00:00 max=00:00:00.265625
+read_reply2 count=112 total=00:00:00.953125 avg=00:00:00.008510 min=00:00:00 max=00:00:00.250000
+read_header1 count=112 total=00:00:00.171875 avg=00:00:00.001534 min=00:00:00 max=00:00:00.062500
+read_header2 count=112 total=00:00:00.078125 avg=00:00:00.000697 min=00:00:00 max=00:00:00.062500
+read_body1 count=111 total=00:01:53.296875 avg=00:00:01.020692 min=00:00:00 max=00:00:02.109375
+read_body2 count=111 total=00:01:53.296875 avg=00:00:01.020692 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:27]
+load_file /maps/gettile?map=yasat&z=10&x=445&y=175
+load count=108 total=00:01:55.687500 avg=00:00:01.071180 min=00:00:00.015625 max=00:00:02.125000
+save count=108 total=00:00:01.734375 avg=00:00:00.016059 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:28]
+get "GET /maps/gettile?map=yasat&z=9&x=227&y=88 HTTP/1.1\r\n\r\n"
+get count=113 total=00:01:55.453125 avg=00:00:01.021709 min=00:00:00 max=00:00:02.109375
+read_reply1 count=113 total=00:00:01 avg=00:00:00.008849 min=00:00:00 max=00:00:00.265625
+read_reply2 count=113 total=00:00:00.953125 avg=00:00:00.008434 min=00:00:00 max=00:00:00.250000
+read_header1 count=113 total=00:00:00.171875 avg=00:00:00.001521 min=00:00:00 max=00:00:00.062500
+read_header2 count=113 total=00:00:00.078125 avg=00:00:00.000691 min=00:00:00 max=00:00:00.062500
+read_body1 count=112 total=00:01:54.250000 avg=00:00:01.020089 min=00:00:00 max=00:00:02.109375
+read_body2 count=112 total=00:01:54.250000 avg=00:00:01.020089 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:28]
+load_file /maps/gettile?map=yasat&z=9&x=227&y=88
+load count=109 total=00:01:56.640625 avg=00:00:01.070097 min=00:00:00.015625 max=00:00:02.125000
+save count=109 total=00:00:01.781250 avg=00:00:00.016341 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:29]
+get "GET /maps/gettile?map=yasat&z=9&x=227&y=87 HTTP/1.1\r\n\r\n"
+get count=114 total=00:01:56.406250 avg=00:00:01.021107 min=00:00:00 max=00:00:02.109375
+read_reply1 count=114 total=00:00:01 avg=00:00:00.008771 min=00:00:00 max=00:00:00.265625
+read_reply2 count=114 total=00:00:00.953125 avg=00:00:00.008360 min=00:00:00 max=00:00:00.250000
+read_header1 count=114 total=00:00:00.171875 avg=00:00:00.001507 min=00:00:00 max=00:00:00.062500
+read_header2 count=114 total=00:00:00.078125 avg=00:00:00.000685 min=00:00:00 max=00:00:00.062500
+read_body1 count=113 total=00:01:55.203125 avg=00:00:01.019496 min=00:00:00 max=00:00:02.109375
+read_body2 count=113 total=00:01:55.203125 avg=00:00:01.019496 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:29]
+load_file /maps/gettile?map=yasat&z=9&x=227&y=87
+load count=110 total=00:01:57.609375 avg=00:00:01.069176 min=00:00:00.015625 max=00:00:02.125000
+save count=110 total=00:00:01.781250 avg=00:00:00.016193 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:30]
+get "GET /maps/gettile?map=yasat&z=9&x=227&y=86 HTTP/1.1\r\n\r\n"
+get count=115 total=00:01:57.390625 avg=00:00:01.020788 min=00:00:00 max=00:00:02.109375
+read_reply1 count=115 total=00:00:01 avg=00:00:00.008695 min=00:00:00 max=00:00:00.265625
+read_reply2 count=115 total=00:00:00.953125 avg=00:00:00.008288 min=00:00:00 max=00:00:00.250000
+read_header1 count=115 total=00:00:00.187500 avg=00:00:00.001630 min=00:00:00 max=00:00:00.062500
+read_header2 count=115 total=00:00:00.078125 avg=00:00:00.000679 min=00:00:00 max=00:00:00.062500
+read_body1 count=114 total=00:01:56.171875 avg=00:00:01.019051 min=00:00:00 max=00:00:02.109375
+read_body2 count=114 total=00:01:56.171875 avg=00:00:01.019051 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:30]
+load_file /maps/gettile?map=yasat&z=9&x=227&y=86
+load count=111 total=00:01:58.609375 avg=00:00:01.068552 min=00:00:00.015625 max=00:00:02.125000
+save count=111 total=00:00:01.781250 avg=00:00:00.016047 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:31]
+get "GET /maps/gettile?map=yasat&z=9&x=226&y=89 HTTP/1.1\r\n\r\n"
+get count=116 total=00:01:58.171875 avg=00:00:01.018723 min=00:00:00 max=00:00:02.109375
+read_reply1 count=116 total=00:00:01 avg=00:00:00.008620 min=00:00:00 max=00:00:00.265625
+read_reply2 count=116 total=00:00:00.953125 avg=00:00:00.008216 min=00:00:00 max=00:00:00.250000
+read_header1 count=116 total=00:00:00.187500 avg=00:00:00.001616 min=00:00:00 max=00:00:00.062500
+read_header2 count=116 total=00:00:00.078125 avg=00:00:00.000673 min=00:00:00 max=00:00:00.062500
+read_body1 count=115 total=00:01:56.953125 avg=00:00:01.016983 min=00:00:00 max=00:00:02.109375
+read_body2 count=115 total=00:01:56.953125 avg=00:00:01.016983 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:31]
+load_file /maps/gettile?map=yasat&z=9&x=226&y=89
+load count=112 total=00:01:59.406250 avg=00:00:01.066127 min=00:00:00.015625 max=00:00:02.125000
+save count=112 total=00:00:01.796875 avg=00:00:00.016043 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:31]
+get "GET /maps/gettile?map=yasat&z=9&x=226&y=88 HTTP/1.1\r\n\r\n"
+get count=117 total=00:01:58.187500 avg=00:00:01.010149 min=00:00:00 max=00:00:02.109375
+read_reply1 count=117 total=00:00:01 avg=00:00:00.008547 min=00:00:00 max=00:00:00.265625
+read_reply2 count=117 total=00:00:00.953125 avg=00:00:00.008146 min=00:00:00 max=00:00:00.250000
+read_header1 count=117 total=00:00:00.187500 avg=00:00:00.001602 min=00:00:00 max=00:00:00.062500
+read_header2 count=117 total=00:00:00.078125 avg=00:00:00.000667 min=00:00:00 max=00:00:00.062500
+read_body1 count=116 total=00:01:56.968750 avg=00:00:01.008351 min=00:00:00 max=00:00:02.109375
+read_body2 count=116 total=00:01:56.968750 avg=00:00:01.008351 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:31]
+load_file /maps/gettile?map=yasat&z=9&x=226&y=88
+load count=113 total=00:01:59.453125 avg=00:00:01.057107 min=00:00:00.015625 max=00:00:02.125000
+save count=113 total=00:00:01.796875 avg=00:00:00.015901 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:31]
+get "GET /maps/gettile?map=yasat&z=9&x=226&y=87 HTTP/1.1\r\n\r\n"
+get count=118 total=00:01:58.203125 avg=00:00:01.001721 min=00:00:00 max=00:00:02.109375
+read_reply1 count=118 total=00:00:01 avg=00:00:00.008474 min=00:00:00 max=00:00:00.265625
+read_reply2 count=118 total=00:00:00.953125 avg=00:00:00.008077 min=00:00:00 max=00:00:00.250000
+read_header1 count=118 total=00:00:00.187500 avg=00:00:00.001588 min=00:00:00 max=00:00:00.062500
+read_header2 count=118 total=00:00:00.078125 avg=00:00:00.000662 min=00:00:00 max=00:00:00.062500
+read_body1 count=117 total=00:01:56.984375 avg=00:00:00.999866 min=00:00:00 max=00:00:02.109375
+read_body2 count=117 total=00:01:56.984375 avg=00:00:00.999866 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:31]
+load_file /maps/gettile?map=yasat&z=9&x=226&y=87
+load count=114 total=00:01:59.640625 avg=00:00:01.049479 min=00:00:00.015625 max=00:00:02.125000
+save count=114 total=00:00:01.796875 avg=00:00:00.015762 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:32]
+get "GET /maps/gettile?map=yasat&z=9&x=226&y=86 HTTP/1.1\r\n\r\n"
+get count=119 total=00:01:59.015625 avg=00:00:01.000131 min=00:00:00 max=00:00:02.109375
+read_reply1 count=119 total=00:00:01 avg=00:00:00.008403 min=00:00:00 max=00:00:00.265625
+read_reply2 count=119 total=00:00:00.953125 avg=00:00:00.008009 min=00:00:00 max=00:00:00.250000
+read_header1 count=119 total=00:00:00.187500 avg=00:00:00.001575 min=00:00:00 max=00:00:00.062500
+read_header2 count=119 total=00:00:00.078125 avg=00:00:00.000656 min=00:00:00 max=00:00:00.062500
+read_body1 count=118 total=00:01:57.796875 avg=00:00:00.998278 min=00:00:00 max=00:00:02.109375
+read_body2 count=118 total=00:01:57.796875 avg=00:00:00.998278 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:32]
+load_file /maps/gettile?map=yasat&z=9&x=226&y=86
+load count=115 total=00:02:00.453125 avg=00:00:01.047418 min=00:00:00.015625 max=00:00:02.125000
+save count=115 total=00:00:01.843750 avg=00:00:00.016032 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:33]
+get "GET /maps/gettile?map=yasat&z=9&x=225&y=89 HTTP/1.1\r\n\r\n"
+get count=120 total=00:01:59.968750 avg=00:00:00.999739 min=00:00:00 max=00:00:02.109375
+read_reply1 count=120 total=00:00:01 avg=00:00:00.008333 min=00:00:00 max=00:00:00.265625
+read_reply2 count=120 total=00:00:00.953125 avg=00:00:00.007942 min=00:00:00 max=00:00:00.250000
+read_header1 count=120 total=00:00:00.187500 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_header2 count=120 total=00:00:00.078125 avg=00:00:00.000651 min=00:00:00 max=00:00:00.062500
+read_body1 count=119 total=00:01:58.750000 avg=00:00:00.997899 min=00:00:00 max=00:00:02.109375
+read_body2 count=119 total=00:01:58.750000 avg=00:00:00.997899 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:33]
+load_file /maps/gettile?map=yasat&z=9&x=225&y=89
+load count=116 total=00:02:01.421875 avg=00:00:01.046740 min=00:00:00.015625 max=00:00:02.125000
+save count=116 total=00:00:01.843750 avg=00:00:00.015894 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:34]
+get "GET /maps/gettile?map=yasat&z=9&x=225&y=88 HTTP/1.1\r\n\r\n"
+get count=121 total=00:02:00.765625 avg=00:00:00.998063 min=00:00:00 max=00:00:02.109375
+read_reply1 count=121 total=00:00:01.031250 avg=00:00:00.008522 min=00:00:00 max=00:00:00.265625
+read_reply2 count=121 total=00:00:00.984375 avg=00:00:00.008135 min=00:00:00 max=00:00:00.250000
+read_header1 count=121 total=00:00:00.187500 avg=00:00:00.001549 min=00:00:00 max=00:00:00.062500
+read_header2 count=121 total=00:00:00.078125 avg=00:00:00.000645 min=00:00:00 max=00:00:00.062500
+read_body1 count=120 total=00:01:59.515625 avg=00:00:00.995963 min=00:00:00 max=00:00:02.109375
+read_body2 count=120 total=00:01:59.515625 avg=00:00:00.995963 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:34]
+load_file /maps/gettile?map=yasat&z=9&x=225&y=88
+load count=117 total=00:02:02.218750 avg=00:00:01.044604 min=00:00:00.015625 max=00:00:02.125000
+save count=117 total=00:00:01.921875 avg=00:00:00.016426 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:35]
+get "GET /maps/gettile?map=yasat&z=9&x=225&y=87 HTTP/1.1\r\n\r\n"
+get count=122 total=00:02:01.781250 avg=00:00:00.998206 min=00:00:00 max=00:00:02.109375
+read_reply1 count=122 total=00:00:01.031250 avg=00:00:00.008452 min=00:00:00 max=00:00:00.265625
+read_reply2 count=122 total=00:00:00.984375 avg=00:00:00.008068 min=00:00:00 max=00:00:00.250000
+read_header1 count=122 total=00:00:00.187500 avg=00:00:00.001536 min=00:00:00 max=00:00:00.062500
+read_header2 count=122 total=00:00:00.078125 avg=00:00:00.000640 min=00:00:00 max=00:00:00.062500
+read_body1 count=121 total=00:02:00.531250 avg=00:00:00.996126 min=00:00:00 max=00:00:02.109375
+read_body2 count=121 total=00:02:00.531250 avg=00:00:00.996126 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:35]
+load_file /maps/gettile?map=yasat&z=9&x=225&y=87
+load count=118 total=00:02:03.234375 avg=00:00:01.044359 min=00:00:00.015625 max=00:00:02.125000
+save count=118 total=00:00:01.921875 avg=00:00:00.016287 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:36]
+get "GET /maps/gettile?map=yasat&z=11&x=899&y=355 HTTP/1.1\r\n\r\n"
+get count=123 total=00:02:02.562500 avg=00:00:00.996443 min=00:00:00 max=00:00:02.109375
+read_reply1 count=123 total=00:00:01.031250 avg=00:00:00.008384 min=00:00:00 max=00:00:00.265625
+read_reply2 count=123 total=00:00:00.984375 avg=00:00:00.008003 min=00:00:00 max=00:00:00.250000
+read_header1 count=123 total=00:00:00.187500 avg=00:00:00.001524 min=00:00:00 max=00:00:00.062500
+read_header2 count=123 total=00:00:00.078125 avg=00:00:00.000635 min=00:00:00 max=00:00:00.062500
+read_body1 count=122 total=00:02:01.312500 avg=00:00:00.994364 min=00:00:00 max=00:00:02.109375
+read_body2 count=122 total=00:02:01.312500 avg=00:00:00.994364 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:36]
+load_file /maps/gettile?map=yasat&z=11&x=899&y=355
+load count=119 total=00:02:04.031250 avg=00:00:01.042279 min=00:00:00.015625 max=00:00:02.125000
+save count=119 total=00:00:01.953125 avg=00:00:00.016412 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:37]
+get "GET /maps/gettile?map=yasat&z=11&x=899&y=354 HTTP/1.1\r\n\r\n"
+get count=124 total=00:02:03.718750 avg=00:00:00.997731 min=00:00:00 max=00:00:02.109375
+read_reply1 count=124 total=00:00:01.031250 avg=00:00:00.008316 min=00:00:00 max=00:00:00.265625
+read_reply2 count=124 total=00:00:00.984375 avg=00:00:00.007938 min=00:00:00 max=00:00:00.250000
+read_header1 count=124 total=00:00:00.203125 avg=00:00:00.001638 min=00:00:00 max=00:00:00.062500
+read_header2 count=124 total=00:00:00.078125 avg=00:00:00.000630 min=00:00:00 max=00:00:00.062500
+read_body1 count=123 total=00:02:02.453125 avg=00:00:00.995553 min=00:00:00 max=00:00:02.109375
+read_body2 count=123 total=00:02:02.453125 avg=00:00:00.995553 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:37]
+load_file /maps/gettile?map=yasat&z=11&x=899&y=354
+load count=120 total=00:02:05.203125 avg=00:00:01.043359 min=00:00:00.015625 max=00:00:02.125000
+save count=120 total=00:00:01.953125 avg=00:00:00.016276 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:38]
+get "GET /maps/gettile?map=yasat&z=11&x=899&y=353 HTTP/1.1\r\n\r\n"
+get count=125 total=00:02:04.812500 avg=00:00:00.998500 min=00:00:00 max=00:00:02.109375
+read_reply1 count=125 total=00:00:01.046875 avg=00:00:00.008375 min=00:00:00 max=00:00:00.265625
+read_reply2 count=125 total=00:00:01 avg=00:00:00.008000 min=00:00:00 max=00:00:00.250000
+read_header1 count=125 total=00:00:00.203125 avg=00:00:00.001625 min=00:00:00 max=00:00:00.062500
+read_header2 count=125 total=00:00:00.078125 avg=00:00:00.000625 min=00:00:00 max=00:00:00.062500
+read_body1 count=124 total=00:02:03.531250 avg=00:00:00.996219 min=00:00:00 max=00:00:02.109375
+read_body2 count=124 total=00:02:03.531250 avg=00:00:00.996219 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:38]
+load_file /maps/gettile?map=yasat&z=11&x=899&y=353
+load count=121 total=00:02:06.312500 avg=00:00:01.043904 min=00:00:00.015625 max=00:00:02.125000
+save count=121 total=00:00:01.984375 avg=00:00:00.016399 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:39]
+get "GET /maps/gettile?map=yasat&z=11&x=899&y=352 HTTP/1.1\r\n\r\n"
+get count=126 total=00:02:05.578125 avg=00:00:00.996651 min=00:00:00 max=00:00:02.109375
+read_reply1 count=126 total=00:00:01.046875 avg=00:00:00.008308 min=00:00:00 max=00:00:00.265625
+read_reply2 count=126 total=00:00:01 avg=00:00:00.007936 min=00:00:00 max=00:00:00.250000
+read_header1 count=126 total=00:00:00.203125 avg=00:00:00.001612 min=00:00:00 max=00:00:00.062500
+read_header2 count=126 total=00:00:00.078125 avg=00:00:00.000620 min=00:00:00 max=00:00:00.062500
+read_body1 count=125 total=00:02:04.296875 avg=00:00:00.994375 min=00:00:00 max=00:00:02.109375
+read_body2 count=125 total=00:02:04.296875 avg=00:00:00.994375 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:39]
+load_file /maps/gettile?map=yasat&z=11&x=899&y=352
+load count=122 total=00:02:07.078125 avg=00:00:01.041623 min=00:00:00.015625 max=00:00:02.125000
+save count=122 total=00:00:01.984375 avg=00:00:00.016265 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:40]
+get "GET /maps/gettile?map=yasat&z=11&x=898&y=355 HTTP/1.1\r\n\r\n"
+get count=127 total=00:02:06.453125 avg=00:00:00.995693 min=00:00:00 max=00:00:02.109375
+read_reply1 count=127 total=00:00:01.046875 avg=00:00:00.008243 min=00:00:00 max=00:00:00.265625
+read_reply2 count=127 total=00:00:01 avg=00:00:00.007874 min=00:00:00 max=00:00:00.250000
+read_header1 count=127 total=00:00:00.203125 avg=00:00:00.001599 min=00:00:00 max=00:00:00.062500
+read_header2 count=127 total=00:00:00.078125 avg=00:00:00.000615 min=00:00:00 max=00:00:00.062500
+read_body1 count=126 total=00:02:05.171875 avg=00:00:00.993427 min=00:00:00 max=00:00:02.109375
+read_body2 count=126 total=00:02:05.171875 avg=00:00:00.993427 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:40]
+load_file /maps/gettile?map=yasat&z=11&x=898&y=355
+load count=123 total=00:02:07.968750 avg=00:00:01.040396 min=00:00:00.015625 max=00:00:02.125000
+save count=123 total=00:00:02.015625 avg=00:00:00.016387 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:41]
+get "GET /maps/gettile?map=yasat&z=11&x=898&y=354 HTTP/1.1\r\n\r\n"
+get count=128 total=00:02:07.609375 avg=00:00:00.996948 min=00:00:00 max=00:00:02.109375
+read_reply1 count=128 total=00:00:01.046875 avg=00:00:00.008178 min=00:00:00 max=00:00:00.265625
+read_reply2 count=128 total=00:00:01 avg=00:00:00.007812 min=00:00:00 max=00:00:00.250000
+read_header1 count=128 total=00:00:00.203125 avg=00:00:00.001586 min=00:00:00 max=00:00:00.062500
+read_header2 count=128 total=00:00:00.078125 avg=00:00:00.000610 min=00:00:00 max=00:00:00.062500
+read_body1 count=127 total=00:02:06.328125 avg=00:00:00.994709 min=00:00:00 max=00:00:02.109375
+read_body2 count=127 total=00:02:06.328125 avg=00:00:00.994709 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:41]
+load_file /maps/gettile?map=yasat&z=11&x=898&y=354
+load count=124 total=00:02:09.125000 avg=00:00:01.041330 min=00:00:00.015625 max=00:00:02.125000
+save count=124 total=00:00:02.031250 avg=00:00:00.016381 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:41]
+get "GET /maps/gettile?map=yasat&z=11&x=898&y=353 HTTP/1.1\r\n\r\n"
+get count=129 total=00:02:07.640625 avg=00:00:00.989462 min=00:00:00 max=00:00:02.109375
+read_reply1 count=129 total=00:00:01.046875 avg=00:00:00.008115 min=00:00:00 max=00:00:00.265625
+read_reply2 count=129 total=00:00:01 avg=00:00:00.007751 min=00:00:00 max=00:00:00.250000
+read_header1 count=129 total=00:00:00.203125 avg=00:00:00.001574 min=00:00:00 max=00:00:00.062500
+read_header2 count=129 total=00:00:00.078125 avg=00:00:00.000605 min=00:00:00 max=00:00:00.062500
+read_body1 count=128 total=00:02:06.359375 avg=00:00:00.987182 min=00:00:00 max=00:00:02.109375
+read_body2 count=128 total=00:02:06.359375 avg=00:00:00.987182 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:41]
+load_file /maps/gettile?map=yasat&z=11&x=898&y=353
+load count=125 total=00:02:09.156250 avg=00:00:01.033250 min=00:00:00.015625 max=00:00:02.125000
+save count=125 total=00:00:02.031250 avg=00:00:00.016250 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:42]
+get "GET /maps/gettile?map=yasat&z=11&x=898&y=352 HTTP/1.1\r\n\r\n"
+get count=130 total=00:02:08.375000 avg=00:00:00.987500 min=00:00:00 max=00:00:02.109375
+read_reply1 count=130 total=00:00:01.046875 avg=00:00:00.008052 min=00:00:00 max=00:00:00.265625
+read_reply2 count=130 total=00:00:01 avg=00:00:00.007692 min=00:00:00 max=00:00:00.250000
+read_header1 count=130 total=00:00:00.203125 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_header2 count=130 total=00:00:00.078125 avg=00:00:00.000600 min=00:00:00 max=00:00:00.062500
+read_body1 count=129 total=00:02:07.093750 avg=00:00:00.985222 min=00:00:00 max=00:00:02.109375
+read_body2 count=129 total=00:02:07.093750 avg=00:00:00.985222 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:42]
+load_file /maps/gettile?map=yasat&z=11&x=898&y=352
+load count=126 total=00:02:09.906250 avg=00:00:01.031001 min=00:00:00.015625 max=00:00:02.125000
+save count=126 total=00:00:02.031250 avg=00:00:00.016121 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:43]
+get "GET /maps/gettile?map=yasat&z=11&x=897&y=355 HTTP/1.1\r\n\r\n"
+get count=131 total=00:02:09.375000 avg=00:00:00.987595 min=00:00:00 max=00:00:02.109375
+read_reply1 count=131 total=00:00:01.062500 avg=00:00:00.008110 min=00:00:00 max=00:00:00.265625
+read_reply2 count=131 total=00:00:01.015625 avg=00:00:00.007752 min=00:00:00 max=00:00:00.250000
+read_header1 count=131 total=00:00:00.203125 avg=00:00:00.001550 min=00:00:00 max=00:00:00.062500
+read_header2 count=131 total=00:00:00.078125 avg=00:00:00.000596 min=00:00:00 max=00:00:00.062500
+read_body1 count=130 total=00:02:08.078125 avg=00:00:00.985216 min=00:00:00 max=00:00:02.109375
+read_body2 count=130 total=00:02:08.078125 avg=00:00:00.985216 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:43]
+load_file /maps/gettile?map=yasat&z=11&x=897&y=355
+load count=127 total=00:02:10.906250 avg=00:00:01.030757 min=00:00:00.015625 max=00:00:02.125000
+save count=127 total=00:00:02.062500 avg=00:00:00.016240 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:44]
+get "GET /maps/gettile?map=yasat&z=11&x=897&y=354 HTTP/1.1\r\n\r\n"
+get count=132 total=00:02:10.140625 avg=00:00:00.985913 min=00:00:00 max=00:00:02.109375
+read_reply1 count=132 total=00:00:01.078125 avg=00:00:00.008167 min=00:00:00 max=00:00:00.265625
+read_reply2 count=132 total=00:00:01.031250 avg=00:00:00.007812 min=00:00:00 max=00:00:00.250000
+read_header1 count=132 total=00:00:00.203125 avg=00:00:00.001538 min=00:00:00 max=00:00:00.062500
+read_header2 count=132 total=00:00:00.078125 avg=00:00:00.000591 min=00:00:00 max=00:00:00.062500
+read_body1 count=131 total=00:02:08.828125 avg=00:00:00.983420 min=00:00:00 max=00:00:02.109375
+read_body2 count=131 total=00:02:08.828125 avg=00:00:00.983420 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:44]
+load_file /maps/gettile?map=yasat&z=11&x=897&y=354
+load count=128 total=00:02:11.687500 avg=00:00:01.028808 min=00:00:00.015625 max=00:00:02.125000
+save count=128 total=00:00:02.062500 avg=00:00:00.016113 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:45]
+get "GET /maps/gettile?map=yasat&z=11&x=897&y=353 HTTP/1.1\r\n\r\n"
+get count=133 total=00:02:11.125000 avg=00:00:00.985902 min=00:00:00 max=00:00:02.109375
+read_reply1 count=133 total=00:00:01.078125 avg=00:00:00.008106 min=00:00:00 max=00:00:00.265625
+read_reply2 count=133 total=00:00:01.031250 avg=00:00:00.007753 min=00:00:00 max=00:00:00.250000
+read_header1 count=133 total=00:00:00.218750 avg=00:00:00.001644 min=00:00:00 max=00:00:00.062500
+read_header2 count=133 total=00:00:00.093750 avg=00:00:00.000704 min=00:00:00 max=00:00:00.062500
+read_body1 count=132 total=00:02:09.796875 avg=00:00:00.983309 min=00:00:00 max=00:00:02.109375
+read_body2 count=132 total=00:02:09.796875 avg=00:00:00.983309 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:45]
+load_file /maps/gettile?map=yasat&z=11&x=897&y=353
+load count=129 total=00:02:12.687500 avg=00:00:01.028585 min=00:00:00.015625 max=00:00:02.125000
+save count=129 total=00:00:02.093750 avg=00:00:00.016230 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:46]
+get "GET /maps/gettile?map=yasat&z=11&x=897&y=352 HTTP/1.1\r\n\r\n"
+get count=134 total=00:02:12.093750 avg=00:00:00.985774 min=00:00:00 max=00:00:02.109375
+read_reply1 count=134 total=00:00:01.093750 avg=00:00:00.008162 min=00:00:00 max=00:00:00.265625
+read_reply2 count=134 total=00:00:01.046875 avg=00:00:00.007812 min=00:00:00 max=00:00:00.250000
+read_header1 count=134 total=00:00:00.218750 avg=00:00:00.001632 min=00:00:00 max=00:00:00.062500
+read_header2 count=134 total=00:00:00.093750 avg=00:00:00.000699 min=00:00:00 max=00:00:00.062500
+read_body1 count=133 total=00:02:10.750000 avg=00:00:00.983082 min=00:00:00 max=00:00:02.109375
+read_body2 count=133 total=00:02:10.750000 avg=00:00:00.983082 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:46]
+load_file /maps/gettile?map=yasat&z=11&x=897&y=352
+load count=130 total=00:02:13.656250 avg=00:00:01.028125 min=00:00:00.015625 max=00:00:02.125000
+save count=130 total=00:00:02.109375 avg=00:00:00.016225 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:47]
+get "GET /maps/gettile?map=yasat&z=11&x=896&y=355 HTTP/1.1\r\n\r\n"
+get count=135 total=00:02:13.078125 avg=00:00:00.985763 min=00:00:00 max=00:00:02.109375
+read_reply1 count=135 total=00:00:01.093750 avg=00:00:00.008101 min=00:00:00 max=00:00:00.265625
+read_reply2 count=135 total=00:00:01.046875 avg=00:00:00.007754 min=00:00:00 max=00:00:00.250000
+read_header1 count=135 total=00:00:00.218750 avg=00:00:00.001620 min=00:00:00 max=00:00:00.062500
+read_header2 count=135 total=00:00:00.093750 avg=00:00:00.000694 min=00:00:00 max=00:00:00.062500
+read_body1 count=134 total=00:02:11.734375 avg=00:00:00.983092 min=00:00:00 max=00:00:02.109375
+read_body2 count=134 total=00:02:11.734375 avg=00:00:00.983092 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:47]
+load_file /maps/gettile?map=yasat&z=11&x=896&y=355
+load count=131 total=00:02:14.656250 avg=00:00:01.027910 min=00:00:00.015625 max=00:00:02.125000
+save count=131 total=00:00:02.140625 avg=00:00:00.016340 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:48]
+get "GET /maps/gettile?map=yasat&z=11&x=896&y=354 HTTP/1.1\r\n\r\n"
+get count=136 total=00:02:14.218750 avg=00:00:00.986902 min=00:00:00 max=00:00:02.109375
+read_reply1 count=136 total=00:00:01.093750 avg=00:00:00.008042 min=00:00:00 max=00:00:00.265625
+read_reply2 count=136 total=00:00:01.046875 avg=00:00:00.007697 min=00:00:00 max=00:00:00.250000
+read_header1 count=136 total=00:00:00.218750 avg=00:00:00.001608 min=00:00:00 max=00:00:00.062500
+read_header2 count=136 total=00:00:00.093750 avg=00:00:00.000689 min=00:00:00 max=00:00:00.062500
+read_body1 count=135 total=00:02:12.875000 avg=00:00:00.984259 min=00:00:00 max=00:00:02.109375
+read_body2 count=135 total=00:02:12.875000 avg=00:00:00.984259 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:48]
+load_file /maps/gettile?map=yasat&z=11&x=896&y=354
+load count=132 total=00:02:15.812500 avg=00:00:01.028882 min=00:00:00.015625 max=00:00:02.125000
+save count=132 total=00:00:02.140625 avg=00:00:00.016216 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:49]
+get "GET /maps/gettile?map=yasat&z=11&x=896&y=353 HTTP/1.1\r\n\r\n"
+get count=137 total=00:02:15 avg=00:00:00.985401 min=00:00:00 max=00:00:02.109375
+read_reply1 count=137 total=00:00:01.093750 avg=00:00:00.007983 min=00:00:00 max=00:00:00.265625
+read_reply2 count=137 total=00:00:01.046875 avg=00:00:00.007641 min=00:00:00 max=00:00:00.250000
+read_header1 count=137 total=00:00:00.218750 avg=00:00:00.001596 min=00:00:00 max=00:00:00.062500
+read_header2 count=137 total=00:00:00.093750 avg=00:00:00.000684 min=00:00:00 max=00:00:00.062500
+read_body1 count=136 total=00:02:13.656250 avg=00:00:00.982766 min=00:00:00 max=00:00:02.109375
+read_body2 count=136 total=00:02:13.656250 avg=00:00:00.982766 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:49]
+load_file /maps/gettile?map=yasat&z=11&x=896&y=353
+load count=133 total=00:02:16.609375 avg=00:00:01.027138 min=00:00:00.015625 max=00:00:02.125000
+save count=133 total=00:00:02.140625 avg=00:00:00.016094 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:50]
+get "GET /maps/gettile?map=yasat&z=11&x=896&y=352 HTTP/1.1\r\n\r\n"
+get count=138 total=00:02:15.984375 avg=00:00:00.985394 min=00:00:00 max=00:00:02.109375
+read_reply1 count=138 total=00:00:01.093750 avg=00:00:00.007925 min=00:00:00 max=00:00:00.265625
+read_reply2 count=138 total=00:00:01.046875 avg=00:00:00.007586 min=00:00:00 max=00:00:00.250000
+read_header1 count=138 total=00:00:00.218750 avg=00:00:00.001585 min=00:00:00 max=00:00:00.062500
+read_header2 count=138 total=00:00:00.093750 avg=00:00:00.000679 min=00:00:00 max=00:00:00.062500
+read_body1 count=137 total=00:02:14.640625 avg=00:00:00.982778 min=00:00:00 max=00:00:02.109375
+read_body2 count=137 total=00:02:14.640625 avg=00:00:00.982778 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:50]
+load_file /maps/gettile?map=yasat&z=11&x=896&y=352
+load count=134 total=00:02:17.609375 avg=00:00:01.026935 min=00:00:00.015625 max=00:00:02.125000
+save count=134 total=00:00:02.140625 avg=00:00:00.015974 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:51]
+get "GET /maps/gettile?map=yasat&z=11&x=895&y=355 HTTP/1.1\r\n\r\n"
+get count=139 total=00:02:16.968750 avg=00:00:00.985386 min=00:00:00 max=00:00:02.109375
+read_reply1 count=139 total=00:00:01.093750 avg=00:00:00.007868 min=00:00:00 max=00:00:00.265625
+read_reply2 count=139 total=00:00:01.046875 avg=00:00:00.007531 min=00:00:00 max=00:00:00.250000
+read_header1 count=139 total=00:00:00.218750 avg=00:00:00.001573 min=00:00:00 max=00:00:00.062500
+read_header2 count=139 total=00:00:00.093750 avg=00:00:00.000674 min=00:00:00 max=00:00:00.062500
+read_body1 count=138 total=00:02:15.625000 avg=00:00:00.982789 min=00:00:00 max=00:00:02.109375
+read_body2 count=138 total=00:02:15.625000 avg=00:00:00.982789 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:51]
+load_file /maps/gettile?map=yasat&z=11&x=895&y=355
+load count=135 total=00:02:18.609375 avg=00:00:01.026736 min=00:00:00.015625 max=00:00:02.125000
+save count=135 total=00:00:02.156250 avg=00:00:00.015972 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:52]
+get "GET /maps/gettile?map=yasat&z=11&x=895&y=354 HTTP/1.1\r\n\r\n"
+get count=140 total=00:02:17.750000 avg=00:00:00.983928 min=00:00:00 max=00:00:02.109375
+read_reply1 count=140 total=00:00:01.093750 avg=00:00:00.007812 min=00:00:00 max=00:00:00.265625
+read_reply2 count=140 total=00:00:01.046875 avg=00:00:00.007477 min=00:00:00 max=00:00:00.250000
+read_header1 count=140 total=00:00:00.218750 avg=00:00:00.001562 min=00:00:00 max=00:00:00.062500
+read_header2 count=140 total=00:00:00.093750 avg=00:00:00.000669 min=00:00:00 max=00:00:00.062500
+read_body1 count=139 total=00:02:16.406250 avg=00:00:00.981339 min=00:00:00 max=00:00:02.109375
+read_body2 count=139 total=00:02:16.406250 avg=00:00:00.981339 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:52]
+load_file /maps/gettile?map=yasat&z=11&x=895&y=354
+load count=136 total=00:02:19.406250 avg=00:00:01.025045 min=00:00:00.015625 max=00:00:02.125000
+save count=136 total=00:00:02.156250 avg=00:00:00.015854 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:53]
+get "GET /maps/gettile?map=yasat&z=11&x=895&y=353 HTTP/1.1\r\n\r\n"
+get count=141 total=00:02:18.750000 avg=00:00:00.984042 min=00:00:00 max=00:00:02.109375
+read_reply1 count=141 total=00:00:01.109375 avg=00:00:00.007867 min=00:00:00 max=00:00:00.265625
+read_reply2 count=141 total=00:00:01.062500 avg=00:00:00.007535 min=00:00:00 max=00:00:00.250000
+read_header1 count=141 total=00:00:00.218750 avg=00:00:00.001551 min=00:00:00 max=00:00:00.062500
+read_header2 count=141 total=00:00:00.093750 avg=00:00:00.000664 min=00:00:00 max=00:00:00.062500
+read_body1 count=140 total=00:02:17.390625 avg=00:00:00.981361 min=00:00:00 max=00:00:02.109375
+read_body2 count=140 total=00:02:17.390625 avg=00:00:00.981361 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:53]
+load_file /maps/gettile?map=yasat&z=11&x=895&y=353
+load count=137 total=00:02:20.406250 avg=00:00:01.024863 min=00:00:00.015625 max=00:00:02.125000
+save count=137 total=00:00:02.187500 avg=00:00:00.015967 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:54]
+get "GET /maps/gettile?map=yasat&z=11&x=895&y=352 HTTP/1.1\r\n\r\n"
+get count=142 total=00:02:19.718750 avg=00:00:00.983934 min=00:00:00 max=00:00:02.109375
+read_reply1 count=142 total=00:00:01.125000 avg=00:00:00.007922 min=00:00:00 max=00:00:00.265625
+read_reply2 count=142 total=00:00:01.078125 avg=00:00:00.007592 min=00:00:00 max=00:00:00.250000
+read_header1 count=142 total=00:00:00.218750 avg=00:00:00.001540 min=00:00:00 max=00:00:00.062500
+read_header2 count=142 total=00:00:00.093750 avg=00:00:00.000660 min=00:00:00 max=00:00:00.062500
+read_body1 count=141 total=00:02:18.343750 avg=00:00:00.981161 min=00:00:00 max=00:00:02.109375
+read_body2 count=141 total=00:02:18.343750 avg=00:00:00.981161 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:54]
+load_file /maps/gettile?map=yasat&z=11&x=895&y=352
+load count=138 total=00:02:21.390625 avg=00:00:01.024569 min=00:00:00.015625 max=00:00:02.125000
+save count=138 total=00:00:02.187500 avg=00:00:00.015851 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:55]
+get "GET /maps/gettile?map=yasat&z=11&x=894&y=355 HTTP/1.1\r\n\r\n"
+get count=143 total=00:02:20.703125 avg=00:00:00.983937 min=00:00:00 max=00:00:02.109375
+read_reply1 count=143 total=00:00:01.125000 avg=00:00:00.007867 min=00:00:00 max=00:00:00.265625
+read_reply2 count=143 total=00:00:01.078125 avg=00:00:00.007539 min=00:00:00 max=00:00:00.250000
+read_header1 count=143 total=00:00:00.218750 avg=00:00:00.001529 min=00:00:00 max=00:00:00.062500
+read_header2 count=143 total=00:00:00.093750 avg=00:00:00.000655 min=00:00:00 max=00:00:00.062500
+read_body1 count=142 total=00:02:19.328125 avg=00:00:00.981183 min=00:00:00 max=00:00:02.109375
+read_body2 count=142 total=00:02:19.328125 avg=00:00:00.981183 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:55]
+load_file /maps/gettile?map=yasat&z=11&x=894&y=355
+load count=139 total=00:02:22.390625 avg=00:00:01.024392 min=00:00:00.015625 max=00:00:02.125000
+save count=139 total=00:00:02.218750 avg=00:00:00.015962 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:55]
+get "GET /maps/gettile?map=yasat&z=11&x=894&y=354 HTTP/1.1\r\n\r\n"
+get count=144 total=00:02:21.468750 avg=00:00:00.982421 min=00:00:00 max=00:00:02.109375
+read_reply1 count=144 total=00:00:01.125000 avg=00:00:00.007812 min=00:00:00 max=00:00:00.265625
+read_reply2 count=144 total=00:00:01.078125 avg=00:00:00.007486 min=00:00:00 max=00:00:00.250000
+read_header1 count=144 total=00:00:00.218750 avg=00:00:00.001519 min=00:00:00 max=00:00:00.062500
+read_header2 count=144 total=00:00:00.093750 avg=00:00:00.000651 min=00:00:00 max=00:00:00.062500
+read_body1 count=143 total=00:02:20.093750 avg=00:00:00.979676 min=00:00:00 max=00:00:02.109375
+read_body2 count=143 total=00:02:20.093750 avg=00:00:00.979676 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:55]
+load_file /maps/gettile?map=yasat&z=11&x=894&y=354
+load count=140 total=00:02:23.156250 avg=00:00:01.022544 min=00:00:00.015625 max=00:00:02.125000
+save count=140 total=00:00:02.234375 avg=00:00:00.015959 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:57]
+get "GET /maps/gettile?map=yasat&z=11&x=894&y=353 HTTP/1.1\r\n\r\n"
+get count=145 total=00:02:22.562500 avg=00:00:00.983189 min=00:00:00 max=00:00:02.109375
+read_reply1 count=145 total=00:00:01.125000 avg=00:00:00.007758 min=00:00:00 max=00:00:00.265625
+read_reply2 count=145 total=00:00:01.078125 avg=00:00:00.007435 min=00:00:00 max=00:00:00.250000
+read_header1 count=145 total=00:00:00.218750 avg=00:00:00.001508 min=00:00:00 max=00:00:00.062500
+read_header2 count=145 total=00:00:00.093750 avg=00:00:00.000646 min=00:00:00 max=00:00:00.062500
+read_body1 count=144 total=00:02:21.187500 avg=00:00:00.980468 min=00:00:00 max=00:00:02.109375
+read_body2 count=144 total=00:02:21.187500 avg=00:00:00.980468 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:57]
+load_file /maps/gettile?map=yasat&z=11&x=894&y=353
+load count=141 total=00:02:24.250000 avg=00:00:01.023049 min=00:00:00.015625 max=00:00:02.125000
+save count=141 total=00:00:02.234375 avg=00:00:00.015846 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:57]
+get "GET /maps/gettile?map=yasat&z=11&x=894&y=352 HTTP/1.1\r\n\r\n"
+get count=146 total=00:02:22.578125 avg=00:00:00.976562 min=00:00:00 max=00:00:02.109375
+read_reply1 count=146 total=00:00:01.125000 avg=00:00:00.007705 min=00:00:00 max=00:00:00.265625
+read_reply2 count=146 total=00:00:01.078125 avg=00:00:00.007384 min=00:00:00 max=00:00:00.250000
+read_header1 count=146 total=00:00:00.218750 avg=00:00:00.001498 min=00:00:00 max=00:00:00.062500
+read_header2 count=146 total=00:00:00.093750 avg=00:00:00.000642 min=00:00:00 max=00:00:00.062500
+read_body1 count=145 total=00:02:21.203125 avg=00:00:00.973814 min=00:00:00 max=00:00:02.109375
+read_body2 count=145 total=00:02:21.203125 avg=00:00:00.973814 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:57]
+load_file /maps/gettile?map=yasat&z=11&x=894&y=352
+load count=142 total=00:02:24.281250 avg=00:00:01.016065 min=00:00:00.015625 max=00:00:02.125000
+save count=142 total=00:00:02.234375 avg=00:00:00.015735 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:57]
+get "GET /maps/gettile?map=yasat&z=11&x=893&y=355 HTTP/1.1\r\n\r\n"
+get count=147 total=00:02:22.609375 avg=00:00:00.970131 min=00:00:00 max=00:00:02.109375
+read_reply1 count=147 total=00:00:01.140625 avg=00:00:00.007759 min=00:00:00 max=00:00:00.265625
+read_reply2 count=147 total=00:00:01.093750 avg=00:00:00.007440 min=00:00:00 max=00:00:00.250000
+read_header1 count=147 total=00:00:00.218750 avg=00:00:00.001488 min=00:00:00 max=00:00:00.062500
+read_header2 count=147 total=00:00:00.093750 avg=00:00:00.000637 min=00:00:00 max=00:00:00.062500
+read_body1 count=146 total=00:02:21.218750 avg=00:00:00.967251 min=00:00:00 max=00:00:02.109375
+read_body2 count=146 total=00:02:21.218750 avg=00:00:00.967251 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:57]
+load_file /maps/gettile?map=yasat&z=11&x=893&y=355
+load count=143 total=00:02:24.312500 avg=00:00:01.009178 min=00:00:00.015625 max=00:00:02.125000
+save count=143 total=00:00:02.281250 avg=00:00:00.015952 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:58]
+get "GET /maps/gettile?map=yasat&z=11&x=893&y=354 HTTP/1.1\r\n\r\n"
+get count=148 total=00:02:23.484375 avg=00:00:00.969489 min=00:00:00 max=00:00:02.109375
+read_reply1 count=148 total=00:00:01.140625 avg=00:00:00.007706 min=00:00:00 max=00:00:00.265625
+read_reply2 count=148 total=00:00:01.093750 avg=00:00:00.007390 min=00:00:00 max=00:00:00.250000
+read_header1 count=148 total=00:00:00.218750 avg=00:00:00.001478 min=00:00:00 max=00:00:00.062500
+read_header2 count=148 total=00:00:00.093750 avg=00:00:00.000633 min=00:00:00 max=00:00:00.062500
+read_body1 count=147 total=00:02:22.093750 avg=00:00:00.966624 min=00:00:00 max=00:00:02.109375
+read_body2 count=147 total=00:02:22.093750 avg=00:00:00.966624 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:58]
+load_file /maps/gettile?map=yasat&z=11&x=893&y=354
+load count=144 total=00:02:25.203125 avg=00:00:01.008355 min=00:00:00.015625 max=00:00:02.125000
+save count=144 total=00:00:02.281250 avg=00:00:00.015842 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:54:59]
+get "GET /maps/gettile?map=yasat&z=11&x=893&y=353 HTTP/1.1\r\n\r\n"
+get count=149 total=00:02:24.468750 avg=00:00:00.969588 min=00:00:00 max=00:00:02.109375
+read_reply1 count=149 total=00:00:01.140625 avg=00:00:00.007655 min=00:00:00 max=00:00:00.265625
+read_reply2 count=149 total=00:00:01.093750 avg=00:00:00.007340 min=00:00:00 max=00:00:00.250000
+read_header1 count=149 total=00:00:00.218750 avg=00:00:00.001468 min=00:00:00 max=00:00:00.062500
+read_header2 count=149 total=00:00:00.093750 avg=00:00:00.000629 min=00:00:00 max=00:00:00.062500
+read_body1 count=148 total=00:02:23.078125 avg=00:00:00.966744 min=00:00:00 max=00:00:02.109375
+read_body2 count=148 total=00:02:23.078125 avg=00:00:00.966744 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:54:59]
+load_file /maps/gettile?map=yasat&z=11&x=893&y=353
+load count=145 total=00:02:26.187500 avg=00:00:01.008189 min=00:00:00.015625 max=00:00:02.125000
+save count=145 total=00:00:02.328125 avg=00:00:00.016056 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:00]
+get "GET /maps/gettile?map=yasat&z=11&x=893&y=352 HTTP/1.1\r\n\r\n"
+get count=150 total=00:02:25.421875 avg=00:00:00.969479 min=00:00:00 max=00:00:02.109375
+read_reply1 count=150 total=00:00:01.156250 avg=00:00:00.007708 min=00:00:00 max=00:00:00.265625
+read_reply2 count=150 total=00:00:01.109375 avg=00:00:00.007395 min=00:00:00 max=00:00:00.250000
+read_header1 count=150 total=00:00:00.218750 avg=00:00:00.001458 min=00:00:00 max=00:00:00.062500
+read_header2 count=150 total=00:00:00.093750 avg=00:00:00.000625 min=00:00:00 max=00:00:00.062500
+read_body1 count=149 total=00:02:24.015625 avg=00:00:00.966547 min=00:00:00 max=00:00:02.109375
+read_body2 count=149 total=00:02:24.015625 avg=00:00:00.966547 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:00]
+load_file /maps/gettile?map=yasat&z=11&x=893&y=352
+load count=146 total=00:02:27.156250 avg=00:00:01.007919 min=00:00:00.015625 max=00:00:02.125000
+save count=146 total=00:00:02.328125 avg=00:00:00.015946 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:00]
+get "GET /maps/gettile?map=yasat&z=9&x=225&y=86 HTTP/1.1\r\n\r\n"
+get count=151 total=00:02:25.453125 avg=00:00:00.963265 min=00:00:00 max=00:00:02.109375
+read_reply1 count=151 total=00:00:01.171875 avg=00:00:00.007760 min=00:00:00 max=00:00:00.265625
+read_reply2 count=151 total=00:00:01.125000 avg=00:00:00.007450 min=00:00:00 max=00:00:00.250000
+read_header1 count=151 total=00:00:00.218750 avg=00:00:00.001448 min=00:00:00 max=00:00:00.062500
+read_header2 count=151 total=00:00:00.093750 avg=00:00:00.000620 min=00:00:00 max=00:00:00.062500
+read_body1 count=150 total=00:02:24.031250 avg=00:00:00.960208 min=00:00:00 max=00:00:02.109375
+read_body2 count=150 total=00:02:24.031250 avg=00:00:00.960208 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:00]
+load_file /maps/gettile?map=yasat&z=9&x=225&y=86
+load count=147 total=00:02:27.296875 avg=00:00:01.002019 min=00:00:00.015625 max=00:00:02.125000
+save count=147 total=00:00:02.328125 avg=00:00:00.015837 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:00]
+get "GET /maps/gettile?map=yasat&z=9&x=224&y=89 HTTP/1.1\r\n\r\n"
+get count=152 total=00:02:25.468750 avg=00:00:00.957031 min=00:00:00 max=00:00:02.109375
+read_reply1 count=152 total=00:00:01.171875 avg=00:00:00.007709 min=00:00:00 max=00:00:00.265625
+read_reply2 count=152 total=00:00:01.125000 avg=00:00:00.007401 min=00:00:00 max=00:00:00.250000
+read_header1 count=152 total=00:00:00.218750 avg=00:00:00.001439 min=00:00:00 max=00:00:00.062500
+read_header2 count=152 total=00:00:00.093750 avg=00:00:00.000616 min=00:00:00 max=00:00:00.062500
+read_body1 count=151 total=00:02:24.046875 avg=00:00:00.953952 min=00:00:00 max=00:00:02.109375
+read_body2 count=151 total=00:02:24.046875 avg=00:00:00.953952 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:00]
+load_file /maps/gettile?map=yasat&z=9&x=224&y=89
+load count=148 total=00:02:27.328125 avg=00:00:00.995460 min=00:00:00.015625 max=00:00:02.125000
+save count=148 total=00:00:02.359375 avg=00:00:00.015941 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:01]
+get "GET /maps/gettile?map=yasat&z=9&x=224&y=88 HTTP/1.1\r\n\r\n"
+get count=153 total=00:02:26.234375 avg=00:00:00.955780 min=00:00:00 max=00:00:02.109375
+read_reply1 count=153 total=00:00:01.171875 avg=00:00:00.007659 min=00:00:00 max=00:00:00.265625
+read_reply2 count=153 total=00:00:01.125000 avg=00:00:00.007352 min=00:00:00 max=00:00:00.250000
+read_header1 count=153 total=00:00:00.218750 avg=00:00:00.001429 min=00:00:00 max=00:00:00.062500
+read_header2 count=153 total=00:00:00.093750 avg=00:00:00.000612 min=00:00:00 max=00:00:00.062500
+read_body1 count=152 total=00:02:24.812500 avg=00:00:00.952713 min=00:00:00 max=00:00:02.109375
+read_body2 count=152 total=00:02:24.812500 avg=00:00:00.952713 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:01]
+load_file /maps/gettile?map=yasat&z=9&x=224&y=88
+load count=149 total=00:02:28.093750 avg=00:00:00.993917 min=00:00:00.015625 max=00:00:02.125000
+save count=149 total=00:00:02.359375 avg=00:00:00.015834 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:02]
+get "GET /maps/gettile?map=yasat&z=9&x=224&y=87 HTTP/1.1\r\n\r\n"
+get count=154 total=00:02:27.218750 avg=00:00:00.955965 min=00:00:00 max=00:00:02.109375
+read_reply1 count=154 total=00:00:01.171875 avg=00:00:00.007609 min=00:00:00 max=00:00:00.265625
+read_reply2 count=154 total=00:00:01.125000 avg=00:00:00.007305 min=00:00:00 max=00:00:00.250000
+read_header1 count=154 total=00:00:00.218750 avg=00:00:00.001420 min=00:00:00 max=00:00:00.062500
+read_header2 count=154 total=00:00:00.093750 avg=00:00:00.000608 min=00:00:00 max=00:00:00.062500
+read_body1 count=153 total=00:02:25.796875 avg=00:00:00.952920 min=00:00:00 max=00:00:02.109375
+read_body2 count=153 total=00:02:25.796875 avg=00:00:00.952920 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:02]
+load_file /maps/gettile?map=yasat&z=9&x=224&y=87
+load count=150 total=00:02:29.093750 avg=00:00:00.993958 min=00:00:00.015625 max=00:00:02.125000
+save count=150 total=00:00:02.359375 avg=00:00:00.015729 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:02]
+get "GET /maps/gettile?map=yasat&z=9&x=224&y=86 HTTP/1.1\r\n\r\n"
+get count=155 total=00:02:27.250000 avg=00:00:00.950000 min=00:00:00 max=00:00:02.109375
+read_reply1 count=155 total=00:00:01.187500 avg=00:00:00.007661 min=00:00:00 max=00:00:00.265625
+read_reply2 count=155 total=00:00:01.140625 avg=00:00:00.007358 min=00:00:00 max=00:00:00.250000
+read_header1 count=155 total=00:00:00.218750 avg=00:00:00.001411 min=00:00:00 max=00:00:00.062500
+read_header2 count=155 total=00:00:00.093750 avg=00:00:00.000604 min=00:00:00 max=00:00:00.062500
+read_body1 count=154 total=00:02:25.812500 avg=00:00:00.946834 min=00:00:00 max=00:00:02.109375
+read_body2 count=154 total=00:02:25.812500 avg=00:00:00.946834 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:02]
+load_file /maps/gettile?map=yasat&z=9&x=224&y=86
+load count=151 total=00:02:29.218750 avg=00:00:00.988203 min=00:00:00.015625 max=00:00:02.125000
+save count=151 total=00:00:02.390625 avg=00:00:00.015831 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:02]
+get "GET /maps/gettile?map=yasat&z=9&x=223&y=89 HTTP/1.1\r\n\r\n"
+get count=156 total=00:02:27.265625 avg=00:00:00.944010 min=00:00:00 max=00:00:02.109375
+read_reply1 count=156 total=00:00:01.187500 avg=00:00:00.007612 min=00:00:00 max=00:00:00.265625
+read_reply2 count=156 total=00:00:01.140625 avg=00:00:00.007311 min=00:00:00 max=00:00:00.250000
+read_header1 count=156 total=00:00:00.218750 avg=00:00:00.001402 min=00:00:00 max=00:00:00.062500
+read_header2 count=156 total=00:00:00.093750 avg=00:00:00.000600 min=00:00:00 max=00:00:00.062500
+read_body1 count=155 total=00:02:25.828125 avg=00:00:00.940826 min=00:00:00 max=00:00:02.109375
+read_body2 count=155 total=00:02:25.828125 avg=00:00:00.940826 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:02]
+load_file /maps/gettile?map=yasat&z=9&x=223&y=89
+load count=152 total=00:02:29.250000 avg=00:00:00.981907 min=00:00:00.015625 max=00:00:02.125000
+save count=152 total=00:00:02.390625 avg=00:00:00.015727 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:02]
+get "GET /maps/gettile?map=yasat&z=9&x=223&y=88 HTTP/1.1\r\n\r\n"
+get count=157 total=00:02:27.296875 avg=00:00:00.938196 min=00:00:00 max=00:00:02.109375
+read_reply1 count=157 total=00:00:01.203125 avg=00:00:00.007663 min=00:00:00 max=00:00:00.265625
+read_reply2 count=157 total=00:00:01.156250 avg=00:00:00.007364 min=00:00:00 max=00:00:00.250000
+read_header1 count=157 total=00:00:00.218750 avg=00:00:00.001393 min=00:00:00 max=00:00:00.062500
+read_header2 count=157 total=00:00:00.093750 avg=00:00:00.000597 min=00:00:00 max=00:00:00.062500
+read_body1 count=156 total=00:02:25.843750 avg=00:00:00.934895 min=00:00:00 max=00:00:02.109375
+read_body2 count=156 total=00:02:25.843750 avg=00:00:00.934895 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:02]
+load_file /maps/gettile?map=yasat&z=9&x=223&y=88
+load count=153 total=00:02:29.312500 avg=00:00:00.975898 min=00:00:00.015625 max=00:00:02.125000
+save count=153 total=00:00:02.390625 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:03]
+get "GET /maps/gettile?map=yasat&z=9&x=223&y=87 HTTP/1.1\r\n\r\n"
+get count=158 total=00:02:28.312500 avg=00:00:00.938686 min=00:00:00 max=00:00:02.109375
+read_reply1 count=158 total=00:00:01.218750 avg=00:00:00.007713 min=00:00:00 max=00:00:00.265625
+read_reply2 count=158 total=00:00:01.171875 avg=00:00:00.007416 min=00:00:00 max=00:00:00.250000
+read_header1 count=158 total=00:00:00.218750 avg=00:00:00.001384 min=00:00:00 max=00:00:00.062500
+read_header2 count=158 total=00:00:00.093750 avg=00:00:00.000593 min=00:00:00 max=00:00:00.062500
+read_body1 count=157 total=00:02:26.843750 avg=00:00:00.935310 min=00:00:00 max=00:00:02.109375
+read_body2 count=157 total=00:02:26.843750 avg=00:00:00.935310 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:03]
+load_file /maps/gettile?map=yasat&z=9&x=223&y=87
+load count=154 total=00:02:30.359375 avg=00:00:00.976359 min=00:00:00.015625 max=00:00:02.125000
+save count=154 total=00:00:02.390625 avg=00:00:00.015523 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:04]
+get "GET /maps/gettile?map=yasat&z=9&x=223&y=86 HTTP/1.1\r\n\r\n"
+get count=159 total=00:02:29.265625 avg=00:00:00.938777 min=00:00:00 max=00:00:02.109375
+read_reply1 count=159 total=00:00:01.218750 avg=00:00:00.007665 min=00:00:00 max=00:00:00.265625
+read_reply2 count=159 total=00:00:01.171875 avg=00:00:00.007370 min=00:00:00 max=00:00:00.250000
+read_header1 count=159 total=00:00:00.218750 avg=00:00:00.001375 min=00:00:00 max=00:00:00.062500
+read_header2 count=159 total=00:00:00.093750 avg=00:00:00.000589 min=00:00:00 max=00:00:00.062500
+read_body1 count=158 total=00:02:27.796875 avg=00:00:00.935423 min=00:00:00 max=00:00:02.109375
+read_body2 count=158 total=00:02:27.796875 avg=00:00:00.935423 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:04]
+load_file /maps/gettile?map=yasat&z=9&x=223&y=86
+load count=155 total=00:02:31.328125 avg=00:00:00.976310 min=00:00:00.015625 max=00:00:02.125000
+save count=155 total=00:00:02.390625 avg=00:00:00.015423 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:05]
+get "GET /maps/gettile?map=yasat&z=9&x=222&y=89 HTTP/1.1\r\n\r\n"
+get count=160 total=00:02:30.437500 avg=00:00:00.940234 min=00:00:00 max=00:00:02.109375
+read_reply1 count=160 total=00:00:01.218750 avg=00:00:00.007617 min=00:00:00 max=00:00:00.265625
+read_reply2 count=160 total=00:00:01.171875 avg=00:00:00.007324 min=00:00:00 max=00:00:00.250000
+read_header1 count=160 total=00:00:00.234375 avg=00:00:00.001464 min=00:00:00 max=00:00:00.062500
+read_header2 count=160 total=00:00:00.093750 avg=00:00:00.000585 min=00:00:00 max=00:00:00.062500
+read_body1 count=159 total=00:02:28.953125 avg=00:00:00.936812 min=00:00:00 max=00:00:02.109375
+read_body2 count=159 total=00:02:28.953125 avg=00:00:00.936812 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:05]
+load_file /maps/gettile?map=yasat&z=9&x=222&y=89
+load count=156 total=00:02:32.515625 avg=00:00:00.977664 min=00:00:00.015625 max=00:00:02.125000
+save count=156 total=00:00:02.421875 avg=00:00:00.015524 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:06]
+get "GET /maps/gettile?map=yasat&z=9&x=222&y=88 HTTP/1.1\r\n\r\n"
+get count=161 total=00:02:31.187500 avg=00:00:00.939052 min=00:00:00 max=00:00:02.109375
+read_reply1 count=161 total=00:00:01.218750 avg=00:00:00.007569 min=00:00:00 max=00:00:00.265625
+read_reply2 count=161 total=00:00:01.171875 avg=00:00:00.007278 min=00:00:00 max=00:00:00.250000
+read_header1 count=161 total=00:00:00.234375 avg=00:00:00.001455 min=00:00:00 max=00:00:00.062500
+read_header2 count=161 total=00:00:00.093750 avg=00:00:00.000582 min=00:00:00 max=00:00:00.062500
+read_body1 count=160 total=00:02:29.703125 avg=00:00:00.935644 min=00:00:00 max=00:00:02.109375
+read_body2 count=160 total=00:02:29.703125 avg=00:00:00.935644 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:06]
+load_file /maps/gettile?map=yasat&z=9&x=222&y=88
+load count=157 total=00:02:33.265625 avg=00:00:00.976214 min=00:00:00.015625 max=00:00:02.125000
+save count=157 total=00:00:02.437500 avg=00:00:00.015525 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:07]
+get "GET /maps/gettile?map=yasat&z=9&x=222&y=87 HTTP/1.1\r\n\r\n"
+get count=162 total=00:02:32.171875 avg=00:00:00.939332 min=00:00:00 max=00:00:02.109375
+read_reply1 count=162 total=00:00:01.234375 avg=00:00:00.007619 min=00:00:00 max=00:00:00.265625
+read_reply2 count=162 total=00:00:01.187500 avg=00:00:00.007330 min=00:00:00 max=00:00:00.250000
+read_header1 count=162 total=00:00:00.234375 avg=00:00:00.001446 min=00:00:00 max=00:00:00.062500
+read_header2 count=162 total=00:00:00.093750 avg=00:00:00.000578 min=00:00:00 max=00:00:00.062500
+read_body1 count=161 total=00:02:30.671875 avg=00:00:00.935850 min=00:00:00 max=00:00:02.109375
+read_body2 count=161 total=00:02:30.671875 avg=00:00:00.935850 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:07]
+load_file /maps/gettile?map=yasat&z=9&x=222&y=87
+load count=158 total=00:02:34.281250 avg=00:00:00.976463 min=00:00:00.015625 max=00:00:02.125000
+save count=158 total=00:00:02.453125 avg=00:00:00.015526 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:07]
+get "GET /maps/gettile?map=yasat&z=9&x=222&y=86 HTTP/1.1\r\n\r\n"
+get count=163 total=00:02:32.187500 avg=00:00:00.933665 min=00:00:00 max=00:00:02.109375
+read_reply1 count=163 total=00:00:01.234375 avg=00:00:00.007572 min=00:00:00 max=00:00:00.265625
+read_reply2 count=163 total=00:00:01.187500 avg=00:00:00.007285 min=00:00:00 max=00:00:00.250000
+read_header1 count=163 total=00:00:00.234375 avg=00:00:00.001437 min=00:00:00 max=00:00:00.062500
+read_header2 count=163 total=00:00:00.093750 avg=00:00:00.000575 min=00:00:00 max=00:00:00.062500
+read_body1 count=162 total=00:02:30.687500 avg=00:00:00.930169 min=00:00:00 max=00:00:02.109375
+read_body2 count=162 total=00:02:30.687500 avg=00:00:00.930169 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:07]
+load_file /maps/gettile?map=yasat&z=9&x=222&y=86
+load count=159 total=00:02:34.328125 avg=00:00:00.970617 min=00:00:00.015625 max=00:00:02.125000
+save count=159 total=00:00:02.484375 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:07]
+get "GET /maps/gettile?map=yasat&z=9&x=221&y=89 HTTP/1.1\r\n\r\n"
+get count=164 total=00:02:32.234375 avg=00:00:00.928258 min=00:00:00 max=00:00:02.109375
+read_reply1 count=164 total=00:00:01.265625 avg=00:00:00.007717 min=00:00:00 max=00:00:00.265625
+read_reply2 count=164 total=00:00:01.218750 avg=00:00:00.007431 min=00:00:00 max=00:00:00.250000
+read_header1 count=164 total=00:00:00.234375 avg=00:00:00.001429 min=00:00:00 max=00:00:00.062500
+read_header2 count=164 total=00:00:00.093750 avg=00:00:00.000571 min=00:00:00 max=00:00:00.062500
+read_body1 count=163 total=00:02:30.703125 avg=00:00:00.924559 min=00:00:00 max=00:00:02.109375
+read_body2 count=163 total=00:02:30.703125 avg=00:00:00.924559 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:07]
+load_file /maps/gettile?map=yasat&z=9&x=221&y=89
+load count=160 total=00:02:34.390625 avg=00:00:00.964941 min=00:00:00.015625 max=00:00:02.125000
+save count=160 total=00:00:02.484375 avg=00:00:00.015527 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:08]
+get "GET /maps/gettile?map=yasat&z=9&x=221&y=88 HTTP/1.1\r\n\r\n"
+get count=165 total=00:02:33.328125 avg=00:00:00.929261 min=00:00:00 max=00:00:02.109375
+read_reply1 count=165 total=00:00:01.265625 avg=00:00:00.007670 min=00:00:00 max=00:00:00.265625
+read_reply2 count=165 total=00:00:01.218750 avg=00:00:00.007386 min=00:00:00 max=00:00:00.250000
+read_header1 count=165 total=00:00:00.234375 avg=00:00:00.001420 min=00:00:00 max=00:00:00.062500
+read_header2 count=165 total=00:00:00.093750 avg=00:00:00.000568 min=00:00:00 max=00:00:00.062500
+read_body1 count=164 total=00:02:31.796875 avg=00:00:00.925590 min=00:00:00 max=00:00:02.109375
+read_body2 count=164 total=00:02:31.796875 avg=00:00:00.925590 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:08]
+load_file /maps/gettile?map=yasat&z=9&x=221&y=88
+load count=161 total=00:02:35.500000 avg=00:00:00.965838 min=00:00:00.015625 max=00:00:02.125000
+save count=161 total=00:00:02.515625 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:08]
+get "GET /maps/gettile?map=yasat&z=9&x=221&y=87 HTTP/1.1\r\n\r\n"
+get count=166 total=00:02:33.359375 avg=00:00:00.923851 min=00:00:00 max=00:00:02.109375
+read_reply1 count=166 total=00:00:01.265625 avg=00:00:00.007624 min=00:00:00 max=00:00:00.265625
+read_reply2 count=166 total=00:00:01.218750 avg=00:00:00.007341 min=00:00:00 max=00:00:00.250000
+read_header1 count=166 total=00:00:00.234375 avg=00:00:00.001411 min=00:00:00 max=00:00:00.062500
+read_header2 count=166 total=00:00:00.093750 avg=00:00:00.000564 min=00:00:00 max=00:00:00.062500
+read_body1 count=165 total=00:02:31.828125 avg=00:00:00.920170 min=00:00:00 max=00:00:02.109375
+read_body2 count=165 total=00:02:31.828125 avg=00:00:00.920170 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:08]
+load_file /maps/gettile?map=yasat&z=9&x=221&y=87
+load count=162 total=00:02:35.531250 avg=00:00:00.960069 min=00:00:00.015625 max=00:00:02.125000
+save count=162 total=00:00:02.531250 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:09]
+get "GET /maps/gettile?map=yasat&z=9&x=221&y=86 HTTP/1.1\r\n\r\n"
+get count=167 total=00:02:34.375000 avg=00:00:00.924401 min=00:00:00 max=00:00:02.109375
+read_reply1 count=167 total=00:00:01.265625 avg=00:00:00.007578 min=00:00:00 max=00:00:00.265625
+read_reply2 count=167 total=00:00:01.218750 avg=00:00:00.007297 min=00:00:00 max=00:00:00.250000
+read_header1 count=167 total=00:00:00.234375 avg=00:00:00.001403 min=00:00:00 max=00:00:00.062500
+read_header2 count=167 total=00:00:00.093750 avg=00:00:00.000561 min=00:00:00 max=00:00:00.062500
+read_body1 count=166 total=00:02:32.843750 avg=00:00:00.920745 min=00:00:00 max=00:00:02.109375
+read_body2 count=166 total=00:02:32.843750 avg=00:00:00.920745 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:09]
+load_file /maps/gettile?map=yasat&z=9&x=221&y=86
+load count=163 total=00:02:36.546875 avg=00:00:00.960410 min=00:00:00.015625 max=00:00:02.125000
+save count=163 total=00:00:02.531250 avg=00:00:00.015529 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:11]
+get "GET /maps/gettile?map=yasat&z=8&x=115&y=45 HTTP/1.1\r\n\r\n"
+get count=168 total=00:02:36.265625 avg=00:00:00.930152 min=00:00:00 max=00:00:02.109375
+read_reply1 count=168 total=00:00:01.296875 avg=00:00:00.007719 min=00:00:00 max=00:00:00.265625
+read_reply2 count=168 total=00:00:01.250000 avg=00:00:00.007440 min=00:00:00 max=00:00:00.250000
+read_header1 count=168 total=00:00:00.234375 avg=00:00:00.001395 min=00:00:00 max=00:00:00.062500
+read_header2 count=168 total=00:00:00.093750 avg=00:00:00.000558 min=00:00:00 max=00:00:00.062500
+read_body1 count=167 total=00:02:34.703125 avg=00:00:00.926366 min=00:00:00 max=00:00:02.109375
+read_body2 count=167 total=00:02:34.703125 avg=00:00:00.926366 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:11]
+load_file /maps/gettile?map=yasat&z=8&x=115&y=45
+load count=164 total=00:02:38.453125 avg=00:00:00.966177 min=00:00:00.015625 max=00:00:02.125000
+save count=164 total=00:00:02.562500 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:13]
+get "GET /maps/gettile?map=yasat&z=8&x=115&y=44 HTTP/1.1\r\n\r\n"
+get count=169 total=00:02:38.125000 avg=00:00:00.935650 min=00:00:00 max=00:00:02.109375
+read_reply1 count=169 total=00:00:01.296875 avg=00:00:00.007673 min=00:00:00 max=00:00:00.265625
+read_reply2 count=169 total=00:00:01.250000 avg=00:00:00.007396 min=00:00:00 max=00:00:00.250000
+read_header1 count=169 total=00:00:00.234375 avg=00:00:00.001386 min=00:00:00 max=00:00:00.062500
+read_header2 count=169 total=00:00:00.093750 avg=00:00:00.000554 min=00:00:00 max=00:00:00.062500
+read_body1 count=168 total=00:02:36.562500 avg=00:00:00.931919 min=00:00:00 max=00:00:02.109375
+read_body2 count=168 total=00:02:36.562500 avg=00:00:00.931919 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:13]
+load_file /maps/gettile?map=yasat&z=8&x=115&y=44
+load count=165 total=00:02:40.328125 avg=00:00:00.971685 min=00:00:00.015625 max=00:00:02.125000
+save count=165 total=00:00:02.593750 avg=00:00:00.015719 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:15]
+get "GET /maps/gettile?map=yasat&z=8&x=115&y=43 HTTP/1.1\r\n\r\n"
+get count=170 total=00:02:39.890625 avg=00:00:00.940533 min=00:00:00 max=00:00:02.109375
+read_reply1 count=170 total=00:00:01.312500 avg=00:00:00.007720 min=00:00:00 max=00:00:00.265625
+read_reply2 count=170 total=00:00:01.265625 avg=00:00:00.007444 min=00:00:00 max=00:00:00.250000
+read_header1 count=170 total=00:00:00.234375 avg=00:00:00.001378 min=00:00:00 max=00:00:00.062500
+read_header2 count=170 total=00:00:00.093750 avg=00:00:00.000551 min=00:00:00 max=00:00:00.062500
+read_body1 count=169 total=00:02:38.312500 avg=00:00:00.936760 min=00:00:00 max=00:00:02.109375
+read_body2 count=169 total=00:02:38.312500 avg=00:00:00.936760 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:15]
+load_file /maps/gettile?map=yasat&z=8&x=115&y=43
+load count=166 total=00:02:42.109375 avg=00:00:00.976562 min=00:00:00.015625 max=00:00:02.125000
+save count=166 total=00:00:02.593750 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:15]
+get "GET /maps/gettile?map=yasat&z=8&x=115&y=42 HTTP/1.1\r\n\r\n"
+get count=171 total=00:02:39.921875 avg=00:00:00.935215 min=00:00:00 max=00:00:02.109375
+read_reply1 count=171 total=00:00:01.328125 avg=00:00:00.007766 min=00:00:00 max=00:00:00.265625
+read_reply2 count=171 total=00:00:01.281250 avg=00:00:00.007492 min=00:00:00 max=00:00:00.250000
+read_header1 count=171 total=00:00:00.234375 avg=00:00:00.001370 min=00:00:00 max=00:00:00.062500
+read_header2 count=171 total=00:00:00.093750 avg=00:00:00.000548 min=00:00:00 max=00:00:00.062500
+read_body1 count=170 total=00:02:38.328125 avg=00:00:00.931341 min=00:00:00 max=00:00:02.109375
+read_body2 count=170 total=00:02:38.328125 avg=00:00:00.931341 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:15]
+load_file /maps/gettile?map=yasat&z=8&x=115&y=42
+load count=167 total=00:02:42.156250 avg=00:00:00.970995 min=00:00:00.015625 max=00:00:02.125000
+save count=167 total=00:00:02.593750 avg=00:00:00.015531 min=00:00:00 max=00:00:00.375000
+
+[2010-05-28 00:55:17]
+get "GET /maps/gettile?map=yasat&z=8&x=114&y=45 HTTP/1.1\r\n\r\n"
+get count=172 total=00:02:41.765625 avg=00:00:00.940497 min=00:00:00 max=00:00:02.109375
+read_reply1 count=172 total=00:00:01.328125 avg=00:00:00.007721 min=00:00:00 max=00:00:00.265625
+read_reply2 count=172 total=00:00:01.281250 avg=00:00:00.007449 min=00:00:00 max=00:00:00.250000
+read_header1 count=172 total=00:00:00.234375 avg=00:00:00.001362 min=00:00:00 max=00:00:00.062500
+read_header2 count=172 total=00:00:00.093750 avg=00:00:00.000545 min=00:00:00 max=00:00:00.062500
+read_body1 count=171 total=00:02:40.171875 avg=00:00:00.936677 min=00:00:00 max=00:00:02.109375
+read_body2 count=171 total=00:02:40.171875 avg=00:00:00.936677 min=00:00:00 max=00:00:02.109375
+
+[2010-05-28 00:55:17]
+load_file /maps/gettile?map=yasat&z=8&x=114&y=45
+load count=168 total=00:02:44.015625 avg=00:00:00.976283 min=00:00:00.015625 max=00:00:02.125000
+save count=168 total=00:00:02.625000 avg=00:00:00.015625 min=00:00:00 max=00:00:00.375000
+
