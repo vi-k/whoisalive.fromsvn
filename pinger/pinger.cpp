@@ -141,14 +141,14 @@ void host_pinger::handle_timeout_(unsigned short sequence_number)
 		Сразу делаем ещё 3 дополнительных запроса */
 	host_state old_state = state_;
 
-	/* Фиксируем время переход в состояние таймаута */
+	/* Фиксируем время перехода в состояние таймаута */
 	if (fails_ == 0)
 		state_changed_ = time;
 
 	if (++fails_ <= 4)
 	{
 		state_ = host_state::warn;
-		timer_.expires_at(last_ping_time_ + timeout_);
+		timer_.expires_at(last_ping_time_ + timeout_ + posix_time::seconds(1));
 	}
 	else
 	{
